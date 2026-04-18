@@ -1,1 +1,723 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agency Profile | Rockline AI Marketing – GEO &amp; AI Marketing Agency, Chicagoland IL</title>
 
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Exo+2:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --blue-bright: #279cf5;
+    --blue-light:  #bbe0fc;
+    --blue-mid:    #8fcbfa;
+    --blue-dark:   #032844;
+    --white:       #ffffff;
+    --glass:       rgba(3,40,68,0.82);
+    --ticker-bg:   #021d32;
+    --surface-1:   rgba(3,40,68,0.55);
+    --surface-2:   rgba(2,18,40,0.85);
+    --border:      rgba(39,156,245,0.14);
+    --border-hi:   rgba(39,156,245,0.32);
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Exo 2', sans-serif; background: var(--blue-dark); color: var(--white); overflow-x: hidden; }
+
+  /* ── DESKTOP HEADER ── */
+  #site-header { background: linear-gradient(180deg, #075C9D 0%, var(--blue-dark) 100%); border-bottom: 1px solid rgba(39,156,245,0.18); }
+  .header-brand { display: flex; align-items: center; justify-content: center; position: relative; padding: 18px 24px 12px; }
+  .cta-sms { position: absolute; left: 32px; top: 50%; transform: translateY(-50%); display: flex; align-items: center; gap: 8px; background: linear-gradient(135deg, var(--blue-bright), #1479c4); color: var(--white); text-decoration: none; font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 1.6px; text-transform: uppercase; padding: 10px 20px; border-radius: 4px; border: 1px solid rgba(255,255,255,0.12); box-shadow: 0 4px 20px rgba(39,156,245,0.3); transition: transform .2s, box-shadow .2s; white-space: nowrap; }
+  .cta-sms:hover { transform: translateY(calc(-50% - 2px)); box-shadow: 0 10px 32px rgba(39,156,245,0.5); }
+  .header-logo { height: 72px; width: auto; display: block; }
+
+  /* ── STICKY NAV ── */
+  #sticky-nav-zone { position: sticky; top: 0; z-index: 500; background: var(--glass); backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px); border-bottom: 1px solid rgba(39,156,245,0.18); box-shadow: 0 4px 30px rgba(2,10,20,0.6); }
+  nav.main-nav { display: flex; align-items: center; justify-content: center; gap: 2px; padding: 0 16px; }
+  .nav-item { position: relative; }
+  .nav-btn { display: flex; align-items: center; gap: 5px; padding: 14px 20px; font-family: 'Rajdhani', sans-serif; font-weight: 600; font-size: 13px; letter-spacing: 2px; text-transform: uppercase; color: var(--blue-light); background: none; border: none; cursor: pointer; text-decoration: none; transition: color .2s; white-space: nowrap; position: relative; }
+  .nav-btn:hover, .nav-item.is-open > .nav-btn { color: var(--white); }
+  a.nav-btn.active, span.nav-btn.active { color: var(--white); }
+  a.nav-btn::after { content: ''; position: absolute; bottom: 8px; left: 20px; right: 20px; height: 2px; background: var(--blue-bright); border-radius: 2px; transform: scaleX(0); transition: transform .25s; }
+  a.nav-btn:hover::after, a.nav-btn.active::after { transform: scaleX(1); }
+  .chevron { width: 10px; height: 10px; transition: transform .25s; flex-shrink: 0; }
+  .nav-item.is-open .chevron { transform: rotate(180deg); }
+  .dropdown { position: absolute; top: 100%; left: 50%; transform: translateX(-50%) translateY(6px); min-width: 220px; background: rgba(2,12,24,0.97); border: 1px solid rgba(39,156,245,0.2); border-radius: 6px; box-shadow: 0 16px 48px rgba(0,0,0,0.55); opacity: 0; pointer-events: none; transition: opacity .22s, transform .22s; z-index: 600; overflow: hidden; }
+  .dropdown::before { content: ''; position: absolute; top: -8px; left: 0; right: 0; height: 8px; }
+  .nav-item.is-open .dropdown { opacity: 1; pointer-events: auto; transform: translateX(-50%) translateY(0); }
+  .dropdown a { display: block; padding: 12px 22px; font-family: 'Exo 2', sans-serif; font-size: 13px; color: var(--blue-light); text-decoration: none; letter-spacing: .5px; border-bottom: 1px solid rgba(39,156,245,0.07); transition: background .18s, color .18s, padding-left .18s; }
+  .dropdown a:last-child { border-bottom: none; }
+  .dropdown a:hover { background: rgba(39,156,245,0.1); color: var(--white); padding-left: 28px; }
+  .dropdown a.current-page { color: var(--white); background: rgba(39,156,245,0.08); }
+
+  /* ── TICKER ── */
+  .ticker-wrap { background: var(--ticker-bg); border-top: 1px solid rgba(39,156,245,0.1); padding: 7px 0; overflow: hidden; position: relative; pointer-events: none; }
+  .ticker-label { position: absolute; left: 0; top: 0; bottom: 0; z-index: 2; display: flex; align-items: center; padding: 0 18px 0 14px; background: var(--blue-bright); font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--blue-dark); white-space: nowrap; clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 50%, calc(100% - 8px) 100%, 0 100%); }
+  .ticker-wrap::after { content: ''; position: absolute; right: 0; top: 0; bottom: 0; width: 60px; background: linear-gradient(to right, transparent, var(--ticker-bg)); z-index: 3; pointer-events: none; }
+  .ticker-inner { overflow: hidden; padding-left: 112px; }
+  .ticker-track { display: flex; width: max-content; animation: tickerScroll 60s linear infinite; }
+  .ticker-item { font-family: 'Space Mono', monospace; font-size: 10.5px; color: var(--blue-mid); white-space: nowrap; padding: 0 44px; display: flex; align-items: center; gap: 10px; }
+  .ticker-item::after { content: '◆'; color: var(--blue-bright); font-size: 7px; }
+  @keyframes tickerScroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+  /* ── MOBILE STICKY ── */
+  #mobile-sticky { display: none; position: fixed; top: 0; left: 0; right: 0; z-index: 800; flex-direction: column; }
+  .mobile-topbar { display: flex; align-items: center; justify-content: center; position: relative; padding: 10px 16px; background: rgba(2,12,24,0.97); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid rgba(39,156,245,0.15); }
+  .mobile-header-logo { height: 42px; width: auto; display: block; }
+  .hamburger-trigger { position: absolute; right: 16px; top: 50%; transform: translateY(-50%); width: 44px; height: 44px; cursor: pointer; background: rgba(39,156,245,0.06); border: 1px solid rgba(39,156,245,0.35); border-radius: 6px; padding: 0; display: flex; align-items: center; justify-content: center; transition: background .25s, border-color .25s, box-shadow .25s; box-shadow: 0 0 10px rgba(39,156,245,0.2); }
+  .hamburger-trigger:hover, .hamburger-trigger.open { background: rgba(39,156,245,0.14); border-color: rgba(39,156,245,0.75); box-shadow: 0 0 18px rgba(39,156,245,0.45), 0 0 6px rgba(39,156,245,0.3) inset; }
+  .hamburger-bars { display: flex; flex-direction: column; gap: 5px; width: 20px; }
+  .hamburger-bars span { display: block; height: 2px; border-radius: 2px; background: var(--blue-light); transition: transform .3s cubic-bezier(.22,1,.36,1), opacity .2s, width .3s; }
+  .hamburger-bars span:nth-child(1) { width: 20px; }
+  .hamburger-bars span:nth-child(2) { width: 14px; }
+  .hamburger-bars span:nth-child(3) { width: 20px; }
+  .hamburger-trigger.open .hamburger-bars span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .hamburger-trigger.open .hamburger-bars span:nth-child(2) { opacity: 0; width: 0; }
+  .hamburger-trigger.open .hamburger-bars span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  .mobile-ticker-strip { background: var(--ticker-bg); border-bottom: 1px solid rgba(39,156,245,0.1); padding: 5px 0; pointer-events: none; }
+  .mobile-ticker-strip .ticker-label { font-size: 9px; padding: 0 14px 0 10px; }
+  .mobile-ticker-strip .ticker-inner { padding-left: 88px; }
+  .mobile-ticker-strip .ticker-track { animation-duration: 50s; }
+  .mobile-ticker-strip .ticker-item { font-size: 9.5px; padding: 0 30px; }
+
+  /* ── MOBILE PANEL ── */
+  .mobile-overlay { display: none; position: fixed; inset: 0; background: rgba(2,9,16,0.55); z-index: 700; opacity: 0; transition: opacity .3s; backdrop-filter: blur(4px); pointer-events: none; }
+  .mobile-overlay.visible { opacity: 1; pointer-events: auto; }
+  .mobile-panel { position: fixed; top: 0; right: -310px; width: 290px; height: 100%; background: rgba(2,12,24,0.99); border-left: 1px solid rgba(39,156,245,0.18); z-index: 900; transition: right .34s cubic-bezier(.22,1,.36,1); overflow-y: auto; padding-bottom: 48px; }
+  .mobile-panel.open { right: 0; }
+  .mobile-panel-logo { display: flex; justify-content: center; padding: 28px 20px 18px; border-bottom: 1px solid rgba(39,156,245,0.1); }
+  .mobile-panel-logo img { height: 52px; width: auto; }
+  .mobile-nav-list { list-style: none; padding: 10px 0; }
+  .mobile-nav-list > li > a, .mobile-nav-list > li > .m-parent { display: flex; align-items: center; justify-content: space-between; padding: 13px 22px; font-family: 'Rajdhani', sans-serif; font-weight: 600; font-size: 14px; letter-spacing: 1.8px; text-transform: uppercase; color: var(--blue-light); text-decoration: none; border-bottom: 1px solid rgba(39,156,245,0.06); transition: background .18s, color .18s; cursor: pointer; }
+  .mobile-nav-list > li > a:hover { background: rgba(39,156,245,0.08); color: var(--white); }
+  .mobile-nav-list > li > .m-parent { color: rgba(187,224,252,0.55); cursor: default; }
+  .m-chevron { width: 12px; height: 12px; transition: transform .25s; color: rgba(143,203,250,0.5); flex-shrink: 0; }
+  .m-parent.sub-open .m-chevron { transform: rotate(180deg); }
+  .mobile-sub { display: none; background: rgba(39,156,245,0.03); border-bottom: 1px solid rgba(39,156,245,0.06); }
+  .mobile-sub.open { display: block; }
+  .mobile-sub a { display: block; padding: 10px 22px 10px 34px; font-size: 12.5px; color: var(--blue-mid); text-decoration: none; border-bottom: 1px solid rgba(39,156,245,0.04); letter-spacing: .4px; transition: color .18s, padding-left .18s; }
+  .mobile-sub a:hover, .mobile-sub a.current-page { color: var(--white); }
+  .mobile-sub a:hover { padding-left: 40px; }
+  .mobile-panel-cta { padding: 18px 20px 0; }
+  .mobile-panel-cta a { display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; padding: 13px; background: linear-gradient(135deg, var(--blue-bright), #1479c4); color: var(--white); text-decoration: none; font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 2px; text-transform: uppercase; border-radius: 4px; box-shadow: 0 4px 20px rgba(39,156,245,0.3); transition: box-shadow .25s; }
+  .mobile-panel-cta a:hover { box-shadow: 0 8px 28px rgba(39,156,245,0.5); }
+
+  /* ── FOOTER ── */
+  footer { background: linear-gradient(180deg, var(--blue-dark) 0%, #075C9D 100%); border-top: 1px solid rgba(39,156,245,0.14); }
+  .footer-main { display: grid; grid-template-columns: 1fr auto 1fr; gap: 24px; align-items: center; padding: 16px 32px; border-bottom: 1px solid rgba(39,156,245,0.08); max-width: 1200px; margin: 0 auto; }
+  .footer-address { font-size: 12.5px; line-height: 1.9; color: var(--blue-mid); font-style: normal; }
+  .footer-address strong { display: block; font-family: 'Rajdhani', sans-serif; font-size: 14px; color: var(--white); letter-spacing: 1px; margin-bottom: 2px; }
+  .footer-address a { color: var(--blue-bright); text-decoration: none; }
+  .footer-address a:hover { text-decoration: underline; }
+  .footer-logo-col { display: flex; justify-content: center; align-items: center; }
+  .footer-logo-col img { height: 44px; width: auto; }
+  .footer-hours { text-align: right; font-size: 12px; color: var(--blue-mid); }
+  .footer-hours strong { display: block; font-family: 'Rajdhani', sans-serif; font-size: 13px; color: var(--white); letter-spacing: 1px; margin-bottom: 4px; }
+  .hours-grid { display: grid; grid-template-columns: auto auto; gap: 0 10px; font-size: 11.5px; justify-content: end; }
+  .hours-grid span:nth-child(even) { color: var(--blue-light); }
+  .footer-social { display: flex; align-items: center; justify-content: center; gap: 6px; padding: 10px 24px; flex-wrap: wrap; }
+  .social-link { width: 36px; height: 36px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.07); display: flex; align-items: center; justify-content: center; text-decoration: none; background: rgba(255,255,255,0.03); transition: transform .2s, border-color .2s, background .2s; }
+  .social-link:hover { transform: translateY(-3px); border-color: rgba(255,255,255,0.18); background: rgba(255,255,255,0.07); }
+  .footer-bottom { padding: 8px 24px; text-align: center; font-size: 10px; color: rgba(143,203,250,0.25); letter-spacing: .8px; border-top: 1px solid rgba(39,156,245,0.05); }
+
+  /* ── ORIGIN STORY SECTION ── */
+  /* ── WHO WE SERVE SECTION ── */
+  .serve-section { padding: 80px 32px; background: linear-gradient(180deg, rgba(2,18,40,0.6) 0%, rgba(3,40,68,0) 100%); border-top: 1px solid var(--border); position: relative; overflow: hidden; }
+  .serve-inner { max-width: 1160px; margin: 0 auto; }
+  .serve-header { text-align: center; max-width: 760px; margin: 0 auto 52px; }
+  .serve-tag { font-family: 'Space Mono', monospace; font-size: 9px; letter-spacing: 3px; text-transform: uppercase; color: var(--blue-bright); margin-bottom: 16px; display: flex; align-items: center; justify-content: center; gap: 10px; }
+  .serve-tag::before, .serve-tag::after { content: ''; flex: 1; max-width: 48px; height: 1px; background: var(--border); }
+  .serve-header h2 { font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: clamp(1.9rem, 3.2vw, 2.8rem); line-height: 1.1; margin-bottom: 18px; }
+  .serve-header h2 em { background: linear-gradient(90deg, var(--blue-bright), var(--blue-mid)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-style: normal; }
+  .serve-lead { font-size: .97rem; color: var(--blue-light); line-height: 1.9; font-weight: 300; }
+
+  .serve-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-bottom: 32px; }
+  .serve-card { background: var(--surface-2); border: 1px solid var(--border); border-radius: 10px; padding: 28px 24px; transition: border-color .25s, transform .2s, background .25s; position: relative; overflow: hidden; }
+  .serve-card::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, var(--blue-bright), transparent); opacity: 0; transition: opacity .3s; }
+  .serve-card:hover { border-color: var(--border-hi); transform: translateY(-3px); background: rgba(39,156,245,0.04); }
+  .serve-card:hover::after { opacity: 1; }
+  .serve-card-icon { width: 42px; height: 42px; background: rgba(39,156,245,0.08); border: 1px solid var(--border-hi); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px; }
+  .serve-card-icon svg { width: 19px; height: 19px; color: var(--blue-bright); }
+  .serve-card h3 { font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 1.08rem; margin-bottom: 10px; color: var(--white); }
+  .serve-card p { font-size: .9rem; color: var(--blue-light); line-height: 1.8; font-weight: 300; }
+
+  .serve-footer-note { display: flex; align-items: flex-start; gap: 14px; background: linear-gradient(135deg, rgba(39,156,245,0.06), rgba(2,18,40,0.4)); border: 1px solid var(--border-hi); border-radius: 8px; padding: 20px 24px; max-width: 760px; margin: 0 auto; }
+  .serve-note-icon { width: 32px; height: 32px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; color: var(--blue-bright); margin-top: 1px; }
+  .serve-note-icon svg { width: 20px; height: 20px; }
+  .serve-footer-note p { font-size: .92rem; color: var(--blue-light); line-height: 1.8; font-weight: 300; }
+  .serve-footer-note strong { color: var(--white); font-weight: 500; }
+
+  @media (max-width: 900px) { .serve-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 768px) {
+    .serve-section { padding: 52px 20px; }
+    .serve-grid { grid-template-columns: 1fr; }
+    .serve-header { margin-bottom: 36px; }
+  }
+
+  .origin-section { padding: 80px 32px; position: relative; overflow: hidden; }
+  .origin-section::before { content: '2025'; position: absolute; right: -24px; top: 50%; transform: translateY(-50%); font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: clamp(100px, 18vw, 220px); color: rgba(39,156,245,0.04); line-height: 1; letter-spacing: -6px; pointer-events: none; }
+  .origin-inner { max-width: 1160px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; position: relative; z-index: 1; }
+
+  .origin-left { position: relative; }
+  .origin-section-tag { font-family: 'Space Mono', monospace; font-size: 9px; letter-spacing: 3px; text-transform: uppercase; color: var(--blue-bright); margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
+  .origin-section-tag::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+  .origin-left h2 { font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: clamp(2rem, 3.5vw, 3rem); line-height: 1.05; margin-bottom: 28px; }
+  .origin-left h2 em { background: linear-gradient(90deg, var(--blue-bright), var(--blue-mid)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-style: normal; }
+
+  .origin-timeline { display: flex; flex-direction: column; gap: 0; position: relative; margin-bottom: 36px; }
+  .origin-timeline::before { content: ''; position: absolute; left: 14px; top: 8px; bottom: 8px; width: 1px; background: linear-gradient(180deg, var(--blue-bright), rgba(39,156,245,0.1)); }
+  .timeline-node { display: flex; gap: 22px; align-items: flex-start; padding: 0 0 28px 0; position: relative; }
+  .timeline-node:last-child { padding-bottom: 0; }
+  .node-dot { width: 29px; height: 29px; border-radius: 50%; background: var(--blue-dark); border: 2px solid var(--blue-bright); display: flex; align-items: center; justify-content: center; flex-shrink: 0; position: relative; z-index: 1; box-shadow: 0 0 14px rgba(39,156,245,0.35); }
+  .node-dot svg { width: 12px; height: 12px; color: var(--blue-bright); }
+  .node-content { padding-top: 3px; }
+  .node-label { font-family: 'Space Mono', monospace; font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: var(--blue-bright); margin-bottom: 5px; }
+  .node-text { font-size: .93rem; color: var(--blue-light); line-height: 1.8; font-weight: 300; }
+  .node-text strong { color: var(--white); font-weight: 500; }
+
+  .origin-right { display: flex; flex-direction: column; gap: 20px; }
+  .origin-pull-quote { background: linear-gradient(135deg, rgba(39,156,245,0.07), rgba(2,18,40,0.6)); border: 1px solid var(--border-hi); border-left: 3px solid var(--blue-bright); border-radius: 0 8px 8px 0; padding: 28px 28px 28px 24px; position: relative; }
+  .origin-pull-quote p { font-family: 'Rajdhani', sans-serif; font-weight: 500; font-size: clamp(1.1rem, 1.6vw, 1.35rem); line-height: 1.5; color: var(--white); font-style: normal; }
+  .origin-pull-quote p em { color: var(--blue-bright); font-style: normal; }
+
+  .origin-body p { font-size: .96rem; color: var(--blue-light); line-height: 1.9; font-weight: 300; margin-bottom: 14px; }
+  .origin-body p:last-child { margin-bottom: 0; }
+  .origin-body strong { color: var(--white); font-weight: 500; }
+
+  .origin-founders { display: flex; align-items: center; gap: 16px; margin-top: 8px; padding: 20px 22px; background: var(--surface-1); border: 1px solid var(--border); border-radius: 8px; }
+  .founders-icon { width: 42px; height: 42px; border-radius: 50%; background: rgba(39,156,245,0.1); border: 1px solid var(--border-hi); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .founders-icon svg { width: 20px; height: 20px; color: var(--blue-bright); }
+  .founders-text { font-size: .88rem; color: var(--blue-mid); line-height: 1.6; }
+  .founders-text strong { display: block; font-family: 'Rajdhani', sans-serif; font-size: 13px; letter-spacing: 1px; color: var(--white); text-transform: uppercase; margin-bottom: 2px; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    #site-header, #sticky-nav-zone { display: none; }
+    #mobile-sticky { display: flex; }
+    .mobile-overlay { display: block; }
+    main { padding-top: 92px; }
+    .footer-main { grid-template-columns: 1fr; text-align: center; gap: 12px; padding: 14px 20px; }
+    .footer-hours { text-align: center; }
+    .hours-grid { justify-content: center; }
+    .footer-logo-col { justify-content: center; }
+    .origin-section { padding: 52px 20px; }
+    .origin-section::before { display: none; }
+    .origin-inner { grid-template-columns: 1fr; gap: 40px; }
+  }
+
+  /* ── WHO WE SERVE SECTION ── */
+  .serve-section { padding: 80px 32px; background: linear-gradient(180deg, rgba(2,18,40,0.6) 0%, rgba(3,40,68,0) 100%); border-top: 1px solid var(--border); position: relative; overflow: hidden; }
+  .serve-inner { max-width: 1160px; margin: 0 auto; }
+  .serve-header { text-align: center; max-width: 760px; margin: 0 auto 52px; }
+  .serve-tag { font-family: 'Space Mono', monospace; font-size: 9px; letter-spacing: 3px; text-transform: uppercase; color: var(--blue-bright); margin-bottom: 16px; display: flex; align-items: center; justify-content: center; gap: 10px; }
+  .serve-tag::before, .serve-tag::after { content: ''; flex: 1; max-width: 48px; height: 1px; background: var(--border); }
+  .serve-header h2 { font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: clamp(1.9rem, 3.2vw, 2.8rem); line-height: 1.1; margin-bottom: 18px; }
+  .serve-header h2 em { background: linear-gradient(90deg, var(--blue-bright), var(--blue-mid)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-style: normal; }
+  .serve-lead { font-size: .97rem; color: var(--blue-light); line-height: 1.9; font-weight: 300; }
+
+  .serve-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-bottom: 32px; }
+  .serve-card { background: var(--surface-2); border: 1px solid var(--border); border-radius: 10px; padding: 28px 24px; transition: border-color .25s, transform .2s, background .25s; position: relative; overflow: hidden; }
+  .serve-card::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, var(--blue-bright), transparent); opacity: 0; transition: opacity .3s; }
+  .serve-card:hover { border-color: var(--border-hi); transform: translateY(-3px); background: rgba(39,156,245,0.04); }
+  .serve-card:hover::after { opacity: 1; }
+  .serve-card-icon { width: 42px; height: 42px; background: rgba(39,156,245,0.08); border: 1px solid var(--border-hi); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px; }
+  .serve-card-icon svg { width: 19px; height: 19px; color: var(--blue-bright); }
+  .serve-card h3 { font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 1.08rem; margin-bottom: 10px; color: var(--white); }
+  .serve-card p { font-size: .9rem; color: var(--blue-light); line-height: 1.8; font-weight: 300; }
+
+  .serve-footer-note { display: flex; align-items: flex-start; gap: 14px; background: linear-gradient(135deg, rgba(39,156,245,0.06), rgba(2,18,40,0.4)); border: 1px solid var(--border-hi); border-radius: 8px; padding: 20px 24px; max-width: 760px; margin: 0 auto; }
+  .serve-note-icon { width: 32px; height: 32px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; color: var(--blue-bright); margin-top: 1px; }
+  .serve-note-icon svg { width: 20px; height: 20px; }
+  .serve-footer-note p { font-size: .92rem; color: var(--blue-light); line-height: 1.8; font-weight: 300; }
+  .serve-footer-note strong { color: var(--white); font-weight: 500; }
+
+  @media (max-width: 900px) { .serve-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 768px) {
+    .serve-section { padding: 52px 20px; }
+    .serve-grid { grid-template-columns: 1fr; }
+    .serve-header { margin-bottom: 36px; }
+  }
+
+  /* ── PLAN FOR SUCCESS SECTION ── */
+  .plan-section { padding: 88px 32px; position: relative; overflow: hidden; border-top: 1px solid var(--border); }
+  .plan-section::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 70% 60% at 50% 0%, rgba(39,156,245,0.07) 0%, transparent 70%); pointer-events: none; }
+  .plan-inner { max-width: 1160px; margin: 0 auto; position: relative; z-index: 1; }
+
+  .plan-header { text-align: center; max-width: 800px; margin: 0 auto 64px; }
+  .plan-tag { font-family: 'Space Mono', monospace; font-size: 9px; letter-spacing: 3px; text-transform: uppercase; color: var(--blue-bright); margin-bottom: 16px; display: flex; align-items: center; justify-content: center; gap: 10px; }
+  .plan-tag::before, .plan-tag::after { content: ''; flex: 1; max-width: 48px; height: 1px; background: var(--border); }
+  .plan-header h2 { font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: clamp(2rem, 3.5vw, 3rem); line-height: 1.08; margin-bottom: 18px; }
+  .plan-header h2 em { background: linear-gradient(90deg, var(--blue-bright), var(--blue-mid)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-style: normal; }
+  .plan-header p { font-size: 1rem; color: var(--blue-light); line-height: 1.9; font-weight: 300; }
+
+  /* Two pillars */
+  .plan-pillars { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 56px; }
+  .plan-pillar { background: var(--surface-2); border: 1px solid var(--border); border-radius: 12px; padding: 40px 36px; position: relative; overflow: hidden; transition: border-color .3s, transform .25s; }
+  .plan-pillar:hover { border-color: var(--border-hi); transform: translateY(-4px); }
+  .plan-pillar::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--blue-bright), rgba(39,156,245,0.2)); }
+  .pillar-number { font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 4rem; color: rgba(39,156,245,0.08); line-height: 1; margin-bottom: 4px; letter-spacing: -2px; }
+  .pillar-icon { width: 48px; height: 48px; background: rgba(39,156,245,0.1); border: 1px solid var(--border-hi); border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; }
+  .pillar-icon svg { width: 22px; height: 22px; color: var(--blue-bright); }
+  .plan-pillar h3 { font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 1.4rem; margin-bottom: 12px; line-height: 1.2; }
+  .plan-pillar h3 em { color: var(--blue-bright); font-style: normal; }
+  .plan-pillar p { font-size: .94rem; color: var(--blue-light); line-height: 1.85; font-weight: 300; margin-bottom: 12px; }
+  .plan-pillar p:last-of-type { margin-bottom: 0; }
+  .plan-pillar strong { color: var(--white); font-weight: 500; }
+  .pillar-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
+  .pillar-tag { font-family: 'Space Mono', monospace; font-size: 9px; letter-spacing: 1px; text-transform: uppercase; color: var(--blue-bright); padding: 5px 12px; border: 1px solid rgba(39,156,245,0.25); border-radius: 3px; background: rgba(39,156,245,0.05); }
+
+  /* Connector arrow between pillars */
+  .plan-pillars { position: relative; }
+  .pillar-connector { display: flex; align-items: center; justify-content: center; }
+  .pillar-connector-inner { width: 48px; height: 48px; border-radius: 50%; background: var(--blue-dark); border: 2px solid var(--blue-bright); display: flex; align-items: center; justify-content: center; box-shadow: 0 0 20px rgba(39,156,245,0.3); flex-shrink: 0; align-self: center; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); z-index: 2; }
+  .pillar-connector-inner svg { width: 18px; height: 18px; color: var(--blue-bright); }
+
+  /* Result band */
+  .plan-result { background: linear-gradient(135deg, rgba(39,156,245,0.09), rgba(2,18,40,0.7)); border: 1px solid var(--border-hi); border-radius: 12px; padding: 40px 44px; display: flex; align-items: center; gap: 36px; margin-bottom: 56px; }
+  .result-icon { width: 64px; height: 64px; border-radius: 50%; background: rgba(39,156,245,0.1); border: 2px solid var(--border-hi); display: flex; align-items: center; justify-content: center; flex-shrink: 0; box-shadow: 0 0 24px rgba(39,156,245,0.2); }
+  .result-icon svg { width: 28px; height: 28px; color: var(--blue-bright); }
+  .result-text h3 { font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: clamp(1.2rem, 2vw, 1.6rem); margin-bottom: 8px; }
+  .result-text h3 em { color: var(--blue-bright); font-style: normal; }
+  .result-text p { font-size: .95rem; color: var(--blue-light); line-height: 1.85; font-weight: 300; }
+  .result-text strong { color: var(--white); font-weight: 500; }
+
+  /* Dual CTA */
+  .plan-cta { display: flex; align-items: center; justify-content: center; gap: 16px; flex-wrap: wrap; }
+  .cta-primary { display: inline-flex; align-items: center; gap: 9px; background: linear-gradient(135deg, var(--blue-bright), #1479c4); color: var(--white); text-decoration: none; font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 1.8px; text-transform: uppercase; padding: 15px 34px; border-radius: 4px; border: 1px solid rgba(255,255,255,0.12); box-shadow: 0 4px 22px rgba(39,156,245,0.4); transition: box-shadow .25s, transform .2s; }
+  .cta-primary:hover { box-shadow: 0 10px 36px rgba(39,156,245,0.6); transform: translateY(-2px); }
+  .cta-secondary { display: inline-flex; align-items: center; gap: 9px; background: transparent; color: var(--blue-light); text-decoration: none; font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 1.8px; text-transform: uppercase; padding: 14px 34px; border-radius: 4px; border: 1px solid var(--border-hi); transition: border-color .25s, color .25s, transform .2s; }
+  .cta-secondary:hover { border-color: var(--blue-bright); color: var(--white); transform: translateY(-2px); }
+  .cta-divider { font-family: 'Space Mono', monospace; font-size: 10px; color: rgba(143,203,250,0.3); letter-spacing: 2px; text-transform: uppercase; }
+
+  @media (max-width: 768px) {
+    .plan-section { padding: 52px 20px; }
+    .plan-pillars { grid-template-columns: 1fr; }
+    .plan-result { flex-direction: column; text-align: center; padding: 28px 24px; gap: 20px; }
+    .plan-cta { flex-direction: column; align-items: stretch; }
+    .cta-primary, .cta-secondary { justify-content: center; }
+    .cta-divider { text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══ DESKTOP HEADER ═══ -->
+<header id="site-header">
+  <div class="header-brand">
+    <a href="sms:+18155555555?body=Hi%2C%20I%27d%20like%20to%20learn%20more%20about%20Rockline%20AI%20Marketing!" class="cta-sms">
+      <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      Contact Us
+    </a>
+    <img src="images/logos/rockline-ai-marketing-logo.png" alt="Rockline AI Marketing" class="header-logo">
+  </div>
+</header>
+
+<!-- ═══ DESKTOP STICKY NAV + TICKER ═══ -->
+<div id="sticky-nav-zone">
+  <nav class="main-nav" role="navigation" aria-label="Main navigation">
+    <div class="nav-item"><a href="../index.html" class="nav-btn">Home</a></div>
+    <div class="nav-item">
+      <span class="nav-btn active" tabindex="0">About <svg class="chevron" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 3.5L5 6.5L8 3.5"/></svg></span>
+      <div class="dropdown">
+        <a href="agency-profile.html" class="current-page">Agency Profile</a>
+        <a href="customer-success-stories.html">Customer Success Stories</a>
+        <a href="community-activism.html">Community Activism</a>
+      </div>
+    </div>
+    <div class="nav-item">
+      <span class="nav-btn" tabindex="0">Portfolio <svg class="chevron" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 3.5L5 6.5L8 3.5"/></svg></span>
+      <div class="dropdown">
+        <a href="../portfolio/website-gallery.html">Website Gallery</a>
+        <a href="../portfolio/photo-gallery.html">Photo Gallery</a>
+        <a href="../portfolio/social-gallery.html">Social Gallery</a>
+      </div>
+    </div>
+    <div class="nav-item">
+      <span class="nav-btn" tabindex="0">Services <svg class="chevron" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 3.5L5 6.5L8 3.5"/></svg></span>
+      <div class="dropdown">
+        <a href="../services/custom-websites.html">Custom Websites</a>
+        <a href="../services/microblogging.html">Microblogging</a>
+        <a href="../services/aerial-8k-photography.html">Aerial &amp; 8K Photography</a>
+      </div>
+    </div>
+    <div class="nav-item">
+      <span class="nav-btn" tabindex="0">Contact <svg class="chevron" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 3.5L5 6.5L8 3.5"/></svg></span>
+      <div class="dropdown">
+        <a href="../contact/business-information.html">Business Information</a>
+        <a href="../contact/social-media.html">Social Media</a>
+        <a href="../contact/q-and-a.html">Q &amp; A</a>
+      </div>
+    </div>
+  </nav>
+  <div class="ticker-wrap">
+    <div class="ticker-label">GEO FAQ</div>
+    <div class="ticker-inner">
+      <div class="ticker-track" id="desktopTicker">
+        <div class="ticker-item">What is Generative Engine Optimization (GEO)?</div>
+        <div class="ticker-item">How does GEO differ from traditional SEO?</div>
+        <div class="ticker-item">Can AI-driven content appear in ChatGPT and Gemini answers?</div>
+        <div class="ticker-item">What makes a website discoverable by AI search engines?</div>
+        <div class="ticker-item">How does Rockline AI Marketing implement GEO strategies?</div>
+        <div class="ticker-item">Is GEO replacing SEO — or working alongside it?</div>
+        <div class="ticker-item">How do large language models discover and cite local businesses?</div>
+        <div class="ticker-item">What role does structured data play in GEO?</div>
+        <div class="ticker-item">How quickly can GEO improve your online visibility?</div>
+        <div class="ticker-item">What industries benefit most from Generative Engine Optimization?</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ MOBILE STICKY HEADER ═══ -->
+<div id="mobile-sticky">
+  <div class="mobile-topbar">
+    <img src="images/logos/rockline-ai-marketing-logo.png" alt="Rockline AI Marketing" class="mobile-header-logo">
+    <button class="hamburger-trigger" id="hamburgerTrigger" aria-label="Open navigation">
+      <div class="hamburger-bars"><span></span><span></span><span></span></div>
+    </button>
+  </div>
+  <div class="mobile-ticker-strip ticker-wrap">
+    <div class="ticker-label">GEO FAQ</div>
+    <div class="ticker-inner">
+      <div class="ticker-track" id="mobileTicker">
+        <div class="ticker-item">What is Generative Engine Optimization (GEO)?</div>
+        <div class="ticker-item">How does GEO differ from traditional SEO?</div>
+        <div class="ticker-item">Can AI-driven content appear in ChatGPT &amp; Gemini?</div>
+        <div class="ticker-item">What makes a website discoverable by AI?</div>
+        <div class="ticker-item">How does Rockline AI Marketing implement GEO?</div>
+        <div class="ticker-item">Is GEO replacing SEO — or working alongside it?</div>
+        <div class="ticker-item">How do LLMs discover and cite local businesses?</div>
+        <div class="ticker-item">What role does structured data play in GEO?</div>
+        <div class="ticker-item">How quickly can GEO improve your visibility?</div>
+        <div class="ticker-item">Which industries benefit most from GEO?</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="mobile-overlay" id="mobileOverlay"></div>
+<div class="mobile-panel" id="mobilePanel" role="dialog" aria-label="Navigation">
+  <div class="mobile-panel-logo">
+    <img src="images/logos/rockline-ai-marketing-logo.png" alt="Rockline AI Marketing">
+  </div>
+  <ul class="mobile-nav-list">
+    <li><a href="../index.html">Home</a></li>
+    <li>
+      <div class="m-parent sub-open" onclick="toggleSub(this)">About <svg class="m-chevron" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 3.5L5 6.5L8 3.5"/></svg></div>
+      <div class="mobile-sub open">
+        <a href="agency-profile.html" class="current-page">Agency Profile</a>
+        <a href="customer-success-stories.html">Customer Success Stories</a>
+        <a href="community-activism.html">Community Activism</a>
+      </div>
+    </li>
+    <li>
+      <div class="m-parent" onclick="toggleSub(this)">Portfolio <svg class="m-chevron" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 3.5L5 6.5L8 3.5"/></svg></div>
+      <div class="mobile-sub"><a href="../portfolio/website-gallery.html">Website Gallery</a><a href="../portfolio/photo-gallery.html">Photo Gallery</a><a href="../portfolio/social-gallery.html">Social Gallery</a></div>
+    </li>
+    <li>
+      <div class="m-parent" onclick="toggleSub(this)">Services <svg class="m-chevron" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 3.5L5 6.5L8 3.5"/></svg></div>
+      <div class="mobile-sub"><a href="../services/custom-websites.html">Custom Websites</a><a href="../services/microblogging.html">Microblogging</a><a href="../services/aerial-8k-photography.html">Aerial &amp; 8K Photography</a></div>
+    </li>
+    <li>
+      <div class="m-parent" onclick="toggleSub(this)">Contact <svg class="m-chevron" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 3.5L5 6.5L8 3.5"/></svg></div>
+      <div class="mobile-sub"><a href="../contact/business-information.html">Business Information</a><a href="../contact/social-media.html">Social Media</a><a href="../contact/q-and-a.html">Q &amp; A</a></div>
+    </li>
+  </ul>
+  <div class="mobile-panel-cta">
+    <a href="sms:+18155555555?body=Hi%2C%20I%27d%20like%20to%20learn%20more%20about%20Rockline%20AI%20Marketing!">
+      <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      Text Us Now
+    </a>
+  </div>
+</div>
+
+<!-- ═══ MAIN CONTENT — sections go here ═══ -->
+<main>
+
+  <!-- ═══ SECTION 1: ORIGIN STORY ═══ -->
+  <section class="origin-section" aria-labelledby="origin-h2">
+    <div class="origin-inner">
+
+      <!-- LEFT: heading + timeline -->
+      <div class="origin-left">
+        <p class="origin-section-tag">Our Story</p>
+        <h2 id="origin-h2">Built from Passion.<br><em>Launched with Purpose.</em></h2>
+
+        <div class="origin-timeline">
+          <div class="timeline-node">
+            <div class="node-dot">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <div class="node-content">
+              <p class="node-label">The Foundation</p>
+              <p class="node-text">Two people. <strong>One shared vision.</strong> Rockline AI Marketing was born from a simple but powerful decision — to stop watching local businesses get overlooked and start doing something about it.</p>
+            </div>
+          </div>
+          <div class="timeline-node">
+            <div class="node-dot">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20M12 2a14.5 14.5 0 0 1 0 20M2 12h20"/></svg>
+            </div>
+            <div class="node-content">
+              <p class="node-label">The Shift We Saw Coming</p>
+              <p class="node-text">While most people were still debating whether AI search was real, we were already building for it. We recognized early that <strong>ChatGPT, Gemini, and Perplexity weren't just tools — they were the new front door</strong> for local business discovery.</p>
+            </div>
+          </div>
+          <div class="timeline-node">
+            <div class="node-dot">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            </div>
+            <div class="node-content">
+              <p class="node-label">Rooted in Homer Glen &middot; Launched 2025</p>
+              <p class="node-text">We launched right here in the southwest suburbs — the same community where our clients live and run their businesses. <strong>Local isn't a marketing angle for us. It's who we are.</strong></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="origin-founders">
+          <div class="founders-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <div class="founders-text">
+            <strong>Husband &amp; Wife &middot; Homer Glen, IL</strong>
+            Family-owned and operated — you work with us directly, every time.
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT: pull quote + body -->
+      <div class="origin-right">
+        <div class="origin-pull-quote">
+          <p>"We didn't start Rockline to chase clients. We started it because we genuinely love marketing — and we saw <em>a window of opportunity</em> that most agencies weren't even looking at yet."</p>
+        </div>
+
+        <div class="origin-body">
+          <p>Between the two of us, we bring a career's worth of marketing experience — across strategy, content, social media, and digital platforms. We've seen what works, what doesn't, and what's changed. When AI search started reshaping how people find local businesses, we knew our background put us in a rare position: <strong>we understood both the marketing fundamentals and the new frontier at the same time.</strong></p>
+          <p>So in 2025, we made it official. We combined everything we'd built individually and channeled it into something we could build together — an agency designed from the ground up for the way search actually works today, not the way it worked five years ago.</p>
+          <p>Rockline AI Marketing isn't a side project or a pivot. It's the thing we chose to <strong>pour everything into</strong> — because we believe local businesses deserve better than they've been getting, and we're in the right place at the right time to deliver it.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══ SECTION 2: WHO WE SERVE ═══ -->
+  <section class="serve-section" aria-labelledby="serve-h2">
+    <div class="serve-inner">
+
+      <div class="serve-header">
+        <p class="serve-tag">Who We Serve</p>
+        <h2 id="serve-h2">If You Serve <em>Local Customers,</em><br>We Can Help You Get Found.</h2>
+        <p class="serve-lead">Rockline AI Marketing works with small and local businesses across Chicago's southwest suburbs. Our clients span a wide range of industries — what they all share is a need to be visible in the places their customers are actually looking, including AI-generated search results.</p>
+      </div>
+
+      <div class="serve-grid">
+
+        <div class="serve-card">
+          <div class="serve-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          </div>
+          <h3>Home Services</h3>
+          <p>Plumbers, electricians, HVAC, roofers, landscapers, and contractors. When someone asks an AI "who's the best [trade] near me," we make sure your name is in the answer.</p>
+        </div>
+
+        <div class="serve-card">
+          <div class="serve-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+          </div>
+          <h3>Restaurants &amp; Food</h3>
+          <p>Diners, cafes, catering companies, food trucks, and specialty food businesses. AI search is quickly becoming where people decide where to eat — we put you in that conversation.</p>
+        </div>
+
+        <div class="serve-card">
+          <div class="serve-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><rect x="9" y="11" width="6" height="10"/><circle cx="19" cy="6" r="3"/></svg>
+          </div>
+          <h3>Real Estate</h3>
+          <p>Agents, brokers, and property managers. Buyers and sellers are asking AI for local expertise before they ever pick up the phone — your digital presence needs to answer them first.</p>
+        </div>
+
+        <div class="serve-card">
+          <div class="serve-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+          </div>
+          <h3>Retail &amp; Boutiques</h3>
+          <p>Independent shops, specialty retailers, and local boutiques. We help brick-and-mortar businesses compete with national brands by owning their local AI footprint.</p>
+        </div>
+
+        <div class="serve-card">
+          <div class="serve-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg>
+          </div>
+          <h3>Professional Services</h3>
+          <p>Law firms, financial advisors, accountants, medical and dental practices. When clients search for trusted local professionals, a strong GEO presence means your name comes up first.</p>
+        </div>
+
+        <div class="serve-card">
+          <div class="serve-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          </div>
+          <h3>Wellness &amp; Health</h3>
+          <p>Gyms, yoga studios, chiropractors, massage therapists, and wellness brands. People searching for local health services trust AI recommendations — we help you earn those mentions.</p>
+        </div>
+
+      </div>
+
+      <div class="serve-footer-note">
+        <div class="serve-note-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        </div>
+        <p>Don't see your industry? <strong>If you serve customers in a specific geographic area, GEO can work for you.</strong> Reach out and we'll give you an honest answer about what's possible.</p>
+      </div>
+
+    </div>
+  </section>
+  <!-- ═══ SECTION 3: PLAN FOR SUCCESS ═══ -->
+  <section class="plan-section" aria-labelledby="plan-h2">
+    <div class="plan-inner">
+
+      <div class="plan-header">
+        <p class="plan-tag">Our Plan for Your Success</p>
+        <h2 id="plan-h2">Simple Strategy.<br><em>Powerful Results.</em></h2>
+        <p>We don't believe in complicated retainers, confusing packages, or strategies that take six months to explain. Our plan for your success comes down to two things done exceptionally well — and the way they work together is what makes all the difference.</p>
+      </div>
+
+      <div class="plan-pillars">
+        <div class="plan-pillar">
+          <div class="pillar-number">01</div>
+          <div class="pillar-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+          </div>
+          <h3>A Fully Coded,<br><em>Fully Customizable Website</em></h3>
+          <p>Your website is the single most important asset in your digital presence — and most small business sites are holding their owners back. We build yours from scratch: <strong>clean code, no page builders, no templates</strong> that a hundred other businesses are also using.</p>
+          <p>Every site we build is structured for both traditional search engines and AI systems. That means proper semantic HTML, Schema.org markup, fast load times, and content architecture that large language models can actually read and trust. <strong>Your site becomes a citation-worthy source</strong> — not just a digital brochure.</p>
+          <div class="pillar-tags">
+            <span class="pillar-tag">Custom Coded</span>
+            <span class="pillar-tag">GEO Structured</span>
+            <span class="pillar-tag">Schema Markup</span>
+            <span class="pillar-tag">Mobile First</span>
+          </div>
+        </div>
+
+        <div class="plan-pillar">
+          <div class="pillar-number">02</div>
+          <div class="pillar-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          </div>
+          <h3>Social Content That Builds<br><em>Local Authority</em></h3>
+          <p>AI systems don't just read your website — they build a picture of your business from everything published about you across the web. Every post, article, and update is a data point. We create <strong>strategic social and microblog content</strong> that strengthens that picture consistently over time.</p>
+          <p>The goal isn't likes or followers. The goal is <strong>authority</strong> — making your business the most recognized, most referenced, and most recommended name in your local market, both by search engines and by the AI assistants your customers are already using.</p>
+          <div class="pillar-tags">
+            <span class="pillar-tag">Microblogging</span>
+            <span class="pillar-tag">Brand Authority</span>
+            <span class="pillar-tag">Local Signals</span>
+            <span class="pillar-tag">AI Citations</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="plan-result">
+        <div class="result-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <div class="result-text">
+          <h3>The Outcome: <em>The Most Authoritative Business in Your Local Market</em></h3>
+          <p>When these two pillars work together — a technically excellent website and a consistent stream of authority-building content — your business becomes the one that AI systems recognize, trust, and recommend. <strong>Not because you outspent your competitors. Because you out-positioned them.</strong> That's the Rockline AI Marketing plan, and it works for any local business that's ready to commit to it.</p>
+        </div>
+      </div>
+
+      <div class="plan-cta">
+        <a href="sms:+18155555555?body=Hi%2C%20I%27d%20like%20to%20learn%20more%20about%20Rockline%20AI%20Marketing!" class="cta-primary">
+          <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          Text Us Now
+        </a>
+        <span class="cta-divider">or</span>
+        <a href="../services/index.html" class="cta-secondary">
+          <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          Explore Our Services
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+
+</main>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  <div class="footer-main">
+    <address class="footer-address">
+      <strong>Rockline AI Marketing</strong>
+      Homer Glen, IL<br>
+      <a href="tel:+18155555555">815-555-5555</a>
+    </address>
+    <div class="footer-logo-col">
+      <img src="images/logos/rockline-ai-marketing-logo.png" alt="Rockline AI Marketing">
+    </div>
+    <div class="footer-hours">
+      <strong>Business Hours</strong>
+      <div class="hours-grid"><span>Mon – Sun</span><span>7:00 AM – 9:00 PM</span></div>
+    </div>
+  </div>
+  <div class="footer-social">
+    <a href="#" class="social-link" title="YouTube" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24"><path fill="#FF0000" d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8z"/><path fill="#fff" d="M9.6 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg></a>
+    <a href="#" class="social-link" title="Google My Business" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg></a>
+    <a href="#" class="social-link" title="Instagram" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24"><defs><radialGradient id="ig2" cx="30%" cy="107%" r="150%"><stop offset="0%" stop-color="#fdf497"/><stop offset="45%" stop-color="#fd5949"/><stop offset="60%" stop-color="#d6249f"/><stop offset="90%" stop-color="#285AEB"/></radialGradient></defs><rect width="24" height="24" rx="5" fill="url(#ig2)"/><path fill="#fff" d="M12 7.2A4.8 4.8 0 1 0 12 16.8 4.8 4.8 0 0 0 12 7.2zm0 7.9a3.1 3.1 0 1 1 0-6.2 3.1 3.1 0 0 1 0 6.2zm6.1-8.1a1.1 1.1 0 1 1-2.2 0 1.1 1.1 0 0 1 2.2 0zM21 8.9c-.1-1.5-.4-2.8-1.5-3.9-1.1-1.1-2.4-1.4-3.9-1.5C14.1 3.4 9.9 3.4 8.4 3.5 6.9 3.6 5.6 3.9 4.5 5 3.4 6.1 3.1 7.4 3 8.9 2.9 10.4 2.9 14.6 3 16.1c.1 1.5.4 2.8 1.5 3.9 1.1 1.1 2.4 1.4 3.9 1.5 1.5.1 5.7.1 7.2 0 1.5-.1 2.8-.4 3.9-1.5 1.1-1.1 1.4-2.4 1.5-3.9.1-1.5.1-5.7 0-7.2zm-2 8.7a3.2 3.2 0 0 1-1.8 1.8c-1.2.5-4.2.4-5.6.4s-4.3.1-5.6-.4a3.2 3.2 0 0 1-1.8-1.8c-.5-1.2-.4-4.2-.4-5.6s-.1-4.3.4-5.6A3.2 3.2 0 0 1 5.8 4.6c1.2-.5 4.2-.4 5.6-.4s4.3-.1 5.6.4a3.2 3.2 0 0 1 1.8 1.8c.5 1.2.4 4.2.4 5.6s.1 4.3-.4 5.6z"/></svg></a>
+    <a href="#" class="social-link" title="Facebook" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24"><rect width="24" height="24" rx="4" fill="#1877F2"/><path fill="#fff" d="M16.6 12H13.8V21H10.4V12H8.4V9H10.4V7.2C10.4 5.3 11.6 3 14.5 3L17.1 3V6.2H15.5C15.2 6.2 14.8 6.4 14.8 7V9H17.1L16.6 12Z"/></svg></a>
+    <a href="#" class="social-link" title="Threads" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24"><rect width="24" height="24" rx="4" fill="#000"/><path fill="none" stroke="#fff" stroke-width="1.3" stroke-linecap="round" d="M16.5 11.3c-.2-1-.7-1.8-1.5-2.4-1-.7-2.2-1-3.5-.9-1.1.1-2 .5-2.7 1.2-.9.9-1.3 2.1-1.3 3.5 0 3 1.9 5 4.8 5.1h.3c1.1 0 2-.2 2.8-.7 1-.6 1.6-1.6 1.6-2.9 0-1-.4-1.9-1.1-2.5.4.5.6 1.1.6 1.8 0 1-.5 1.7-1.3 2.1-.6.3-1.3.4-2.1.4h-.2c-2-.1-3.3-1.4-3.3-3.3 0-.3 0-.6.1-.9.3-1.1 1-1.9 2.2-2.3.7-.3 1.5-.4 2.3-.4h.7c1.2.1 2.2.5 2.9 1.3.5.5.8 1.1 1 1.8"/></svg></a>
+    <a href="#" class="social-link" title="TikTok" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24"><rect width="24" height="24" rx="4" fill="#010101"/><path fill="#fff" d="M17 6.7a4.6 4.6 0 0 1-2.7-.9 4.6 4.6 0 0 1-1.7-2.9H10v8.3l.01 4.5a2.7 2.7 0 0 1-2.7 2.5 2.7 2.7 0 0 1-2.7-2.7 2.7 2.7 0 0 1 2.7-2.7c.3 0 .5 0 .8.1v-2.5a5.5 5.5 0 0 0-.8-.1A5.3 5.3 0 0 0 2 16.7a5.3 5.3 0 0 0 5.3 5.3 5.3 5.3 0 0 0 5.3-5.3v-7a7.3 7.3 0 0 0 4.2 1.3V8.6A4.6 4.6 0 0 1 17 6.7z"/></svg></a>
+    <a href="#" class="social-link" title="Substack" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24"><rect width="24" height="24" rx="4" fill="#FF6719"/><path fill="#fff" d="M19 5.5H5v1.75h14V5.5zm0 3.75H5v1.75h14V9.25zM5 13l7 5 7-5v7.5L12 18l-7 2.5V13z"/></svg></a>
+    <a href="#" class="social-link" title="X (Twitter)" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24"><rect width="24" height="24" rx="4" fill="#000"/><path fill="#fff" d="M17.75 3h3.14l-6.86 7.84 8.06 10.66H16.2l-4.95-6.47-5.66 6.47H2.44l7.34-8.39L1.98 3h6.68l4.47 5.91L17.75 3zm-1.1 16.52h1.74L7.45 4.78H5.59l11.06 14.74z"/></svg></a>
+  </div>
+  <div class="footer-bottom">&copy; 2025 Rockline AI Marketing · Homer Glen, IL · All Rights Reserved</div>
+</footer>
+
+<script>
+  /* ── Ticker ── */
+  function initSeamlessTicker(el) {
+    if (!el) return;
+    Array.from(el.children).forEach(i => el.appendChild(i.cloneNode(true)));
+  }
+  initSeamlessTicker(document.getElementById('desktopTicker'));
+  initSeamlessTicker(document.getElementById('mobileTicker'));
+
+  /* ── Desktop nav dropdowns ── */
+  const navItems = document.querySelectorAll('#sticky-nav-zone .nav-item');
+  const timers   = new Map();
+  navItems.forEach(item => {
+    if (!item.querySelector('.dropdown')) return;
+    item.addEventListener('mouseenter', () => {
+      clearTimeout(timers.get(item));
+      navItems.forEach(o => { if (o !== item) { clearTimeout(timers.get(o)); o.classList.remove('is-open'); } });
+      item.classList.add('is-open');
+    });
+    item.addEventListener('mouseleave', () => {
+      timers.set(item, setTimeout(() => item.classList.remove('is-open'), 200));
+    });
+  });
+  document.addEventListener('click', e => {
+    if (!e.target.closest('#sticky-nav-zone .nav-item'))
+      navItems.forEach(i => i.classList.remove('is-open'));
+  });
+
+  /* ── Mobile nav ── */
+  const hbtn    = document.getElementById('hamburgerTrigger');
+  const panel   = document.getElementById('mobilePanel');
+  const overlay = document.getElementById('mobileOverlay');
+  const open  = () => { panel.classList.add('open'); overlay.classList.add('visible'); hbtn.classList.add('open'); hbtn.setAttribute('aria-label','Close navigation'); document.body.style.overflow='hidden'; };
+  const close = () => { panel.classList.remove('open'); overlay.classList.remove('visible'); hbtn.classList.remove('open'); hbtn.setAttribute('aria-label','Open navigation'); document.body.style.overflow=''; };
+  hbtn.addEventListener('click', () => panel.classList.contains('open') ? close() : open());
+  overlay.addEventListener('click', close);
+  function toggleSub(el) {
+    const sub = el.nextElementSibling, isOpen = sub.classList.contains('open');
+    document.querySelectorAll('.mobile-sub.open').forEach(s => s.classList.remove('open'));
+    document.querySelectorAll('.m-parent.sub-open').forEach(p => p.classList.remove('sub-open'));
+    if (!isOpen) { sub.classList.add('open'); el.classList.add('sub-open'); }
+  }
+</script>
+</body>
+</html>
