@@ -1,10 +1,11 @@
 # rockline-ai-marketing
+header foot v2
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Rockline AI Marketing</title>
+<title>Rockline AI Marketing – Header &amp; Footer</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Exo+2:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
@@ -22,9 +23,11 @@
   html { scroll-behavior: smooth; }
   body { font-family: 'Exo 2', sans-serif; background: var(--blue-dark); color: var(--white); overflow-x: hidden; }
 
-  /* ===== DESKTOP HEADER ===== */
+  /* =============================================
+     DESKTOP HEADER
+     ============================================= */
   #site-header {
-    background: linear-gradient(180deg, #020f1a 0%, var(--blue-dark) 100%);
+    background: linear-gradient(180deg, #075C9D 0%, var(--blue-dark) 100%);
     border-bottom: 1px solid rgba(39,156,245,0.18);
   }
   .header-brand {
@@ -58,7 +61,9 @@
     text-transform: uppercase; text-align: center; line-height: 1.5;
   }
 
-  /* ===== DESKTOP STICKY NAV + TICKER (always visible) ===== */
+  /* =============================================
+     DESKTOP STICKY NAV + TICKER
+     ============================================= */
   #sticky-nav-zone {
     position: sticky; top: 0; z-index: 500;
     background: var(--glass);
@@ -77,7 +82,7 @@
     cursor: pointer; text-decoration: none;
     transition: color .2s; white-space: nowrap; position: relative;
   }
-  .nav-btn:hover { color: var(--white); }
+  .nav-btn:hover, .nav-item.is-open > .nav-btn { color: var(--white); }
   a.nav-btn.active { color: var(--white); }
   a.nav-btn::after {
     content: ''; position: absolute;
@@ -88,10 +93,11 @@
   a.nav-btn:hover::after, a.nav-btn.active::after { transform: scaleX(1); }
   span.nav-btn { cursor: default; }
   .chevron { width: 10px; height: 10px; transition: transform .25s; flex-shrink: 0; }
-  .nav-item:hover .chevron { transform: rotate(180deg); }
+  .nav-item.is-open .chevron { transform: rotate(180deg); }
+
   .dropdown {
-    position: absolute; top: calc(100% + 2px); left: 50%;
-    transform: translateX(-50%) translateY(8px);
+    position: absolute; top: 100%; left: 50%;
+    transform: translateX(-50%) translateY(6px);
     min-width: 220px;
     background: rgba(2,12,24,0.97);
     border: 1px solid rgba(39,156,245,0.2); border-radius: 6px;
@@ -99,7 +105,14 @@
     opacity: 0; pointer-events: none;
     transition: opacity .22s, transform .22s; z-index: 600; overflow: hidden;
   }
-  .nav-item:hover .dropdown { opacity: 1; pointer-events: auto; transform: translateX(-50%) translateY(0); }
+  .dropdown::before {
+    content: ''; position: absolute;
+    top: -8px; left: 0; right: 0; height: 8px;
+  }
+  .nav-item.is-open .dropdown {
+    opacity: 1; pointer-events: auto;
+    transform: translateX(-50%) translateY(0);
+  }
   .dropdown a {
     display: block; padding: 12px 22px;
     font-family: 'Exo 2', sans-serif; font-size: 13px;
@@ -110,11 +123,14 @@
   .dropdown a:last-child { border-bottom: none; }
   .dropdown a:hover { background: rgba(39,156,245,0.1); color: var(--white); padding-left: 28px; }
 
-  /* ===== TICKER — true seamless loop ===== */
+  /* =============================================
+     TICKER
+     ============================================= */
   .ticker-wrap {
     background: var(--ticker-bg);
     border-top: 1px solid rgba(39,156,245,0.1);
     padding: 7px 0; overflow: hidden; position: relative;
+    pointer-events: none;
   }
   .ticker-label {
     position: absolute; left: 0; top: 0; bottom: 0; z-index: 2;
@@ -126,7 +142,6 @@
     color: var(--blue-dark); white-space: nowrap;
     clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 50%, calc(100% - 8px) 100%, 0 100%);
   }
-  /* Fade edges */
   .ticker-wrap::after {
     content: ''; position: absolute; right: 0; top: 0; bottom: 0; width: 60px;
     background: linear-gradient(to right, transparent, var(--ticker-bg));
@@ -137,21 +152,20 @@
     display: flex; width: max-content;
     animation: tickerScroll 60s linear infinite;
   }
-  .ticker-track:hover { animation-play-state: paused; }
   .ticker-item {
     font-family: 'Space Mono', monospace; font-size: 10.5px;
     color: var(--blue-mid); white-space: nowrap;
-    padding: 0 44px;
-    display: flex; align-items: center; gap: 10px;
+    padding: 0 44px; display: flex; align-items: center; gap: 10px;
   }
   .ticker-item::after { content: '◆'; color: var(--blue-bright); font-size: 7px; }
-  /* True seamless: JS duplicates the track so we animate exactly one copy width */
   @keyframes tickerScroll {
     0%   { transform: translateX(0); }
-    100% { transform: translateX(var(--ticker-shift, -50%)); }
+    100% { transform: translateX(-50%); }
   }
 
-  /* ===== MOBILE STICKY HEADER (fixed, always on top) ===== */
+  /* =============================================
+     MOBILE STICKY HEADER
+     ============================================= */
   #mobile-sticky {
     display: none;
     position: fixed; top: 0; left: 0; right: 0;
@@ -173,8 +187,6 @@
     font-family: 'Rajdhani', sans-serif; font-size: 8px;
     color: rgba(143,203,250,0.4); text-transform: uppercase; letter-spacing: 1px;
   }
-
-  /* ===== HAMBURGER TRIGGER ===== */
   .hamburger-trigger {
     position: absolute; right: 16px; top: 50%; transform: translateY(-50%);
     width: 44px; height: 44px;
@@ -186,40 +198,34 @@
   }
   .hamburger-trigger:hover,
   .hamburger-trigger.open {
-    background: rgba(39,156,245,0.14);
-    border-color: rgba(39,156,245,0.75);
+    background: rgba(39,156,245,0.14); border-color: rgba(39,156,245,0.75);
     box-shadow: 0 0 18px rgba(39,156,245,0.45), 0 0 6px rgba(39,156,245,0.3) inset;
   }
-  .hamburger-bars {
-    display: flex; flex-direction: column; gap: 5px;
-    width: 20px; position: relative;
-  }
+  .hamburger-bars { display: flex; flex-direction: column; gap: 5px; width: 20px; position: relative; }
   .hamburger-bars span {
-    display: block; height: 2px; border-radius: 2px;
-    background: var(--blue-light);
+    display: block; height: 2px; border-radius: 2px; background: var(--blue-light);
     transition: transform .3s cubic-bezier(.22,1,.36,1), opacity .2s, width .3s;
   }
   .hamburger-bars span:nth-child(1) { width: 20px; }
   .hamburger-bars span:nth-child(2) { width: 14px; }
   .hamburger-bars span:nth-child(3) { width: 20px; }
-  /* open state → X */
   .hamburger-trigger.open .hamburger-bars span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
   .hamburger-trigger.open .hamburger-bars span:nth-child(2) { opacity: 0; width: 0; }
   .hamburger-trigger.open .hamburger-bars span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-  /* Mobile ticker strip (baked into fixed header, below topbar) */
   .mobile-ticker-strip {
-    background: var(--ticker-bg);
-    border-top: none;
+    background: var(--ticker-bg); border-top: none;
     border-bottom: 1px solid rgba(39,156,245,0.1);
-    padding: 5px 0;
+    padding: 5px 0; pointer-events: none;
   }
   .mobile-ticker-strip .ticker-label { font-size: 9px; padding: 0 14px 0 10px; }
   .mobile-ticker-strip .ticker-inner { padding-left: 88px; }
   .mobile-ticker-strip .ticker-track { animation-duration: 50s; }
   .mobile-ticker-strip .ticker-item { font-size: 9.5px; padding: 0 30px; }
 
-  /* ===== MOBILE PANEL ===== */
+  /* =============================================
+     MOBILE PANEL + OVERLAY
+     ============================================= */
   .mobile-overlay {
     display: none; position: fixed; inset: 0;
     background: rgba(2,9,16,0.55); z-index: 700;
@@ -229,26 +235,17 @@
   .mobile-overlay.visible { opacity: 1; pointer-events: auto; }
   .mobile-panel {
     position: fixed; top: 0; right: -310px; width: 290px; height: 100%;
-    background: rgba(2,12,24,0.99);
-    border-left: 1px solid rgba(39,156,245,0.18);
+    background: rgba(2,12,24,0.99); border-left: 1px solid rgba(39,156,245,0.18);
     z-index: 900; transition: right .34s cubic-bezier(.22,1,.36,1);
     overflow-y: auto; padding-bottom: 48px;
   }
   .mobile-panel.open { right: 0; }
-  .mobile-panel-logo {
-    display: flex; justify-content: center;
-    padding: 28px 20px 18px;
-    border-bottom: 1px solid rgba(39,156,245,0.1);
-  }
+  .mobile-panel-logo { display: flex; justify-content: center; padding: 28px 20px 18px; border-bottom: 1px solid rgba(39,156,245,0.1); }
   .mobile-panel-logo-box {
-    width: 110px; height: 52px;
-    border: 1px dashed rgba(143,203,250,0.25); border-radius: 6px;
+    width: 110px; height: 52px; border: 1px dashed rgba(143,203,250,0.25); border-radius: 6px;
     display: flex; align-items: center; justify-content: center;
   }
-  .mobile-panel-logo-box span {
-    font-family: 'Rajdhani', sans-serif; font-size: 8px;
-    color: rgba(143,203,250,0.35); text-transform: uppercase; letter-spacing: 1px;
-  }
+  .mobile-panel-logo-box span { font-family: 'Rajdhani', sans-serif; font-size: 8px; color: rgba(143,203,250,0.35); text-transform: uppercase; letter-spacing: 1px; }
   .mobile-nav-list { list-style: none; padding: 10px 0; }
   .mobile-nav-list > li > a,
   .mobile-nav-list > li > .m-parent {
@@ -286,25 +283,20 @@
   }
   .mobile-panel-cta a:hover { box-shadow: 0 8px 28px rgba(39,156,245,0.5); }
 
-  /* ===== FOOTER ===== */
-  footer { background: #020b13; border-top: 1px solid rgba(39,156,245,0.14); }
-  .footer-main {
-    display: grid; grid-template-columns: 1fr auto 1fr;
-    gap: 24px; align-items: center;
-    padding: 16px 32px; border-bottom: 1px solid rgba(39,156,245,0.08);
-    max-width: 1200px; margin: 0 auto;
+  /* =============================================
+     FOOTER
+     ============================================= */
+  footer {
+    background: linear-gradient(180deg, var(--blue-dark) 0%, #075C9D 100%);
+    border-top: 1px solid rgba(39,156,245,0.14);
   }
+  .footer-main { display: grid; grid-template-columns: 1fr auto 1fr; gap: 24px; align-items: center; padding: 16px 32px; border-bottom: 1px solid rgba(39,156,245,0.08); max-width: 1200px; margin: 0 auto; }
   .footer-address { font-size: 12.5px; line-height: 1.9; color: var(--blue-mid); font-style: normal; }
   .footer-address strong { display: block; font-family: 'Rajdhani', sans-serif; font-size: 14px; color: var(--white); letter-spacing: 1px; margin-bottom: 2px; }
   .footer-address a { color: var(--blue-bright); text-decoration: none; }
   .footer-address a:hover { text-decoration: underline; }
-  /* Centered logo column */
   .footer-logo-col { display: flex; justify-content: center; align-items: center; }
-  .footer-logo-box {
-    width: 90px; height: 44px;
-    border: 1px dashed rgba(143,203,250,0.25); border-radius: 6px;
-    display: flex; align-items: center; justify-content: center;
-  }
+  .footer-logo-box { width: 90px; height: 44px; border: 1px dashed rgba(143,203,250,0.25); border-radius: 6px; display: flex; align-items: center; justify-content: center; }
   .footer-logo-box span { font-family: 'Rajdhani', sans-serif; font-size: 9px; color: rgba(143,203,250,0.35); text-transform: uppercase; letter-spacing: 1px; }
   .footer-hours { text-align: right; font-size: 12px; color: var(--blue-mid); }
   .footer-hours strong { display: block; font-family: 'Rajdhani', sans-serif; font-size: 13px; color: var(--white); letter-spacing: 1px; margin-bottom: 4px; }
@@ -315,7 +307,9 @@
   .social-link:hover { transform: translateY(-3px); border-color: rgba(255,255,255,0.18); background: rgba(255,255,255,0.07); }
   .footer-bottom { padding: 8px 24px; text-align: center; font-size: 10px; color: rgba(143,203,250,0.25); letter-spacing: .8px; border-top: 1px solid rgba(39,156,245,0.05); }
 
-  /* ===== RESPONSIVE ===== */
+  /* =============================================
+     RESPONSIVE
+     ============================================= */
   @media (max-width: 768px) {
     #site-header, #sticky-nav-zone { display: none; }
     #mobile-sticky { display: flex; }
@@ -326,29 +320,39 @@
     .hours-grid { justify-content: center; }
     .footer-logo-col { justify-content: center; }
   }
-  @media (max-width: 960px) and (min-width: 769px) {
-    .footer-main { grid-template-columns: 1fr auto 1fr; }
+
+  /* Demo spacer so header/footer aren't flush */
+  .demo-spacer {
+    min-height: 200px;
+    display: flex; align-items: center; justify-content: center;
+    color: rgba(143,203,250,0.25);
+    font-family: 'Space Mono', monospace; font-size: 11px;
+    letter-spacing: 1px; text-transform: uppercase;
+    border-top: 1px solid rgba(39,156,245,0.06);
+    border-bottom: 1px solid rgba(39,156,245,0.06);
   }
 </style>
 </head>
 <body>
 
-<!-- ═══════════════════════════════════════════
-     DESKTOP HEADER
-═══════════════════════════════════════════ -->
+<!-- ═══════════════════════════════════════════════════════════════
+     HEADER (Desktop)
+     ════════════════════════════════════════════════════════════ -->
 <header id="site-header">
   <div class="header-brand">
     <a href="sms:+18155555555?body=Hi%2C%20I%27d%20like%20to%20learn%20more%20about%20Rockline%20AI%20Marketing!" class="cta-sms">
       <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
       Contact Us
     </a>
-    <div class="logo-placeholder"><span>Your Logo<br>Here</span></div>
+    <div class="logo-placeholder">
+      <span>Rockline AI<br>Marketing</span>
+    </div>
   </div>
 </header>
 
-<!-- ═══════════════════════════════════════════
-     DESKTOP STICKY NAV + TICKER (always visible)
-═══════════════════════════════════════════ -->
+<!-- ═══════════════════════════════════════════════════════════════
+     STICKY NAV + TICKER (Desktop)
+     ════════════════════════════════════════════════════════════ -->
 <div id="sticky-nav-zone">
   <nav class="main-nav" role="navigation" aria-label="Main navigation">
     <div class="nav-item"><a href="index.html" class="nav-btn active">Home</a></div>
@@ -385,7 +389,6 @@
       </div>
     </div>
   </nav>
-  <!-- Desktop ticker — true seamless loop via JS duplication -->
   <div class="ticker-wrap">
     <div class="ticker-label">GEO FAQ</div>
     <div class="ticker-inner">
@@ -405,21 +408,16 @@
   </div>
 </div>
 
-<!-- ═══════════════════════════════════════════
-     MOBILE STICKY HEADER (fixed)
-═══════════════════════════════════════════ -->
+<!-- ═══════════════════════════════════════════════════════════════
+     MOBILE STICKY HEADER
+     ════════════════════════════════════════════════════════════ -->
 <div id="mobile-sticky">
   <div class="mobile-topbar">
     <div class="mobile-logo-bar"><span>Logo</span></div>
     <button class="hamburger-trigger" id="hamburgerTrigger" aria-label="Open navigation">
-      <div class="hamburger-bars">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
+      <div class="hamburger-bars"><span></span><span></span><span></span></div>
     </button>
   </div>
-  <!-- Mobile ticker — baked in, always visible, true seamless loop -->
   <div class="mobile-ticker-strip ticker-wrap">
     <div class="ticker-label">GEO FAQ</div>
     <div class="ticker-inner">
@@ -439,7 +437,7 @@
   </div>
 </div>
 
-<!-- Mobile overlay + panel -->
+<!-- Mobile overlay + side panel -->
 <div class="mobile-overlay" id="mobileOverlay"></div>
 <div class="mobile-panel" id="mobilePanel" role="dialog" aria-label="Navigation">
   <div class="mobile-panel-logo"><div class="mobile-panel-logo-box"><span>Logo Here</span></div></div>
@@ -470,16 +468,16 @@
   </div>
 </div>
 
-<!-- ═══════════════════════════════════════════
-     MAIN — body content goes here
-═══════════════════════════════════════════ -->
+<!-- ═══════════════════════════════════════════════════════════════
+     MAIN CONTENT PLACEHOLDER
+     ════════════════════════════════════════════════════════════ -->
 <main>
-  <!-- sections will be added here -->
+  <div class="demo-spacer">← Page content goes here →</div>
 </main>
 
-<!-- ═══════════════════════════════════════════
+<!-- ═══════════════════════════════════════════════════════════════
      FOOTER
-═══════════════════════════════════════════ -->
+     ════════════════════════════════════════════════════════════ -->
 <footer>
   <div class="footer-main">
     <address class="footer-address">
@@ -492,9 +490,7 @@
     </div>
     <div class="footer-hours">
       <strong>Business Hours</strong>
-      <div class="hours-grid">
-        <span>Mon – Sun</span><span>7:00 AM – 9:00 PM</span>
-      </div>
+      <div class="hours-grid"><span>Mon – Sun</span><span>7:00 AM – 9:00 PM</span></div>
     </div>
   </div>
   <div class="footer-social">
@@ -510,27 +506,50 @@
   <div class="footer-bottom">&copy; 2025 Rockline AI Marketing · Lockport, IL · All Rights Reserved</div>
 </footer>
 
+<!-- ═══════════════════════════════════════════════════════════════
+     JAVASCRIPT
+     ════════════════════════════════════════════════════════════ -->
 <script>
-  /* ── True seamless ticker ──────────────────────────────────────────
-     Duplicates the items once so the track is exactly 2× wide,
-     then animates exactly −50% (one copy width) so the loop is
-     pixel-perfect with no jump.
-  ──────────────────────────────────────────────────────────────────── */
+  /* ── Seamless ticker ─────────────────────────────────────────── */
   function initSeamlessTicker(trackEl) {
     if (!trackEl) return;
-    // Clone all current children and append
-    const origItems = Array.from(trackEl.children);
-    origItems.forEach(item => {
-      trackEl.appendChild(item.cloneNode(true));
-    });
-    // The animation CSS already uses translateX(-50%) via the keyframe
-    // so nothing else needed — the duration is set in CSS per ticker
+    Array.from(trackEl.children).forEach(item => trackEl.appendChild(item.cloneNode(true)));
   }
-
   initSeamlessTicker(document.getElementById('desktopTicker'));
   initSeamlessTicker(document.getElementById('mobileTicker'));
 
-  /* ── Mobile nav ───────────────────────────────────────────────────── */
+  /* ── Desktop nav dropdowns ───────────────────────────────────── */
+  const navItems    = document.querySelectorAll('#sticky-nav-zone .nav-item');
+  const closeTimers = new Map();
+
+  navItems.forEach(item => {
+    if (!item.querySelector('.dropdown')) return;
+
+    item.addEventListener('mouseenter', () => {
+      clearTimeout(closeTimers.get(item));
+      navItems.forEach(other => {
+        if (other !== item) {
+          clearTimeout(closeTimers.get(other));
+          other.classList.remove('is-open');
+        }
+      });
+      item.classList.add('is-open');
+    });
+
+    item.addEventListener('mouseleave', () => {
+      closeTimers.set(item, setTimeout(() => {
+        item.classList.remove('is-open');
+      }, 200));
+    });
+  });
+
+  document.addEventListener('click', e => {
+    if (!e.target.closest('#sticky-nav-zone .nav-item')) {
+      navItems.forEach(item => item.classList.remove('is-open'));
+    }
+  });
+
+  /* ── Mobile nav ──────────────────────────────────────────────── */
   const hamburgerTrigger = document.getElementById('hamburgerTrigger');
   const mobilePanel      = document.getElementById('mobilePanel');
   const mobileOverlay    = document.getElementById('mobileOverlay');
