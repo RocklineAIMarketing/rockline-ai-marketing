@@ -376,6 +376,78 @@
   .featured-post:hover .post-read-link { gap: 10px; }
   .post-read-link svg { flex-shrink: 0; }
 
+  /* ── FEATURED PLATFORM LINKS ── */
+  .featured-platform-links {
+    border-top: 1px solid var(--border-hi);
+    background: rgba(2,6,16,0.5);
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+  }
+  .featured-platform-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    padding: 13px 8px;
+    text-decoration: none;
+    color: var(--blue-mid);
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    border-right: 1px solid var(--border-hi);
+    transition: background .2s, color .2s;
+    white-space: nowrap;
+  }
+  .featured-platform-links a:last-child { border-right: none; }
+  .featured-platform-links a:hover { background: rgba(39,156,245,0.07); color: var(--white); }
+  .featured-platform-links a svg { flex-shrink: 0; }
+  .fpl-quora:hover  { color: #e57373 !important; }
+  .fpl-reddit:hover { color: #ff7043 !important; }
+  .fpl-li:hover     { color: #5ba3d9 !important; }
+  .fpl-gmb:hover    { color: #7baaf7 !important; }
+  .fpl-blog:hover   { color: var(--blue-bright) !important; }
+
+  /* ── CARD DUAL LINKS ── */
+  .post-card-links {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-top: 1px solid var(--border);
+    margin-top: auto;
+  }
+  .post-card-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    padding: 11px 8px;
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700;
+    font-size: 10px;
+    letter-spacing: 1.6px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--blue-mid);
+    transition: background .2s, color .2s;
+    white-space: nowrap;
+  }
+  .post-card-links a:first-child { border-right: 1px solid var(--border); }
+  .post-card-links a:hover { background: rgba(39,156,245,0.06); color: var(--white); }
+  .post-card-links a svg { flex-shrink: 0; }
+  .pcl-quora:hover  { color: #e57373 !important; }
+  .pcl-reddit:hover { color: #ff7043 !important; }
+  .pcl-li:hover     { color: #5ba3d9 !important; }
+  .pcl-gmb:hover    { color: #7baaf7 !important; }
+  .pcl-blog:hover   { color: var(--blue-bright) !important; }
+
+  @media (max-width: 640px) {
+    .featured-platform-links { grid-template-columns: repeat(3, 1fr); }
+    .featured-platform-links a:nth-child(3) { border-right: none; }
+    .featured-platform-links a:nth-child(4) { border-top: 1px solid var(--border-hi); }
+    .featured-platform-links a:nth-child(5) { border-top: 1px solid var(--border-hi); border-right: none; }
+  }
+
   /* ── POST GRID ── */
   .blog-grid {
     display: grid;
@@ -431,13 +503,12 @@
     text-transform: uppercase;
     color: rgba(143,203,250,0.18);
   }
-  /* client color bar across top of image */
   .post-card-image::after {
     content: '';
     position: absolute;
     top: 0; left: 0; right: 0;
     height: 3px;
-    background: linear-gradient(90deg, var(--blue-bright), #1479c4);
+    background: var(--card-accent, linear-gradient(90deg, var(--blue-bright), #1479c4));
     opacity: 0;
     transition: opacity .25s;
   }
@@ -450,6 +521,27 @@
     flex: 1;
     gap: 0;
   }
+  .post-card-platform {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 3px 10px;
+    border-radius: 4px;
+    font-family: 'Space Mono', monospace;
+    font-size: 8px;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    width: fit-content;
+    border: 1px solid;
+  }
+  .post-card-platform svg { width: 11px; height: 11px; flex-shrink: 0; }
+  .platform-blog   { color: var(--blue-bright); background: rgba(39,156,245,0.10); border-color: rgba(39,156,245,0.28); }
+  .platform-quora  { color: #e57373; background: rgba(185,43,39,0.12); border-color: rgba(185,43,39,0.28); }
+  .platform-reddit { color: #ff7043; background: rgba(255,69,0,0.12); border-color: rgba(255,69,0,0.28); }
+  .platform-li     { color: #5ba3d9; background: rgba(10,102,194,0.12); border-color: rgba(10,102,194,0.28); }
+  .platform-gmb    { color: #7baaf7; background: rgba(66,133,244,0.12); border-color: rgba(66,133,244,0.28); }
+
   .post-card-client {
     font-family: 'Space Mono', monospace;
     font-size: 8.5px;
@@ -495,6 +587,8 @@
     font-size: 8.5px;
     letter-spacing: 0.8px;
     color: var(--blue-mid);
+    margin-top: 12px;
+    display: block;
   }
   .card-read-link {
     display: inline-flex;
@@ -687,37 +781,62 @@
 
     <!-- FEATURED POST -->
     <div class="blog-section-label"><span>Featured Post</span></div>
-    <a href="#" target="_blank" rel="noopener" class="featured-post">
-      <div class="featured-post-image">
-        <!-- Replace with: <img src="path/to/image.jpg" alt="Post title"> -->
-        <div class="featured-img-placeholder">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-          <span>Featured post image</span>
+    <div class="featured-post-wrap" style="border:1px solid var(--border-hi);border-radius:10px;overflow:hidden;margin-bottom:56px;background:rgba(2,10,22,0.6);">
+      <a href="#" target="_blank" rel="noopener" class="featured-post" style="border:none;border-radius:0;margin-bottom:0;">
+        <div class="featured-post-image">
+          <!-- Replace with: <img src="path/to/image.jpg" alt="Post title"> -->
+          <div class="featured-img-placeholder">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+            <span>Featured post image</span>
+          </div>
         </div>
-      </div>
-      <div class="featured-post-body">
-        <div class="featured-badge">Latest Post</div>
-        <div class="featured-client-tag">Client Name · Category</div>
-        <h2 class="featured-post-title">Replace This With Your Most Recent Blog Post Title</h2>
-        <p class="featured-post-excerpt">Paste the opening paragraph or excerpt of the blog post here. This should be 2–3 sentences that hook the reader and give them a reason to click through to the full article on your client's website.</p>
-        <div class="featured-post-meta">
-          <span class="post-date">Month DD, YYYY</span>
-          <span class="post-read-link">
-            Read Full Post
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-          </span>
+        <div class="featured-post-body">
+          <div class="featured-badge">Latest Post</div>
+          <div class="featured-client-tag">Client Name · Category</div>
+          <h2 class="featured-post-title">Replace This With Your Most Recent Blog Post Title</h2>
+          <p class="featured-post-excerpt">Paste the opening paragraph or excerpt of the blog post here. This should be 2–3 sentences that hook the reader and give them a reason to click through to the full article on your client's website.</p>
+          <div class="featured-post-meta">
+            <span class="post-date">Month DD, YYYY</span>
+            <span class="post-read-link">
+              Read Full Post
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </span>
+          </div>
         </div>
+      </a>
+      <!-- PLATFORM LINKS — replace each href="#" with the real URL for this post on that platform -->
+      <div class="featured-platform-links">
+        <a href="#" target="_blank" rel="noopener" class="fpl-blog">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"/><line x1="7" y1="8" x2="17" y2="8"/><line x1="7" y1="12" x2="14" y2="12"/></svg>
+          Blog
+        </a>
+        <a href="#" target="_blank" rel="noopener" class="fpl-quora">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm2.5 18.5c-.5-.9-.9-1.9-1.1-3-.5.1-1 .2-1.5.2-2.8 0-5-2.2-5-5s2.2-5 5-5 5 2.2 5 5c0 1.5-.7 2.9-1.7 3.8l1.2 2.1-1.9 1.9z"/></svg>
+          Quora
+        </a>
+        <a href="#" target="_blank" rel="noopener" class="fpl-reddit">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="#FF4500"><circle cx="12" cy="12" r="11"/><path fill="#fff" d="M18.5 12a1.5 1.5 0 0 0-1.5-1.5c-.4 0-.7.1-1 .4-1-.7-2.3-1.1-3.7-1.2l.6-3 2 .4c0 .5.5.9 1 .9s.9-.4.9-.9-.4-.9-.9-.9c-.4 0-.7.2-.8.5l-2.3-.5c-.1 0-.2.1-.2.2l-.7 3.4c-1.4.1-2.7.5-3.7 1.2-.3-.3-.7-.4-1.1-.4a1.5 1.5 0 0 0-.6 2.9c0 .2 0 .3.1.5 0 2 2.3 3.5 5.2 3.5s5.2-1.6 5.2-3.5c0-.2 0-.3.1-.5.5-.2.9-.7.9-1.3zm-10 1c0-.5.4-.9.9-.9s.9.4.9.9-.4.9-.9.9-.9-.4-.9-.9zm5.1 2.4c-.6.6-1.6.9-2.6.9s-2-.3-2.6-.9c-.1-.1-.1-.3 0-.4.1-.1.3-.1.4 0 .5.5 1.3.7 2.2.7s1.7-.2 2.2-.7c.1-.1.3-.1.4 0 .1.1.1.3 0 .4zm-.2-1.5c-.5 0-.9-.4-.9-.9s.4-.9.9-.9.9.4.9.9-.4.9-.9.9z"/></svg>
+          Reddit
+        </a>
+        <a href="#" target="_blank" rel="noopener" class="fpl-li">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="#0A66C2"><rect x="2" y="2" width="20" height="20" rx="3"/><path fill="#fff" d="M6.5 10h2v7h-2v-7zm1-3a1.25 1.25 0 1 1 0 2.5A1.25 1.25 0 0 1 7.5 7zm4 3h2v.9c.3-.5.9-1 1.8-1 1.9 0 2.7 1.3 2.7 3v4.1h-2v-3.8c0-.9-.3-1.5-1.1-1.5-.9 0-1.4.6-1.4 1.7V17h-2v-7z"/></svg>
+          LinkedIn
+        </a>
+        <a href="#" target="_blank" rel="noopener" class="fpl-gmb">
+          <svg width="13" height="13" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+          Google My Business
+        </a>
       </div>
-    </a>
+    </div>
+    <!-- /featured-post-wrap -->
 
     <!-- POST GRID -->
     <div class="blog-section-label"><span>All Posts</span></div>
     <div class="blog-grid">
 
-      <!-- Card 1 -->
-      <a href="#" target="_blank" rel="noopener" class="post-card">
+      <!-- Card 1 — Blog + Quora -->
+      <div class="post-card">
         <div class="post-card-image">
-          <!-- Replace with: <img src="path/to/image.jpg" alt="Post title"> -->
           <div class="card-img-placeholder">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
             <span>Post image</span>
@@ -725,17 +844,24 @@
         </div>
         <div class="post-card-body">
           <div class="post-card-client">Client Name · Category</div>
-          <h3 class="post-card-title">Blog Post Title Goes Here</h3>
-          <p class="post-card-excerpt">Paste the opening 2–3 sentences of the blog post here. Keep it punchy enough to earn the click through to your client's site.</p>
-          <div class="post-card-footer">
-            <span class="post-card-date">Month DD, YYYY</span>
-            <span class="card-read-link">Read Post <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></span>
-          </div>
+          <h3 class="post-card-title">Post Title Goes Here</h3>
+          <p class="post-card-excerpt">Paste the opening 2–3 sentences of the post here. Keep it punchy enough to earn the click through to your client's site.</p>
+          <span class="post-card-date">Month DD, YYYY</span>
         </div>
-      </a>
+        <div class="post-card-links">
+          <a href="#" target="_blank" rel="noopener" class="pcl-blog">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"/><line x1="7" y1="8" x2="17" y2="8"/><line x1="7" y1="12" x2="14" y2="12"/></svg>
+            Read Blog
+          </a>
+          <a href="#" target="_blank" rel="noopener" class="pcl-quora">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm2.5 18.5c-.5-.9-.9-1.9-1.1-3-.5.1-1 .2-1.5.2-2.8 0-5-2.2-5-5s2.2-5 5-5 5 2.2 5 5c0 1.5-.7 2.9-1.7 3.8l1.2 2.1-1.9 1.9z"/></svg>
+            View on Quora
+          </a>
+        </div>
+      </div>
 
-      <!-- Card 2 -->
-      <a href="#" target="_blank" rel="noopener" class="post-card">
+      <!-- Card 2 — Blog + Reddit -->
+      <div class="post-card">
         <div class="post-card-image">
           <div class="card-img-placeholder">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
@@ -744,17 +870,24 @@
         </div>
         <div class="post-card-body">
           <div class="post-card-client">Client Name · Category</div>
-          <h3 class="post-card-title">Blog Post Title Goes Here</h3>
-          <p class="post-card-excerpt">Paste the opening 2–3 sentences of the blog post here. Keep it punchy enough to earn the click through to your client's site.</p>
-          <div class="post-card-footer">
-            <span class="post-card-date">Month DD, YYYY</span>
-            <span class="card-read-link">Read Post <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></span>
-          </div>
+          <h3 class="post-card-title">Post Title Goes Here</h3>
+          <p class="post-card-excerpt">Paste the opening 2–3 sentences of the post here. Keep it punchy enough to earn the click through to your client's site.</p>
+          <span class="post-card-date">Month DD, YYYY</span>
         </div>
-      </a>
+        <div class="post-card-links">
+          <a href="#" target="_blank" rel="noopener" class="pcl-blog">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"/><line x1="7" y1="8" x2="17" y2="8"/><line x1="7" y1="12" x2="14" y2="12"/></svg>
+            Read Blog
+          </a>
+          <a href="#" target="_blank" rel="noopener" class="pcl-reddit">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="#FF4500"><circle cx="12" cy="12" r="11"/><path fill="#fff" d="M18.5 12a1.5 1.5 0 0 0-1.5-1.5c-.4 0-.7.1-1 .4-1-.7-2.3-1.1-3.7-1.2l.6-3 2 .4c0 .5.5.9 1 .9s.9-.4.9-.9-.4-.9-.9-.9c-.4 0-.7.2-.8.5l-2.3-.5c-.1 0-.2.1-.2.2l-.7 3.4c-1.4.1-2.7.5-3.7 1.2-.3-.3-.7-.4-1.1-.4a1.5 1.5 0 0 0-.6 2.9c0 .2 0 .3.1.5 0 2 2.3 3.5 5.2 3.5s5.2-1.6 5.2-3.5c0-.2 0-.3.1-.5.5-.2.9-.7.9-1.3zm-10 1c0-.5.4-.9.9-.9s.9.4.9.9-.4.9-.9.9-.9-.4-.9-.9zm5.1 2.4c-.6.6-1.6.9-2.6.9s-2-.3-2.6-.9c-.1-.1-.1-.3 0-.4.1-.1.3-.1.4 0 .5.5 1.3.7 2.2.7s1.7-.2 2.2-.7c.1-.1.3-.1.4 0 .1.1.1.3 0 .4zm-.2-1.5c-.5 0-.9-.4-.9-.9s.4-.9.9-.9.9.4.9.9-.4.9-.9.9z"/></svg>
+            View on Reddit
+          </a>
+        </div>
+      </div>
 
-      <!-- Card 3 -->
-      <a href="#" target="_blank" rel="noopener" class="post-card">
+      <!-- Card 3 — Blog + LinkedIn -->
+      <div class="post-card">
         <div class="post-card-image">
           <div class="card-img-placeholder">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
@@ -763,17 +896,24 @@
         </div>
         <div class="post-card-body">
           <div class="post-card-client">Client Name · Category</div>
-          <h3 class="post-card-title">Blog Post Title Goes Here</h3>
-          <p class="post-card-excerpt">Paste the opening 2–3 sentences of the blog post here. Keep it punchy enough to earn the click through to your client's site.</p>
-          <div class="post-card-footer">
-            <span class="post-card-date">Month DD, YYYY</span>
-            <span class="card-read-link">Read Post <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></span>
-          </div>
+          <h3 class="post-card-title">Post Title Goes Here</h3>
+          <p class="post-card-excerpt">Paste the opening 2–3 sentences of the post here. Keep it punchy enough to earn the click through to your client's site.</p>
+          <span class="post-card-date">Month DD, YYYY</span>
         </div>
-      </a>
+        <div class="post-card-links">
+          <a href="#" target="_blank" rel="noopener" class="pcl-blog">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"/><line x1="7" y1="8" x2="17" y2="8"/><line x1="7" y1="12" x2="14" y2="12"/></svg>
+            Read Blog
+          </a>
+          <a href="#" target="_blank" rel="noopener" class="pcl-li">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="#0A66C2"><rect x="2" y="2" width="20" height="20" rx="3"/><path fill="#fff" d="M6.5 10h2v7h-2v-7zm1-3a1.25 1.25 0 1 1 0 2.5A1.25 1.25 0 0 1 7.5 7zm4 3h2v.9c.3-.5.9-1 1.8-1 1.9 0 2.7 1.3 2.7 3v4.1h-2v-3.8c0-.9-.3-1.5-1.1-1.5-.9 0-1.4.6-1.4 1.7V17h-2v-7z"/></svg>
+            View on LinkedIn
+          </a>
+        </div>
+      </div>
 
-      <!-- Card 4 -->
-      <a href="#" target="_blank" rel="noopener" class="post-card">
+      <!-- Card 4 — Blog + Google My Business -->
+      <div class="post-card">
         <div class="post-card-image">
           <div class="card-img-placeholder">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
@@ -782,17 +922,24 @@
         </div>
         <div class="post-card-body">
           <div class="post-card-client">Client Name · Category</div>
-          <h3 class="post-card-title">Blog Post Title Goes Here</h3>
-          <p class="post-card-excerpt">Paste the opening 2–3 sentences of the blog post here. Keep it punchy enough to earn the click through to your client's site.</p>
-          <div class="post-card-footer">
-            <span class="post-card-date">Month DD, YYYY</span>
-            <span class="card-read-link">Read Post <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></span>
-          </div>
+          <h3 class="post-card-title">Post Title Goes Here</h3>
+          <p class="post-card-excerpt">Paste the opening 2–3 sentences of the post here. Keep it punchy enough to earn the click through to your client's site.</p>
+          <span class="post-card-date">Month DD, YYYY</span>
         </div>
-      </a>
+        <div class="post-card-links">
+          <a href="#" target="_blank" rel="noopener" class="pcl-blog">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"/><line x1="7" y1="8" x2="17" y2="8"/><line x1="7" y1="12" x2="14" y2="12"/></svg>
+            Read Blog
+          </a>
+          <a href="#" target="_blank" rel="noopener" class="pcl-gmb">
+            <svg width="11" height="11" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+            View on GMB
+          </a>
+        </div>
+      </div>
 
-      <!-- Card 5 -->
-      <a href="#" target="_blank" rel="noopener" class="post-card">
+      <!-- Card 5 — Blog + Quora -->
+      <div class="post-card">
         <div class="post-card-image">
           <div class="card-img-placeholder">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
@@ -801,17 +948,24 @@
         </div>
         <div class="post-card-body">
           <div class="post-card-client">Client Name · Category</div>
-          <h3 class="post-card-title">Blog Post Title Goes Here</h3>
-          <p class="post-card-excerpt">Paste the opening 2–3 sentences of the blog post here. Keep it punchy enough to earn the click through to your client's site.</p>
-          <div class="post-card-footer">
-            <span class="post-card-date">Month DD, YYYY</span>
-            <span class="card-read-link">Read Post <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></span>
-          </div>
+          <h3 class="post-card-title">Post Title Goes Here</h3>
+          <p class="post-card-excerpt">Paste the opening 2–3 sentences of the post here. Keep it punchy enough to earn the click through to your client's site.</p>
+          <span class="post-card-date">Month DD, YYYY</span>
         </div>
-      </a>
+        <div class="post-card-links">
+          <a href="#" target="_blank" rel="noopener" class="pcl-blog">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"/><line x1="7" y1="8" x2="17" y2="8"/><line x1="7" y1="12" x2="14" y2="12"/></svg>
+            Read Blog
+          </a>
+          <a href="#" target="_blank" rel="noopener" class="pcl-quora">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm2.5 18.5c-.5-.9-.9-1.9-1.1-3-.5.1-1 .2-1.5.2-2.8 0-5-2.2-5-5s2.2-5 5-5 5 2.2 5 5c0 1.5-.7 2.9-1.7 3.8l1.2 2.1-1.9 1.9z"/></svg>
+            View on Quora
+          </a>
+        </div>
+      </div>
 
-      <!-- Card 6 -->
-      <a href="#" target="_blank" rel="noopener" class="post-card">
+      <!-- Card 6 — Blog + Reddit -->
+      <div class="post-card">
         <div class="post-card-image">
           <div class="card-img-placeholder">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
@@ -820,14 +974,21 @@
         </div>
         <div class="post-card-body">
           <div class="post-card-client">Client Name · Category</div>
-          <h3 class="post-card-title">Blog Post Title Goes Here</h3>
-          <p class="post-card-excerpt">Paste the opening 2–3 sentences of the blog post here. Keep it punchy enough to earn the click through to your client's site.</p>
-          <div class="post-card-footer">
-            <span class="post-card-date">Month DD, YYYY</span>
-            <span class="card-read-link">Read Post <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></span>
-          </div>
+          <h3 class="post-card-title">Post Title Goes Here</h3>
+          <p class="post-card-excerpt">Paste the opening 2–3 sentences of the post here. Keep it punchy enough to earn the click through to your client's site.</p>
+          <span class="post-card-date">Month DD, YYYY</span>
         </div>
-      </a>
+        <div class="post-card-links">
+          <a href="#" target="_blank" rel="noopener" class="pcl-blog">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"/><line x1="7" y1="8" x2="17" y2="8"/><line x1="7" y1="12" x2="14" y2="12"/></svg>
+            Read Blog
+          </a>
+          <a href="#" target="_blank" rel="noopener" class="pcl-reddit">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="#FF4500"><circle cx="12" cy="12" r="11"/><path fill="#fff" d="M18.5 12a1.5 1.5 0 0 0-1.5-1.5c-.4 0-.7.1-1 .4-1-.7-2.3-1.1-3.7-1.2l.6-3 2 .4c0 .5.5.9 1 .9s.9-.4.9-.9-.4-.9-.9-.9c-.4 0-.7.2-.8.5l-2.3-.5c-.1 0-.2.1-.2.2l-.7 3.4c-1.4.1-2.7.5-3.7 1.2-.3-.3-.7-.4-1.1-.4a1.5 1.5 0 0 0-.6 2.9c0 .2 0 .3.1.5 0 2 2.3 3.5 5.2 3.5s5.2-1.6 5.2-3.5c0-.2 0-.3.1-.5.5-.2.9-.7.9-1.3zm-10 1c0-.5.4-.9.9-.9s.9.4.9.9-.4.9-.9.9-.9-.4-.9-.9zm5.1 2.4c-.6.6-1.6.9-2.6.9s-2-.3-2.6-.9c-.1-.1-.1-.3 0-.4.1-.1.3-.1.4 0 .5.5 1.3.7 2.2.7s1.7-.2 2.2-.7c.1-.1.3-.1.4 0 .1.1.1.3 0 .4zm-.2-1.5c-.5 0-.9-.4-.9-.9s.4-.9.9-.9.9.4.9.9-.4.9-.9.9z"/></svg>
+            View on Reddit
+          </a>
+        </div>
+      </div>
 
     </div>
     <!-- /blog-grid -->
