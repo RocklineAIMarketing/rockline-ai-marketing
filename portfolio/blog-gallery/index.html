@@ -1,1 +1,907 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Microblog Gallery | Rockline AI Marketing – GEO &amp; AI Marketing Agency, Chicagoland IL</title>
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Exo+2:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --blue-bright: #279cf5;
+    --blue-light:  #bbe0fc;
+    --blue-mid:    #8fcbfa;
+    --blue-dark:   #032844;
+    --white:       #ffffff;
+    --glass:       rgba(3,40,68,0.82);
+    --ticker-bg:   #021d32;
+    --border:      rgba(39,156,245,0.14);
+    --border-hi:   rgba(39,156,245,0.32);
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Exo 2', sans-serif; background: var(--blue-dark); color: var(--white); overflow-x: hidden; }
+
+  /* ── DESKTOP HEADER ── */
+  #site-header { background: linear-gradient(180deg, #075C9D 0%, var(--blue-dark) 100%); border-bottom: 1px solid rgba(39,156,245,0.18); }
+  .header-brand { display: flex; align-items: center; justify-content: center; position: relative; padding: 18px 24px 12px; }
+  .cta-sms { position: absolute; left: 32px; top: 50%; transform: translateY(-50%); display: flex; align-items: center; gap: 8px; background: linear-gradient(135deg, var(--blue-bright), #1479c4); color: var(--white); text-decoration: none; font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 1.6px; text-transform: uppercase; padding: 10px 20px; border-radius: 4px; border: 1px solid rgba(255,255,255,0.12); box-shadow: 0 4px 20px rgba(39,156,245,0.3); transition: transform .2s, box-shadow .2s; white-space: nowrap; }
+  .cta-sms:hover { transform: translateY(calc(-50% - 2px)); box-shadow: 0 10px 32px rgba(39,156,245,0.5); }
+  .header-logo { height: 72px; width: auto; display: block; }
+
+  /* ── STICKY NAV ── */
+  #sticky-nav-zone { position: sticky; top: 0; z-index: 500; background: var(--glass); backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px); border-bottom: 1px solid rgba(39,156,245,0.18); box-shadow: 0 4px 30px rgba(2,10,20,0.6); }
+  nav.main-nav { display: flex; align-items: center; justify-content: center; gap: 2px; padding: 0 16px; }
+  .nav-item { position: relative; }
+  .nav-btn { display: flex; align-items: center; gap: 5px; padding: 14px 20px; font-family: 'Rajdhani', sans-serif; font-weight: 600; font-size: 13px; letter-spacing: 2px; text-transform: uppercase; color: var(--blue-light); background: none; border: none; cursor: pointer; text-decoration: none; transition: color .2s; white-space: nowrap; position: relative; }
+  .nav-btn:hover, .nav-item.is-open > .nav-btn { color: var(--white); }
+  a.nav-btn::after { content: ''; position: absolute; bottom: 8px; left: 20px; right: 20px; height: 2px; background: var(--blue-bright); border-radius: 2px; transform: scaleX(0); transition: transform .25s; }
+  a.nav-btn:hover::after, a.nav-btn.active::after { transform: scaleX(1); }
+  .chevron { width: 10px; height: 10px; transition: transform .25s; flex-shrink: 0; }
+  .nav-item.is-open .chevron { transform: rotate(180deg); }
+  .dropdown { position: absolute; top: 100%; left: 50%; transform: translateX(-50%) translateY(6px); min-width: 220px; background: rgba(2,12,24,0.97); border: 1px solid rgba(39,156,245,0.2); border-radius: 6px; box-shadow: 0 16px 48px rgba(0,0,0,0.55); opacity: 0; pointer-events: none; transition: opacity .22s, transform .22s; z-index: 600; overflow: hidden; }
+  .dropdown::before { content: ''; position: absolute; top: -8px; left: 0; right: 0; height: 8px; }
+  .nav-item.is-open .dropdown { opacity: 1; pointer-events: auto; transform: translateX(-50%) translateY(0); }
+  .dropdown a { display: block; padding: 12px 22px; font-family: 'Exo 2', sans-serif; font-size: 13px; color: var(--blue-light); text-decoration: none; letter-spacing: .5px; border-bottom: 1px solid rgba(39,156,245,0.07); transition: background .18s, color .18s, padding-left .18s; }
+  .dropdown a:last-child { border-bottom: none; }
+  .dropdown a:hover { background: rgba(39,156,245,0.1); color: var(--white); padding-left: 28px; }
+  .dropdown a.current-page { color: var(--white); background: rgba(39,156,245,0.08); }
+
+  /* ── TICKER ── */
+  .ticker-wrap { background: var(--ticker-bg); border-top: 1px solid rgba(39,156,245,0.1); padding: 7px 0; overflow: hidden; position: relative; pointer-events: none; }
+  .ticker-label { position: absolute; left: 0; top: 0; bottom: 0; z-index: 2; display: flex; align-items: center; padding: 0 18px 0 14px; background: var(--blue-bright); font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--blue-dark); white-space: nowrap; clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 50%, calc(100% - 8px) 100%, 0 100%); }
+  .ticker-wrap::after { content: ''; position: absolute; right: 0; top: 0; bottom: 0; width: 60px; background: linear-gradient(to right, transparent, var(--ticker-bg)); z-index: 3; }
+  .ticker-inner { overflow: hidden; padding-left: 112px; }
+  .ticker-track { display: flex; width: max-content; animation: tickerScroll 60s linear infinite; }
+  .ticker-item { font-family: 'Space Mono', monospace; font-size: 10.5px; color: var(--blue-mid); white-space: nowrap; padding: 0 44px; display: flex; align-items: center; gap: 10px; }
+  .ticker-item::after { content: '◆'; color: var(--blue-bright); font-size: 7px; }
+  @keyframes tickerScroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+  /* ── MOBILE STICKY ── */
+  #mobile-sticky { display: none; position: fixed; top: 0; left: 0; right: 0; z-index: 800; flex-direction: column; }
+  .mobile-topbar { display: flex; align-items: center; justify-content: center; position: relative; padding: 10px 16px; background: rgba(2,12,24,0.97); backdrop-filter: blur(14px); border-bottom: 1px solid rgba(39,156,245,0.15); }
+  .mobile-header-logo { height: 42px; width: auto; display: block; }
+  .hamburger-trigger { position: absolute; right: 16px; top: 50%; transform: translateY(-50%); width: 44px; height: 44px; cursor: pointer; background: rgba(39,156,245,0.06); border: 1px solid rgba(39,156,245,0.35); border-radius: 6px; padding: 0; display: flex; align-items: center; justify-content: center; transition: background .25s, border-color .25s, box-shadow .25s; box-shadow: 0 0 10px rgba(39,156,245,0.2); }
+  .hamburger-trigger:hover, .hamburger-trigger.open { background: rgba(39,156,245,0.14); border-color: rgba(39,156,245,0.75); box-shadow: 0 0 18px rgba(39,156,245,0.45); }
+  .hamburger-bars { display: flex; flex-direction: column; gap: 5px; width: 20px; }
+  .hamburger-bars span { display: block; height: 2px; border-radius: 2px; background: var(--blue-light); transition: transform .3s cubic-bezier(.22,1,.36,1), opacity .2s, width .3s; }
+  .hamburger-bars span:nth-child(1) { width: 20px; }
+  .hamburger-bars span:nth-child(2) { width: 14px; }
+  .hamburger-bars span:nth-child(3) { width: 20px; }
+  .hamburger-trigger.open .hamburger-bars span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .hamburger-trigger.open .hamburger-bars span:nth-child(2) { opacity: 0; width: 0; }
+  .hamburger-trigger.open .hamburger-bars span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  .mobile-ticker-strip { background: var(--ticker-bg); border-bottom: 1px solid rgba(39,156,245,0.1); padding: 5px 0; pointer-events: none; }
+  .mobile-ticker-strip .ticker-label { font-size: 9px; padding: 0 14px 0 10px; }
+  .mobile-ticker-strip .ticker-inner { padding-left: 88px; }
+  .mobile-ticker-strip .ticker-track { animation-duration: 50s; }
+  .mobile-ticker-strip .ticker-item { font-size: 9.5px; padding: 0 30px; }
+
+  /* ── MOBILE PANEL ── */
+  .mobile-overlay { display: none; position: fixed; inset: 0; background: rgba(2,9,16,0.55); z-index: 700; opacity: 0; transition: opacity .3s; backdrop-filter: blur(4px); pointer-events: none; }
+  .mobile-overlay.visible { opacity: 1; pointer-events: auto; }
+  .mobile-panel { position: fixed; top: 0; right: -310px; width: 290px; height: 100%; background: rgba(2,12,24,0.99); border-left: 1px solid rgba(39,156,245,0.18); z-index: 900; transition: right .34s cubic-bezier(.22,1,.36,1); overflow-y: auto; padding-bottom: 48px; }
+  .mobile-panel.open { right: 0; }
+  .mobile-panel-logo { display: flex; justify-content: center; padding: 28px 20px 18px; border-bottom: 1px solid rgba(39,156,245,0.1); }
+  .mobile-panel-logo img { height: 52px; width: auto; }
+  .mobile-nav-list { list-style: none; padding: 10px 0; }
+  .mobile-nav-list > li > a, .mobile-nav-list > li > .m-parent { display: flex; align-items: center; justify-content: space-between; padding: 13px 22px; font-family: 'Rajdhani', sans-serif; font-weight: 600; font-size: 14px; letter-spacing: 1.8px; text-transform: uppercase; color: var(--blue-light); text-decoration: none; border-bottom: 1px solid rgba(39,156,245,0.06); transition: background .18s, color .18s; cursor: pointer; }
+  .mobile-nav-list > li > a:hover { background: rgba(39,156,245,0.08); color: var(--white); }
+  .mobile-nav-list > li > .m-parent { color: rgba(187,224,252,0.55); cursor: default; }
+  .m-chevron { width: 12px; height: 12px; transition: transform .25s; color: rgba(143,203,250,0.5); flex-shrink: 0; }
+  .m-parent.sub-open .m-chevron { transform: rotate(180deg); }
+  .mobile-sub { display: none; background: rgba(39,156,245,0.03); border-bottom: 1px solid rgba(39,156,245,0.06); }
+  .mobile-sub.open { display: block; }
+  .mobile-sub a { display: block; padding: 10px 22px 10px 34px; font-size: 12.5px; color: var(--blue-mid); text-decoration: none; border-bottom: 1px solid rgba(39,156,245,0.04); letter-spacing: .4px; transition: color .18s, padding-left .18s; }
+  .mobile-sub a:hover, .mobile-sub a.current-page { color: var(--white); }
+  .mobile-sub a:hover { padding-left: 40px; }
+  .mobile-panel-cta { padding: 18px 20px 0; }
+  .mobile-panel-cta a { display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; padding: 13px; background: linear-gradient(135deg, var(--blue-bright), #1479c4); color: var(--white); text-decoration: none; font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 2px; text-transform: uppercase; border-radius: 4px; box-shadow: 0 4px 20px rgba(39,156,245,0.3); transition: box-shadow .25s; }
+  .mobile-panel-cta a:hover { box-shadow: 0 8px 28px rgba(39,156,245,0.5); }
+
+  /* ── FOOTER ── */
+  footer { background: linear-gradient(180deg, var(--blue-dark) 0%, #075C9D 100%); border-top: 1px solid rgba(39,156,245,0.14); }
+  .footer-main { display: grid; grid-template-columns: 1fr auto 1fr; gap: 24px; align-items: center; padding: 16px 32px; border-bottom: 1px solid rgba(39,156,245,0.08); max-width: 1200px; margin: 0 auto; }
+  .footer-address { font-size: 12.5px; line-height: 1.9; color: var(--blue-mid); font-style: normal; }
+  .footer-address strong { display: block; font-family: 'Rajdhani', sans-serif; font-size: 14px; color: var(--white); letter-spacing: 1px; margin-bottom: 2px; }
+  .footer-address a { color: var(--blue-bright); text-decoration: none; }
+  .footer-address a:hover { text-decoration: underline; }
+  .footer-logo-col { display: flex; justify-content: center; align-items: center; }
+  .footer-logo-col img { height: 44px; width: auto; }
+  .footer-hours { text-align: right; font-size: 12px; color: var(--blue-mid); }
+  .footer-hours strong { display: block; font-family: 'Rajdhani', sans-serif; font-size: 13px; color: var(--white); letter-spacing: 1px; margin-bottom: 4px; }
+  .hours-grid { display: grid; grid-template-columns: auto auto; gap: 0 10px; font-size: 11.5px; justify-content: end; }
+  .hours-grid span:nth-child(even) { color: var(--blue-light); }
+  .footer-social { display: flex; align-items: center; justify-content: center; gap: 6px; padding: 10px 24px; flex-wrap: wrap; }
+  .social-link { width: 36px; height: 36px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.07); display: flex; align-items: center; justify-content: center; text-decoration: none; background: rgba(255,255,255,0.03); transition: transform .2s, border-color .2s, background .2s; }
+  .social-link:hover { transform: translateY(-3px); border-color: rgba(255,255,255,0.18); background: rgba(255,255,255,0.07); }
+  .footer-bottom { padding: 8px 24px; text-align: center; font-size: 10px; color: rgba(143,203,250,0.25); letter-spacing: .8px; border-top: 1px solid rgba(39,156,245,0.05); }
+
+  /* ── RESPONSIVE BASE ── */
+  @media (max-width: 768px) {
+    #site-header, #sticky-nav-zone { display: none; }
+    #mobile-sticky { display: flex; }
+    .mobile-overlay { display: block; }
+    main { padding-top: 92px; }
+    .footer-main { grid-template-columns: 1fr; text-align: center; gap: 12px; padding: 14px 20px; }
+    .footer-hours { text-align: center; }
+    .hours-grid { justify-content: center; }
+    .footer-logo-col { justify-content: center; }
+  }
+
+  /* ════════════════════════════
+     MICROBLOG GALLERY PAGE
+  ════════════════════════════ */
+
+  /* ── PAGE HERO ── */
+  .blog-hero {
+    position: relative;
+    padding: 72px 32px 56px;
+    border-bottom: 1px solid var(--border);
+    overflow: hidden;
+  }
+  .blog-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(39,156,245,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(39,156,245,0.04) 1px, transparent 1px);
+    background-size: 48px 48px;
+    mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, black 40%, transparent 100%);
+    -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, black 40%, transparent 100%);
+  }
+  .blog-hero::after {
+    content: '';
+    position: absolute;
+    top: -60px; right: -100px;
+    width: 440px; height: 440px;
+    background: radial-gradient(circle, rgba(39,156,245,0.09) 0%, transparent 65%);
+    pointer-events: none;
+  }
+  .blog-hero-inner {
+    max-width: 1160px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+  .blog-eyebrow {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: var(--blue-bright);
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .blog-eyebrow::before {
+    content: '';
+    display: block;
+    width: 32px;
+    height: 1px;
+    background: var(--blue-bright);
+  }
+  .blog-hero h1 {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700;
+    font-size: clamp(2.4rem, 5vw, 3.8rem);
+    line-height: 1.02;
+    margin-bottom: 20px;
+  }
+  .blog-hero h1 em {
+    background: linear-gradient(90deg, var(--blue-bright), var(--blue-mid));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-style: normal;
+  }
+  .blog-hero-lead {
+    font-size: 1rem;
+    color: var(--blue-light);
+    line-height: 1.9;
+    font-weight: 300;
+    max-width: 520px;
+  }
+
+  /* ── MAIN CONTENT AREA ── */
+  .blog-content {
+    max-width: 1160px;
+    margin: 0 auto;
+    padding: 56px 32px 80px;
+  }
+
+  /* ── SECTION LABEL ── */
+  .blog-section-label {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 28px;
+  }
+  .blog-section-label span {
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--blue-bright);
+    white-space: nowrap;
+  }
+  .blog-section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border-hi);
+  }
+
+  /* ── FEATURED POST ── */
+  .featured-post {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    border: 1px solid var(--border-hi);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 56px;
+    text-decoration: none;
+    color: inherit;
+    transition: border-color .25s;
+    background: rgba(2,10,22,0.6);
+  }
+  .featured-post:hover { border-color: rgba(39,156,245,0.6); }
+
+  .featured-post-image {
+    position: relative;
+    min-height: 380px;
+    background: rgba(39,156,245,0.05);
+    overflow: hidden;
+  }
+  .featured-post-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform .6s cubic-bezier(.22,1,.36,1);
+  }
+  .featured-post:hover .featured-post-image img { transform: scale(1.04); }
+  .featured-img-placeholder {
+    width: 100%;
+    height: 100%;
+    min-height: 380px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+  }
+  .featured-img-placeholder svg { width: 32px; height: 32px; color: rgba(39,156,245,0.18); }
+  .featured-img-placeholder span {
+    font-family: 'Space Mono', monospace;
+    font-size: 8px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: rgba(143,203,250,0.18);
+  }
+
+  .featured-post-body {
+    padding: 40px 36px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0;
+    border-left: 1px solid var(--border-hi);
+  }
+  .featured-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 12px;
+    border-radius: 20px;
+    background: rgba(39,156,245,0.12);
+    border: 1px solid var(--border-hi);
+    font-family: 'Space Mono', monospace;
+    font-size: 8.5px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--blue-bright);
+    margin-bottom: 20px;
+    width: fit-content;
+  }
+  .featured-badge::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--blue-bright);
+    animation: pulse 2s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.4; transform: scale(0.7); }
+  }
+  .featured-client-tag {
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--blue-mid);
+    margin-bottom: 12px;
+  }
+  .featured-post-title {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700;
+    font-size: clamp(1.5rem, 2.5vw, 2rem);
+    line-height: 1.12;
+    color: var(--white);
+    margin-bottom: 18px;
+    transition: color .2s;
+  }
+  .featured-post:hover .featured-post-title { color: var(--blue-light); }
+  .featured-post-excerpt {
+    font-size: 0.9rem;
+    color: var(--blue-light);
+    line-height: 1.85;
+    font-weight: 300;
+    margin-bottom: 28px;
+  }
+  .featured-post-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 20px;
+    border-top: 1px solid var(--border);
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .post-date {
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 1px;
+    color: var(--blue-mid);
+  }
+  .post-read-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--blue-bright);
+    transition: gap .2s;
+  }
+  .featured-post:hover .post-read-link { gap: 10px; }
+  .post-read-link svg { flex-shrink: 0; }
+
+  /* ── POST GRID ── */
+  .blog-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  /* ── POST CARD ── */
+  .post-card {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--border-hi);
+    border-radius: 10px;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    background: rgba(2,10,22,0.6);
+    transition: border-color .25s, transform .25s;
+  }
+  .post-card:hover {
+    border-color: rgba(39,156,245,0.6);
+    transform: translateY(-3px);
+  }
+  .post-card-image {
+    position: relative;
+    height: 200px;
+    background: rgba(39,156,245,0.05);
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+  .post-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform .5s cubic-bezier(.22,1,.36,1);
+  }
+  .post-card:hover .post-card-image img { transform: scale(1.06); }
+  .card-img-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+  .card-img-placeholder svg { width: 24px; height: 24px; color: rgba(39,156,245,0.18); }
+  .card-img-placeholder span {
+    font-family: 'Space Mono', monospace;
+    font-size: 7px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: rgba(143,203,250,0.18);
+  }
+  /* client color bar across top of image */
+  .post-card-image::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--blue-bright), #1479c4);
+    opacity: 0;
+    transition: opacity .25s;
+  }
+  .post-card:hover .post-card-image::after { opacity: 1; }
+
+  .post-card-body {
+    padding: 22px 22px 20px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 0;
+  }
+  .post-card-client {
+    font-family: 'Space Mono', monospace;
+    font-size: 8.5px;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+    color: var(--blue-bright);
+    margin-bottom: 10px;
+    opacity: 0.8;
+  }
+  .post-card-title {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700;
+    font-size: 1.15rem;
+    line-height: 1.2;
+    color: var(--white);
+    margin-bottom: 12px;
+    transition: color .2s;
+  }
+  .post-card:hover .post-card-title { color: var(--blue-light); }
+  .post-card-excerpt {
+    font-size: 0.82rem;
+    color: var(--blue-light);
+    line-height: 1.8;
+    font-weight: 300;
+    flex: 1;
+    margin-bottom: 20px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .post-card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 16px;
+    border-top: 1px solid var(--border);
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .post-card-date {
+    font-family: 'Space Mono', monospace;
+    font-size: 8.5px;
+    letter-spacing: 0.8px;
+    color: var(--blue-mid);
+  }
+  .card-read-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700;
+    font-size: 10px;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+    color: var(--blue-bright);
+    transition: gap .2s;
+  }
+  .post-card:hover .card-read-link { gap: 8px; }
+  .card-read-link svg { flex-shrink: 0; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    .blog-grid { grid-template-columns: repeat(2, 1fr); }
+    .featured-post { grid-template-columns: 1fr; }
+    .featured-post-image { min-height: 260px; }
+    .featured-img-placeholder { min-height: 260px; }
+    .featured-post-body { border-left: none; border-top: 1px solid var(--border-hi); padding: 28px 24px; }
+  }
+  @media (max-width: 640px) {
+    .blog-hero { padding: 40px 16px 40px; }
+    .blog-content { padding: 32px 16px 60px; }
+    .blog-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- DESKTOP HEADER -->
+<header id="site-header">
+  <div class="header-brand">
+    <a href="sms:+18155555555?body=Hi%2C%20I%27d%20like%20to%20learn%20more%20about%20Rockline%20AI%20Marketing!" class="cta-sms">
+      <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      Contact Us
+    </a>
+    <img src="../images/logos/rockline-ai-marketing-logo.png" alt="Rockline AI Marketing" class="header-logo">
+  </div>
+</header>
+
+<!-- DESKTOP STICKY NAV + TICKER -->
+<div id="sticky-nav-zone">
+  <nav class="main-nav" role="navigation" aria-label="Main navigation">
+    <div class="nav-item"><a href="../index.html" class="nav-btn">Home</a></div>
+    <div class="nav-item">
+      <span class="nav-btn" tabindex="0">About <svg class="chevron" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 3.5L5 6.5L8 3.5"/></svg></span>
+      <div class="dropdown">
+        <a href="../about/agency-profile.html">Agency Profile</a>
+        <a href="../about/customer-success-stories.html">Customer Success Stories</a>
+        <a href="../about/community-activism.html">Community Activism</a>
+      </div>
+    </div>
+    <div class="nav-item">
+      <span class="nav-btn" tabindex="0">Portfolio <svg class="chevron" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 3.5L5 6.5L8 3.5"/></svg></span>
+      <div class="dropdown">
+        <a href="website-gallery.html">Website Gallery</a>
+        <a href="photo-gallery.html">Photo Gallery</a>
+        <a href="social-gallery.html" class="current-page">Social Gallery</a>
+      </div>
+    </div>
+    <div class="nav-item">
+      <span class="nav-btn" tabindex="0">Services <svg class="chevron" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 3.5L5 6.5L8 3.5"/></svg></span>
+      <div class="dropdown">
+        <a href="../services/custom-websites.html">Custom Websites</a>
+        <a href="../services/microblogging.html">Microblogging</a>
+        <a href="../services/aerial-8k-photography.html">Aerial &amp; 8K Photography</a>
+      </div>
+    </div>
+    <div class="nav-item">
+      <span class="nav-btn" tabindex="0">Contact <svg class="chevron" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 3.5L5 6.5L8 3.5"/></svg></span>
+      <div class="dropdown">
+        <a href="../contact/business-information.html">Business Information</a>
+        <a href="../contact/social-media.html">Social Media</a>
+        <a href="../contact/q-and-a.html">Q &amp; A</a>
+      </div>
+    </div>
+  </nav>
+  <div class="ticker-wrap">
+    <a href="../contact/q-and-a.html" style="text-decoration:none; pointer-events:auto;"><div class="ticker-label">GEO FAQ</div></a>
+    <div class="ticker-inner">
+      <div class="ticker-track" id="desktopTicker">
+        <div class="ticker-item">What is Generative Engine Optimization (GEO)?</div>
+        <div class="ticker-item">How does GEO differ from traditional SEO?</div>
+        <div class="ticker-item">Can AI-driven content appear in ChatGPT and Gemini answers?</div>
+        <div class="ticker-item">What makes a website discoverable by AI search engines?</div>
+        <div class="ticker-item">How does Rockline AI Marketing implement GEO strategies?</div>
+        <div class="ticker-item">Is GEO replacing SEO — or working alongside it?</div>
+        <div class="ticker-item">How do large language models discover and cite local businesses?</div>
+        <div class="ticker-item">What role does structured data play in GEO?</div>
+        <div class="ticker-item">How quickly can GEO improve your online visibility?</div>
+        <div class="ticker-item">What industries benefit most from Generative Engine Optimization?</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MOBILE STICKY -->
+<div id="mobile-sticky">
+  <div class="mobile-topbar">
+    <img src="../images/logos/rockline-ai-marketing-logo.png" alt="Rockline AI Marketing" class="mobile-header-logo">
+    <button class="hamburger-trigger" id="hamburgerTrigger" aria-label="Open navigation">
+      <div class="hamburger-bars"><span></span><span></span><span></span></div>
+    </button>
+  </div>
+  <div class="mobile-ticker-strip ticker-wrap">
+    <a href="../contact/q-and-a.html" style="text-decoration:none; pointer-events:auto;"><div class="ticker-label">GEO FAQ</div></a>
+    <div class="ticker-inner">
+      <div class="ticker-track" id="mobileTicker">
+        <div class="ticker-item">What is Generative Engine Optimization (GEO)?</div>
+        <div class="ticker-item">How does GEO differ from traditional SEO?</div>
+        <div class="ticker-item">Can AI-driven content appear in ChatGPT &amp; Gemini?</div>
+        <div class="ticker-item">What makes a website discoverable by AI?</div>
+        <div class="ticker-item">How does Rockline AI Marketing implement GEO?</div>
+        <div class="ticker-item">Is GEO replacing SEO — or working alongside it?</div>
+        <div class="ticker-item">How do LLMs discover and cite local businesses?</div>
+        <div class="ticker-item">What role does structured data play in GEO?</div>
+        <div class="ticker-item">How quickly can GEO improve your visibility?</div>
+        <div class="ticker-item">Which industries benefit most from GEO?</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="mobile-overlay" id="mobileOverlay"></div>
+<div class="mobile-panel" id="mobilePanel" role="dialog" aria-label="Navigation">
+  <div class="mobile-panel-logo">
+    <img src="../images/logos/rockline-ai-marketing-logo.png" alt="Rockline AI Marketing">
+  </div>
+  <ul class="mobile-nav-list">
+    <li><a href="../index.html">Home</a></li>
+    <li>
+      <div class="m-parent" onclick="toggleSub(this)">About <svg class="m-chevron" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 3.5L5 6.5L8 3.5"/></svg></div>
+      <div class="mobile-sub">
+        <a href="../about/agency-profile.html">Agency Profile</a>
+        <a href="../about/customer-success-stories.html">Customer Success Stories</a>
+        <a href="../about/community-activism.html">Community Activism</a>
+      </div>
+    </li>
+    <li>
+      <div class="m-parent sub-open" onclick="toggleSub(this)">Portfolio <svg class="m-chevron" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 3.5L5 6.5L8 3.5"/></svg></div>
+      <div class="mobile-sub open">
+        <a href="website-gallery.html">Website Gallery</a>
+        <a href="photo-gallery.html">Photo Gallery</a>
+        <a href="social-gallery.html" class="current-page">Social Gallery</a>
+      </div>
+    </li>
+    <li>
+      <div class="m-parent" onclick="toggleSub(this)">Services <svg class="m-chevron" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 3.5L5 6.5L8 3.5"/></svg></div>
+      <div class="mobile-sub">
+        <a href="../services/custom-websites.html">Custom Websites</a>
+        <a href="../services/microblogging.html">Microblogging</a>
+        <a href="../services/aerial-8k-photography.html">Aerial &amp; 8K Photography</a>
+      </div>
+    </li>
+    <li>
+      <div class="m-parent" onclick="toggleSub(this)">Contact <svg class="m-chevron" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 3.5L5 6.5L8 3.5"/></svg></div>
+      <div class="mobile-sub">
+        <a href="../contact/business-information.html">Business Information</a>
+        <a href="../contact/social-media.html">Social Media</a>
+        <a href="../contact/q-and-a.html">Q &amp; A</a>
+      </div>
+    </li>
+  </ul>
+  <div class="mobile-panel-cta">
+    <a href="sms:+18155555555?body=Hi%2C%20I%27d%20like%20to%20learn%20more%20about%20Rockline%20AI%20Marketing!">
+      <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      Text Us Now
+    </a>
+  </div>
+</div>
+
+<!-- ═══════════════ MAIN ═══════════════ -->
+<main>
+
+  <!-- PAGE HERO -->
+  <section class="blog-hero">
+    <div class="blog-hero-inner">
+      <p class="blog-eyebrow">Microblog Gallery</p>
+      <h1>Content Written<br>to <em>Rank &amp; Resonate.</em></h1>
+      <p class="blog-hero-lead">Every post is crafted to be discovered — by the people searching for it and the AI engines that surface it. Real blogs, written for real clients.</p>
+    </div>
+  </section>
+
+  <!-- BLOG CONTENT -->
+  <div class="blog-content">
+
+    <!-- FEATURED POST -->
+    <div class="blog-section-label"><span>Featured Post</span></div>
+    <a href="#" target="_blank" rel="noopener" class="featured-post">
+      <div class="featured-post-image">
+        <!-- Replace with: <img src="path/to/image.jpg" alt="Post title"> -->
+        <div class="featured-img-placeholder">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+          <span>Featured post image</span>
+        </div>
+      </div>
+      <div class="featured-post-body">
+        <div class="featured-badge">Latest Post</div>
+        <div class="featured-client-tag">Client Name · Category</div>
+        <h2 class="featured-post-title">Replace This With Your Most Recent Blog Post Title</h2>
+        <p class="featured-post-excerpt">Paste the opening paragraph or excerpt of the blog post here. This should be 2–3 sentences that hook the reader and give them a reason to click through to the full article on your client's website.</p>
+        <div class="featured-post-meta">
+          <span class="post-date">Month DD, YYYY</span>
+          <span class="post-read-link">
+            Read Full Post
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </span>
+        </div>
+      </div>
+    </a>
+
+    <!-- POST GRID -->
+    <div class="blog-section-label"><span>All Posts</span></div>
+    <div class="blog-grid">
+
+      <!-- Card 1 -->
+      <a href="#" target="_blank" rel="noopener" class="post-card">
+        <div class="post-card-image">
+          <!-- Replace with: <img src="path/to/image.jpg" alt="Post title"> -->
+          <div class="card-img-placeholder">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+            <span>Post image</span>
+          </div>
+        </div>
+        <div class="post-card-body">
+          <div class="post-card-client">Client Name · Category</div>
+          <h3 class="post-card-title">Blog Post Title Goes Here</h3>
+          <p class="post-card-excerpt">Paste the opening 2–3 sentences of the blog post here. Keep it punchy enough to earn the click through to your client's site.</p>
+          <div class="post-card-footer">
+            <span class="post-card-date">Month DD, YYYY</span>
+            <span class="card-read-link">Read Post <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Card 2 -->
+      <a href="#" target="_blank" rel="noopener" class="post-card">
+        <div class="post-card-image">
+          <div class="card-img-placeholder">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+            <span>Post image</span>
+          </div>
+        </div>
+        <div class="post-card-body">
+          <div class="post-card-client">Client Name · Category</div>
+          <h3 class="post-card-title">Blog Post Title Goes Here</h3>
+          <p class="post-card-excerpt">Paste the opening 2–3 sentences of the blog post here. Keep it punchy enough to earn the click through to your client's site.</p>
+          <div class="post-card-footer">
+            <span class="post-card-date">Month DD, YYYY</span>
+            <span class="card-read-link">Read Post <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Card 3 -->
+      <a href="#" target="_blank" rel="noopener" class="post-card">
+        <div class="post-card-image">
+          <div class="card-img-placeholder">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+            <span>Post image</span>
+          </div>
+        </div>
+        <div class="post-card-body">
+          <div class="post-card-client">Client Name · Category</div>
+          <h3 class="post-card-title">Blog Post Title Goes Here</h3>
+          <p class="post-card-excerpt">Paste the opening 2–3 sentences of the blog post here. Keep it punchy enough to earn the click through to your client's site.</p>
+          <div class="post-card-footer">
+            <span class="post-card-date">Month DD, YYYY</span>
+            <span class="card-read-link">Read Post <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Card 4 -->
+      <a href="#" target="_blank" rel="noopener" class="post-card">
+        <div class="post-card-image">
+          <div class="card-img-placeholder">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+            <span>Post image</span>
+          </div>
+        </div>
+        <div class="post-card-body">
+          <div class="post-card-client">Client Name · Category</div>
+          <h3 class="post-card-title">Blog Post Title Goes Here</h3>
+          <p class="post-card-excerpt">Paste the opening 2–3 sentences of the blog post here. Keep it punchy enough to earn the click through to your client's site.</p>
+          <div class="post-card-footer">
+            <span class="post-card-date">Month DD, YYYY</span>
+            <span class="card-read-link">Read Post <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Card 5 -->
+      <a href="#" target="_blank" rel="noopener" class="post-card">
+        <div class="post-card-image">
+          <div class="card-img-placeholder">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+            <span>Post image</span>
+          </div>
+        </div>
+        <div class="post-card-body">
+          <div class="post-card-client">Client Name · Category</div>
+          <h3 class="post-card-title">Blog Post Title Goes Here</h3>
+          <p class="post-card-excerpt">Paste the opening 2–3 sentences of the blog post here. Keep it punchy enough to earn the click through to your client's site.</p>
+          <div class="post-card-footer">
+            <span class="post-card-date">Month DD, YYYY</span>
+            <span class="card-read-link">Read Post <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Card 6 -->
+      <a href="#" target="_blank" rel="noopener" class="post-card">
+        <div class="post-card-image">
+          <div class="card-img-placeholder">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+            <span>Post image</span>
+          </div>
+        </div>
+        <div class="post-card-body">
+          <div class="post-card-client">Client Name · Category</div>
+          <h3 class="post-card-title">Blog Post Title Goes Here</h3>
+          <p class="post-card-excerpt">Paste the opening 2–3 sentences of the blog post here. Keep it punchy enough to earn the click through to your client's site.</p>
+          <div class="post-card-footer">
+            <span class="post-card-date">Month DD, YYYY</span>
+            <span class="card-read-link">Read Post <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></span>
+          </div>
+        </div>
+      </a>
+
+    </div>
+    <!-- /blog-grid -->
+
+  </div>
+  <!-- /blog-content -->
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-main">
+    <address class="footer-address">
+      <strong>Rockline AI Marketing</strong>
+      Lockport, IL<br>
+      <a href="tel:+18155555555">815-555-5555</a>
+    </address>
+    <div class="footer-logo-col">
+      <img src="../images/logos/rockline-ai-marketing-logo.png" alt="Rockline AI Marketing">
+    </div>
+    <div class="footer-hours">
+      <strong>Business Hours</strong>
+      <div class="hours-grid"><span>Mon – Sun</span><span>7:00 AM – 9:00 PM</span></div>
+    </div>
+  </div>
+  <div class="footer-social">
+    <a href="#" class="social-link" title="YouTube" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24"><path fill="#FF0000" d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8z"/><path fill="#fff" d="M9.6 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg></a>
+    <a href="#" class="social-link" title="Google My Business" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg></a>
+    <a href="#" class="social-link" title="Instagram" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24"><defs><radialGradient id="ig2" cx="30%" cy="107%" r="150%"><stop offset="0%" stop-color="#fdf497"/><stop offset="45%" stop-color="#fd5949"/><stop offset="60%" stop-color="#d6249f"/><stop offset="90%" stop-color="#285AEB"/></radialGradient></defs><rect width="24" height="24" rx="5" fill="url(#ig2)"/><path fill="#fff" d="M12 7.2A4.8 4.8 0 1 0 12 16.8 4.8 4.8 0 0 0 12 7.2zm0 7.9a3.1 3.1 0 1 1 0-6.2 3.1 3.1 0 0 1 0 6.2zm6.1-8.1a1.1 1.1 0 1 1-2.2 0 1.1 1.1 0 0 1 2.2 0zM21 8.9c-.1-1.5-.4-2.8-1.5-3.9-1.1-1.1-2.4-1.4-3.9-1.5C14.1 3.4 9.9 3.4 8.4 3.5 6.9 3.6 5.6 3.9 4.5 5 3.4 6.1 3.1 7.4 3 8.9 2.9 10.4 2.9 14.6 3 16.1c.1 1.5.4 2.8 1.5 3.9 1.1 1.1 2.4 1.4 3.9 1.5 1.5.1 5.7.1 7.2 0 1.5-.1 2.8-.4 3.9-1.5 1.1-1.1 1.4-2.4 1.5-3.9.1-1.5.1-5.7 0-7.2zm-2 8.7a3.2 3.2 0 0 1-1.8 1.8c-1.2.5-4.2.4-5.6.4s-4.3.1-5.6-.4a3.2 3.2 0 0 1-1.8-1.8c-.5-1.2-.4-4.2-.4-5.6s-.1-4.3.4-5.6A3.2 3.2 0 0 1 5.8 4.6c1.2-.5 4.2-.4 5.6-.4s4.3-.1 5.6.4a3.2 3.2 0 0 1 1.8 1.8c.5 1.2.4 4.2.4 5.6s.1 4.3-.4 5.6z"/></svg></a>
+    <a href="#" class="social-link" title="Facebook" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24"><rect width="24" height="24" rx="4" fill="#1877F2"/><path fill="#fff" d="M16.6 12H13.8V21H10.4V12H8.4V9H10.4V7.2C10.4 5.3 11.6 3 14.5 3L17.1 3V6.2H15.5C15.2 6.2 14.8 6.4 14.8 7V9H17.1L16.6 12Z"/></svg></a>
+    <a href="#" class="social-link" title="Substack" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24"><rect width="24" height="24" rx="4" fill="#FF6719"/><path fill="#fff" d="M19 5.5H5v1.75h14V5.5zm0 3.75H5v1.75h14V9.25zM5 13l7 5 7-5v7.5L12 18l-7 2.5V13z"/></svg></a>
+    <a href="#" class="social-link" title="X (Twitter)" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24"><rect width="24" height="24" rx="4" fill="#000"/><path fill="#fff" d="M17.75 3h3.14l-6.86 7.84 8.06 10.66H16.2l-4.95-6.47-5.66 6.47H2.44l7.34-8.39L1.98 3h6.68l4.47 5.91L17.75 3zm-1.1 16.52h1.74L7.45 4.78H5.59l11.06 14.74z"/></svg></a>
+  </div>
+  <div class="footer-bottom">&copy; 2025 Rockline AI Marketing · Lockport, IL · All Rights Reserved</div>
+</footer>
+
+<script>
+  function initSeamlessTicker(el) {
+    if (!el) return;
+    Array.from(el.children).forEach(i => el.appendChild(i.cloneNode(true)));
+  }
+  initSeamlessTicker(document.getElementById('desktopTicker'));
+  initSeamlessTicker(document.getElementById('mobileTicker'));
+
+  const navItems = document.querySelectorAll('#sticky-nav-zone .nav-item');
+  const timers = new Map();
+  navItems.forEach(item => {
+    if (!item.querySelector('.dropdown')) return;
+    item.addEventListener('mouseenter', () => {
+      clearTimeout(timers.get(item));
+      navItems.forEach(o => { if (o !== item) { clearTimeout(timers.get(o)); o.classList.remove('is-open'); }});
+      item.classList.add('is-open');
+    });
+    item.addEventListener('mouseleave', () => {
+      timers.set(item, setTimeout(() => item.classList.remove('is-open'), 200));
+    });
+  });
+  document.addEventListener('click', e => {
+    if (!e.target.closest('#sticky-nav-zone .nav-item')) navItems.forEach(i => i.classList.remove('is-open'));
+  });
+
+  const hbtn = document.getElementById('hamburgerTrigger');
+  const panel = document.getElementById('mobilePanel');
+  const overlay = document.getElementById('mobileOverlay');
+  const openPanel = () => { panel.classList.add('open'); overlay.classList.add('visible'); hbtn.classList.add('open'); hbtn.setAttribute('aria-label','Close navigation'); document.body.style.overflow='hidden'; };
+  const closePanel = () => { panel.classList.remove('open'); overlay.classList.remove('visible'); hbtn.classList.remove('open'); hbtn.setAttribute('aria-label','Open navigation'); document.body.style.overflow=''; };
+  hbtn.addEventListener('click', () => panel.classList.contains('open') ? closePanel() : openPanel());
+  overlay.addEventListener('click', closePanel);
+  function toggleSub(el) {
+    const sub = el.nextElementSibling, isOpen = sub.classList.contains('open');
+    document.querySelectorAll('.mobile-sub.open').forEach(s => s.classList.remove('open'));
+    document.querySelectorAll('.m-parent.sub-open').forEach(p => p.classList.remove('sub-open'));
+    if (!isOpen) { sub.classList.add('open'); el.classList.add('sub-open'); }
+  }
+</script>
+</body>
+</html>
