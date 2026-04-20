@@ -1,4 +1,5 @@
 # rockline-ai-marketing
+************The Play: Use Schema Markup (specifically Organization or RelatedTo properties) to explicitly define these relationships for AI crawlers. This turns a simple link into a structured data point.***********
 header foot v2
 <!DOCTYPE html>
 <html lang="en">
