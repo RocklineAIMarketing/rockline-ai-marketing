@@ -99,12 +99,188 @@ a {
 }
 
 /* ==========================================================================
-   Header / Footer — placeholders, built last
+   Header
    ========================================================================== */
 
-.site-header,
-.site-footer {
-  /* intentionally minimal until header/footer pass */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  width: 100%;
+  background: rgba(23, 27, 34, 0.7);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(232, 228, 219, 0.1);
+}
+
+.site-header__inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 1rem var(--gutter);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.site-header__logo {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.site-header__logo img {
+  height: clamp(2rem, 3vw, 2.5rem);
+  width: auto;
+}
+
+.site-header__logo-text {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: var(--pure-white);
+  line-height: 1.1;
+}
+
+.site-header__nav {
+  display: none;
+  align-items: center;
+  gap: clamp(1.25rem, 2.5vw, 2.25rem);
+}
+
+.site-header__nav a {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 0.92rem;
+  color: var(--stone-fog);
+  text-decoration: none;
+  position: relative;
+  padding: 0.25rem 0;
+  transition: color 0.25s ease;
+}
+
+.site-header__nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0;
+  height: 2px;
+  background: var(--rockline-blue);
+  transition: width 0.25s ease;
+}
+
+.site-header__nav a:hover,
+.site-header__nav a:focus-visible {
+  color: var(--pure-white);
+}
+
+.site-header__nav a:hover::after,
+.site-header__nav a:focus-visible::after {
+  width: 100%;
+}
+
+.site-header__actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
+
+.site-header__call {
+  display: none;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.88rem;
+  color: var(--pure-white);
+  text-decoration: none;
+}
+
+.site-header__call svg {
+  color: var(--rockline-blue);
+}
+
+.site-header__cta {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.88rem;
+  color: var(--pure-white);
+  background: var(--rockline-blue);
+  border-radius: 999px;
+  padding: 0.6rem 1.35rem;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease;
+}
+
+.site-header__cta:hover,
+.site-header__cta:focus-visible {
+  background: var(--pure-white);
+  color: var(--ink-slate);
+  transform: translateY(-2px);
+}
+
+.site-header__toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  background: transparent;
+  border: 1px solid rgba(232, 228, 219, 0.25);
+  border-radius: 8px;
+  color: var(--pure-white);
+  cursor: pointer;
+}
+
+@media (min-width: 900px) {
+  .site-header__nav {
+    display: flex;
+  }
+  .site-header__call {
+    display: inline-flex;
+  }
+  .site-header__toggle {
+    display: none;
+  }
+}
+
+/* Mobile menu panel */
+.site-header__mobile {
+  display: none;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 0.5rem var(--gutter) 1.5rem;
+  border-top: 1px solid rgba(232, 228, 219, 0.1);
+}
+
+.site-header__mobile.is-open {
+  display: flex;
+}
+
+.site-header__mobile a {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 1rem;
+  color: var(--stone-fog);
+  text-decoration: none;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid rgba(232, 228, 219, 0.08);
+}
+
+.site-header__mobile a:hover,
+.site-header__mobile a:focus-visible {
+  color: var(--pure-white);
+}
+
+@media (min-width: 900px) {
+  .site-header__mobile {
+    display: none !important;
+  }
 }
 
 /* ==========================================================================
@@ -838,14 +1014,398 @@ a {
   }
 }
 
+/* ==========================================================================
+   Blog Preview — "From the Blog"
+   Light again, alternating rhythm: Hero (dark) → Services (light) →
+   Reviews (dark) → Blog (light). Same 3-card pattern as the two sections
+   above it, so the page keeps a consistent grammar.
+   ========================================================================== */
+
+.blog {
+  background:
+    radial-gradient(ellipse 55% 50% at 0% 0%, rgba(76, 134, 176, 0.1), transparent 70%),
+    var(--pure-white);
+  color: var(--ink-slate);
+  padding: clamp(5rem, 11vw, 8.5rem) var(--gutter);
+}
+
+.blog__inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.blog__eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--rockline-blue);
+  margin-bottom: 1.25rem;
+}
+
+.blog__eyebrow::before {
+  content: "";
+  width: 2rem;
+  height: 1px;
+  background: var(--rockline-blue);
+}
+
+.blog__headline {
+  font-family: var(--font-display);
+  font-weight: 600;
+  line-height: 1.08;
+  letter-spacing: -0.01em;
+  font-size: clamp(2.1rem, 4.4vw, 3.6rem);
+  max-width: 21ch;
+  color: var(--ink-slate);
+  margin-bottom: clamp(3rem, 7vw, 4.5rem);
+}
+
+.blog__headline em {
+  font-style: italic;
+  font-weight: 500;
+  color: var(--rockline-blue);
+}
+
+.blog__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(1.25rem, 2.5vw, 1.75rem);
+}
+
+.blog-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  background: linear-gradient(165deg, var(--pure-white) 55%, #f2f7fa 100%);
+  border: 1px solid rgba(28, 35, 44, 0.09);
+  border-radius: 18px;
+  padding: clamp(2rem, 3vw, 2.5rem) clamp(1.75rem, 2.5vw, 2.25rem);
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blog-card:hover,
+.blog-card:focus-visible {
+  border-color: var(--rockline-blue);
+  transform: translateY(-5px);
+  box-shadow: 0 24px 48px -28px rgba(28, 35, 44, 0.3);
+}
+
+.blog-card__tag {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--rock-gray);
+}
+
+.blog-card__title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(1.25rem, 1.8vw, 1.45rem);
+  line-height: 1.25;
+  color: var(--ink-slate);
+}
+
+.blog-card__desc {
+  font-size: 0.93rem;
+  line-height: 1.65;
+  color: rgba(28, 35, 44, 0.72);
+}
+
+.blog-card__link {
+  margin-top: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: var(--ink-slate);
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(28, 35, 44, 0.1);
+  transition: color 0.25s ease;
+}
+
+.blog-card:hover .blog-card__link {
+  color: var(--rockline-blue);
+}
+
+.blog-card__link svg {
+  color: var(--rockline-blue);
+  transition: transform 0.25s ease;
+}
+
+.blog-card:hover .blog-card__link svg {
+  transform: translateX(4px);
+}
+
+@media (max-width: 900px) {
+  .blog__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ==========================================================================
+   Call CTA — "Call or Text Now"
+   Dark again (Hero → Services → Reviews → Blog → CTA), phone-first close.
+   Kept deliberately minimal: one number, one action, nothing competing
+   with it — the /contact/office CTA already lives in the hero.
+   ========================================================================== */
+
+.call-cta {
+  background: var(--ink-slate);
+  color: var(--stone-fog);
+  padding: clamp(5rem, 11vw, 8rem) var(--gutter);
+  text-align: center;
+}
+
+.call-cta__inner {
+  max-width: 40rem;
+  margin: 0 auto;
+}
+
+.call-cta__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--rockline-blue);
+  margin-bottom: 1.25rem;
+}
+
+.call-cta__headline {
+  font-family: var(--font-display);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  font-size: clamp(2rem, 4.2vw, 3.25rem);
+  color: var(--pure-white);
+  margin-bottom: 0.75rem;
+}
+
+.call-cta__headline em {
+  font-style: italic;
+  font-weight: 500;
+  color: var(--rockline-blue);
+}
+
+.call-cta__subhead {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: rgba(232, 228, 219, 0.75);
+  margin-bottom: 2.5rem;
+}
+
+.call-cta__button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  color: var(--pure-white);
+  background: var(--rockline-blue);
+  border-radius: 999px;
+  padding: 1.25rem 2.5rem;
+  text-decoration: none;
+  transition: transform 0.25s ease, background 0.25s ease;
+}
+
+.call-cta__button svg {
+  flex-shrink: 0;
+}
+
+.call-cta__button:hover,
+.call-cta__button:focus-visible {
+  background: var(--pure-white);
+  color: var(--ink-slate);
+  transform: translateY(-2px);
+}
+
+.call-cta__note {
+  margin-top: 1.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  color: rgba(232, 228, 219, 0.55);
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+
+.site-footer {
+  background: var(--pure-white);
+  color: var(--ink-slate);
+  border-top: 1px solid rgba(28, 35, 44, 0.1);
+}
+
+.site-footer__inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: clamp(3rem, 6vw, 4.5rem) var(--gutter) clamp(2rem, 4vw, 2.5rem);
+  display: grid;
+  grid-template-columns: 1.3fr 1fr 1.3fr;
+  gap: clamp(2rem, 5vw, 3rem);
+}
+
+.site-footer__brand {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.site-footer__logo {
+  height: clamp(2.5rem, 4vw, 3.25rem);
+  width: auto;
+}
+
+.site-footer__tagline {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1rem;
+  color: rgba(28, 35, 44, 0.65);
+  max-width: 22ch;
+}
+
+.site-footer__heading {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--rockline-blue);
+  margin-bottom: 0.85rem;
+}
+
+.site-footer__hours-value {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--ink-slate);
+  margin-bottom: 0.25rem;
+}
+
+.site-footer__hours-sub {
+  font-size: 0.85rem;
+  color: rgba(28, 35, 44, 0.6);
+}
+
+.site-footer__social {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.site-footer__social-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+}
+
+.site-footer__social-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--pure-white);
+  text-decoration: none;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.78rem;
+  flex-shrink: 0;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.site-footer__social-icon:hover,
+.site-footer__social-icon:focus-visible {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px -6px rgba(0, 0, 0, 0.5);
+}
+
+.site-footer__social-icon--facebook { background: #1877f2; }
+.site-footer__social-icon--instagram { background: linear-gradient(135deg, #f9ce34, #ee2a7b, #6228d7); }
+.site-footer__social-icon--x { background: #000000; border: 1px solid rgba(255,255,255,0.15); }
+.site-footer__social-icon--substack { background: #ff6719; }
+.site-footer__social-icon--threads { background: #000000; border: 1px solid rgba(255,255,255,0.15); }
+.site-footer__social-icon--tiktok { background: #010101; border: 1px solid rgba(255,255,255,0.15); }
+.site-footer__social-icon--pinterest { background: #e60023; }
+
+.site-footer__bottom {
+  border-top: 1px solid rgba(28, 35, 44, 0.08);
+  padding: 1.5rem var(--gutter);
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  color: rgba(28, 35, 44, 0.4);
+}
+
+@media (max-width: 900px) {
+  .site-footer__inner {
+    grid-template-columns: 1fr;
+  }
+}
+
   </style>
 </head>
 <body>
 
   <!-- ==========================================================================
-       HEADER — build last
+       HEADER
        ========================================================================== -->
-  <!-- <header class="site-header"></header> -->
+  <header class="site-header">
+    <div class="site-header__inner">
+
+      <a class="site-header__logo" href="https://rocklineaimarketing.com/">
+        <img src="images/logos/rockline-ai-marketing-logo.png" alt="Rockline AI Marketing" />
+        <span class="site-header__logo-text">Rockline</span>
+      </a>
+
+      <nav class="site-header__nav" aria-label="Primary">
+        <a href="#services">Services</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#blog">Blog</a>
+        <a href="https://rocklineaimarketing.com/about/customer-success-stories">Our Work</a>
+      </nav>
+
+      <div class="site-header__actions">
+        <a class="site-header__call" href="tel:+18152747425">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          (815) 274-7425
+        </a>
+        <a class="site-header__cta" href="https://rocklineaimarketing.com/contact/office">Start a project</a>
+        <button class="site-header__toggle" id="site-header-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="site-header-mobile">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+
+    </div>
+
+    <nav class="site-header__mobile" id="site-header-mobile" aria-label="Mobile">
+      <a href="#services">Services</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#blog">Blog</a>
+      <a href="https://rocklineaimarketing.com/about/customer-success-stories">Our Work</a>
+      <a href="tel:+18152747425">(815) 274-7425</a>
+    </nav>
+  </header>
 
   <main>
 
@@ -1128,12 +1688,147 @@ a {
       </div>
     </section>
 
+    <!-- ==========================================================================
+         BLOG PREVIEW — "From the Blog"
+         Titles/teasers are my best guess based on the slug + what we've
+         discussed about each post's topic — double-check these match the
+         actual published content and adjust wording as needed.
+         ========================================================================== -->
+    <section class="blog" id="blog" aria-label="Latest blog posts">
+      <div class="blog__inner">
+
+        <p class="blog__eyebrow">From the blog</p>
+        <h2 class="blog__headline">Fresh thinking, <em>every week.</em></h2>
+
+        <div class="blog__grid">
+
+          <a class="blog-card" href="https://rocklineaimarketing.com/contact/faq/from-google-to-ai">
+            <p class="blog-card__tag">Search &amp; AI</p>
+            <h3 class="blog-card__title">From Google to AI: How Search Is Changing</h3>
+            <p class="blog-card__desc">
+              Search isn't just Google anymore. Here's what the rise of
+              ChatGPT and AI answers means for how customers actually find
+              local businesses today.
+            </p>
+            <span class="blog-card__link">
+              Read the post
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+          </a>
+
+          <a class="blog-card" href="https://rocklineaimarketing.com/contact/faq/ai-search-operation">
+            <p class="blog-card__tag">Search &amp; AI</p>
+            <h3 class="blog-card__title">How AI Search Actually Works</h3>
+            <p class="blog-card__desc">
+              A look under the hood at how AI engines pull their answers
+              &mdash; and what that means for whether your business gets
+              mentioned or gets skipped.
+            </p>
+            <span class="blog-card__link">
+              Read the post
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+          </a>
+
+          <a class="blog-card" href="https://rocklineaimarketing.com/contact/faq/building-ai-authority">
+            <p class="blog-card__tag">Strategy</p>
+            <h3 class="blog-card__title">Building AI Authority for Your Business</h3>
+            <p class="blog-card__desc">
+              Rankings used to be the whole game. Now it's about being
+              trusted enough that AI cites you directly. Here's how to build
+              that kind of authority.
+            </p>
+            <span class="blog-card__link">
+              Read the post
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         CALL CTA — "Call or Text Now"
+         ========================================================================== -->
+    <section class="call-cta" id="call" aria-label="Call or text us">
+      <div class="call-cta__inner">
+
+        <p class="call-cta__eyebrow">Skip the form</p>
+        <h2 class="call-cta__headline">Call or text <em>anytime.</em></h2>
+        <p class="call-cta__subhead">
+          Have a question or ready to get started? Reach out directly
+          &mdash; no form required.
+        </p>
+
+        <a class="call-cta__button" href="tel:+18152747425">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          (815) 274-7425
+        </a>
+
+        <p class="call-cta__note">Call or text &middot; Rockline AI Marketing</p>
+
+      </div>
+    </section>
+
   </main>
 
   <!-- ==========================================================================
-       FOOTER — build last
+       FOOTER
        ========================================================================== -->
-  <!-- <footer class="site-footer"></footer> -->
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+
+      <div class="site-footer__brand">
+        <img
+          class="site-footer__logo"
+          src="images/logos/rockline-ai-marketing-logo.png"
+          alt="Rockline AI Marketing logo"
+        />
+        <p class="site-footer__tagline">Marketing built on higher ground.</p>
+      </div>
+
+      <div>
+        <p class="site-footer__heading">Hours</p>
+        <p class="site-footer__hours-value">Mon&ndash;Fri, 9am&ndash;5pm</p>
+        <p class="site-footer__hours-sub">Call or text anytime &mdash; (815) 274-7425</p>
+      </div>
+
+      <div class="site-footer__social">
+        <p class="site-footer__heading">Follow along</p>
+        <div class="site-footer__social-row">
+          <a class="site-footer__social-icon site-footer__social-icon--facebook" href="https://facebook.com/rocklineaimarketing" target="_blank" rel="noopener" aria-label="Facebook">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 12.06C22 6.51 17.52 2 12 2S2 6.51 2 12.06c0 5.02 3.66 9.18 8.44 9.94v-7.03H7.9v-2.91h2.54V9.85c0-2.51 1.49-3.9 3.77-3.9 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.89h2.78l-.44 2.91h-2.34V22c4.78-.76 8.44-4.92 8.44-9.94Z"/></svg>
+          </a>
+          <a class="site-footer__social-icon site-footer__social-icon--instagram" href="#" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a class="site-footer__social-icon site-footer__social-icon--x" href="#" target="_blank" rel="noopener" aria-label="X">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.9 2H22l-7.6 8.67L23.3 22h-6.9l-5.4-7.06L4.7 22H1.6l8.13-9.28L1 2h7.1l4.88 6.46L18.9 2Zm-1.2 18.2h1.72L7.4 3.7H5.56L17.7 20.2Z"/></svg>
+          </a>
+          <a class="site-footer__social-icon site-footer__social-icon--tiktok" href="#" target="_blank" rel="noopener" aria-label="TikTok">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.6 2h-3.3v13.9c0 1.6-1.3 2.9-2.9 2.9a2.9 2.9 0 0 1-2.9-2.9 2.9 2.9 0 0 1 2.9-2.9c.3 0 .6 0 .9.1v-3.4a6.3 6.3 0 0 0-.9-.1A6.3 6.3 0 0 0 4.2 15.9a6.3 6.3 0 0 0 6.2 6.3 6.3 6.3 0 0 0 6.2-6.3V8.4a8.2 8.2 0 0 0 4.8 1.5V6.6a4.9 4.9 0 0 1-4.8-4.6Z"/></svg>
+          </a>
+          <a class="site-footer__social-icon site-footer__social-icon--pinterest" href="#" target="_blank" rel="noopener" aria-label="Pinterest">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.24 2.63 7.86 6.35 9.32-.09-.79-.17-2.01.04-2.88.19-.79 1.22-5.02 1.22-5.02s-.31-.62-.31-1.54c0-1.44.84-2.52 1.87-2.52.88 0 1.31.66 1.31 1.45 0 .88-.56 2.2-.85 3.42-.24 1.02.51 1.86 1.52 1.86 1.82 0 3.22-1.92 3.22-4.69 0-2.45-1.76-4.17-4.28-4.17-2.91 0-4.62 2.19-4.62 4.45 0 .88.34 1.83.76 2.34.08.1.1.19.07.29-.08.32-.25 1-.29 1.14-.04.19-.15.23-.35.14-1.3-.6-2.11-2.5-2.11-4.02 0-3.28 2.38-6.29 6.87-6.29 3.61 0 6.41 2.57 6.41 6 0 3.58-2.26 6.47-5.39 6.47-1.05 0-2.04-.55-2.38-1.2l-.65 2.47c-.23.9-.87 2.02-1.29 2.71.98.3 2 .46 3.07.46 5.52 0 10-4.48 10-10S17.52 2 12 2Z"/></svg>
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="site-footer__bottom">
+      &copy; 2026 Rockline AI Marketing. All rights reserved.
+    </div>
+  </footer>
 
   <!-- ==========================================================================
        Live Google rating
@@ -1191,6 +1886,18 @@ a {
         "https://maps.googleapis.com/maps/api/js?key=PASTE_YOUR_API_KEY_HERE&libraries=places&callback=initRocklineGoogleRating";
       script.async = true;
       document.head.appendChild(script);
+    }
+  </script>
+
+  <!-- Mobile menu toggle -->
+  <script>
+    const rocklineHeaderToggle = document.getElementById("site-header-toggle");
+    const rocklineMobileNav = document.getElementById("site-header-mobile");
+    if (rocklineHeaderToggle && rocklineMobileNav) {
+      rocklineHeaderToggle.addEventListener("click", () => {
+        const isOpen = rocklineMobileNav.classList.toggle("is-open");
+        rocklineHeaderToggle.setAttribute("aria-expanded", String(isOpen));
+      });
     }
   </script>
 
