@@ -680,6 +680,164 @@ a {
   }
 }
 
+/* ==========================================================================
+   Reviews — "Social Proof"
+   Dark section again, alternating rhythm with the light Services block.
+   Each card is a real review from one platform and links straight out to
+   it — the card itself is the citation, so no need to over-explain it.
+   ========================================================================== */
+
+.reviews {
+  background: var(--ink-slate);
+  color: var(--stone-fog);
+  padding: clamp(5rem, 11vw, 8.5rem) var(--gutter);
+}
+
+.reviews__inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.reviews__eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--rockline-blue);
+  margin-bottom: 1.25rem;
+}
+
+.reviews__eyebrow::before {
+  content: "";
+  width: 2rem;
+  height: 1px;
+  background: var(--rockline-blue);
+}
+
+.reviews__headline {
+  font-family: var(--font-display);
+  font-weight: 600;
+  line-height: 1.08;
+  letter-spacing: -0.01em;
+  font-size: clamp(2.1rem, 4.4vw, 3.6rem);
+  max-width: 21ch;
+  color: var(--pure-white);
+  margin-bottom: clamp(3rem, 7vw, 4.5rem);
+}
+
+.reviews__headline em {
+  font-style: italic;
+  font-weight: 500;
+  color: var(--rockline-blue);
+}
+
+.reviews__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(1.25rem, 2.5vw, 1.75rem);
+}
+
+.review-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  background: var(--pure-white);
+  color: var(--ink-slate);
+  border-radius: 18px;
+  padding: clamp(2rem, 3vw, 2.5rem) clamp(1.75rem, 2.5vw, 2.25rem);
+  text-decoration: none;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.review-card:hover,
+.review-card:focus-visible {
+  transform: translateY(-5px);
+  box-shadow: 0 24px 48px -28px rgba(0, 0, 0, 0.45);
+}
+
+.review-card__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.review-card__platform {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--ink-slate);
+}
+
+.review-card__badge {
+  width: 1.9rem;
+  height: 1.9rem;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--pure-white);
+  flex-shrink: 0;
+}
+
+.review-card__badge--google { background: #4285f4; }
+.review-card__badge--facebook { background: #1877f2; }
+.review-card__badge--yelp { background: #d32323; }
+
+.review-card__stars {
+  display: flex;
+  gap: 0.15rem;
+  color: var(--sunrise-gold);
+}
+
+.review-card__quote {
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: rgba(28, 35, 44, 0.78);
+}
+
+.review-card__author {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(28, 35, 44, 0.1);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: var(--ink-slate);
+}
+
+.review-card__author span:last-child {
+  color: var(--rockline-blue);
+  transition: transform 0.25s ease;
+}
+
+.review-card:hover .review-card__author span:last-child {
+  transform: translateX(4px);
+}
+
+.review-card--pending {
+  opacity: 0.7;
+}
+
+@media (max-width: 900px) {
+  .reviews__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
   </style>
 </head>
 <body>
@@ -888,6 +1046,83 @@ a {
               </svg>
             </span>
           </a>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         REVIEWS — "Social Proof"
+         PLACEHOLDER CONTENT: swap in the actual reviewer name, rating, and
+         verbatim quote for Google + Facebook. Yelp card is disabled/pending
+         until the listing clears review — flip review-card--pending off and
+         add the real href once it's live.
+         ========================================================================== -->
+    <section class="reviews" id="reviews" aria-label="Customer reviews">
+      <div class="reviews__inner">
+
+        <p class="reviews__eyebrow">What clients say</p>
+        <h2 class="reviews__headline">Don't take our word for it &mdash; <em>take theirs.</em></h2>
+
+        <div class="reviews__grid">
+
+          <!-- Google review -->
+          <a class="review-card" href="https://maps.app.goo.gl/DLH9tbk5KfZxzdb36" target="_blank" rel="noopener">
+            <div class="review-card__top">
+              <span class="review-card__platform">
+                <span class="review-card__badge review-card__badge--google">G</span>
+                Google
+              </span>
+              <span class="review-card__stars" aria-label="5 out of 5 stars">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3l2.6 5.4 5.9.9-4.3 4.1 1 5.9-5.2-2.7-5.2 2.7 1-5.9-4.3-4.1 5.9-.9L12 3Z"/></svg>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3l2.6 5.4 5.9.9-4.3 4.1 1 5.9-5.2-2.7-5.2 2.7 1-5.9-4.3-4.1 5.9-.9L12 3Z"/></svg>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3l2.6 5.4 5.9.9-4.3 4.1 1 5.9-5.2-2.7-5.2 2.7 1-5.9-4.3-4.1 5.9-.9L12 3Z"/></svg>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3l2.6 5.4 5.9.9-4.3 4.1 1 5.9-5.2-2.7-5.2 2.7 1-5.9-4.3-4.1 5.9-.9L12 3Z"/></svg>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3l2.6 5.4 5.9.9-4.3 4.1 1 5.9-5.2-2.7-5.2 2.7 1-5.9-4.3-4.1 5.9-.9L12 3Z"/></svg>
+              </span>
+            </div>
+            <p class="review-card__quote">[Paste the actual Google review text here, verbatim.]</p>
+            <div class="review-card__author">
+              <span>&mdash; [Reviewer name]</span>
+              <span>Read on Google &rarr;</span>
+            </div>
+          </a>
+
+          <!-- Facebook review -->
+          <a class="review-card" href="https://facebook.com/rocklineaimarketing" target="_blank" rel="noopener">
+            <div class="review-card__top">
+              <span class="review-card__platform">
+                <span class="review-card__badge review-card__badge--facebook">f</span>
+                Facebook
+              </span>
+              <span class="review-card__stars" aria-label="5 out of 5 stars">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3l2.6 5.4 5.9.9-4.3 4.1 1 5.9-5.2-2.7-5.2 2.7 1-5.9-4.3-4.1 5.9-.9L12 3Z"/></svg>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3l2.6 5.4 5.9.9-4.3 4.1 1 5.9-5.2-2.7-5.2 2.7 1-5.9-4.3-4.1 5.9-.9L12 3Z"/></svg>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3l2.6 5.4 5.9.9-4.3 4.1 1 5.9-5.2-2.7-5.2 2.7 1-5.9-4.3-4.1 5.9-.9L12 3Z"/></svg>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3l2.6 5.4 5.9.9-4.3 4.1 1 5.9-5.2-2.7-5.2 2.7 1-5.9-4.3-4.1 5.9-.9L12 3Z"/></svg>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3l2.6 5.4 5.9.9-4.3 4.1 1 5.9-5.2-2.7-5.2 2.7 1-5.9-4.3-4.1 5.9-.9L12 3Z"/></svg>
+              </span>
+            </div>
+            <p class="review-card__quote">[Paste the actual Facebook review text here, verbatim.]</p>
+            <div class="review-card__author">
+              <span>&mdash; [Reviewer name]</span>
+              <span>Read on Facebook &rarr;</span>
+            </div>
+          </a>
+
+          <!-- Yelp review — pending, listing still in review -->
+          <div class="review-card review-card--pending" aria-label="Yelp listing pending review">
+            <div class="review-card__top">
+              <span class="review-card__platform">
+                <span class="review-card__badge review-card__badge--yelp">y</span>
+                Yelp
+              </span>
+            </div>
+            <p class="review-card__quote">Our Yelp listing is currently under review. Check back soon &mdash; or find us on Google and Facebook above in the meantime.</p>
+            <div class="review-card__author">
+              <span>&mdash; Coming soon</span>
+            </div>
+          </div>
 
         </div>
       </div>
