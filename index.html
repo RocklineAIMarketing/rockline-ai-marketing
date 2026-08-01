@@ -1,715 +1,677 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Rockline AI Marketing</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Exo+2:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-<style>
-  :root {
-    --blue-bright: #279cf5;
-    --blue-light:  #bbe0fc;
-    --blue-mid:    #8fcbfa;
-    --blue-dark:   #032844;
-    --white:       #ffffff;
-    --glass:       rgba(3,40,68,0.82);
-    --ticker-bg:   #021d32;
-  }
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; }
-  body { font-family: 'Exo 2', sans-serif; background: var(--blue-dark); color: var(--white); overflow-x: hidden; }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rockline AI Marketing | Marketing for Small Business</title>
+  <meta name="description" content="Rockline AI Marketing — website design, social media marketing, generative engine optimization, and aerial photography for small businesses." />
+  <link rel="canonical" href="https://rocklineaimarketing.com/" />
 
-  /* ===== DESKTOP HEADER ===== */
-  #site-header {
-    background: linear-gradient(180deg, #075C9D 0%, var(--blue-dark) 100%);
-    border-bottom: 1px solid rgba(39,156,245,0.18);
-  }
-  .header-brand {
-    display: flex; align-items: center; justify-content: center;
-    position: relative; padding: 18px 24px 12px;
-  }
-  .cta-sms {
-    position: absolute; left: 32px; top: 50%; transform: translateY(-50%);
-    display: flex; align-items: center; gap: 8px;
-    background: linear-gradient(135deg, var(--blue-bright), #1479c4);
-    color: var(--white); text-decoration: none;
-    font-family: 'Rajdhani', sans-serif; font-weight: 700;
-    font-size: 13px; letter-spacing: 1.6px; text-transform: uppercase;
-    padding: 10px 20px; border-radius: 4px;
-    border: 1px solid rgba(255,255,255,0.12);
-    box-shadow: 0 4px 20px rgba(39,156,245,0.3);
-    transition: transform .2s, box-shadow .2s; white-space: nowrap;
-  }
-  .cta-sms:hover { transform: translateY(calc(-50% - 2px)); box-shadow: 0 10px 32px rgba(39,156,245,0.5); }
-  .logo-placeholder {
-    width: 150px; height: 72px;
-    border: 2px dashed var(--blue-mid); border-radius: 8px;
-    display: flex; align-items: center; justify-content: center;
-    background: rgba(143,203,250,0.05); cursor: pointer;
-    transition: border-color .3s, background .3s;
-  }
-  .logo-placeholder:hover { border-color: var(--blue-bright); background: rgba(39,156,245,0.1); }
-  .logo-placeholder span {
-    font-family: 'Rajdhani', sans-serif; font-size: 10px;
-    letter-spacing: 1.5px; color: var(--blue-mid);
-    text-transform: uppercase; text-align: center; line-height: 1.5;
-  }
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Rockline AI Marketing" />
+  <meta property="og:title" content="Rockline AI Marketing | Marketing for Small Business" />
+  <meta property="og:description" content="Rockline AI Marketing — website design, social media marketing, generative engine optimization, and aerial photography for small businesses." />
+  <meta property="og:url" content="https://rocklineaimarketing.com/" />
+  <meta property="og:image" content="https://rocklineaimarketing.com/images/logos/rockline-ai-marketing-cover.JPG" />
 
-  /* ===== DESKTOP STICKY NAV + TICKER ===== */
-  #sticky-nav-zone {
-    position: sticky; top: 0; z-index: 500;
-    background: var(--glass);
-    backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);
-    border-bottom: 1px solid rgba(39,156,245,0.18);
-    box-shadow: 0 4px 30px rgba(2,10,20,0.6);
-  }
-  nav.main-nav { display: flex; align-items: center; justify-content: center; gap: 2px; padding: 0 16px; }
-  .nav-item { position: relative; }
-  .nav-btn {
-    display: flex; align-items: center; gap: 5px;
-    padding: 14px 20px;
-    font-family: 'Rajdhani', sans-serif; font-weight: 600;
-    font-size: 13px; letter-spacing: 2px; text-transform: uppercase;
-    color: var(--blue-light); background: none; border: none;
-    cursor: pointer; text-decoration: none;
-    transition: color .2s; white-space: nowrap; position: relative;
-  }
-  .nav-btn:hover, .nav-item.is-open > .nav-btn { color: var(--white); }
-  a.nav-btn.active { color: var(--white); }
-  a.nav-btn::after {
-    content: ''; position: absolute;
-    bottom: 8px; left: 20px; right: 20px;
-    height: 2px; background: var(--blue-bright);
-    border-radius: 2px; transform: scaleX(0); transition: transform .25s;
-  }
-  a.nav-btn:hover::after, a.nav-btn.active::after { transform: scaleX(1); }
-  span.nav-btn { cursor: default; }
-  .chevron { width: 10px; height: 10px; transition: transform .25s; flex-shrink: 0; }
-  .nav-item.is-open .chevron { transform: rotate(180deg); }
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Rockline AI Marketing | Marketing for Small Business" />
+  <meta name="twitter:description" content="Rockline AI Marketing — website design, social media marketing, generative engine optimization, and aerial photography for small businesses." />
+  <meta name="twitter:image" content="https://rocklineaimarketing.com/images/logos/rockline-ai-marketing-cover.JPG" />
 
-  /* ── Dropdown ─────────────────────────────────────────────────
-     Key UX fixes:
-     • top: 100% closes the gap that let the mouse escape between
-       the button and the menu
-     • ::before pseudo creates an invisible 8px hover bridge over
-       the top so diagonal mouse movement doesn't close the menu
-     • Open state driven by .is-open class set by JS with a close
-       delay, not CSS :hover (which the ticker below could disrupt)
-  ──────────────────────────────────────────────────────────────── */
-  .dropdown {
-    position: absolute; top: 100%; left: 50%;
-    transform: translateX(-50%) translateY(6px);
-    min-width: 220px;
-    background: rgba(2,12,24,0.97);
-    border: 1px solid rgba(39,156,245,0.2); border-radius: 6px;
-    box-shadow: 0 16px 48px rgba(0,0,0,0.55);
-    opacity: 0; pointer-events: none;
-    transition: opacity .22s, transform .22s; z-index: 600; overflow: hidden;
-  }
-  /* Invisible bridge: extends the hitbox upward by 8px so the
-     mouse doesn't fall through the gap between button and menu */
-  .dropdown::before {
-    content: ''; position: absolute;
-    top: -8px; left: 0; right: 0; height: 8px;
-  }
-  .nav-item.is-open .dropdown {
-    opacity: 1; pointer-events: auto;
-    transform: translateX(-50%) translateY(0);
-  }
-  .dropdown a {
-    display: block; padding: 12px 22px;
-    font-family: 'Exo 2', sans-serif; font-size: 13px;
-    color: var(--blue-light); text-decoration: none; letter-spacing: .5px;
-    border-bottom: 1px solid rgba(39,156,245,0.07);
-    transition: background .18s, color .18s, padding-left .18s;
-  }
-  .dropdown a:last-child { border-bottom: none; }
-  .dropdown a:hover { background: rgba(39,156,245,0.1); color: var(--white); padding-left: 28px; }
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+  <style>
+/* ==========================================================================
+   Rockline AI Marketing — Design Tokens
+   ========================================================================== */
 
-  /* ===== TICKER =====
-     pointer-events: none ensures the ticker never steals hover
-     state away from the nav dropdowns positioned above it.      */
-  .ticker-wrap {
-    background: var(--ticker-bg);
-    border-top: 1px solid rgba(39,156,245,0.1);
-    padding: 7px 0; overflow: hidden; position: relative;
-    pointer-events: none;
-  }
-  .ticker-label {
-    position: absolute; left: 0; top: 0; bottom: 0; z-index: 2;
-    display: flex; align-items: center;
-    padding: 0 18px 0 14px;
-    background: var(--blue-bright);
-    font-family: 'Rajdhani', sans-serif; font-weight: 700;
-    font-size: 10px; letter-spacing: 2px; text-transform: uppercase;
-    color: var(--blue-dark); white-space: nowrap;
-    clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 50%, calc(100% - 8px) 100%, 0 100%);
-  }
-  .ticker-wrap::after {
-    content: ''; position: absolute; right: 0; top: 0; bottom: 0; width: 60px;
-    background: linear-gradient(to right, transparent, var(--ticker-bg));
-    z-index: 3; pointer-events: none;
-  }
-  .ticker-inner { overflow: hidden; padding-left: 112px; }
-  .ticker-track {
-    display: flex; width: max-content;
-    animation: tickerScroll 60s linear infinite;
-  }
-  .ticker-item {
-    font-family: 'Space Mono', monospace; font-size: 10.5px;
-    color: var(--blue-mid); white-space: nowrap;
-    padding: 0 44px; display: flex; align-items: center; gap: 10px;
-  }
-  .ticker-item::after { content: '◆'; color: var(--blue-bright); font-size: 7px; }
-  @keyframes tickerScroll {
-    0%   { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
-  }
+:root {
+  /* Color — matched to the Rockline logo (slate rock stack, steel-blue
+     arrow, small gold atom accent) and the coastal photography */
+  --ink-slate: #1c232c;      /* dark overlay base / foreground */
+  --stone-fog: #e7e4dc;      /* light neutral, body text on dark */
+  --rockline-blue: #4c86b0;  /* primary accent — logo arrow/wordmark, sky & ocean */
+  --rock-gray: #8993a0;      /* secondary — stacked-stone gray from the logo */
+  --sunrise-gold: #e4b94b;   /* minor accent — the logo's small atom badge */
+  --pure-white: #ffffff;
 
-  /* ===== MOBILE STICKY HEADER ===== */
-  #mobile-sticky {
+  /* Type */
+  --font-display: "Fraunces", Georgia, serif;
+  --font-body: "Inter", -apple-system, sans-serif;
+  --font-mono: "IBM Plex Mono", monospace;
+
+  /* Layout */
+  --gutter: clamp(1.5rem, 5vw, 5rem);
+  --max-width: 1400px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--ink-slate);
+  color: var(--stone-fog);
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid var(--rockline-blue);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ==========================================================================
+   Header / Footer — placeholders, built last
+   ========================================================================== */
+
+.site-header,
+.site-footer {
+  /* intentionally minimal until header/footer pass */
+}
+
+/* ==========================================================================
+   Hero
+   ========================================================================== */
+
+.hero {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.hero__media {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+}
+
+.hero__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 40%;
+}
+
+/* Directional scrim: clear at top for a navbar, dense at bottom for the
+   headline block. Keeps the photo readable without flattening it. */
+.hero__scrim {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(
+    180deg,
+    rgba(23, 27, 34, 0.15) 0%,
+    rgba(23, 27, 34, 0.05) 30%,
+    rgba(23, 27, 34, 0.55) 68%,
+    rgba(23, 27, 34, 0.92) 100%
+  );
+}
+
+.hero__content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--gutter) clamp(3.5rem, 9vh, 6rem);
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: clamp(1.5rem, 4vw, 4rem);
+}
+
+.hero__copy {
+  max-width: 40rem;
+}
+
+.hero__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--rockline-blue);
+  background: rgba(76, 134, 176, 0.12);
+  border: 1px solid rgba(76, 134, 176, 0.4);
+  border-radius: 999px;
+  padding: 0.5rem 1rem;
+  margin-bottom: 1.5rem;
+  opacity: 0;
+  animation: fade-up 0.8s ease-out 0.5s forwards;
+}
+
+.hero__badge svg {
+  color: var(--sunrise-gold);
+  flex-shrink: 0;
+}
+
+.hero__headline {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(2.75rem, 6.5vw, 6rem);
+  line-height: 1.02;
+  letter-spacing: -0.01em;
+  color: var(--pure-white);
+  max-width: 16ch;
+  opacity: 0;
+  animation: fade-up 0.9s ease-out 0.65s forwards;
+}
+
+.hero__headline em {
+  font-style: italic;
+  color: var(--rockline-blue);
+  font-family: var(--font-body);
+  font-size: clamp(1rem, 1.4vw, 1.25rem);
+  line-height: 1.6;
+  color: var(--stone-fog);
+  max-width: 42ch;
+  margin-top: 1.75rem;
+  opacity: 0;
+  animation: fade-up 0.9s ease-out 0.8s forwards;
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2.5rem;
+  opacity: 0;
+  animation: fade-up 0.9s ease-out 0.95s forwards;
+}
+
+.btn {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 0.9rem 1.75rem;
+  border-radius: 999px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  transition: transform 0.25s ease, background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+
+.btn--primary {
+  background: var(--rockline-blue);
+  color: var(--pure-white);
+}
+
+.btn--primary:hover {
+  background: var(--pure-white);
+  color: var(--ink-slate);
+  transform: translateY(-2px);
+}
+
+.btn--ghost {
+  background: transparent;
+  color: var(--pure-white);
+  border: 1px solid rgba(232, 228, 219, 0.4);
+}
+
+.btn--ghost:hover {
+  border-color: var(--pure-white);
+  transform: translateY(-2px);
+}
+
+.btn--play {
+  background: transparent;
+  color: var(--pure-white);
+  padding: 0.4rem 1.5rem 0.4rem 0.4rem;
+  border: 1px solid rgba(232, 228, 219, 0.35);
+}
+
+.btn--play:hover {
+  border-color: var(--pure-white);
+  transform: translateY(-2px);
+}
+
+.btn--play__icon {
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 50%;
+  background: var(--pure-white);
+  color: var(--ink-slate);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* ==========================================================================
+   Hero — stat row
+   ========================================================================== */
+
+.hero__stats {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(1.5rem, 4vw, 2.75rem);
+  margin-top: clamp(2.25rem, 5vh, 3.25rem);
+  padding-top: 1.75rem;
+  border-top: 1px solid rgba(232, 228, 219, 0.18);
+  opacity: 0;
+  animation: fade-up 0.9s ease-out 1.1s forwards;
+}
+
+.hero__stats li {
+  display: grid;
+  grid-template-columns: auto minmax(0, 12rem);
+  align-items: center;
+  gap: 0.4rem 0.55rem;
+  min-width: 7.5rem;
+}
+
+.hero__stats svg {
+  grid-row: 1 / 3;
+  color: var(--rock-gray);
+}
+
+.hero__stat-num {
+  font-family: var(--font-display);
+  font-size: clamp(1rem, 1.6vw, 1.35rem);
+  color: var(--pure-white);
+  line-height: 1.1;
+}
+
+.hero__stat-label {
+  grid-column: 2;
+  font-size: 0.75rem;
+  color: rgba(232, 228, 219, 0.75);
+  line-height: 1.3;
+}
+
+/* ==========================================================================
+   Hero — floating insights card
+   ========================================================================== */
+
+.hero__card {
+  display: none;
+  flex-shrink: 0;
+  width: 17.5rem;
+  background: rgba(23, 27, 34, 0.72);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(232, 228, 219, 0.14);
+  border-radius: 14px;
+  padding: 1.25rem;
+  opacity: 0;
+  animation: fade-up 0.9s ease-out 1.25s forwards;
+}
+
+.hero__card-head {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--stone-fog);
+  margin-bottom: 1rem;
+}
+
+.hero__card-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #6fbf73;
+  box-shadow: 0 0 0 3px rgba(111, 191, 115, 0.2);
+}
+
+.hero__card-link {
+  margin-left: auto;
+  font-size: 0.7rem;
+  color: var(--rockline-blue);
+  text-decoration: none;
+}
+
+.hero__card-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  font-size: 0.78rem;
+  color: rgba(232, 228, 219, 0.8);
+  margin-bottom: 0.35rem;
+}
+
+.hero__card-row strong {
+  color: var(--pure-white);
+  font-weight: 600;
+}
+
+.hero__card-bar {
+  height: 4px;
+  background: rgba(232, 228, 219, 0.14);
+  border-radius: 999px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.hero__card-bar span {
+  display: block;
+  height: 100%;
+  background: var(--rockline-blue);
+  border-radius: 999px;
+}
+
+@media (min-width: 900px) {
+  .hero__card {
+    display: block;
+  }
+}
+
+/* ==========================================================================
+   Hero — scroll indicator
+   ========================================================================== */
+
+.hero__scroll {
+  position: absolute;
+  left: 50%;
+  bottom: 1.75rem;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(232, 228, 219, 0.65);
+  text-decoration: none;
+  opacity: 0;
+  animation: fade-up 0.9s ease-out 1.4s forwards;
+}
+
+.hero__scroll-pill {
+  width: 1.4rem;
+  height: 2.2rem;
+  border: 1px solid rgba(232, 228, 219, 0.5);
+  border-radius: 999px;
+  position: relative;
+}
+
+.hero__scroll-pill::after {
+  content: "";
+  position: absolute;
+  top: 6px;
+  left: 50%;
+  width: 3px;
+  height: 6px;
+  background: var(--sunrise-gold);
+}
+
+@keyframes scroll-dot {
+  0% { top: 6px; opacity: 1; }
+  60% { top: 14px; opacity: 0; }
+  100% { top: 6px; opacity: 0; }
+}
+
+@media (max-width: 640px) {
+  .hero__scroll {
     display: none;
-    position: fixed; top: 0; left: 0; right: 0;
-    z-index: 800; flex-direction: column;
   }
-  .mobile-topbar {
-    display: flex; align-items: center; justify-content: center;
-    position: relative; padding: 10px 16px;
-    background: rgba(2,12,24,0.97);
-    backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
-    border-bottom: 1px solid rgba(39,156,245,0.15);
-  }
-  .mobile-logo-bar {
-    width: 90px; height: 42px;
-    border: 1px dashed rgba(143,203,250,0.3); border-radius: 6px;
-    display: flex; align-items: center; justify-content: center;
-  }
-  .mobile-logo-bar span {
-    font-family: 'Rajdhani', sans-serif; font-size: 8px;
-    color: rgba(143,203,250,0.4); text-transform: uppercase; letter-spacing: 1px;
-  }
-  .hamburger-trigger {
-    position: absolute; right: 16px; top: 50%; transform: translateY(-50%);
-    width: 44px; height: 44px;
-    cursor: pointer; background: rgba(39,156,245,0.06); border: 1px solid rgba(39,156,245,0.35);
-    border-radius: 6px; padding: 0;
-    display: flex; align-items: center; justify-content: center;
-    transition: background .25s, border-color .25s, box-shadow .25s;
-    box-shadow: 0 0 10px rgba(39,156,245,0.2);
-  }
-  .hamburger-trigger:hover,
-  .hamburger-trigger.open {
-    background: rgba(39,156,245,0.14); border-color: rgba(39,156,245,0.75);
-    box-shadow: 0 0 18px rgba(39,156,245,0.45), 0 0 6px rgba(39,156,245,0.3) inset;
-  }
-  .hamburger-bars { display: flex; flex-direction: column; gap: 5px; width: 20px; position: relative; }
-  .hamburger-bars span {
-    display: block; height: 2px; border-radius: 2px; background: var(--blue-light);
-    transition: transform .3s cubic-bezier(.22,1,.36,1), opacity .2s, width .3s;
-  }
-  .hamburger-bars span:nth-child(1) { width: 20px; }
-  .hamburger-bars span:nth-child(2) { width: 14px; }
-  .hamburger-bars span:nth-child(3) { width: 20px; }
-  .hamburger-trigger.open .hamburger-bars span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-  .hamburger-trigger.open .hamburger-bars span:nth-child(2) { opacity: 0; width: 0; }
-  .hamburger-trigger.open .hamburger-bars span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+}
 
-  .mobile-ticker-strip {
-    background: var(--ticker-bg); border-top: none;
-    border-bottom: 1px solid rgba(39,156,245,0.1);
-    padding: 5px 0; pointer-events: none;
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
   }
-  .mobile-ticker-strip .ticker-label { font-size: 9px; padding: 0 14px 0 10px; }
-  .mobile-ticker-strip .ticker-inner { padding-left: 88px; }
-  .mobile-ticker-strip .ticker-track { animation-duration: 50s; }
-  .mobile-ticker-strip .ticker-item { font-size: 9.5px; padding: 0 30px; }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
-  /* ===== MOBILE PANEL ===== */
-  .mobile-overlay {
-    display: none; position: fixed; inset: 0;
-    background: rgba(2,9,16,0.55); z-index: 700;
-    opacity: 0; transition: opacity .3s;
-    backdrop-filter: blur(4px); pointer-events: none;
+@media (prefers-reduced-motion: reduce) {
+  .hero__badge,
+  .hero__headline,
+  .hero__subhead,
+  .hero__actions,
+  .hero__stats,
+  .hero__card,
+  .hero__scroll {
+    opacity: 1;
+    animation: none;
   }
-  .mobile-overlay.visible { opacity: 1; pointer-events: auto; }
-  .mobile-panel {
-    position: fixed; top: 0; right: -310px; width: 290px; height: 100%;
-    background: rgba(2,12,24,0.99); border-left: 1px solid rgba(39,156,245,0.18);
-    z-index: 900; transition: right .34s cubic-bezier(.22,1,.36,1);
-    overflow-y: auto; padding-bottom: 48px;
+  .hero__scroll-pill::after {
+    animation: none;
   }
-  .mobile-panel.open { right: 0; }
-  .mobile-panel-logo { display: flex; justify-content: center; padding: 28px 20px 18px; border-bottom: 1px solid rgba(39,156,245,0.1); }
-  .mobile-panel-logo-box {
-    width: 110px; height: 52px; border: 1px dashed rgba(143,203,250,0.25); border-radius: 6px;
-    display: flex; align-items: center; justify-content: center;
-  }
-  .mobile-panel-logo-box span { font-family: 'Rajdhani', sans-serif; font-size: 8px; color: rgba(143,203,250,0.35); text-transform: uppercase; letter-spacing: 1px; }
-  .mobile-nav-list { list-style: none; padding: 10px 0; }
-  .mobile-nav-list > li > a,
-  .mobile-nav-list > li > .m-parent {
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 13px 22px;
-    font-family: 'Rajdhani', sans-serif; font-weight: 600;
-    font-size: 14px; letter-spacing: 1.8px; text-transform: uppercase;
-    color: var(--blue-light); text-decoration: none;
-    border-bottom: 1px solid rgba(39,156,245,0.06);
-    transition: background .18s, color .18s; cursor: pointer;
-  }
-  .mobile-nav-list > li > a:hover { background: rgba(39,156,245,0.08); color: var(--white); }
-  .mobile-nav-list > li > .m-parent { color: rgba(187,224,252,0.55); cursor: default; }
-  .m-chevron { width: 12px; height: 12px; transition: transform .25s; color: rgba(143,203,250,0.5); flex-shrink: 0; }
-  .m-parent.sub-open .m-chevron { transform: rotate(180deg); }
-  .mobile-sub { display: none; background: rgba(39,156,245,0.03); border-bottom: 1px solid rgba(39,156,245,0.06); }
-  .mobile-sub.open { display: block; }
-  .mobile-sub a {
-    display: block; padding: 10px 22px 10px 34px;
-    font-size: 12.5px; color: var(--blue-mid); text-decoration: none;
-    border-bottom: 1px solid rgba(39,156,245,0.04); letter-spacing: .4px;
-    transition: color .18s, padding-left .18s;
-  }
-  .mobile-sub a:hover { color: var(--white); padding-left: 40px; }
-  .mobile-panel-cta { padding: 18px 20px 0; }
-  .mobile-panel-cta a {
-    display: flex; align-items: center; justify-content: center; gap: 8px;
-    width: 100%; padding: 13px;
-    background: linear-gradient(135deg, var(--blue-bright), #1479c4);
-    color: var(--white); text-decoration: none;
-    font-family: 'Rajdhani', sans-serif; font-weight: 700;
-    font-size: 13px; letter-spacing: 2px; text-transform: uppercase;
-    border-radius: 4px; box-shadow: 0 4px 20px rgba(39,156,245,0.3);
-    transition: box-shadow .25s;
-  }
-  .mobile-panel-cta a:hover { box-shadow: 0 8px 28px rgba(39,156,245,0.5); }
+}
 
-  /* ===== TRUST SECTION ===== */
-  .trust-section { background: var(--blue-dark); padding: 56px 24px 60px; }
-  .trust-inner { max-width: 1000px; margin: 0 auto 36px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
-  .trust-badge { display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 28px 20px; border: 1px solid var(--white); border-radius: 10px; background: transparent; transition: background .25s; }
-  .trust-badge:hover { background: rgba(255,255,255,0.04); }
-  .trust-badge span { font-family: 'Rajdhani', sans-serif; font-weight: 600; font-size: 13px; letter-spacing: 1.4px; text-transform: uppercase; color: var(--white); line-height: 1.4; }
-  .trust-statement { max-width: 620px; margin: 0 auto; text-align: center; }
-  .trust-statement p { font-size: .95rem; color: rgba(187,224,252,0.7); line-height: 1.85; font-weight: 300; font-style: italic; }
-  @media (max-width: 768px) { .trust-inner { grid-template-columns: repeat(2, 1fr); gap: 14px; } .trust-section { padding: 40px 20px 48px; } }
-  @media (max-width: 400px) { .trust-inner { grid-template-columns: 1fr; } }
-
-  /* ===== FOOTER ===== */
-  footer {
-    background: linear-gradient(180deg, var(--blue-dark) 0%, #075C9D 100%);
-    border-top: 1px solid rgba(39,156,245,0.14);
+@media (max-width: 900px) {
+  .hero__content {
+    flex-direction: column;
+    align-items: flex-start;
   }
-  .footer-main { display: grid; grid-template-columns: 1fr auto 1fr; gap: 24px; align-items: center; padding: 16px 32px; border-bottom: 1px solid rgba(39,156,245,0.08); max-width: 1200px; margin: 0 auto; }
-  .footer-address { font-size: 12.5px; line-height: 1.9; color: var(--blue-mid); font-style: normal; }
-  .footer-address strong { display: block; font-family: 'Rajdhani', sans-serif; font-size: 14px; color: var(--white); letter-spacing: 1px; margin-bottom: 2px; }
-  .footer-address a { color: var(--blue-bright); text-decoration: none; }
-  .footer-address a:hover { text-decoration: underline; }
-  .footer-logo-col { display: flex; justify-content: center; align-items: center; }
-  .footer-logo-box { width: 90px; height: 44px; border: 1px dashed rgba(143,203,250,0.25); border-radius: 6px; display: flex; align-items: center; justify-content: center; }
-  .footer-logo-box span { font-family: 'Rajdhani', sans-serif; font-size: 9px; color: rgba(143,203,250,0.35); text-transform: uppercase; letter-spacing: 1px; }
-  .footer-hours { text-align: right; font-size: 12px; color: var(--blue-mid); }
-  .footer-hours strong { display: block; font-family: 'Rajdhani', sans-serif; font-size: 13px; color: var(--white); letter-spacing: 1px; margin-bottom: 4px; }
-  .hours-grid { display: grid; grid-template-columns: auto auto; gap: 0 10px; font-size: 11.5px; justify-content: end; }
-  .hours-grid span:nth-child(even) { color: var(--blue-light); }
-  .footer-social { display: flex; align-items: center; justify-content: center; gap: 6px; padding: 10px 24px; flex-wrap: wrap; }
-  .social-link { width: 36px; height: 36px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.07); display: flex; align-items: center; justify-content: center; text-decoration: none; background: rgba(255,255,255,0.03); transition: transform .2s, border-color .2s, background .2s; }
-  .social-link:hover { transform: translateY(-3px); border-color: rgba(255,255,255,0.18); background: rgba(255,255,255,0.07); }
-  .footer-bottom { padding: 8px 24px; text-align: center; font-size: 10px; color: rgba(143,203,250,0.25); letter-spacing: .8px; border-top: 1px solid rgba(39,156,245,0.05); }
+}
 
-  /* ===== RESPONSIVE ===== */
-  @media (max-width: 768px) {
-    #site-header, #sticky-nav-zone { display: none; }
-    #mobile-sticky { display: flex; }
-    .mobile-overlay { display: block; }
-    main { padding-top: 92px; }
-    .footer-main { grid-template-columns: 1fr; text-align: center; gap: 12px; padding: 14px 20px; }
-    .footer-hours { text-align: center; }
-    .hours-grid { justify-content: center; }
-    .footer-logo-col { justify-content: center; }
+@media (max-width: 640px) {
+  .hero {
+    min-height: 100dvh;
   }
+  .hero__stats {
+    gap: 1.25rem 1.75rem;
+  }
+}
 
-  /* ===== SECTIONS ===== */
-  .aim-section { padding: 80px 24px 72px; max-width: 1160px; margin: 0 auto; }
-  .aim-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; margin-bottom: 64px; }
-  .aim-video-col { width: 100%; }
-  .aim-video-wrap { position: relative; width: 100%; border-radius: 12px; overflow: hidden; border: 1px solid rgba(39,156,245,0.2); box-shadow: 0 20px 60px rgba(2,9,20,0.55), 0 0 0 1px rgba(39,156,245,0.08); background: #020c18; aspect-ratio: 16/9; }
-  .aim-video-wrap video { width: 100%; height: 100%; object-fit: cover; display: block; }
-  .aim-video-placeholder { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; background: linear-gradient(145deg, rgba(2,18,40,0.95), rgba(3,40,68,0.85)); }
-  .aim-video-label { font-family: 'Rajdhani', sans-serif; font-weight: 600; font-size: 14px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--blue-mid); }
-  .aim-video-sub { font-size: 11px; color: rgba(143,203,250,0.4); font-family: 'Space Mono', monospace; letter-spacing: .5px; }
-  .aim-video-sub code { font-size: 10px; color: rgba(39,156,245,0.55); }
-  .aim-video-wrap::after { content: ''; position: absolute; inset: 0; pointer-events: none; background: repeating-linear-gradient(0deg, transparent, transparent 3px, rgba(39,156,245,0.022) 3px, rgba(39,156,245,0.022) 4px); }
-  .aim-eyebrow { font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 3px; color: var(--blue-bright); text-transform: uppercase; margin-bottom: 14px; }
-  .aim-heading { font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: clamp(1.9rem, 3.2vw, 2.6rem); line-height: 1.1; margin-bottom: 20px; }
-  .aim-heading span { background: linear-gradient(90deg, var(--blue-bright), var(--blue-mid)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-  .aim-body { font-size: 1rem; color: var(--blue-light); line-height: 1.85; font-weight: 300; }
-
-  /* ===== FLIP CARDS ===== */
-  .aim-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-  .flip-card { height: 220px; perspective: 1000px; cursor: pointer; }
-  .flip-inner { position: relative; width: 100%; height: 100%; transform-style: preserve-3d; transition: transform .55s cubic-bezier(.4,0,.2,1); }
-  .flip-card:hover .flip-inner, .flip-card.flipped .flip-inner { transform: rotateY(180deg); }
-  .flip-front, .flip-back { position: absolute; inset: 0; border-radius: 10px; backface-visibility: hidden; -webkit-backface-visibility: hidden; padding: 28px 24px; border: 1px solid rgba(39,156,245,0.16); background: linear-gradient(145deg, rgba(3,40,68,0.7), rgba(2,18,38,0.92)); }
-  .flip-front { display: flex; flex-direction: column; justify-content: space-between; transition: border-color .3s; }
-  .flip-card:hover .flip-front { border-color: rgba(39,156,245,0.38); }
-  .flip-front h3 { font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 1.05rem; line-height: 1.3; color: var(--white); flex: 1; display: flex; align-items: center; }
-  .flip-hint { font-family: 'Space Mono', monospace; font-size: 9px; letter-spacing: 1.5px; color: rgba(39,156,245,0.45); text-transform: uppercase; margin-top: 14px; }
-  .flip-back { transform: rotateY(180deg); background: linear-gradient(145deg, rgba(39,156,245,0.1), rgba(2,18,38,0.96)); border-color: rgba(39,156,245,0.3); display: flex; align-items: center; }
-  .flip-back p { font-size: 13.5px; color: var(--blue-light); line-height: 1.75; font-weight: 300; }
-  .aim-divider { max-width: 1160px; margin: 0 auto; border: none; border-top: 1px solid rgba(39,156,245,0.1); }
-
-  @media (max-width: 768px) { .aim-inner { grid-template-columns: 1fr; gap: 32px; } .aim-cards { grid-template-columns: 1fr; } .flip-card { height: auto; min-height: 160px; } .aim-section { padding: 48px 20px 56px; } }
-  @media (max-width: 960px) and (min-width: 769px) { .aim-inner { gap: 36px; } .aim-cards { grid-template-columns: 1fr 1fr; } .flip-card:last-child { grid-column: span 2; max-width: 420px; margin: 0 auto; width: 100%; } }
-</style>
+  </style>
 </head>
 <body>
 
-<!-- ═══ DESKTOP HEADER ═══ -->
-<header id="site-header">
-  <div class="header-brand">
-    <a href="sms:+18155555555?body=Hi%2C%20I%27d%20like%20to%20learn%20more%20about%20Rockline%20AI%20Marketing!" class="cta-sms">
-      <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-      Contact Us
-    </a>
-    <div class="images/logos/rockline-ai-marketing-logo.png">
-  <span>Rockline AI<br>Marketing</span>
-</div>
-</header>
+  <!-- ==========================================================================
+       HEADER — build last
+       ========================================================================== -->
+  <!-- <header class="site-header"></header> -->
 
-<!-- ═══ DESKTOP STICKY NAV + TICKER ═══ -->
-<div id="sticky-nav-zone">
-  <nav class="main-nav" role="navigation" aria-label="Main navigation">
-    <div class="nav-item"><a href="index.html" class="nav-btn active">Home</a></div>
-    <div class="nav-item">
-      <span class="nav-btn" tabindex="0">About <svg class="chevron" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 3.5L5 6.5L8 3.5"/></svg></span>
-      <div class="dropdown">
-        <a href="about/agency-profile.html">Agency Profile</a>
-        <a href="about/customer-success-stories.html">Customer Success Stories</a>
-        <a href="about/community-activism.html">Community Activism</a>
+  <main>
+
+    <!-- ==========================================================================
+         HERO
+         ========================================================================== -->
+    <section class="hero" aria-label="Introduction">
+
+      <div class="hero__media">
+        <img
+          src="images/logos/rockline-ai-marketing-cover.JPG"
+          alt="Rockline AI Marketing cover photo"
+        />
       </div>
-    </div>
-    <div class="nav-item">
-      <span class="nav-btn" tabindex="0">Portfolio <svg class="chevron" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 3.5L5 6.5L8 3.5"/></svg></span>
-      <div class="dropdown">
-        <a href="portfolio/website-gallery.html">Website Gallery</a>
-        <a href="portfolio/photo-gallery.html">Photo Gallery</a>
-        <a href="portfolio/social-gallery.html">Social Gallery</a>
+
+      <div class="hero__scrim" aria-hidden="true"></div>
+
+      <div class="hero__content">
+
+        <div class="hero__copy">
+          <p class="hero__badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M12 2L14.5 9.5L22 12L14.5 14.5L12 22L9.5 14.5L2 12L9.5 9.5L12 2Z" fill="currentColor"/>
+            </svg>
+            AI-powered marketing, built locally
+          </p>
+
+          <h1 class="hero__headline">
+            Marketing built on<br />
+            <em>higher ground.</em>
+          </h1>
+
+          <p class="hero__subhead">
+            Rockline AI Marketing gives Chicagoland small businesses the
+            websites, social presence, and search visibility to be found
+            first &mdash; grounded in real strategy, not guesswork.
+          </p>
+
+          <div class="hero__actions">
+            <a href="#contact" class="btn btn--primary">
+              Start a project
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+            <a href="#work" class="btn btn--play">
+              <span class="btn--play__icon" aria-hidden="true">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+                  <path d="M8 5v14l11-7L8 5Z" fill="currentColor"/>
+                </svg>
+              </span>
+              See our work
+            </a>
+          </div>
+
+          <ul class="hero__stats">
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21s-7-4.6-9.5-9A5.5 5.5 0 0 1 12 5.5 5.5 5.5 0 0 1 21.5 12c-2.5 4.4-9.5 9-9.5 9Z" stroke="currentColor" stroke-width="1.6"/></svg>
+              <span class="hero__stat-num">Family-Owned</span>
+              <span class="hero__stat-label">Chicagoland businesses, always</span>
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+              <span class="hero__stat-num">3</span>
+              <span class="hero__stat-label">Core services, one team</span>
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="8" r="6" stroke="currentColor" stroke-width="1.6"/><path d="M8.5 13.5L7 22l5-3 5 3-1.5-8.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span class="hero__stat-num">10+</span>
+              <span class="hero__stat-label">Years of experience</span>
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3l2.6 5.4 5.9.9-4.3 4.1 1 5.9-5.2-2.7-5.2 2.7 1-5.9-4.3-4.1 5.9-.9L12 3Z" fill="currentColor"/></svg>
+              <span class="hero__stat-num"><span id="rockline-google-rating">5.0</span></span>
+              <span class="hero__stat-label" id="rockline-google-rating-label">Rating on Google</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Floating insights card -->
+        <div class="hero__card" aria-hidden="true">
+          <div class="hero__card-head">
+            <span class="hero__card-dot"></span>
+            Live Campaign Snapshot
+            <a href="#work" class="hero__card-link">View all &rarr;</a>
+          </div>
+          <div class="hero__card-row">
+            <span>Search Visibility</span>
+            <strong>Improving</strong>
+          </div>
+          <div class="hero__card-bar"><span style="width: 74%;"></span></div>
+          <div class="hero__card-row">
+            <span>Site Traffic</span>
+            <strong>Trending up</strong>
+          </div>
+          <div class="hero__card-bar"><span style="width: 61%;"></span></div>
+          <div class="hero__card-row">
+            <span>Social Engagement</span>
+            <strong>Trending up</strong>
+          </div>
+          <div class="hero__card-bar"><span style="width: 85%;"></span></div>
+        </div>
+
       </div>
-    </div>
-    <div class="nav-item">
-      <span class="nav-btn" tabindex="0">Services <svg class="chevron" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 3.5L5 6.5L8 3.5"/></svg></span>
-      <div class="dropdown">
-        <a href="services/custom-websites.html">Custom Websites</a>
-        <a href="services/microblogging.html">Microblogging</a>
-        <a href="services/aerial-8k-photography.html">Aerial &amp; 8K Photography</a>
-      </div>
-    </div>
-    <div class="nav-item">
-      <span class="nav-btn" tabindex="0">Contact <svg class="chevron" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 3.5L5 6.5L8 3.5"/></svg></span>
-      <div class="dropdown">
-        <a href="contact/business-information.html">Business Information</a>
-        <a href="contact/social-media.html">Social Media</a>
-        <a href="contact/q-and-a.html">Q &amp; A</a>
-      </div>
-    </div>
-  </nav>
-  <div class="ticker-wrap">
-    <a href="../contact/q-and-a.html" style="text-decoration:none; pointer-events:auto;"><div class="ticker-label">GEO FAQ</div></a>
-    <div class="ticker-inner">
-      <div class="ticker-track" id="desktopTicker">
-        <div class="ticker-item">What is Generative Engine Optimization (GEO)?</div>
-        <div class="ticker-item">How does GEO differ from traditional SEO?</div>
-        <div class="ticker-item">Can AI-driven content appear in ChatGPT and Gemini answers?</div>
-        <div class="ticker-item">What makes a website discoverable by AI search engines?</div>
-        <div class="ticker-item">How does Rockline AI Marketing implement GEO strategies?</div>
-        <div class="ticker-item">Is GEO replacing SEO — or working alongside it?</div>
-        <div class="ticker-item">How do large language models discover and cite local businesses?</div>
-        <div class="ticker-item">What role does structured data play in GEO?</div>
-        <div class="ticker-item">How quickly can GEO improve your online visibility?</div>
-        <div class="ticker-item">What industries benefit most from Generative Engine Optimization?</div>
-      </div>
-    </div>
-  </div>
-</div>
 
-<!-- ═══ MOBILE STICKY HEADER ═══ -->
-<div id="mobile-sticky">
-  <div class="mobile-topbar">
-    <div class="mobile-logo-bar"><span>Logo</span></div>
-    <button class="hamburger-trigger" id="hamburgerTrigger" aria-label="Open navigation">
-      <div class="hamburger-bars"><span></span><span></span><span></span></div>
-    </button>
-  </div>
-  <div class="mobile-ticker-strip ticker-wrap">
-    <a href="../contact/q-and-a.html" style="text-decoration:none; pointer-events:auto;"><div class="ticker-label">GEO FAQ</div></a>
-    <div class="ticker-inner">
-      <div class="ticker-track" id="mobileTicker">
-        <div class="ticker-item">What is Generative Engine Optimization (GEO)?</div>
-        <div class="ticker-item">How does GEO differ from traditional SEO?</div>
-        <div class="ticker-item">Can AI-driven content appear in ChatGPT &amp; Gemini?</div>
-        <div class="ticker-item">What makes a website discoverable by AI?</div>
-        <div class="ticker-item">How does Rockline AI Marketing implement GEO?</div>
-        <div class="ticker-item">Is GEO replacing SEO — or working alongside it?</div>
-        <div class="ticker-item">How do LLMs discover and cite local businesses?</div>
-        <div class="ticker-item">What role does structured data play in GEO?</div>
-        <div class="ticker-item">How quickly can GEO improve your visibility?</div>
-        <div class="ticker-item">Which industries benefit most from GEO?</div>
-      </div>
-    </div>
-  </div>
-</div>
+      <a href="#services" class="hero__scroll">
+        <span class="hero__scroll-pill" aria-hidden="true"></span>
+        Scroll to explore
+      </a>
 
-<div class="mobile-overlay" id="mobileOverlay"></div>
-<div class="mobile-panel" id="mobilePanel" role="dialog" aria-label="Navigation">
-  <div class="mobile-panel-logo"><div class="mobile-panel-logo-box"><span>Logo Here</span></div></div>
-  <ul class="mobile-nav-list">
-    <li><a href="index.html">Home</a></li>
-    <li>
-      <div class="m-parent" onclick="toggleSub(this)">About <svg class="m-chevron" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 3.5L5 6.5L8 3.5"/></svg></div>
-      <div class="mobile-sub"><a href="about/agency-profile.html">Agency Profile</a><a href="about/customer-success-stories.html">Customer Success Stories</a><a href="about/community-activism.html">Community Activism</a></div>
-    </li>
-    <li>
-      <div class="m-parent" onclick="toggleSub(this)">Portfolio <svg class="m-chevron" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 3.5L5 6.5L8 3.5"/></svg></div>
-      <div class="mobile-sub"><a href="portfolio/website-gallery.html">Website Gallery</a><a href="portfolio/photo-gallery.html">Photo Gallery</a><a href="portfolio/social-gallery.html">Social Gallery</a></div>
-    </li>
-    <li>
-      <div class="m-parent" onclick="toggleSub(this)">Services <svg class="m-chevron" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 3.5L5 6.5L8 3.5"/></svg></div>
-      <div class="mobile-sub"><a href="services/custom-websites.html">Custom Websites</a><a href="services/microblogging.html">Microblogging</a><a href="services/aerial-8k-photography.html">Aerial &amp; 8K Photography</a></div>
-    </li>
-    <li>
-      <div class="m-parent" onclick="toggleSub(this)">Contact <svg class="m-chevron" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 3.5L5 6.5L8 3.5"/></svg></div>
-      <div class="mobile-sub"><a href="contact/business-information.html">Business Information</a><a href="contact/social-media.html">Social Media</a><a href="contact/q-and-a.html">Q &amp; A</a></div>
-    </li>
-  </ul>
-  <div class="mobile-panel-cta">
-    <a href="sms:+18155555555?body=Hi%2C%20I%27d%20like%20to%20learn%20more%20about%20Rockline%20AI%20Marketing!">
-      <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-      Text Us Now
-    </a>
-  </div>
-</div>
+    </section>
 
-<main>
+  </main>
 
-<!-- SECTION 1 -->
-<section class="aim-section">
-  <div class="aim-inner">
-    <div class="aim-video-col">
-      <div class="aim-video-wrap">
-        <video src="" data-autoplay muted loop playsinline preload="none" style="width:100%;height:100%;object-fit:cover;display:block;"></video>
-        <div class="aim-video-placeholder"><p class="aim-video-label">Your Video Goes Here</p><p class="aim-video-sub">Add <code>src="your-video.mp4"</code> to the video tag above</p></div>
-      </div>
-    </div>
-    <div class="aim-text-col">
-      <p class="aim-eyebrow">What We Do</p>
-      <h2 class="aim-heading">AI Marketing, <span>Plain and Simple</span></h2>
-      <p class="aim-body">Think of us as your business's guide to being found in a world where people don't just Google things anymore — they ask AI. At Rockline, we make sure that when someone asks ChatGPT, Gemini, or any AI assistant for a local service, your name is the one that comes up. We pair that with sharp web design, social content, and stunning aerial photography so your brand looks as good as it ranks.</p>
-    </div>
-  </div>
-  <div class="aim-cards">
-    <div class="flip-card"><div class="flip-inner"><div class="flip-front"><h3>Is AI marketing just a buzzword?</h3><span class="flip-hint">Tap to flip</span></div><div class="flip-back"><p>Nope — it's a real shift in how people find businesses. AI assistants now answer questions directly instead of showing a list of links. If your business isn't set up to be cited by those systems, you're invisible to a growing chunk of your potential customers.</p></div></div></div>
-    <div class="flip-card"><div class="flip-inner"><div class="flip-front"><h3>Do I still need a regular website?</h3><span class="flip-hint">Tap to flip</span></div><div class="flip-back"><p>Absolutely. Your website is still the foundation — it just needs to be built differently now. We design sites that satisfy both traditional search engines and the AI models that read and cite your content. One stone, two birds.</p></div></div></div>
-    <div class="flip-card"><div class="flip-inner"><div class="flip-front"><h3>What makes Rockline different?</h3><span class="flip-hint">Tap to flip</span></div><div class="flip-back"><p>We're a local shop with a big-picture view. We don't just build a website and hand you a bill — we think about your whole digital footprint, from how AI systems read your content to how your aerial photos make someone stop scrolling. Every piece works together.</p></div></div></div>
-  </div>
-</section>
+  <!-- ==========================================================================
+       FOOTER — build last
+       ========================================================================== -->
+  <!-- <footer class="site-footer"></footer> -->
 
-<hr class="aim-divider">
+  <!-- ==========================================================================
+       Live Google rating
+       The "5.0 · Rating on Google" stat pulls a live number from your
+       Google Business Profile via the Google Maps Places library. It
+       fetches on every page load, so it always reflects your current
+       rating — there's no manual editing needed as new reviews come in.
 
-<!-- SECTION 2 -->
-<section class="aim-section">
-  <div class="aim-inner">
-    <div class="aim-text-col">
-      <p class="aim-eyebrow">How It Works</p>
-      <h2 class="aim-heading">Your Business, <span>Cited by AI</span></h2>
-      <p class="aim-body">When AI answers a question, it pulls from the most trustworthy, well-structured sources it can find. We make your business one of them. That means building content that's clear, specific, and authoritative — the kind AI systems love to reference. It also means making sure your name, location, services, and reputation are consistent and visible everywhere online, so the machines connect the dots just like a person would.</p>
-    </div>
-    <div class="aim-video-col">
-      <div class="aim-video-wrap">
-        <video src="" data-autoplay muted loop playsinline preload="none" style="width:100%;height:100%;object-fit:cover;display:block;"></video>
-        <div class="aim-video-placeholder"><p class="aim-video-label">Your Video Goes Here</p><p class="aim-video-sub">Add <code>src="your-video.mp4"</code> to the video tag above</p></div>
-      </div>
-    </div>
-  </div>
-  <div class="aim-cards">
-    <div class="flip-card"><div class="flip-inner"><div class="flip-front"><h3>How does AI decide who to recommend?</h3><span class="flip-hint">Tap to flip</span></div><div class="flip-back"><p>AI models look for businesses with consistent information, helpful content, and a strong presence across the web. The more places your business shows up — and the clearer your content is — the more likely an AI is to pull your name when it answers a related question.</p></div></div></div>
-    <div class="flip-card"><div class="flip-inner"><div class="flip-front"><h3>Is my current website good enough?</h3><span class="flip-hint">Tap to flip</span></div><div class="flip-back"><p>Probably not for AI search — and that's not a dig, it's just the reality. Most sites were built for Google's old way of ranking pages. AI systems read your content differently, and we know how to structure it so it gets picked up and cited the right way.</p></div></div></div>
-    <div class="flip-card"><div class="flip-inner"><div class="flip-front"><h3>How long does it take to see results?</h3><span class="flip-hint">Tap to flip</span></div><div class="flip-back"><p>Some things — like a well-built website or a cleaned-up business profile — can make a difference quickly. Building real authority with AI systems takes a few months of consistent effort. We're upfront about that, because we'd rather give you realistic wins than overpromise.</p></div></div></div>
-  </div>
-</section>
+       SETUP (one-time, in Google Cloud Console):
+       1. Create/select a project, enable the "Places API".
+       2. Create an API key, then restrict it to "HTTP referrers" and
+          add your live domain(s) (e.g. rocklineaimarketing.com/*) so
+          the key can't be used elsewhere.
+       3. Find your Place ID: https://developers.google.com/maps/documentation/places/web-service/place-id
+          (search "Rockline AI Marketing" — use the exact business listing).
+       4. Paste both values below. Until you do, the stat quietly stays
+          at the "5.0" fallback shown in the HTML — nothing breaks.
+       ========================================================================== -->
+  <script>
+    const ROCKLINE_GOOGLE_PLACE_ID = "PASTE_YOUR_PLACE_ID_HERE";
+    const ROCKLINE_GOOGLE_RATING_ENABLED =
+      ROCKLINE_GOOGLE_PLACE_ID && ROCKLINE_GOOGLE_PLACE_ID !== "PASTE_YOUR_PLACE_ID_HERE";
 
-<hr class="aim-divider">
-
-<!-- SECTION 3 -->
-<section class="aim-section">
-  <div class="aim-inner">
-    <div class="aim-video-col">
-      <div class="aim-video-wrap">
-        <video src="" data-autoplay muted loop playsinline preload="none" style="width:100%;height:100%;object-fit:cover;display:block;"></video>
-        <div class="aim-video-placeholder"><p class="aim-video-label">Your Video Goes Here</p><p class="aim-video-sub">Add <code>src="your-video.mp4"</code> to the video tag above</p></div>
-      </div>
-    </div>
-    <div class="aim-text-col">
-      <p class="aim-eyebrow">Why It Matters</p>
-      <h2 class="aim-heading">Local Business in <span>an AI-First World</span></h2>
-      <p class="aim-body">The way people find local businesses is changing fast. A few years ago, showing up on page one of Google was the goal. Now, more and more people skip the search results entirely and just ask an AI. That shift is especially big for local services — contractors, restaurants, photographers, agencies. If your competitors are being mentioned by AI and you're not, that's real business walking out the door. We exist to make sure that doesn't happen to you.</p>
-    </div>
-  </div>
-  <div class="aim-cards">
-    <div class="flip-card"><div class="flip-inner"><div class="flip-front"><h3>Does this work for small local businesses?</h3><span class="flip-hint">Tap to flip</span></div><div class="flip-back"><p>It works especially well for local businesses. AI assistants are increasingly used for "near me" type questions — best roofer in Lockport, top photographers in the Chicago suburbs, and so on. A well-optimized local presence can punch way above its weight against bigger competitors.</p></div></div></div>
-    <div class="flip-card"><div class="flip-inner"><div class="flip-front"><h3>What industries do you work with?</h3><span class="flip-hint">Tap to flip</span></div><div class="flip-back"><p>We work with all kinds of local businesses — home services, retail, restaurants, professional services, real estate, and more. If you serve customers in a specific area and want to be easier to find, we can help. The strategies are the same; we just tailor the content to your industry.</p></div></div></div>
-    <div class="flip-card"><div class="flip-inner"><div class="flip-front"><h3>What does it cost to get started?</h3><span class="flip-hint">Tap to flip</span></div><div class="flip-back"><p>We keep things straightforward and affordable for local businesses — no agency-sized retainers or confusing packages. The best way to find out what makes sense is to just reach out. We'll have a real conversation about where you are and what it would take to get you where you want to be.</p></div></div></div>
-  </div>
-</section>
-
-</main>
-
-<!-- TRUST SECTION -->
-<section class="trust-section">
-  <div class="trust-inner">
-    <div class="trust-badge"><span>Based in Chicago's Southwest Suburbs</span></div>
-    <div class="trust-badge"><span>20+ Years of Social Media Mastery</span></div>
-    <div class="trust-badge"><span>10+ Years of Digital Marketing Experience</span></div>
-    <div class="trust-badge"><span>Family Owned and Operated</span></div>
-  </div>
-  <div class="trust-statement">
-    <p>We're not a faceless agency — we're a small, dedicated team right here in the Chicago southwest suburbs. We care about the businesses we work with because they're our neighbors. When you win, we win. That's the only way we know how to operate.</p>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  <div class="footer-main">
-    <address class="footer-address">
-      <strong>Rockline AI Marketing</strong>
-      Lockport, IL<br>
-      <a href="tel:+18155555555">815-555-5555</a>
-    </address>
-    <div class="footer-logo-col"><div class="images/logos/rockline-ai-marketing-logo.png"><span>Logo</span></div></div>
-    <div class="footer-hours">
-      <strong>Business Hours</strong>
-      <div class="hours-grid"><span>Mon – Sun</span><span>7:00 AM – 9:00 PM</span></div>
-    </div>
-  </div>
-  <div class="footer-social">
-    <a href="#" class="social-link" title="YouTube" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24"><path fill="#FF0000" d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8z"/><path fill="#fff" d="M9.6 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg></a>
-    <a href="#" class="social-link" title="Google My Business" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg></a>
-    <a href="#" class="social-link" title="Instagram" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24"><defs><radialGradient id="ig" cx="30%" cy="107%" r="150%"><stop offset="0%" stop-color="#fdf497"/><stop offset="45%" stop-color="#fd5949"/><stop offset="60%" stop-color="#d6249f"/><stop offset="90%" stop-color="#285AEB"/></radialGradient></defs><rect width="24" height="24" rx="5" fill="url(#ig)"/><path fill="#fff" d="M12 7.2A4.8 4.8 0 1 0 12 16.8 4.8 4.8 0 0 0 12 7.2zm0 7.9a3.1 3.1 0 1 1 0-6.2 3.1 3.1 0 0 1 0 6.2zm6.1-8.1a1.1 1.1 0 1 1-2.2 0 1.1 1.1 0 0 1 2.2 0zM21 8.9c-.1-1.5-.4-2.8-1.5-3.9-1.1-1.1-2.4-1.4-3.9-1.5C14.1 3.4 9.9 3.4 8.4 3.5 6.9 3.6 5.6 3.9 4.5 5 3.4 6.1 3.1 7.4 3 8.9 2.9 10.4 2.9 14.6 3 16.1c.1 1.5.4 2.8 1.5 3.9 1.1 1.1 2.4 1.4 3.9 1.5 1.5.1 5.7.1 7.2 0 1.5-.1 2.8-.4 3.9-1.5 1.1-1.1 1.4-2.4 1.5-3.9.1-1.5.1-5.7 0-7.2zm-2 8.7a3.2 3.2 0 0 1-1.8 1.8c-1.2.5-4.2.4-5.6.4s-4.3.1-5.6-.4a3.2 3.2 0 0 1-1.8-1.8c-.5-1.2-.4-4.2-.4-5.6s-.1-4.3.4-5.6A3.2 3.2 0 0 1 5.8 4.6c1.2-.5 4.2-.4 5.6-.4s4.3-.1 5.6.4a3.2 3.2 0 0 1 1.8 1.8c.5 1.2.4 4.2.4 5.6s.1 4.3-.4 5.6z"/></svg></a>
-    <a href="#" class="social-link" title="Facebook" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24"><rect width="24" height="24" rx="4" fill="#1877F2"/><path fill="#fff" d="M16.6 12H13.8V21H10.4V12H8.4V9H10.4V7.2C10.4 5.3 11.6 3 14.5 3L17.1 3V6.2H15.5C15.2 6.2 14.8 6.4 14.8 7V9H17.1L16.6 12Z"/></svg></a>
-    <a href="#" class="social-link" title="Threads" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24"><rect width="24" height="24" rx="4" fill="#000"/><path fill="none" stroke="#fff" stroke-width="1.3" stroke-linecap="round" d="M16.5 11.3c-.2-1-.7-1.8-1.5-2.4-1-.7-2.2-1-3.5-.9-1.1.1-2 .5-2.7 1.2-.9.9-1.3 2.1-1.3 3.5 0 3 1.9 5 4.8 5.1h.3c1.1 0 2-.2 2.8-.7 1-.6 1.6-1.6 1.6-2.9 0-1-.4-1.9-1.1-2.5.4.5.6 1.1.6 1.8 0 1-.5 1.7-1.3 2.1-.6.3-1.3.4-2.1.4h-.2c-2-.1-3.3-1.4-3.3-3.3 0-.3 0-.6.1-.9.3-1.1 1-1.9 2.2-2.3.7-.3 1.5-.4 2.3-.4h.7c1.2.1 2.2.5 2.9 1.3.5.5.8 1.1 1 1.8"/></svg></a>
-    <a href="#" class="social-link" title="TikTok" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24"><rect width="24" height="24" rx="4" fill="#010101"/><path fill="#fff" d="M17 6.7a4.6 4.6 0 0 1-2.7-.9 4.6 4.6 0 0 1-1.7-2.9H10v8.3l.01 4.5a2.7 2.7 0 0 1-2.7 2.5 2.7 2.7 0 0 1-2.7-2.7 2.7 2.7 0 0 1 2.7-2.7c.3 0 .5 0 .8.1v-2.5a5.5 5.5 0 0 0-.8-.1A5.3 5.3 0 0 0 2 16.7a5.3 5.3 0 0 0 5.3 5.3 5.3 5.3 0 0 0 5.3-5.3v-7a7.3 7.3 0 0 0 4.2 1.3V8.6A4.6 4.6 0 0 1 17 6.7z"/></svg></a>
-    <a href="#" class="social-link" title="Substack" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24"><rect width="24" height="24" rx="4" fill="#FF6719"/><path fill="#fff" d="M19 5.5H5v1.75h14V5.5zm0 3.75H5v1.75h14V9.25zM5 13l7 5 7-5v7.5L12 18l-7 2.5V13z"/></svg></a>
-    <a href="#" class="social-link" title="X (Twitter)" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24"><rect width="24" height="24" rx="4" fill="#000"/><path fill="#fff" d="M17.75 3h3.14l-6.86 7.84 8.06 10.66H16.2l-4.95-6.47-5.66 6.47H2.44l7.34-8.39L1.98 3h6.68l4.47 5.91L17.75 3zm-1.1 16.52h1.74L7.45 4.78H5.59l11.06 14.74z"/></svg></a>
-  </div>
-  <div class="footer-bottom">&copy; 2025 Rockline AI Marketing · Lockport, IL · All Rights Reserved</div>
-</footer>
-
-<script>
-  /* ── Seamless ticker ─────────────────────────────────────────── */
-  function initSeamlessTicker(trackEl) {
-    if (!trackEl) return;
-    Array.from(trackEl.children).forEach(item => trackEl.appendChild(item.cloneNode(true)));
-  }
-  initSeamlessTicker(document.getElementById('desktopTicker'));
-  initSeamlessTicker(document.getElementById('mobileTicker'));
-
-  /* ── Desktop nav dropdowns ───────────────────────────────────────
-     Replaces pure CSS :hover with JS mouseenter/mouseleave + a 200ms
-     close delay. This solves two problems:
-       1. Diagonal mouse movement from button to menu no longer snaps
-          the dropdown shut before you can reach the items.
-       2. The ticker (pointer-events: none in CSS) and any other
-          elements below the nav can never disrupt the open state.
-  ──────────────────────────────────────────────────────────────────── */
-  const navItems    = document.querySelectorAll('#sticky-nav-zone .nav-item');
-  const closeTimers = new Map();
-
-  navItems.forEach(item => {
-    if (!item.querySelector('.dropdown')) return; // skip plain links
-
-    item.addEventListener('mouseenter', () => {
-      clearTimeout(closeTimers.get(item));
-      // Close any other open dropdowns instantly
-      navItems.forEach(other => {
-        if (other !== item) {
-          clearTimeout(closeTimers.get(other));
-          other.classList.remove('is-open');
-        }
-      });
-      item.classList.add('is-open');
-    });
-
-    item.addEventListener('mouseleave', () => {
-      // 200ms grace period — enough time to reach dropdown items diagonally
-      closeTimers.set(item, setTimeout(() => {
-        item.classList.remove('is-open');
-      }, 200));
-    });
-  });
-
-  // Close all dropdowns when clicking outside the nav
-  document.addEventListener('click', e => {
-    if (!e.target.closest('#sticky-nav-zone .nav-item')) {
-      navItems.forEach(item => item.classList.remove('is-open'));
-    }
-  });
-
-  /* ── Scroll-triggered video autoplay ────────────────────────── */
-  const videoObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      const video = entry.target;
-      if (entry.isIntersecting) {
-        if (video.src && video.src !== window.location.href) video.play().catch(() => {});
-      } else {
-        video.pause();
+    function initRocklineGoogleRating() {
+      if (!ROCKLINE_GOOGLE_RATING_ENABLED || !window.google || !google.maps || !google.maps.places) {
+        return;
       }
-    });
-  }, { threshold: 0.35 });
-
-  document.querySelectorAll('video[data-autoplay]').forEach(video => {
-    videoObserver.observe(video);
-    if (video.src && video.src !== window.location.href) {
-      const ph = video.nextElementSibling;
-      if (ph && ph.classList.contains('aim-video-placeholder')) ph.style.display = 'none';
+      try {
+        const service = new google.maps.places.PlacesService(document.createElement("div"));
+        service.getDetails(
+          { placeId: ROCKLINE_GOOGLE_PLACE_ID, fields: ["rating", "user_ratings_total"] },
+          (place, status) => {
+            if (status !== google.maps.places.PlacesServiceStatus.OK || !place || !place.rating) {
+              return;
+            }
+            const ratingEl = document.getElementById("rockline-google-rating");
+            const labelEl = document.getElementById("rockline-google-rating-label");
+            if (ratingEl) ratingEl.textContent = place.rating.toFixed(1);
+            if (labelEl) {
+              labelEl.textContent = place.user_ratings_total
+                ? `Rating on Google (${place.user_ratings_total} reviews)`
+                : "Rating on Google";
+            }
+          }
+        );
+      } catch (err) {
+        console.warn("Rockline: couldn't load the live Google rating, showing fallback.", err);
+      }
     }
-  });
+  </script>
+  <script>
+    if (ROCKLINE_GOOGLE_RATING_ENABLED) {
+      const script = document.createElement("script");
+      script.src =
+        "https://maps.googleapis.com/maps/api/js?key=PASTE_YOUR_API_KEY_HERE&libraries=places&callback=initRocklineGoogleRating";
+      script.async = true;
+      document.head.appendChild(script);
+    }
+  </script>
 
-  /* ── Flip cards ──────────────────────────────────────────────── */
-  document.querySelectorAll('.flip-card').forEach(card => {
-    card.addEventListener('click', () => card.classList.toggle('flipped'));
-  });
-
-  /* ── Mobile nav ──────────────────────────────────────────────── */
-  const hamburgerTrigger = document.getElementById('hamburgerTrigger');
-  const mobilePanel      = document.getElementById('mobilePanel');
-  const mobileOverlay    = document.getElementById('mobileOverlay');
-
-  function openPanel() {
-    mobilePanel.classList.add('open');
-    mobileOverlay.classList.add('visible');
-    hamburgerTrigger.classList.add('open');
-    hamburgerTrigger.setAttribute('aria-label', 'Close navigation');
-    document.body.style.overflow = 'hidden';
-  }
-  function closePanel() {
-    mobilePanel.classList.remove('open');
-    mobileOverlay.classList.remove('visible');
-    hamburgerTrigger.classList.remove('open');
-    hamburgerTrigger.setAttribute('aria-label', 'Open navigation');
-    document.body.style.overflow = '';
-  }
-  hamburgerTrigger.addEventListener('click', () =>
-    mobilePanel.classList.contains('open') ? closePanel() : openPanel()
-  );
-  mobileOverlay.addEventListener('click', closePanel);
-
-  function toggleSub(el) {
-    const sub    = el.nextElementSibling;
-    const isOpen = sub.classList.contains('open');
-    document.querySelectorAll('.mobile-sub.open').forEach(s => s.classList.remove('open'));
-    document.querySelectorAll('.m-parent.sub-open').forEach(p => p.classList.remove('sub-open'));
-    if (!isOpen) { sub.classList.add('open'); el.classList.add('sub-open'); }
-  }
-</script>
 </body>
 </html>
