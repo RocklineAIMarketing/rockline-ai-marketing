@@ -183,18 +183,32 @@ a {
 .hero__headline {
   font-family: var(--font-display);
   font-weight: 600;
-  font-size: clamp(2.75rem, 6.5vw, 6rem);
   line-height: 1.02;
   letter-spacing: -0.01em;
   color: var(--pure-white);
-  max-width: 16ch;
+  max-width: 22ch;
   opacity: 0;
   animation: fade-up 0.9s ease-out 0.65s forwards;
 }
 
+.hero__headline-lead {
+  display: block;
+  font-weight: 500;
+  font-size: clamp(1.5rem, 3.1vw, 2.5rem);
+  white-space: nowrap;
+}
+
 .hero__headline em {
+  display: block;
   font-style: italic;
+  font-weight: 600;
   color: var(--rockline-blue);
+  font-size: clamp(3.25rem, 7.8vw, 6.75rem);
+  line-height: 0.98;
+  margin-top: 0.1em;
+}
+
+.hero__subhead {
   font-family: var(--font-body);
   font-size: clamp(1rem, 1.4vw, 1.25rem);
   line-height: 1.6;
@@ -525,8 +539,8 @@ a {
           </p>
 
           <h1 class="hero__headline">
-            Marketing built on<br />
-            <em>higher ground.</em>
+            <span class="hero__headline-lead">Marketing built on</span>
+            <em>Higher ground.</em>
           </h1>
 
           <p class="hero__subhead">
