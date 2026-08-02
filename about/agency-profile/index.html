@@ -1,723 +1,742 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Agency Profile | Rockline AI Marketing – GEO &amp; AI Marketing Agency, Chicagoland IL</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<!-- Fonts -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Exo+2:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-D0SWY5Y40W"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-D0SWY5Y40W');
+  </script>
 
-<style>
-  :root {
-    --blue-bright: #279cf5;
-    --blue-light:  #bbe0fc;
-    --blue-mid:    #8fcbfa;
-    --blue-dark:   #032844;
-    --white:       #ffffff;
-    --glass:       rgba(3,40,68,0.82);
-    --ticker-bg:   #021d32;
-    --surface-1:   rgba(3,40,68,0.55);
-    --surface-2:   rgba(2,18,40,0.85);
-    --border:      rgba(39,156,245,0.14);
-    --border-hi:   rgba(39,156,245,0.32);
+  <title>Agency Profile | Rockline AI Marketing</title>
+  <meta name="description" content="Meet Rockline AI Marketing — a family-owned agency in Lockport, IL building websites and AI-search visibility for Chicagoland small businesses." />
+  <link rel="canonical" href="https://rocklineaimarketing.com/about/agency-profile" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Rockline AI Marketing" />
+  <meta property="og:title" content="Agency Profile | Rockline AI Marketing" />
+  <meta property="og:description" content="Meet Rockline AI Marketing — a family-owned agency in Lockport, IL building websites and AI-search visibility for Chicagoland small businesses." />
+  <meta property="og:url" content="https://rocklineaimarketing.com/about/agency-profile" />
+  <meta property="og:image" content="https://rocklineaimarketing.com/images/logos/rockline-ai-marketing-cover.JPG" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Agency Profile | Rockline AI Marketing" />
+  <meta name="twitter:description" content="Meet Rockline AI Marketing — a family-owned agency in Lockport, IL building websites and AI-search visibility for Chicagoland small businesses." />
+  <meta name="twitter:image" content="https://rocklineaimarketing.com/images/logos/rockline-ai-marketing-cover.JPG" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+  <style>
+/* ==========================================================================
+   Rockline AI Marketing — Design Tokens (shared with homepage)
+   ========================================================================== */
+
+:root {
+  --ink-slate: #1c232c;
+  --stone-fog: #e7e4dc;
+  --rockline-blue: #4c86b0;
+  --rockline-blue-deep: #16314a;
+  --rock-gray: #8993a0;
+  --sunrise-gold: #e4b94b;
+  --pure-white: #ffffff;
+
+  --font-display: "Fraunces", Georgia, serif;
+  --font-body: "Inter", -apple-system, sans-serif;
+  --font-mono: "IBM Plex Mono", monospace;
+
+  --gutter: clamp(1.5rem, 5vw, 5rem);
+  --max-width: 1400px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; overflow-x: hidden; }
+body { font-family: var(--font-body); background: var(--ink-slate); color: var(--stone-fog); -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+:focus-visible { outline: 2px solid var(--rockline-blue); outline-offset: 3px; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
   }
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; }
-  body { font-family: 'Exo 2', sans-serif; background: var(--blue-dark); color: var(--white); overflow-x: hidden; }
+}
 
-  /* ── DESKTOP HEADER ── */
-  #site-header { background: linear-gradient(180deg, #075C9D 0%, var(--blue-dark) 100%); border-bottom: 1px solid rgba(39,156,245,0.18); }
-  .header-brand { display: flex; align-items: center; justify-content: center; position: relative; padding: 18px 24px 12px; }
-  .cta-sms { position: absolute; left: 32px; top: 50%; transform: translateY(-50%); display: flex; align-items: center; gap: 8px; background: linear-gradient(135deg, var(--blue-bright), #1479c4); color: var(--white); text-decoration: none; font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 1.6px; text-transform: uppercase; padding: 10px 20px; border-radius: 4px; border: 1px solid rgba(255,255,255,0.12); box-shadow: 0 4px 20px rgba(39,156,245,0.3); transition: transform .2s, box-shadow .2s; white-space: nowrap; }
-  .cta-sms:hover { transform: translateY(calc(-50% - 2px)); box-shadow: 0 10px 32px rgba(39,156,245,0.5); }
-  .header-logo { height: 72px; width: auto; display: block; }
+/* ==========================================================================
+   Header (shared with homepage)
+   ========================================================================== */
 
-  /* ── STICKY NAV ── */
-  #sticky-nav-zone { position: sticky; top: 0; z-index: 500; background: var(--glass); backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px); border-bottom: 1px solid rgba(39,156,245,0.18); box-shadow: 0 4px 30px rgba(2,10,20,0.6); }
-  nav.main-nav { display: flex; align-items: center; justify-content: center; gap: 2px; padding: 0 16px; }
-  .nav-item { position: relative; }
-  .nav-btn { display: flex; align-items: center; gap: 5px; padding: 14px 20px; font-family: 'Rajdhani', sans-serif; font-weight: 600; font-size: 13px; letter-spacing: 2px; text-transform: uppercase; color: var(--blue-light); background: none; border: none; cursor: pointer; text-decoration: none; transition: color .2s; white-space: nowrap; position: relative; }
-  .nav-btn:hover, .nav-item.is-open > .nav-btn { color: var(--white); }
-  a.nav-btn.active, span.nav-btn.active { color: var(--white); }
-  a.nav-btn::after { content: ''; position: absolute; bottom: 8px; left: 20px; right: 20px; height: 2px; background: var(--blue-bright); border-radius: 2px; transform: scaleX(0); transition: transform .25s; }
-  a.nav-btn:hover::after, a.nav-btn.active::after { transform: scaleX(1); }
-  .chevron { width: 10px; height: 10px; transition: transform .25s; flex-shrink: 0; }
-  .nav-item.is-open .chevron { transform: rotate(180deg); }
-  .dropdown { position: absolute; top: 100%; left: 50%; transform: translateX(-50%) translateY(6px); min-width: 220px; background: rgba(2,12,24,0.97); border: 1px solid rgba(39,156,245,0.2); border-radius: 6px; box-shadow: 0 16px 48px rgba(0,0,0,0.55); opacity: 0; pointer-events: none; transition: opacity .22s, transform .22s; z-index: 600; overflow: hidden; }
-  .dropdown::before { content: ''; position: absolute; top: -8px; left: 0; right: 0; height: 8px; }
-  .nav-item.is-open .dropdown { opacity: 1; pointer-events: auto; transform: translateX(-50%) translateY(0); }
-  .dropdown a { display: block; padding: 12px 22px; font-family: 'Exo 2', sans-serif; font-size: 13px; color: var(--blue-light); text-decoration: none; letter-spacing: .5px; border-bottom: 1px solid rgba(39,156,245,0.07); transition: background .18s, color .18s, padding-left .18s; }
-  .dropdown a:last-child { border-bottom: none; }
-  .dropdown a:hover { background: rgba(39,156,245,0.1); color: var(--white); padding-left: 28px; }
-  .dropdown a.current-page { color: var(--white); background: rgba(39,156,245,0.08); }
+.site-header { position: absolute; top: 0; left: 0; z-index: 50; width: 100%; background: transparent; }
+.site-header__inner { max-width: var(--max-width); margin: 0 auto; padding: 1rem var(--gutter); display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; }
+.site-header__logo { display: flex; align-items: center; gap: 0.65rem; text-decoration: none; flex-shrink: 0; }
+.site-header__logo-text { font-family: var(--font-display); font-weight: 600; font-size: 1.1rem; color: var(--pure-white); line-height: 1.1; }
+@media (min-width: 900px) { .site-header__logo-text { font-size: 1.55rem; } }
 
-  /* ── TICKER ── */
-  .ticker-wrap { background: var(--ticker-bg); border-top: 1px solid rgba(39,156,245,0.1); padding: 7px 0; overflow: hidden; position: relative; pointer-events: none; }
-  .ticker-label { position: absolute; left: 0; top: 0; bottom: 0; z-index: 2; display: flex; align-items: center; padding: 0 18px 0 14px; background: var(--blue-bright); font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--blue-dark); white-space: nowrap; clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 50%, calc(100% - 8px) 100%, 0 100%); }
-  .ticker-wrap::after { content: ''; position: absolute; right: 0; top: 0; bottom: 0; width: 60px; background: linear-gradient(to right, transparent, var(--ticker-bg)); z-index: 3; pointer-events: none; }
-  .ticker-inner { overflow: hidden; padding-left: 112px; }
-  .ticker-track { display: flex; width: max-content; animation: tickerScroll 60s linear infinite; }
-  .ticker-item { font-family: 'Space Mono', monospace; font-size: 10.5px; color: var(--blue-mid); white-space: nowrap; padding: 0 44px; display: flex; align-items: center; gap: 10px; }
-  .ticker-item::after { content: '◆'; color: var(--blue-bright); font-size: 7px; }
-  @keyframes tickerScroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+.site-header__nav { display: none; align-items: center; gap: clamp(1.25rem, 2.5vw, 2.25rem); }
+.site-header__nav a { font-family: var(--font-body); font-weight: 500; font-size: 0.92rem; color: var(--stone-fog); text-decoration: none; position: relative; padding: 0.25rem 0; transition: color 0.25s ease; }
+.site-header__nav a::after { content: ""; position: absolute; left: 0; bottom: -2px; width: 0; height: 2px; background: var(--rockline-blue); transition: width 0.25s ease; }
+.site-header__nav a:hover, .site-header__nav a:focus-visible { color: var(--pure-white); }
+.site-header__nav a:hover::after, .site-header__nav a:focus-visible::after { width: 100%; }
 
-  /* ── MOBILE STICKY ── */
-  #mobile-sticky { display: none; position: fixed; top: 0; left: 0; right: 0; z-index: 800; flex-direction: column; }
-  .mobile-topbar { display: flex; align-items: center; justify-content: center; position: relative; padding: 10px 16px; background: rgba(2,12,24,0.97); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid rgba(39,156,245,0.15); }
-  .mobile-header-logo { height: 42px; width: auto; display: block; }
-  .hamburger-trigger { position: absolute; right: 16px; top: 50%; transform: translateY(-50%); width: 44px; height: 44px; cursor: pointer; background: rgba(39,156,245,0.06); border: 1px solid rgba(39,156,245,0.35); border-radius: 6px; padding: 0; display: flex; align-items: center; justify-content: center; transition: background .25s, border-color .25s, box-shadow .25s; box-shadow: 0 0 10px rgba(39,156,245,0.2); }
-  .hamburger-trigger:hover, .hamburger-trigger.open { background: rgba(39,156,245,0.14); border-color: rgba(39,156,245,0.75); box-shadow: 0 0 18px rgba(39,156,245,0.45), 0 0 6px rgba(39,156,245,0.3) inset; }
-  .hamburger-bars { display: flex; flex-direction: column; gap: 5px; width: 20px; }
-  .hamburger-bars span { display: block; height: 2px; border-radius: 2px; background: var(--blue-light); transition: transform .3s cubic-bezier(.22,1,.36,1), opacity .2s, width .3s; }
-  .hamburger-bars span:nth-child(1) { width: 20px; }
-  .hamburger-bars span:nth-child(2) { width: 14px; }
-  .hamburger-bars span:nth-child(3) { width: 20px; }
-  .hamburger-trigger.open .hamburger-bars span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-  .hamburger-trigger.open .hamburger-bars span:nth-child(2) { opacity: 0; width: 0; }
-  .hamburger-trigger.open .hamburger-bars span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-  .mobile-ticker-strip { background: var(--ticker-bg); border-bottom: 1px solid rgba(39,156,245,0.1); padding: 5px 0; pointer-events: none; }
-  .mobile-ticker-strip .ticker-label { font-size: 9px; padding: 0 14px 0 10px; }
-  .mobile-ticker-strip .ticker-inner { padding-left: 88px; }
-  .mobile-ticker-strip .ticker-track { animation-duration: 50s; }
-  .mobile-ticker-strip .ticker-item { font-size: 9.5px; padding: 0 30px; }
+.site-header__actions { display: flex; align-items: center; gap: 0.75rem; flex-shrink: 0; }
+.site-header__call { display: none; align-items: center; gap: 0.5rem; font-family: var(--font-body); font-weight: 600; font-size: 0.88rem; color: var(--pure-white); text-decoration: none; }
+.site-header__call svg { color: var(--rockline-blue); }
+.site-header__cta { font-family: var(--font-body); font-weight: 600; font-size: 0.88rem; color: var(--pure-white); background: var(--rockline-blue); border-radius: 999px; padding: 0.6rem 1.35rem; text-decoration: none; white-space: nowrap; transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease; }
+.site-header__cta:hover, .site-header__cta:focus-visible { background: var(--pure-white); color: var(--ink-slate); transform: translateY(-2px); }
+.site-header__toggle { display: inline-flex; align-items: center; justify-content: center; width: 2.5rem; height: 2.5rem; background: transparent; border: 1px solid rgba(232, 228, 219, 0.25); border-radius: 8px; color: var(--pure-white); cursor: pointer; }
 
-  /* ── MOBILE PANEL ── */
-  .mobile-overlay { display: none; position: fixed; inset: 0; background: rgba(2,9,16,0.55); z-index: 700; opacity: 0; transition: opacity .3s; backdrop-filter: blur(4px); pointer-events: none; }
-  .mobile-overlay.visible { opacity: 1; pointer-events: auto; }
-  .mobile-panel { position: fixed; top: 0; right: -310px; width: 290px; height: 100%; background: rgba(2,12,24,0.99); border-left: 1px solid rgba(39,156,245,0.18); z-index: 900; transition: right .34s cubic-bezier(.22,1,.36,1); overflow-y: auto; padding-bottom: 48px; }
-  .mobile-panel.open { right: 0; }
-  .mobile-panel-logo { display: flex; justify-content: center; padding: 28px 20px 18px; border-bottom: 1px solid rgba(39,156,245,0.1); }
-  .mobile-panel-logo img { height: 52px; width: auto; }
-  .mobile-nav-list { list-style: none; padding: 10px 0; }
-  .mobile-nav-list > li > a, .mobile-nav-list > li > .m-parent { display: flex; align-items: center; justify-content: space-between; padding: 13px 22px; font-family: 'Rajdhani', sans-serif; font-weight: 600; font-size: 14px; letter-spacing: 1.8px; text-transform: uppercase; color: var(--blue-light); text-decoration: none; border-bottom: 1px solid rgba(39,156,245,0.06); transition: background .18s, color .18s; cursor: pointer; }
-  .mobile-nav-list > li > a:hover { background: rgba(39,156,245,0.08); color: var(--white); }
-  .mobile-nav-list > li > .m-parent { color: rgba(187,224,252,0.55); cursor: default; }
-  .m-chevron { width: 12px; height: 12px; transition: transform .25s; color: rgba(143,203,250,0.5); flex-shrink: 0; }
-  .m-parent.sub-open .m-chevron { transform: rotate(180deg); }
-  .mobile-sub { display: none; background: rgba(39,156,245,0.03); border-bottom: 1px solid rgba(39,156,245,0.06); }
-  .mobile-sub.open { display: block; }
-  .mobile-sub a { display: block; padding: 10px 22px 10px 34px; font-size: 12.5px; color: var(--blue-mid); text-decoration: none; border-bottom: 1px solid rgba(39,156,245,0.04); letter-spacing: .4px; transition: color .18s, padding-left .18s; }
-  .mobile-sub a:hover, .mobile-sub a.current-page { color: var(--white); }
-  .mobile-sub a:hover { padding-left: 40px; }
-  .mobile-panel-cta { padding: 18px 20px 0; }
-  .mobile-panel-cta a { display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; padding: 13px; background: linear-gradient(135deg, var(--blue-bright), #1479c4); color: var(--white); text-decoration: none; font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 2px; text-transform: uppercase; border-radius: 4px; box-shadow: 0 4px 20px rgba(39,156,245,0.3); transition: box-shadow .25s; }
-  .mobile-panel-cta a:hover { box-shadow: 0 8px 28px rgba(39,156,245,0.5); }
+@media (min-width: 900px) {
+  .site-header__nav { display: flex; }
+  .site-header__call { display: inline-flex; }
+  .site-header__toggle { display: none; }
+}
+@media (max-width: 480px) { .site-header__logo-text { font-size: 0.92rem; } .site-header__cta { display: none; } }
 
-  /* ── FOOTER ── */
-  footer { background: linear-gradient(180deg, var(--blue-dark) 0%, #075C9D 100%); border-top: 1px solid rgba(39,156,245,0.14); }
-  .footer-main { display: grid; grid-template-columns: 1fr auto 1fr; gap: 24px; align-items: center; padding: 16px 32px; border-bottom: 1px solid rgba(39,156,245,0.08); max-width: 1200px; margin: 0 auto; }
-  .footer-address { font-size: 12.5px; line-height: 1.9; color: var(--blue-mid); font-style: normal; }
-  .footer-address strong { display: block; font-family: 'Rajdhani', sans-serif; font-size: 14px; color: var(--white); letter-spacing: 1px; margin-bottom: 2px; }
-  .footer-address a { color: var(--blue-bright); text-decoration: none; }
-  .footer-address a:hover { text-decoration: underline; }
-  .footer-logo-col { display: flex; justify-content: center; align-items: center; }
-  .footer-logo-col img { height: 44px; width: auto; }
-  .footer-hours { text-align: right; font-size: 12px; color: var(--blue-mid); }
-  .footer-hours strong { display: block; font-family: 'Rajdhani', sans-serif; font-size: 13px; color: var(--white); letter-spacing: 1px; margin-bottom: 4px; }
-  .hours-grid { display: grid; grid-template-columns: auto auto; gap: 0 10px; font-size: 11.5px; justify-content: end; }
-  .hours-grid span:nth-child(even) { color: var(--blue-light); }
-  .footer-social { display: flex; align-items: center; justify-content: center; gap: 6px; padding: 10px 24px; flex-wrap: wrap; }
-  .social-link { width: 36px; height: 36px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.07); display: flex; align-items: center; justify-content: center; text-decoration: none; background: rgba(255,255,255,0.03); transition: transform .2s, border-color .2s, background .2s; }
-  .social-link:hover { transform: translateY(-3px); border-color: rgba(255,255,255,0.18); background: rgba(255,255,255,0.07); }
-  .footer-bottom { padding: 8px 24px; text-align: center; font-size: 10px; color: rgba(143,203,250,0.25); letter-spacing: .8px; border-top: 1px solid rgba(39,156,245,0.05); }
+.site-header__mobile { display: none; flex-direction: column; gap: 0.25rem; padding: 0.5rem var(--gutter) 1.5rem; background: rgba(23, 27, 34, 0.92); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); }
+.site-header__mobile.is-open { display: flex; }
+.site-header__mobile a { font-family: var(--font-body); font-weight: 500; font-size: 1rem; color: var(--stone-fog); text-decoration: none; padding: 0.75rem 0; border-bottom: 1px solid rgba(232, 228, 219, 0.08); }
+.site-header__mobile a:hover, .site-header__mobile a:focus-visible { color: var(--pure-white); }
+@media (min-width: 900px) { .site-header__mobile { display: none !important; } }
 
-  /* ── ORIGIN STORY SECTION ── */
-  /* ── WHO WE SERVE SECTION ── */
-  .serve-section { padding: 80px 32px; background: linear-gradient(180deg, rgba(2,18,40,0.6) 0%, rgba(3,40,68,0) 100%); border-top: 1px solid var(--border); position: relative; overflow: hidden; }
-  .serve-inner { max-width: 1160px; margin: 0 auto; }
-  .serve-header { text-align: center; max-width: 760px; margin: 0 auto 52px; }
-  .serve-tag { font-family: 'Space Mono', monospace; font-size: 9px; letter-spacing: 3px; text-transform: uppercase; color: var(--blue-bright); margin-bottom: 16px; display: flex; align-items: center; justify-content: center; gap: 10px; }
-  .serve-tag::before, .serve-tag::after { content: ''; flex: 1; max-width: 48px; height: 1px; background: var(--border); }
-  .serve-header h2 { font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: clamp(1.9rem, 3.2vw, 2.8rem); line-height: 1.1; margin-bottom: 18px; }
-  .serve-header h2 em { background: linear-gradient(90deg, var(--blue-bright), var(--blue-mid)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-style: normal; }
-  .serve-lead { font-size: .97rem; color: var(--blue-light); line-height: 1.9; font-weight: 300; }
+.nav-dropdown { position: relative; padding-bottom: 0.6rem; margin-bottom: -0.6rem; }
+.nav-dropdown__label { display: inline-flex; align-items: center; gap: 0.35rem; font-family: var(--font-body); font-weight: 500; font-size: 0.92rem; color: var(--stone-fog); padding: 0.25rem 0; cursor: default; user-select: none; }
+.nav-dropdown__label svg { width: 10px; height: 10px; transition: transform 0.25s ease; flex-shrink: 0; }
+.nav-dropdown.is-current .nav-dropdown__label { color: var(--pure-white); }
+.nav-dropdown:hover .nav-dropdown__label, .nav-dropdown:focus-within .nav-dropdown__label { color: var(--pure-white); }
+.nav-dropdown:hover .nav-dropdown__label svg, .nav-dropdown:focus-within .nav-dropdown__label svg { transform: rotate(180deg); }
+.nav-dropdown__menu { position: absolute; top: 100%; left: 50%; transform: translateX(-50%) translateY(6px); min-width: 15rem; margin-top: 0; padding: 0.5rem; background: rgba(23, 27, 34, 0.96); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border: 1px solid rgba(232, 228, 219, 0.12); border-radius: 12px; box-shadow: 0 24px 48px -20px rgba(0, 0, 0, 0.55); display: flex; flex-direction: column; gap: 0.15rem; opacity: 0; visibility: hidden; pointer-events: none; transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s; z-index: 60; }
+.nav-dropdown:hover .nav-dropdown__menu, .nav-dropdown:focus-within .nav-dropdown__menu { opacity: 1; visibility: visible; pointer-events: auto; transform: translateX(-50%) translateY(0); }
+.nav-dropdown__menu a { padding: 0.6rem 0.75rem; border-radius: 7px; font-size: 0.87rem; white-space: nowrap; }
+.nav-dropdown__menu a::after { display: none; }
+.nav-dropdown__menu a:hover, .nav-dropdown__menu a:focus-visible { background: rgba(76, 134, 176, 0.18); color: var(--pure-white); }
+.nav-dropdown__menu a.current-page { background: rgba(76, 134, 176, 0.18); color: var(--pure-white); }
 
-  .serve-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-bottom: 32px; }
-  .serve-card { background: var(--surface-2); border: 1px solid var(--border); border-radius: 10px; padding: 28px 24px; transition: border-color .25s, transform .2s, background .25s; position: relative; overflow: hidden; }
-  .serve-card::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, var(--blue-bright), transparent); opacity: 0; transition: opacity .3s; }
-  .serve-card:hover { border-color: var(--border-hi); transform: translateY(-3px); background: rgba(39,156,245,0.04); }
-  .serve-card:hover::after { opacity: 1; }
-  .serve-card-icon { width: 42px; height: 42px; background: rgba(39,156,245,0.08); border: 1px solid var(--border-hi); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px; }
-  .serve-card-icon svg { width: 19px; height: 19px; color: var(--blue-bright); }
-  .serve-card h3 { font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 1.08rem; margin-bottom: 10px; color: var(--white); }
-  .serve-card p { font-size: .9rem; color: var(--blue-light); line-height: 1.8; font-weight: 300; }
+.site-header__mobile details { border-bottom: 1px solid rgba(232, 228, 219, 0.08); }
+.site-header__mobile summary { display: flex; align-items: center; justify-content: space-between; list-style: none; font-family: var(--font-body); font-weight: 500; font-size: 1rem; color: var(--stone-fog); padding: 0.75rem 0; cursor: pointer; }
+.site-header__mobile summary::-webkit-details-marker { display: none; }
+.site-header__mobile summary svg { width: 12px; height: 12px; transition: transform 0.25s ease; flex-shrink: 0; }
+.site-header__mobile details[open] summary svg { transform: rotate(180deg); }
+.site-header__mobile details[open] summary { color: var(--pure-white); }
+.site-header__mobile__submenu { display: flex; flex-direction: column; padding-bottom: 0.5rem; }
+.site-header__mobile__submenu a { padding: 0.6rem 0 0.6rem 1rem; border-bottom: none; font-size: 0.92rem; color: rgba(232, 228, 219, 0.85); }
+.site-header__mobile__submenu a:hover, .site-header__mobile__submenu a:focus-visible { color: var(--pure-white); }
+.site-header__mobile__submenu a.current-page { color: var(--pure-white); }
 
-  .serve-footer-note { display: flex; align-items: flex-start; gap: 14px; background: linear-gradient(135deg, rgba(39,156,245,0.06), rgba(2,18,40,0.4)); border: 1px solid var(--border-hi); border-radius: 8px; padding: 20px 24px; max-width: 760px; margin: 0 auto; }
-  .serve-note-icon { width: 32px; height: 32px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; color: var(--blue-bright); margin-top: 1px; }
-  .serve-note-icon svg { width: 20px; height: 20px; }
-  .serve-footer-note p { font-size: .92rem; color: var(--blue-light); line-height: 1.8; font-weight: 300; }
-  .serve-footer-note strong { color: var(--white); font-weight: 500; }
+.btn { font-family: var(--font-body); font-weight: 600; font-size: 0.95rem; padding: 0.9rem 1.75rem; border-radius: 999px; text-decoration: none; display: inline-flex; align-items: center; gap: 0.6rem; transition: transform 0.25s ease, background 0.25s ease, color 0.25s ease, border-color 0.25s ease; }
+.btn--primary { background: var(--rockline-blue); color: var(--pure-white); }
+.btn--primary:hover { background: var(--pure-white); color: var(--ink-slate); transform: translateY(-2px); }
+.btn--ghost { background: transparent; color: var(--pure-white); border: 1px solid rgba(232, 228, 219, 0.4); }
+.btn--ghost:hover { border-color: var(--pure-white); transform: translateY(-2px); }
 
-  @media (max-width: 900px) { .serve-grid { grid-template-columns: repeat(2, 1fr); } }
-  @media (max-width: 768px) {
-    .serve-section { padding: 52px 20px; }
-    .serve-grid { grid-template-columns: 1fr; }
-    .serve-header { margin-bottom: 36px; }
-  }
+/* ==========================================================================
+   Page intro band — sits directly under the transparent header, so it
+   carries a dark background of its own (unlike the homepage hero photo).
+   ========================================================================== */
 
-  .origin-section { padding: 80px 32px; position: relative; overflow: hidden; }
-  .origin-section::before { content: '2025'; position: absolute; right: -24px; top: 50%; transform: translateY(-50%); font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: clamp(100px, 18vw, 220px); color: rgba(39,156,245,0.04); line-height: 1; letter-spacing: -6px; pointer-events: none; }
-  .origin-inner { max-width: 1160px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; position: relative; z-index: 1; }
+.page-intro { background: var(--ink-slate); padding: clamp(7.5rem, 16vw, 10rem) var(--gutter) 0; }
+.page-intro__inner { max-width: var(--max-width); margin: 0 auto; }
+.page-intro__eyebrow { display: flex; align-items: center; gap: 0.65rem; font-family: var(--font-mono); font-size: 0.72rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--rockline-blue); margin-bottom: 1.25rem; }
+.page-intro__eyebrow::before { content: ""; width: 2rem; height: 1px; background: var(--rockline-blue); }
+.page-intro__headline { font-family: var(--font-display); font-weight: 600; line-height: 1.05; letter-spacing: -0.01em; font-size: clamp(2.4rem, 5.2vw, 4rem); max-width: 20ch; color: var(--pure-white); }
+.page-intro__headline em { font-style: italic; font-weight: 500; color: var(--rockline-blue); }
 
-  .origin-left { position: relative; }
-  .origin-section-tag { font-family: 'Space Mono', monospace; font-size: 9px; letter-spacing: 3px; text-transform: uppercase; color: var(--blue-bright); margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
-  .origin-section-tag::after { content: ''; flex: 1; height: 1px; background: var(--border); }
-  .origin-left h2 { font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: clamp(2rem, 3.5vw, 3rem); line-height: 1.05; margin-bottom: 28px; }
-  .origin-left h2 em { background: linear-gradient(90deg, var(--blue-bright), var(--blue-mid)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-style: normal; }
+/* ==========================================================================
+   Origin Story — dark section, continues straight off the page intro.
+   Timeline on the left encodes an actual chronology (foundation → the
+   shift we saw coming → the Lockport launch), so numbering here is
+   earned, not decorative.
+   ========================================================================== */
 
-  .origin-timeline { display: flex; flex-direction: column; gap: 0; position: relative; margin-bottom: 36px; }
-  .origin-timeline::before { content: ''; position: absolute; left: 14px; top: 8px; bottom: 8px; width: 1px; background: linear-gradient(180deg, var(--blue-bright), rgba(39,156,245,0.1)); }
-  .timeline-node { display: flex; gap: 22px; align-items: flex-start; padding: 0 0 28px 0; position: relative; }
-  .timeline-node:last-child { padding-bottom: 0; }
-  .node-dot { width: 29px; height: 29px; border-radius: 50%; background: var(--blue-dark); border: 2px solid var(--blue-bright); display: flex; align-items: center; justify-content: center; flex-shrink: 0; position: relative; z-index: 1; box-shadow: 0 0 14px rgba(39,156,245,0.35); }
-  .node-dot svg { width: 12px; height: 12px; color: var(--blue-bright); }
-  .node-content { padding-top: 3px; }
-  .node-label { font-family: 'Space Mono', monospace; font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: var(--blue-bright); margin-bottom: 5px; }
-  .node-text { font-size: .93rem; color: var(--blue-light); line-height: 1.8; font-weight: 300; }
-  .node-text strong { color: var(--white); font-weight: 500; }
+.origin { background: var(--ink-slate); color: var(--stone-fog); padding: clamp(3.5rem, 7vw, 5rem) var(--gutter) clamp(5rem, 11vw, 8.5rem); }
+.origin__inner { max-width: var(--max-width); margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2.5rem, 5vw, 4.5rem); align-items: start; }
 
-  .origin-right { display: flex; flex-direction: column; gap: 20px; }
-  .origin-pull-quote { background: linear-gradient(135deg, rgba(39,156,245,0.07), rgba(2,18,40,0.6)); border: 1px solid var(--border-hi); border-left: 3px solid var(--blue-bright); border-radius: 0 8px 8px 0; padding: 28px 28px 28px 24px; position: relative; }
-  .origin-pull-quote p { font-family: 'Rajdhani', sans-serif; font-weight: 500; font-size: clamp(1.1rem, 1.6vw, 1.35rem); line-height: 1.5; color: var(--white); font-style: normal; }
-  .origin-pull-quote p em { color: var(--blue-bright); font-style: normal; }
+.origin-timeline { display: flex; flex-direction: column; position: relative; margin-bottom: 2rem; }
+.origin-timeline::before { content: ""; position: absolute; left: 14px; top: 8px; bottom: 8px; width: 1px; background: linear-gradient(180deg, var(--rockline-blue), rgba(76, 134, 176, 0.08)); }
+.timeline-node { display: flex; gap: 1.35rem; align-items: flex-start; padding: 0 0 1.75rem 0; position: relative; }
+.timeline-node:last-child { padding-bottom: 0; }
+.node-dot { width: 29px; height: 29px; border-radius: 50%; background: var(--ink-slate); border: 2px solid var(--rockline-blue); display: flex; align-items: center; justify-content: center; flex-shrink: 0; position: relative; z-index: 1; }
+.node-dot svg { width: 12px; height: 12px; color: var(--rockline-blue); }
+.node-content { padding-top: 3px; }
+.node-label { font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--rockline-blue); margin-bottom: 0.4rem; }
+.node-text { font-size: 0.93rem; line-height: 1.75; color: rgba(232, 228, 219, 0.82); }
+.node-text strong { color: var(--pure-white); font-weight: 600; }
 
-  .origin-body p { font-size: .96rem; color: var(--blue-light); line-height: 1.9; font-weight: 300; margin-bottom: 14px; }
-  .origin-body p:last-child { margin-bottom: 0; }
-  .origin-body strong { color: var(--white); font-weight: 500; }
+.origin-founders { display: flex; align-items: center; gap: 1rem; padding: 1.1rem 1.25rem; background: rgba(232, 228, 219, 0.05); border: 1px solid rgba(232, 228, 219, 0.12); border-radius: 12px; }
+.founders-icon { width: 42px; height: 42px; border-radius: 50%; background: rgba(76, 134, 176, 0.14); border: 1px solid rgba(76, 134, 176, 0.35); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.founders-icon svg { width: 19px; height: 19px; color: var(--rockline-blue); }
+.founders-text { font-size: 0.85rem; line-height: 1.55; color: rgba(232, 228, 219, 0.75); }
+.founders-text strong { display: block; font-family: var(--font-body); font-weight: 600; font-size: 0.88rem; color: var(--pure-white); margin-bottom: 0.1rem; }
 
-  .origin-founders { display: flex; align-items: center; gap: 16px; margin-top: 8px; padding: 20px 22px; background: var(--surface-1); border: 1px solid var(--border); border-radius: 8px; }
-  .founders-icon { width: 42px; height: 42px; border-radius: 50%; background: rgba(39,156,245,0.1); border: 1px solid var(--border-hi); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-  .founders-icon svg { width: 20px; height: 20px; color: var(--blue-bright); }
-  .founders-text { font-size: .88rem; color: var(--blue-mid); line-height: 1.6; }
-  .founders-text strong { display: block; font-family: 'Rajdhani', sans-serif; font-size: 13px; letter-spacing: 1px; color: var(--white); text-transform: uppercase; margin-bottom: 2px; }
+.origin-right { display: flex; flex-direction: column; gap: 1.5rem; }
+.origin-quote { background: rgba(76, 134, 176, 0.08); border-left: 3px solid var(--rockline-blue); border-radius: 0 12px 12px 0; padding: 1.75rem 1.75rem 1.75rem 1.5rem; }
+.origin-quote p { font-family: var(--font-display); font-style: italic; font-weight: 500; font-size: clamp(1.15rem, 1.7vw, 1.4rem); line-height: 1.5; color: var(--pure-white); }
+.origin-quote p em { color: var(--rockline-blue); font-style: italic; }
 
-  /* ── RESPONSIVE ── */
-  @media (max-width: 768px) {
-    #site-header, #sticky-nav-zone { display: none; }
-    #mobile-sticky { display: flex; }
-    .mobile-overlay { display: block; }
-    main { padding-top: 92px; }
-    .footer-main { grid-template-columns: 1fr; text-align: center; gap: 12px; padding: 14px 20px; }
-    .footer-hours { text-align: center; }
-    .hours-grid { justify-content: center; }
-    .footer-logo-col { justify-content: center; }
-    .origin-section { padding: 52px 20px; }
-    .origin-section::before { display: none; }
-    .origin-inner { grid-template-columns: 1fr; gap: 40px; }
-  }
+.origin-body p { font-size: 0.96rem; line-height: 1.85; color: rgba(232, 228, 219, 0.82); margin-bottom: 1rem; }
+.origin-body p:last-child { margin-bottom: 0; }
+.origin-body strong { color: var(--pure-white); font-weight: 600; }
 
-  /* ── WHO WE SERVE SECTION ── */
-  .serve-section { padding: 80px 32px; background: linear-gradient(180deg, rgba(2,18,40,0.6) 0%, rgba(3,40,68,0) 100%); border-top: 1px solid var(--border); position: relative; overflow: hidden; }
-  .serve-inner { max-width: 1160px; margin: 0 auto; }
-  .serve-header { text-align: center; max-width: 760px; margin: 0 auto 52px; }
-  .serve-tag { font-family: 'Space Mono', monospace; font-size: 9px; letter-spacing: 3px; text-transform: uppercase; color: var(--blue-bright); margin-bottom: 16px; display: flex; align-items: center; justify-content: center; gap: 10px; }
-  .serve-tag::before, .serve-tag::after { content: ''; flex: 1; max-width: 48px; height: 1px; background: var(--border); }
-  .serve-header h2 { font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: clamp(1.9rem, 3.2vw, 2.8rem); line-height: 1.1; margin-bottom: 18px; }
-  .serve-header h2 em { background: linear-gradient(90deg, var(--blue-bright), var(--blue-mid)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-style: normal; }
-  .serve-lead { font-size: .97rem; color: var(--blue-light); line-height: 1.9; font-weight: 300; }
+@media (max-width: 900px) {
+  .origin__inner { grid-template-columns: 1fr; }
+}
 
-  .serve-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-bottom: 32px; }
-  .serve-card { background: var(--surface-2); border: 1px solid var(--border); border-radius: 10px; padding: 28px 24px; transition: border-color .25s, transform .2s, background .25s; position: relative; overflow: hidden; }
-  .serve-card::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, var(--blue-bright), transparent); opacity: 0; transition: opacity .3s; }
-  .serve-card:hover { border-color: var(--border-hi); transform: translateY(-3px); background: rgba(39,156,245,0.04); }
-  .serve-card:hover::after { opacity: 1; }
-  .serve-card-icon { width: 42px; height: 42px; background: rgba(39,156,245,0.08); border: 1px solid var(--border-hi); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px; }
-  .serve-card-icon svg { width: 19px; height: 19px; color: var(--blue-bright); }
-  .serve-card h3 { font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 1.08rem; margin-bottom: 10px; color: var(--white); }
-  .serve-card p { font-size: .9rem; color: var(--blue-light); line-height: 1.8; font-weight: 300; }
+/* ==========================================================================
+   Who We Serve — light section, alternating rhythm off the dark Origin
+   block. Cards mirror the homepage's service-card pattern.
+   ========================================================================== */
 
-  .serve-footer-note { display: flex; align-items: flex-start; gap: 14px; background: linear-gradient(135deg, rgba(39,156,245,0.06), rgba(2,18,40,0.4)); border: 1px solid var(--border-hi); border-radius: 8px; padding: 20px 24px; max-width: 760px; margin: 0 auto; }
-  .serve-note-icon { width: 32px; height: 32px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; color: var(--blue-bright); margin-top: 1px; }
-  .serve-note-icon svg { width: 20px; height: 20px; }
-  .serve-footer-note p { font-size: .92rem; color: var(--blue-light); line-height: 1.8; font-weight: 300; }
-  .serve-footer-note strong { color: var(--white); font-weight: 500; }
+.serve { background: radial-gradient(ellipse 60% 55% at 100% 0%, rgba(76, 134, 176, 0.12), transparent 70%), var(--pure-white); color: var(--ink-slate); padding: clamp(5rem, 11vw, 8.5rem) var(--gutter); }
+.serve__inner { max-width: var(--max-width); margin: 0 auto; }
+.serve__eyebrow { display: flex; align-items: center; gap: 0.65rem; font-family: var(--font-mono); font-size: 0.72rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--rockline-blue); margin-bottom: 1.25rem; }
+.serve__eyebrow::before { content: ""; width: 2rem; height: 1px; background: var(--rockline-blue); }
+.serve__headline { font-family: var(--font-display); font-weight: 600; line-height: 1.08; letter-spacing: -0.01em; font-size: clamp(2.1rem, 4.4vw, 3.6rem); max-width: 26ch; color: var(--ink-slate); margin-bottom: 1.25rem; }
+.serve__headline em { font-style: italic; font-weight: 500; color: var(--rockline-blue); }
+.serve__lead { font-size: 0.98rem; line-height: 1.85; color: rgba(28, 35, 44, 0.72); max-width: 62ch; margin-bottom: clamp(2.75rem, 6vw, 3.5rem); }
 
-  @media (max-width: 900px) { .serve-grid { grid-template-columns: repeat(2, 1fr); } }
-  @media (max-width: 768px) {
-    .serve-section { padding: 52px 20px; }
-    .serve-grid { grid-template-columns: 1fr; }
-    .serve-header { margin-bottom: 36px; }
-  }
+.serve__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(1.1rem, 2.2vw, 1.5rem); margin-bottom: clamp(2rem, 4vw, 2.75rem); }
+.serve-card { display: flex; flex-direction: column; gap: 1rem; background: linear-gradient(165deg, var(--pure-white) 55%, #f2f7fa 100%); border: 1px solid rgba(28, 35, 44, 0.09); border-radius: 16px; padding: 1.75rem 1.6rem; transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; }
+.serve-card:hover { border-color: var(--rockline-blue); transform: translateY(-4px); box-shadow: 0 20px 40px -26px rgba(28, 35, 44, 0.32); }
+.serve-card__icon { width: 40px; height: 40px; background: rgba(76, 134, 176, 0.1); border: 1px solid rgba(76, 134, 176, 0.3); border-radius: 9px; display: flex; align-items: center; justify-content: center; color: var(--rockline-blue); }
+.serve-card__icon svg { width: 18px; height: 18px; }
+.serve-card__title { font-family: var(--font-display); font-weight: 600; font-size: 1.12rem; color: var(--ink-slate); }
+.serve-card__desc { font-size: 0.89rem; line-height: 1.7; color: rgba(28, 35, 44, 0.7); }
 
-  /* ── PLAN FOR SUCCESS SECTION ── */
-  .plan-section { padding: 88px 32px; position: relative; overflow: hidden; border-top: 1px solid var(--border); }
-  .plan-section::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 70% 60% at 50% 0%, rgba(39,156,245,0.07) 0%, transparent 70%); pointer-events: none; }
-  .plan-inner { max-width: 1160px; margin: 0 auto; position: relative; z-index: 1; }
+.serve-note { display: flex; align-items: flex-start; gap: 0.9rem; background: rgba(76, 134, 176, 0.06); border: 1px solid rgba(76, 134, 176, 0.25); border-radius: 12px; padding: 1.25rem 1.5rem; max-width: 52rem; }
+.serve-note__icon { width: 30px; height: 30px; flex-shrink: 0; border-radius: 50%; background: rgba(76, 134, 176, 0.14); display: flex; align-items: center; justify-content: center; color: var(--rockline-blue); }
+.serve-note__icon svg { width: 16px; height: 16px; }
+.serve-note p { font-size: 0.9rem; line-height: 1.7; color: rgba(28, 35, 44, 0.78); }
+.serve-note strong { color: var(--ink-slate); font-weight: 600; }
 
-  .plan-header { text-align: center; max-width: 800px; margin: 0 auto 64px; }
-  .plan-tag { font-family: 'Space Mono', monospace; font-size: 9px; letter-spacing: 3px; text-transform: uppercase; color: var(--blue-bright); margin-bottom: 16px; display: flex; align-items: center; justify-content: center; gap: 10px; }
-  .plan-tag::before, .plan-tag::after { content: ''; flex: 1; max-width: 48px; height: 1px; background: var(--border); }
-  .plan-header h2 { font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: clamp(2rem, 3.5vw, 3rem); line-height: 1.08; margin-bottom: 18px; }
-  .plan-header h2 em { background: linear-gradient(90deg, var(--blue-bright), var(--blue-mid)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-style: normal; }
-  .plan-header p { font-size: 1rem; color: var(--blue-light); line-height: 1.9; font-weight: 300; }
+@media (max-width: 900px) { .serve__grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 640px) { .serve__grid { grid-template-columns: 1fr; } }
 
-  /* Two pillars */
-  .plan-pillars { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 56px; }
-  .plan-pillar { background: var(--surface-2); border: 1px solid var(--border); border-radius: 12px; padding: 40px 36px; position: relative; overflow: hidden; transition: border-color .3s, transform .25s; }
-  .plan-pillar:hover { border-color: var(--border-hi); transform: translateY(-4px); }
-  .plan-pillar::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--blue-bright), rgba(39,156,245,0.2)); }
-  .pillar-number { font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 4rem; color: rgba(39,156,245,0.08); line-height: 1; margin-bottom: 4px; letter-spacing: -2px; }
-  .pillar-icon { width: 48px; height: 48px; background: rgba(39,156,245,0.1); border: 1px solid var(--border-hi); border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; }
-  .pillar-icon svg { width: 22px; height: 22px; color: var(--blue-bright); }
-  .plan-pillar h3 { font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 1.4rem; margin-bottom: 12px; line-height: 1.2; }
-  .plan-pillar h3 em { color: var(--blue-bright); font-style: normal; }
-  .plan-pillar p { font-size: .94rem; color: var(--blue-light); line-height: 1.85; font-weight: 300; margin-bottom: 12px; }
-  .plan-pillar p:last-of-type { margin-bottom: 0; }
-  .plan-pillar strong { color: var(--white); font-weight: 500; }
-  .pillar-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
-  .pillar-tag { font-family: 'Space Mono', monospace; font-size: 9px; letter-spacing: 1px; text-transform: uppercase; color: var(--blue-bright); padding: 5px 12px; border: 1px solid rgba(39,156,245,0.25); border-radius: 3px; background: rgba(39,156,245,0.05); }
+/* ==========================================================================
+   Plan for Success — dark section, alternating rhythm off Who We Serve.
+   Two pillars are the literal, complete scope of the plan — not a
+   generic 01/02 device — so numbering them still carries information.
+   ========================================================================== */
 
-  /* Connector arrow between pillars */
-  .plan-pillars { position: relative; }
-  .pillar-connector { display: flex; align-items: center; justify-content: center; }
-  .pillar-connector-inner { width: 48px; height: 48px; border-radius: 50%; background: var(--blue-dark); border: 2px solid var(--blue-bright); display: flex; align-items: center; justify-content: center; box-shadow: 0 0 20px rgba(39,156,245,0.3); flex-shrink: 0; align-self: center; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); z-index: 2; }
-  .pillar-connector-inner svg { width: 18px; height: 18px; color: var(--blue-bright); }
+.plan { background: var(--ink-slate); color: var(--stone-fog); padding: clamp(5rem, 11vw, 8.5rem) var(--gutter); }
+.plan__inner { max-width: var(--max-width); margin: 0 auto; }
+.plan__eyebrow { display: flex; align-items: center; gap: 0.65rem; font-family: var(--font-mono); font-size: 0.72rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--rockline-blue); margin-bottom: 1.25rem; }
+.plan__eyebrow::before { content: ""; width: 2rem; height: 1px; background: var(--rockline-blue); }
+.plan__headline { font-family: var(--font-display); font-weight: 600; line-height: 1.08; letter-spacing: -0.01em; font-size: clamp(2.1rem, 4.4vw, 3.6rem); max-width: 20ch; color: var(--pure-white); margin-bottom: 1.25rem; }
+.plan__headline em { font-style: italic; font-weight: 500; color: var(--rockline-blue); }
+.plan__lead { font-size: 0.98rem; line-height: 1.85; color: rgba(232, 228, 219, 0.78); max-width: 62ch; margin-bottom: clamp(3rem, 6.5vw, 4rem); }
 
-  /* Result band */
-  .plan-result { background: linear-gradient(135deg, rgba(39,156,245,0.09), rgba(2,18,40,0.7)); border: 1px solid var(--border-hi); border-radius: 12px; padding: 40px 44px; display: flex; align-items: center; gap: 36px; margin-bottom: 56px; }
-  .result-icon { width: 64px; height: 64px; border-radius: 50%; background: rgba(39,156,245,0.1); border: 2px solid var(--border-hi); display: flex; align-items: center; justify-content: center; flex-shrink: 0; box-shadow: 0 0 24px rgba(39,156,245,0.2); }
-  .result-icon svg { width: 28px; height: 28px; color: var(--blue-bright); }
-  .result-text h3 { font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: clamp(1.2rem, 2vw, 1.6rem); margin-bottom: 8px; }
-  .result-text h3 em { color: var(--blue-bright); font-style: normal; }
-  .result-text p { font-size: .95rem; color: var(--blue-light); line-height: 1.85; font-weight: 300; }
-  .result-text strong { color: var(--white); font-weight: 500; }
+.plan-pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(1.25rem, 2.5vw, 1.75rem); margin-bottom: clamp(2.5rem, 5vw, 3.5rem); }
+@media (max-width: 1100px) { .plan-pillars { grid-template-columns: 1fr 1fr; } }
+.plan-pillar { background: rgba(232, 228, 219, 0.05); border: 1px solid rgba(232, 228, 219, 0.12); border-radius: 18px; padding: clamp(1.75rem, 3vw, 2.25rem); transition: border-color 0.3s ease, transform 0.3s ease; }
+.plan-pillar:hover { border-color: var(--rockline-blue); transform: translateY(-4px); }
+.plan-pillar__num { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.06em; color: var(--rock-gray); margin-bottom: 1rem; }
+.plan-pillar__icon { width: 44px; height: 44px; background: rgba(76, 134, 176, 0.14); border: 1px solid rgba(76, 134, 176, 0.35); border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.25rem; color: var(--rockline-blue); }
+.plan-pillar__icon svg { width: 20px; height: 20px; }
+.plan-pillar h3 { font-family: var(--font-display); font-weight: 600; font-size: 1.35rem; line-height: 1.25; margin-bottom: 0.85rem; color: var(--pure-white); }
+.plan-pillar h3 em { font-style: italic; color: var(--rockline-blue); }
+.plan-pillar p { font-size: 0.92rem; line-height: 1.75; color: rgba(232, 228, 219, 0.78); margin-bottom: 0.85rem; }
+.plan-pillar p:last-of-type { margin-bottom: 0; }
+.plan-pillar strong { color: var(--pure-white); font-weight: 600; }
+.pillar-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.25rem; }
+.pillar-tag { font-family: var(--font-mono); font-size: 0.65rem; letter-spacing: 0.05em; text-transform: uppercase; color: var(--rockline-blue); padding: 0.3rem 0.7rem; border: 1px solid rgba(76, 134, 176, 0.35); border-radius: 999px; background: rgba(76, 134, 176, 0.08); }
 
-  /* Dual CTA */
-  .plan-cta { display: flex; align-items: center; justify-content: center; gap: 16px; flex-wrap: wrap; }
-  .cta-primary { display: inline-flex; align-items: center; gap: 9px; background: linear-gradient(135deg, var(--blue-bright), #1479c4); color: var(--white); text-decoration: none; font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 1.8px; text-transform: uppercase; padding: 15px 34px; border-radius: 4px; border: 1px solid rgba(255,255,255,0.12); box-shadow: 0 4px 22px rgba(39,156,245,0.4); transition: box-shadow .25s, transform .2s; }
-  .cta-primary:hover { box-shadow: 0 10px 36px rgba(39,156,245,0.6); transform: translateY(-2px); }
-  .cta-secondary { display: inline-flex; align-items: center; gap: 9px; background: transparent; color: var(--blue-light); text-decoration: none; font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 1.8px; text-transform: uppercase; padding: 14px 34px; border-radius: 4px; border: 1px solid var(--border-hi); transition: border-color .25s, color .25s, transform .2s; }
-  .cta-secondary:hover { border-color: var(--blue-bright); color: var(--white); transform: translateY(-2px); }
-  .cta-divider { font-family: 'Space Mono', monospace; font-size: 10px; color: rgba(143,203,250,0.3); letter-spacing: 2px; text-transform: uppercase; }
+.plan-result { display: flex; align-items: center; gap: 1.75rem; background: rgba(76, 134, 176, 0.1); border: 1px solid rgba(76, 134, 176, 0.3); border-radius: 18px; padding: clamp(1.75rem, 3vw, 2.5rem); margin-bottom: clamp(2.5rem, 5vw, 3.5rem); }
+.plan-result__icon { width: 56px; height: 56px; border-radius: 50%; background: rgba(76, 134, 176, 0.16); border: 1px solid rgba(76, 134, 176, 0.4); display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: var(--sunrise-gold); }
+.plan-result__icon svg { width: 24px; height: 24px; }
+.plan-result__text h3 { font-family: var(--font-display); font-weight: 600; font-size: clamp(1.15rem, 2vw, 1.5rem); margin-bottom: 0.5rem; color: var(--pure-white); }
+.plan-result__text h3 em { font-style: italic; color: var(--rockline-blue); }
+.plan-result__text p { font-size: 0.93rem; line-height: 1.8; color: rgba(232, 228, 219, 0.8); }
+.plan-result__text strong { color: var(--pure-white); font-weight: 600; }
 
-  @media (max-width: 768px) {
-    .plan-section { padding: 52px 20px; }
-    .plan-pillars { grid-template-columns: 1fr; }
-    .plan-result { flex-direction: column; text-align: center; padding: 28px 24px; gap: 20px; }
-    .plan-cta { flex-direction: column; align-items: stretch; }
-    .cta-primary, .cta-secondary { justify-content: center; }
-    .cta-divider { text-align: center; }
-  }
-</style>
+.plan-cta { display: flex; align-items: center; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+.plan-cta__divider { font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(232, 228, 219, 0.4); }
+
+@media (max-width: 700px) {
+  .plan-pillars { grid-template-columns: 1fr; }
+}
+@media (max-width: 900px) {
+  .plan-result { flex-direction: column; text-align: center; }
+}
+@media (max-width: 640px) {
+  .plan-cta { flex-direction: column; align-items: stretch; }
+  .plan-cta .btn { justify-content: center; }
+  .plan-cta__divider { text-align: center; }
+}
+
+/* ==========================================================================
+   Footer (shared with homepage)
+   ========================================================================== */
+
+.site-footer { background: var(--pure-white); color: var(--ink-slate); border-top: 1px solid rgba(28, 35, 44, 0.1); }
+.site-footer__inner { max-width: var(--max-width); margin: 0 auto; padding: clamp(3rem, 6vw, 4.5rem) var(--gutter) clamp(2rem, 4vw, 2.5rem); display: grid; grid-template-columns: 1.3fr 1fr 1.3fr; gap: clamp(2rem, 5vw, 3rem); }
+.site-footer__brand { display: flex; flex-direction: column; gap: 1rem; }
+.site-footer__logo { height: clamp(4.5rem, 8vw, 6.5rem); width: auto; align-self: flex-start; object-fit: contain; margin-bottom: 0.25rem; }
+.site-footer__tagline { font-family: var(--font-display); font-style: italic; font-size: 1rem; color: rgba(28, 35, 44, 0.65); max-width: 22ch; }
+.site-footer__heading { font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--rockline-blue); margin-bottom: 0.85rem; }
+.site-footer__hours-value { font-family: var(--font-body); font-weight: 600; font-size: 1rem; color: var(--ink-slate); margin-bottom: 0.25rem; }
+.site-footer__hours-sub { font-size: 0.85rem; color: rgba(28, 35, 44, 0.6); }
+.site-footer__social { display: flex; flex-direction: column; align-items: flex-start; }
+.site-footer__social-row { display: flex; flex-direction: column; gap: 0.4rem; }
+.site-footer__social-hex-row { display: flex; gap: 0.5rem; }
+.site-footer__social-hex-row--offset { margin: -0.62rem 0 0 1.6rem; }
+.site-footer__social-icon { width: 3rem; height: 3.4rem; clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%); display: inline-flex; align-items: center; justify-content: center; color: var(--pure-white); text-decoration: none; font-family: var(--font-body); font-weight: 700; font-size: 0.78rem; flex-shrink: 0; transition: transform 0.25s ease, filter 0.25s ease; }
+.site-footer__social-icon:hover, .site-footer__social-icon:focus-visible { transform: translateY(-3px) scale(1.06); filter: brightness(1.1); }
+.site-footer__social-icon--facebook { background: #1877f2; }
+.site-footer__social-icon--instagram { background: linear-gradient(135deg, #f9ce34, #ee2a7b, #6228d7); }
+.site-footer__social-icon--x { background: #000000; }
+.site-footer__social-icon--substack { background: #ff6719; }
+.site-footer__social-icon--threads { background: #000000; }
+.site-footer__social-icon--tiktok { background: #010101; }
+.site-footer__social-icon--pinterest { background: #e60023; }
+.site-footer__bottom { border-top: 1px solid rgba(28, 35, 44, 0.08); padding: 1.5rem var(--gutter); text-align: center; font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.04em; color: rgba(28, 35, 44, 0.4); }
+@media (max-width: 900px) { .site-footer__inner { grid-template-columns: 1fr; } }
+
+  </style>
 </head>
 <body>
 
-<!-- ═══ DESKTOP HEADER ═══ -->
-<header id="site-header">
-  <div class="header-brand">
-    <a href="sms:+18155555555?body=Hi%2C%20I%27d%20like%20to%20learn%20more%20about%20Rockline%20AI%20Marketing!" class="cta-sms">
-      <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-      Contact Us
-    </a>
-    <img src="images/logos/rockline-ai-marketing-logo.png" alt="Rockline AI Marketing" class="header-logo">
-  </div>
-</header>
+  <!-- ==========================================================================
+       HEADER
+       ========================================================================== -->
+  <header class="site-header">
+    <div class="site-header__inner">
 
-<!-- ═══ DESKTOP STICKY NAV + TICKER ═══ -->
-<div id="sticky-nav-zone">
-  <nav class="main-nav" role="navigation" aria-label="Main navigation">
-    <div class="nav-item"><a href="../index.html" class="nav-btn">Home</a></div>
-    <div class="nav-item">
-      <span class="nav-btn active" tabindex="0">About <svg class="chevron" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 3.5L5 6.5L8 3.5"/></svg></span>
-      <div class="dropdown">
-        <a href="agency-profile.html" class="current-page">Agency Profile</a>
-        <a href="customer-success-stories.html">Customer Success Stories</a>
-        <a href="community-activism.html">Community Activism</a>
-      </div>
-    </div>
-    <div class="nav-item">
-      <span class="nav-btn" tabindex="0">Portfolio <svg class="chevron" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 3.5L5 6.5L8 3.5"/></svg></span>
-      <div class="dropdown">
-        <a href="../portfolio/website-gallery.html">Website Gallery</a>
-        <a href="../portfolio/photo-gallery.html">Photo Gallery</a>
-        <a href="../portfolio/social-gallery.html">Social Gallery</a>
-      </div>
-    </div>
-    <div class="nav-item">
-      <span class="nav-btn" tabindex="0">Services <svg class="chevron" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 3.5L5 6.5L8 3.5"/></svg></span>
-      <div class="dropdown">
-        <a href="../services/custom-websites.html">Custom Websites</a>
-        <a href="../services/microblogging.html">Microblogging</a>
-        <a href="../services/aerial-8k-photography.html">Aerial &amp; 8K Photography</a>
-      </div>
-    </div>
-    <div class="nav-item">
-      <span class="nav-btn" tabindex="0">Contact <svg class="chevron" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 3.5L5 6.5L8 3.5"/></svg></span>
-      <div class="dropdown">
-        <a href="../contact/business-information.html">Business Information</a>
-        <a href="../contact/social-media.html">Social Media</a>
-        <a href="../contact/q-and-a.html">Q &amp; A</a>
-      </div>
-    </div>
-  </nav>
-  <div class="ticker-wrap">
-    <a href="../contact/q-and-a.html" style="text-decoration:none; pointer-events:auto;"><div class="ticker-label">GEO FAQ</div></a>
-    <div class="ticker-inner">
-      <div class="ticker-track" id="desktopTicker">
-        <div class="ticker-item">What is Generative Engine Optimization (GEO)?</div>
-        <div class="ticker-item">How does GEO differ from traditional SEO?</div>
-        <div class="ticker-item">Can AI-driven content appear in ChatGPT and Gemini answers?</div>
-        <div class="ticker-item">What makes a website discoverable by AI search engines?</div>
-        <div class="ticker-item">How does Rockline AI Marketing implement GEO strategies?</div>
-        <div class="ticker-item">Is GEO replacing SEO — or working alongside it?</div>
-        <div class="ticker-item">How do large language models discover and cite local businesses?</div>
-        <div class="ticker-item">What role does structured data play in GEO?</div>
-        <div class="ticker-item">How quickly can GEO improve your online visibility?</div>
-        <div class="ticker-item">What industries benefit most from Generative Engine Optimization?</div>
-      </div>
-    </div>
-  </div>
-</div>
+      <a class="site-header__logo" href="https://rocklineaimarketing.com/">
+        <span class="site-header__logo-text">Rockline AI Marketing</span>
+      </a>
 
-<!-- ═══ MOBILE STICKY HEADER ═══ -->
-<div id="mobile-sticky">
-  <div class="mobile-topbar">
-    <img src="images/logos/rockline-ai-marketing-logo.png" alt="Rockline AI Marketing" class="mobile-header-logo">
-    <button class="hamburger-trigger" id="hamburgerTrigger" aria-label="Open navigation">
-      <div class="hamburger-bars"><span></span><span></span><span></span></div>
-    </button>
-  </div>
-  <div class="mobile-ticker-strip ticker-wrap">
-    <a href="../contact/q-and-a.html" style="text-decoration:none; pointer-events:auto;"><div class="ticker-label">GEO FAQ</div></a>
-    <div class="ticker-inner">
-      <div class="ticker-track" id="mobileTicker">
-        <div class="ticker-item">What is Generative Engine Optimization (GEO)?</div>
-        <div class="ticker-item">How does GEO differ from traditional SEO?</div>
-        <div class="ticker-item">Can AI-driven content appear in ChatGPT &amp; Gemini?</div>
-        <div class="ticker-item">What makes a website discoverable by AI?</div>
-        <div class="ticker-item">How does Rockline AI Marketing implement GEO?</div>
-        <div class="ticker-item">Is GEO replacing SEO — or working alongside it?</div>
-        <div class="ticker-item">How do LLMs discover and cite local businesses?</div>
-        <div class="ticker-item">What role does structured data play in GEO?</div>
-        <div class="ticker-item">How quickly can GEO improve your visibility?</div>
-        <div class="ticker-item">Which industries benefit most from GEO?</div>
-      </div>
-    </div>
-  </div>
-</div>
+      <nav class="site-header__nav" aria-label="Primary">
+        <a href="https://rocklineaimarketing.com/">Home</a>
 
-<div class="mobile-overlay" id="mobileOverlay"></div>
-<div class="mobile-panel" id="mobilePanel" role="dialog" aria-label="Navigation">
-  <div class="mobile-panel-logo">
-    <img src="images/logos/rockline-ai-marketing-logo.png" alt="Rockline AI Marketing">
-  </div>
-  <ul class="mobile-nav-list">
-    <li><a href="../index.html">Home</a></li>
-    <li>
-      <div class="m-parent sub-open" onclick="toggleSub(this)">About <svg class="m-chevron" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 3.5L5 6.5L8 3.5"/></svg></div>
-      <div class="mobile-sub open">
-        <a href="agency-profile.html" class="current-page">Agency Profile</a>
-        <a href="customer-success-stories.html">Customer Success Stories</a>
-        <a href="community-activism.html">Community Activism</a>
-      </div>
-    </li>
-    <li>
-      <div class="m-parent" onclick="toggleSub(this)">Portfolio <svg class="m-chevron" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 3.5L5 6.5L8 3.5"/></svg></div>
-      <div class="mobile-sub"><a href="../portfolio/website-gallery.html">Website Gallery</a><a href="../portfolio/photo-gallery.html">Photo Gallery</a><a href="../portfolio/social-gallery.html">Social Gallery</a></div>
-    </li>
-    <li>
-      <div class="m-parent" onclick="toggleSub(this)">Services <svg class="m-chevron" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 3.5L5 6.5L8 3.5"/></svg></div>
-      <div class="mobile-sub"><a href="../services/custom-websites.html">Custom Websites</a><a href="../services/microblogging.html">Microblogging</a><a href="../services/aerial-8k-photography.html">Aerial &amp; 8K Photography</a></div>
-    </li>
-    <li>
-      <div class="m-parent" onclick="toggleSub(this)">Contact <svg class="m-chevron" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 3.5L5 6.5L8 3.5"/></svg></div>
-      <div class="mobile-sub"><a href="../contact/business-information.html">Business Information</a><a href="../contact/social-media.html">Social Media</a><a href="../contact/q-and-a.html">Q &amp; A</a></div>
-    </li>
-  </ul>
-  <div class="mobile-panel-cta">
-    <a href="sms:+18155555555?body=Hi%2C%20I%27d%20like%20to%20learn%20more%20about%20Rockline%20AI%20Marketing!">
-      <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-      Text Us Now
-    </a>
-  </div>
-</div>
-
-<!-- ═══ MAIN CONTENT — sections go here ═══ -->
-<main>
-
-  <!-- ═══ SECTION 1: ORIGIN STORY ═══ -->
-  <section class="origin-section" aria-labelledby="origin-h2">
-    <div class="origin-inner">
-
-      <!-- LEFT: heading + timeline -->
-      <div class="origin-left">
-        <p class="origin-section-tag">Our Story</p>
-        <h2 id="origin-h2">Built from Passion.<br><em>Launched with Purpose.</em></h2>
-
-        <div class="origin-timeline">
-          <div class="timeline-node">
-            <div class="node-dot">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-            </div>
-            <div class="node-content">
-              <p class="node-label">The Foundation</p>
-              <p class="node-text">Two people. <strong>One shared vision.</strong> Rockline AI Marketing was born from a simple but powerful decision — to help small business owners transition in to the next level of marketing before their competitors. </p>
-            </div>
-          </div>
-          <div class="timeline-node">
-            <div class="node-dot">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20M12 2a14.5 14.5 0 0 1 0 20M2 12h20"/></svg>
-            </div>
-            <div class="node-content">
-              <p class="node-label">The Shift We Saw Coming</p>
-              <p class="node-text">While most people were still debating whether AI search was real, we were already building for it. We recognized early that <strong>ChatGPT, Gemini, and Perplexity weren't just tools — they were the new front door</strong> for local business discovery.</p>
-            </div>
-          </div>
-          <div class="timeline-node">
-            <div class="node-dot">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-            </div>
-            <div class="node-content">
-              <p class="node-label">Rooted in Lockport &middot; Launched 2025</p>
-              <p class="node-text">We launched right here in the southwest suburbs — the same community where our clients live and run their businesses. <strong>Local isn't a marketing angle for us. It's who we are.</strong></p>
-            </div>
+        <div class="nav-dropdown is-current">
+          <span class="nav-dropdown__label">
+            About
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+          <div class="nav-dropdown__menu">
+            <a href="https://rocklineaimarketing.com/about/agency-profile" class="current-page">Agency Profile</a>
+            <a href="https://rocklineaimarketing.com/about/customer-success-stories">Customer Success Stories</a>
           </div>
         </div>
 
-        <div class="origin-founders">
-          <div class="founders-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-          </div>
-          <div class="founders-text">
-            <strong>Husband &amp; Wife &middot; Lockport, IL</strong>
-            Family-owned and operated — you work with us directly, every time.
-          </div>
-        </div>
-      </div>
-
-      <!-- RIGHT: pull quote + body -->
-      <div class="origin-right">
-        <div class="origin-pull-quote">
-          <p>"We didn't start Rockline to chase clients. We started it because we genuinely love marketing — and we saw <em>a window of opportunity</em> that most agencies weren't even looking at yet."</p>
-        </div>
-
-        <div class="origin-body">
-          <p>Between the two of us, we bring a career's worth of marketing experience — across strategy, content, social media, and digital platforms. We've seen what works, what doesn't, and what's changed. When AI search started reshaping how people find local businesses, we knew our background put us in a rare position: <strong>we understood both the marketing fundamentals and the new frontier at the same time.</strong></p>
-          <p>So in 2025, we made it official. We combined everything we'd built individually and channeled it into something we could build together — an agency designed from the ground up for the way search actually works today, not the way it worked five years ago.</p>
-          <p>Rockline AI Marketing isn't a side project or a pivot. It's the thing we chose to <strong>pour everything into</strong> — because we believe local businesses deserve better than they've been getting, and we're in the right place at the right time to deliver it.</p>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ═══ SECTION 2: WHO WE SERVE ═══ -->
-  <section class="serve-section" aria-labelledby="serve-h2">
-    <div class="serve-inner">
-
-      <div class="serve-header">
-        <p class="serve-tag">Who We Serve</p>
-        <h2 id="serve-h2">If You Serve <em>Local Customers,</em><br>We Can Help You Get Found.</h2>
-        <p class="serve-lead">Rockline AI Marketing works with small and local businesses across Chicago's southwest suburbs. Our clients span a wide range of industries — what they all share is a need to be visible in the places their customers are actually looking, including AI-generated search results.</p>
-      </div>
-
-      <div class="serve-grid">
-
-        <div class="serve-card">
-          <div class="serve-card-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-          </div>
-          <h3>Home Services</h3>
-          <p>Plumbers, electricians, HVAC, roofers, landscapers, and contractors. When someone asks an AI "who's the best [trade] near me," we make sure your name is in the answer.</p>
-        </div>
-
-        <div class="serve-card">
-          <div class="serve-card-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
-          </div>
-          <h3>Restaurants &amp; Food</h3>
-          <p>Diners, cafes, catering companies, food trucks, and specialty food businesses. AI search is quickly becoming where people decide where to eat — we put you in that conversation.</p>
-        </div>
-
-        <div class="serve-card">
-          <div class="serve-card-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><rect x="9" y="11" width="6" height="10"/><circle cx="19" cy="6" r="3"/></svg>
-          </div>
-          <h3>Real Estate</h3>
-          <p>Agents, brokers, and property managers. Buyers and sellers are asking AI for local expertise before they ever pick up the phone — your digital presence needs to answer them first.</p>
-        </div>
-
-        <div class="serve-card">
-          <div class="serve-card-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
-          </div>
-          <h3>Retail &amp; Boutiques</h3>
-          <p>Independent shops, specialty retailers, and local boutiques. We help brick-and-mortar businesses compete with national brands by owning their local AI footprint.</p>
-        </div>
-
-        <div class="serve-card">
-          <div class="serve-card-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg>
-          </div>
-          <h3>Professional Services</h3>
-          <p>Law firms, financial advisors, accountants, medical and dental practices. When clients search for trusted local professionals, a strong GEO presence means your name comes up first.</p>
-        </div>
-
-        <div class="serve-card">
-          <div class="serve-card-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-          </div>
-          <h3>Wellness &amp; Health</h3>
-          <p>Gyms, yoga studios, chiropractors, massage therapists, and wellness brands. People searching for local health services trust AI recommendations — we help you earn those mentions.</p>
-        </div>
-
-      </div>
-
-      <div class="serve-footer-note">
-        <div class="serve-note-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-        </div>
-        <p>Don't see your industry? <strong>If you serve customers in a specific geographic area, GEO can work for you.</strong> Reach out and we'll give you an honest answer about what's possible.</p>
-      </div>
-
-    </div>
-  </section>
-  <!-- ═══ SECTION 3: PLAN FOR SUCCESS ═══ -->
-  <section class="plan-section" aria-labelledby="plan-h2">
-    <div class="plan-inner">
-
-      <div class="plan-header">
-        <p class="plan-tag">Our Plan for Your Success</p>
-        <h2 id="plan-h2">Simple Strategy.<br><em>Powerful Results.</em></h2>
-        <p>We don't believe in complicated retainers, confusing packages, or strategies that take six months to explain. Our plan for your success comes down to two things done exceptionally well — and the way they work together is what makes all the difference.</p>
-      </div>
-
-      <div class="plan-pillars">
-        <div class="plan-pillar">
-          <div class="pillar-number">01</div>
-          <div class="pillar-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
-          </div>
-          <h3>A Fully Coded,<br><em>Fully Customizable Website</em></h3>
-          <p>Your website is the single most important asset in your digital presence — and most small business sites are holding their owners back. We build yours from scratch: <strong>clean code, no page builders, no templates</strong> that a hundred other businesses are also using.</p>
-          <p>Every site we build is structured for both traditional search engines and AI systems. That means proper semantic HTML, Schema.org markup, fast load times, and content architecture that large language models can actually read and trust. <strong>Your site becomes a citation-worthy source</strong> — not just a digital brochure.</p>
-          <div class="pillar-tags">
-            <span class="pillar-tag">Custom Coded</span>
-            <span class="pillar-tag">GEO Structured</span>
-            <span class="pillar-tag">Schema Markup</span>
-            <span class="pillar-tag">Mobile First</span>
+        <div class="nav-dropdown">
+          <span class="nav-dropdown__label">
+            Services
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+          <div class="nav-dropdown__menu">
+            <a href="https://rocklineaimarketing.com/services/web-development">Web Development</a>
+            <a href="https://rocklineaimarketing.com/services/social-media-microblogging">Social Media and Microblogging</a>
+            <a href="https://rocklineaimarketing.com/services/aerial-photography">Aerial Photography</a>
           </div>
         </div>
 
-        <div class="plan-pillar">
-          <div class="pillar-number">02</div>
-          <div class="pillar-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-          </div>
-          <h3>Social Content That Builds<br><em>Local Authority</em></h3>
-          <p>AI systems don't just read your website — they build a picture of your business from everything published about you across the web. Every post, article, and update is a data point. We create <strong>strategic social and microblog content</strong> that strengthens that picture consistently over time.</p>
-          <p>The goal isn't likes or followers. The goal is <strong>authority</strong> — making your business the most recognized, most referenced, and most recommended name in your local market, both by search engines and by the AI assistants your customers are already using.</p>
-          <div class="pillar-tags">
-            <span class="pillar-tag">Microblogging</span>
-            <span class="pillar-tag">Brand Authority</span>
-            <span class="pillar-tag">Local Signals</span>
-            <span class="pillar-tag">AI Citations</span>
+        <div class="nav-dropdown">
+          <span class="nav-dropdown__label">
+            Portfolios
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+          <div class="nav-dropdown__menu">
+            <a href="https://rocklineaimarketing.com/portfolio/website-gallery">Website Gallery</a>
+            <a href="https://rocklineaimarketing.com/portfolio/blog-gallery">Micro-Blog Gallery</a>
+            <a href="https://rocklineaimarketing.com/portfolio/photography-gallery">Photography Gallery</a>
           </div>
         </div>
-      </div>
 
-      <div class="plan-result">
-        <div class="result-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <div class="nav-dropdown">
+          <span class="nav-dropdown__label">
+            Contact
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+          <div class="nav-dropdown__menu">
+            <a href="https://rocklineaimarketing.com/contact/faq">FAQ</a>
+            <a href="https://rocklineaimarketing.com/contact/office">Office</a>
+          </div>
         </div>
-        <div class="result-text">
-          <h3>The Outcome: <em>The Most Authoritative Business in Your Local Market</em></h3>
-          <p>When these two pillars work together — a technically excellent website and a consistent stream of authority-building content — your business becomes the one that AI systems recognize, trust, and recommend. <strong>Not because you outspent your competitors. Because you out-positioned them.</strong> That's the Rockline AI Marketing plan, and it works for any local business that's ready to commit to it.</p>
-        </div>
-      </div>
+      </nav>
 
-      <div class="plan-cta">
-        <a href="sms:+18155555555?body=Hi%2C%20I%27d%20like%20to%20learn%20more%20about%20Rockline%20AI%20Marketing!" class="cta-primary">
-          <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-          Text Us Now
+      <div class="site-header__actions">
+        <a class="site-header__call" href="tel:+18152747425">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          (815) 274-7425
         </a>
-        <span class="cta-divider">or</span>
-        <a href="../services/index.html" class="cta-secondary">
-          <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          Explore Our Services
-        </a>
+        <a class="site-header__cta" href="https://rocklineaimarketing.com/contact/office">Start a project</a>
+        <button class="site-header__toggle" id="site-header-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="site-header-mobile">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </button>
       </div>
 
     </div>
-  </section>
 
+    <nav class="site-header__mobile" id="site-header-mobile" aria-label="Mobile">
+      <a href="https://rocklineaimarketing.com/">Home</a>
 
-</main>
+      <details open>
+        <summary>
+          About
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </summary>
+        <div class="site-header__mobile__submenu">
+          <a href="https://rocklineaimarketing.com/about/agency-profile" class="current-page">Agency Profile</a>
+          <a href="https://rocklineaimarketing.com/about/customer-success-stories">Customer Success Stories</a>
+        </div>
+      </details>
 
-<!-- ═══ FOOTER ═══ -->
-<footer>
-  <div class="footer-main">
-    <address class="footer-address">
-      <strong>Rockline AI Marketing</strong>
-      Lockport, IL<br>
-      <a href="tel:+18155555555">815-555-5555</a>
-    </address>
-    <div class="footer-logo-col">
-      <img src="images/logos/rockline-ai-marketing-logo.png" alt="Rockline AI Marketing">
+      <details>
+        <summary>
+          Services
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </summary>
+        <div class="site-header__mobile__submenu">
+          <a href="https://rocklineaimarketing.com/services/web-development">Web Development</a>
+          <a href="https://rocklineaimarketing.com/services/social-media-microblogging">Social Media and Microblogging</a>
+          <a href="https://rocklineaimarketing.com/services/aerial-photography">Aerial Photography</a>
+        </div>
+      </details>
+
+      <details>
+        <summary>
+          Portfolios
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </summary>
+        <div class="site-header__mobile__submenu">
+          <a href="https://rocklineaimarketing.com/portfolio/website-gallery">Website Gallery</a>
+          <a href="https://rocklineaimarketing.com/portfolio/blog-gallery">Micro-Blog Gallery</a>
+          <a href="https://rocklineaimarketing.com/portfolio/photography-gallery">Photography Gallery</a>
+        </div>
+      </details>
+
+      <details>
+        <summary>
+          Contact
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </summary>
+        <div class="site-header__mobile__submenu">
+          <a href="https://rocklineaimarketing.com/contact/faq">FAQ</a>
+          <a href="https://rocklineaimarketing.com/contact/office">Office</a>
+        </div>
+      </details>
+
+      <a href="https://rocklineaimarketing.com/contact/office">Start a project</a>
+      <a href="tel:+18152747425">(815) 274-7425</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ==========================================================================
+         PAGE INTRO
+         ========================================================================== -->
+    <section class="page-intro" aria-label="Agency profile introduction">
+      <div class="page-intro__inner">
+        <p class="page-intro__eyebrow">Agency Profile</p>
+        <h1 class="page-intro__headline">Built from passion.<br><em>Launched with purpose.</em></h1>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         ORIGIN STORY
+         ========================================================================== -->
+    <section class="origin" aria-label="Our story">
+      <div class="origin__inner">
+
+        <div>
+          <div class="origin-timeline">
+            <div class="timeline-node">
+              <div class="node-dot">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              </div>
+              <div class="node-content">
+                <p class="node-label">The Foundation</p>
+                <p class="node-text">Two people. <strong>One shared vision.</strong> Rockline AI Marketing was born from a simple but powerful decision — to help small business owners transition into the next level of marketing before their competitors.</p>
+              </div>
+            </div>
+            <div class="timeline-node">
+              <div class="node-dot">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20M12 2a14.5 14.5 0 0 1 0 20M2 12h20"/></svg>
+              </div>
+              <div class="node-content">
+                <p class="node-label">The Shift We Saw Coming</p>
+                <p class="node-text">While most people were still debating whether AI search was real, we were already building for it. We recognized early that <strong>ChatGPT, Gemini, and Perplexity weren't just tools — they were the new front door</strong> for local business discovery.</p>
+              </div>
+            </div>
+            <div class="timeline-node">
+              <div class="node-dot">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+              </div>
+              <div class="node-content">
+                <p class="node-label">Rooted in Lockport &middot; Launched 2025</p>
+                <p class="node-text">We launched right here in the southwest suburbs — the same community where our clients live and run their businesses. <strong>Local isn't a marketing angle for us. It's who we are.</strong></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="origin-founders">
+            <div class="founders-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <div class="founders-text">
+              <strong>Husband &amp; Wife &middot; Lockport, IL</strong>
+              Family-owned and operated — you work with us directly, every time.
+            </div>
+          </div>
+        </div>
+
+        <div class="origin-right">
+          <div class="origin-quote">
+            <p>"We didn't start Rockline to chase clients. We started it because we genuinely love marketing — and we saw <em>a window of opportunity</em> that most agencies weren't even looking at yet."</p>
+          </div>
+
+          <div class="origin-body">
+            <p>Between the two of us, we bring a career's worth of marketing experience — across strategy, content, social media, and digital platforms. We've seen what works, what doesn't, and what's changed. When AI search started reshaping how people find local businesses, we knew our background put us in a rare position: <strong>we understood both the marketing fundamentals and the new frontier at the same time.</strong></p>
+            <p>So in 2025, we made it official. We combined everything we'd built individually and channeled it into something we could build together — an agency designed from the ground up for the way search actually works today, not the way it worked five years ago.</p>
+            <p>Rockline AI Marketing isn't a side project or a pivot. It's the thing we chose to <strong>pour everything into</strong> — because we believe local businesses deserve better than they've been getting, and we're in the right place at the right time to deliver it.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         WHO WE SERVE
+         ========================================================================== -->
+    <section class="serve" aria-label="Who we serve">
+      <div class="serve__inner">
+
+        <p class="serve__eyebrow">Who we serve</p>
+        <h2 class="serve__headline">If you serve <em>local customers,</em> we can help you get found.</h2>
+        <p class="serve__lead">Rockline AI Marketing works with small and local businesses across Chicago's southwest suburbs. Our clients span a wide range of industries — what they all share is a need to be visible in the places their customers are actually looking, including AI-generated search results.</p>
+
+        <div class="serve__grid">
+
+          <div class="serve-card">
+            <div class="serve-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            </div>
+            <h3 class="serve-card__title">Home Services</h3>
+            <p class="serve-card__desc">Plumbers, electricians, HVAC, roofers, landscapers, and contractors. When someone asks an AI "who's the best [trade] near me," we make sure your name is in the answer.</p>
+          </div>
+
+          <div class="serve-card">
+            <div class="serve-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+            </div>
+            <h3 class="serve-card__title">Restaurants &amp; Food</h3>
+            <p class="serve-card__desc">Diners, cafes, catering companies, food trucks, and specialty food businesses. AI search is quickly becoming where people decide where to eat — we put you in that conversation.</p>
+          </div>
+
+          <div class="serve-card">
+            <div class="serve-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><rect x="9" y="11" width="6" height="10"/><circle cx="19" cy="6" r="3"/></svg>
+            </div>
+            <h3 class="serve-card__title">Real Estate</h3>
+            <p class="serve-card__desc">Agents, brokers, and property managers. Buyers and sellers are asking AI for local expertise before they ever pick up the phone — your digital presence needs to answer them first.</p>
+          </div>
+
+          <div class="serve-card">
+            <div class="serve-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+            </div>
+            <h3 class="serve-card__title">Retail &amp; Boutiques</h3>
+            <p class="serve-card__desc">Independent shops, specialty retailers, and local boutiques. We help brick-and-mortar businesses compete with national brands by owning their local AI footprint.</p>
+          </div>
+
+          <div class="serve-card">
+            <div class="serve-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg>
+            </div>
+            <h3 class="serve-card__title">Professional Services</h3>
+            <p class="serve-card__desc">Law firms, financial advisors, accountants, medical and dental practices. When clients search for trusted local professionals, a strong GEO presence means your name comes up first.</p>
+          </div>
+
+          <div class="serve-card">
+            <div class="serve-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </div>
+            <h3 class="serve-card__title">Wellness &amp; Health</h3>
+            <p class="serve-card__desc">Gyms, yoga studios, chiropractors, massage therapists, and wellness brands. People searching for local health services trust AI recommendations — we help you earn those mentions.</p>
+          </div>
+
+        </div>
+
+        <div class="serve-note">
+          <div class="serve-note__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          </div>
+          <p>Don't see your industry? <strong>If you serve customers in a specific geographic area, GEO can work for you.</strong> Reach out and we'll give you an honest answer about what's possible.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         PLAN FOR SUCCESS
+         ========================================================================== -->
+    <section class="plan" aria-label="Our plan for your success">
+      <div class="plan__inner">
+
+        <p class="plan__eyebrow">Our plan for your success</p>
+        <h2 class="plan__headline">Simple strategy. <em>Powerful results.</em></h2>
+        <p class="plan__lead">We don't believe in complicated retainers, confusing packages, or strategies that take six months to explain. Our plan for your success comes down to three things done exceptionally well — and the way they work together is what makes all the difference.</p>
+
+        <div class="plan-pillars">
+          <div class="plan-pillar">
+            <p class="plan-pillar__num">01</p>
+            <div class="plan-pillar__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+            </div>
+            <h3>A fully coded,<br><em>fully customizable website</em></h3>
+            <p>Your website is the single most important asset in your digital presence — and most small business sites are holding their owners back. We build yours from scratch: <strong>clean code, no page builders, no templates</strong> that a hundred other businesses are also using.</p>
+            <p>Every site we build is structured for both traditional search engines and AI systems. That means proper semantic HTML, Schema.org markup, fast load times, and content architecture that large language models can actually read and trust. <strong>Your site becomes a citation-worthy source</strong> — not just a digital brochure.</p>
+            <div class="pillar-tags">
+              <span class="pillar-tag">Custom Coded</span>
+              <span class="pillar-tag">GEO Structured</span>
+              <span class="pillar-tag">Schema Markup</span>
+              <span class="pillar-tag">Mobile First</span>
+            </div>
+          </div>
+
+          <div class="plan-pillar">
+            <p class="plan-pillar__num">02</p>
+            <div class="plan-pillar__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            </div>
+            <h3>Social content that builds<br><em>local authority</em></h3>
+            <p>AI systems don't just read your website — they build a picture of your business from everything published about you across the web. Every post, article, and update is a data point. We create <strong>strategic social and microblog content</strong> that strengthens that picture consistently over time.</p>
+            <p>The goal isn't likes or followers. The goal is <strong>authority</strong> — making your business the most recognized, most referenced, and most recommended name in your local market, both by search engines and by the AI assistants your customers are already using.</p>
+            <div class="pillar-tags">
+              <span class="pillar-tag">Microblogging</span>
+              <span class="pillar-tag">Brand Authority</span>
+              <span class="pillar-tag">Local Signals</span>
+              <span class="pillar-tag">AI Citations</span>
+            </div>
+          </div>
+
+          <div class="plan-pillar">
+            <p class="plan-pillar__num">03</p>
+            <div class="plan-pillar__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3.5"/></svg>
+            </div>
+            <h3>Aerial &amp; 8K photography<br><em>that stops the scroll</em></h3>
+            <p>A great website and consistent content still need something worth looking at. We shoot <strong>drone photo and video, plus high-resolution 8K coverage</strong> of your property, storefront, or event — the kind of imagery a phone camera can't capture.</p>
+            <p>Those shots feed everything else in the plan: hero images on your site, thumbnails on social, and visual proof for real estate listings and event coverage. <strong>One shoot, used everywhere.</strong></p>
+            <div class="pillar-tags">
+              <span class="pillar-tag">Drone Photo &amp; Video</span>
+              <span class="pillar-tag">8K Resolution</span>
+              <span class="pillar-tag">Real Estate Ready</span>
+              <span class="pillar-tag">Event Coverage</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="plan-result">
+          <div class="plan-result__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <div class="plan-result__text">
+            <h3>The outcome: <em>the most authoritative business in your local market</em></h3>
+            <p>When these three pillars work together — a technically excellent website, a consistent stream of authority-building content, and imagery that actually shows off your business — you become the one that AI systems recognize, trust, and recommend. <strong>Not because you outspent your competitors. Because you out-positioned them.</strong> That's the Rockline AI Marketing plan, and it works for any local business that's ready to commit to it.</p>
+          </div>
+        </div>
+
+        <div class="plan-cta">
+          <a href="tel:+18152747425" class="btn btn--primary">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Call or Text Now
+          </a>
+          <span class="plan-cta__divider">or</span>
+          <a href="https://rocklineaimarketing.com/services/web-development" class="btn btn--ghost">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Explore Our Services
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==========================================================================
+       FOOTER
+       ========================================================================== -->
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+
+      <div class="site-footer__brand">
+        <img
+          class="site-footer__logo"
+          src="images/logos/rockline-ai-marketing-logo.png"
+          alt="Rockline AI Marketing logo"
+        />
+        <p class="site-footer__tagline">Marketing built on higher ground.</p>
+      </div>
+
+      <div>
+        <p class="site-footer__heading">Hours</p>
+        <p class="site-footer__hours-value">7 Days a Week, 10am&ndash;7pm</p>
+        <p class="site-footer__hours-sub">Call or text anytime &mdash; (815) 274-7425</p>
+      </div>
+
+      <div class="site-footer__social">
+        <p class="site-footer__heading">Follow along</p>
+        <div class="site-footer__social-row">
+          <div class="site-footer__social-hex-row">
+            <a class="site-footer__social-icon site-footer__social-icon--facebook" href="https://facebook.com/rocklineaimarketing" target="_blank" rel="noopener" aria-label="Facebook">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 12.06C22 6.51 17.52 2 12 2S2 6.51 2 12.06c0 5.02 3.66 9.18 8.44 9.94v-7.03H7.9v-2.91h2.54V9.85c0-2.51 1.49-3.9 3.77-3.9 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.89h2.78l-.44 2.91h-2.34V22c4.78-.76 8.44-4.92 8.44-9.94Z"/></svg>
+            </a>
+            <a class="site-footer__social-icon site-footer__social-icon--instagram" href="#" target="_blank" rel="noopener" aria-label="Instagram">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"/></svg>
+            </a>
+            <a class="site-footer__social-icon site-footer__social-icon--x" href="https://x.com/RocklineAI" target="_blank" rel="noopener" aria-label="X">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.9 2H22l-7.6 8.67L23.3 22h-6.9l-5.4-7.06L4.7 22H1.6l8.13-9.28L1 2h7.1l4.88 6.46L18.9 2Zm-1.2 18.2h1.72L7.4 3.7H5.56L17.7 20.2Z"/></svg>
+            </a>
+            <a class="site-footer__social-icon site-footer__social-icon--pinterest" href="#" target="_blank" rel="noopener" aria-label="Pinterest">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.24 2.63 7.86 6.35 9.32-.09-.79-.17-2.01.04-2.88.19-.79 1.22-5.02 1.22-5.02s-.31-.62-.31-1.54c0-1.44.84-2.52 1.87-2.52.88 0 1.31.66 1.31 1.45 0 .88-.56 2.2-.85 3.42-.24 1.02.51 1.86 1.52 1.86 1.82 0 3.22-1.92 3.22-4.69 0-2.45-1.76-4.17-4.28-4.17-2.91 0-4.62 2.19-4.62 4.45 0 .88.34 1.83.76 2.34.08.1.1.19.07.29-.08.32-.25 1-.29 1.14-.04.19-.15.23-.35.14-1.3-.6-2.11-2.5-2.11-4.02 0-3.28 2.38-6.29 6.87-6.29 3.61 0 6.41 2.57 6.41 6 0 3.58-2.26 6.47-5.39 6.47-1.05 0-2.04-.55-2.38-1.2l-.65 2.47c-.23.9-.87 2.02-1.29 2.71.98.3 2 .46 3.07.46 5.52 0 10-4.48 10-10S17.52 2 12 2Z"/></svg>
+            </a>
+          </div>
+          <div class="site-footer__social-hex-row site-footer__social-hex-row--offset">
+            <a class="site-footer__social-icon site-footer__social-icon--substack" href="https://substack.com/@rocklineaimarketing" target="_blank" rel="noopener" aria-label="Substack">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 6.6H2V4h20v2.6ZM2 9.7h20v9.6L12 14.2 2 19.3V9.7ZM22 2H2v0h20v0Z"/></svg>
+            </a>
+            <a class="site-footer__social-icon site-footer__social-icon--threads" href="https://www.threads.net/@rocklineaimarketing" target="_blank" rel="noopener" aria-label="Threads">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.2 2C7.1 2 3.6 5.1 3.4 10.1v.1c0 .1 0 .2 0 .3v2.9c0 .1 0 .2 0 .3v.1c.2 5 3.7 8.1 8.8 8.1 3 0 5.3-.9 6.9-2.7 1.2-1.4 1.9-3.2 2-5.5h-2.3c-.1 1.6-.6 2.9-1.4 3.8-1.1 1.2-2.7 1.8-4.9 1.9-3.5-.1-5.7-2-6.1-5-.1-.6-.1-1.2-.1-1.9v-.1c0-.7 0-1.3.1-1.9.4-3 2.6-4.9 6.1-5 2.3.1 4 1.1 5 3l2-1.1c-1.4-2.6-3.9-4.1-7.3-4.4Zm2.8 9.9c0 1.8-1 3-2.7 3.1-1.1 0-2-.5-2-1.5 0-1.1 1.2-1.6 2.9-1.9.6-.1 1.2-.2 1.8-.4v.7Z"/></svg>
+            </a>
+            <a class="site-footer__social-icon site-footer__social-icon--tiktok" href="#" target="_blank" rel="noopener" aria-label="TikTok">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.6 2h-3.3v13.9c0 1.6-1.3 2.9-2.9 2.9a2.9 2.9 0 0 1-2.9-2.9 2.9 2.9 0 0 1 2.9-2.9c.3 0 .6 0 .9.1v-3.4a6.3 6.3 0 0 0-.9-.1A6.3 6.3 0 0 0 4.2 15.9a6.3 6.3 0 0 0 6.2 6.3 6.3 6.3 0 0 0 6.2-6.3V8.4a8.2 8.2 0 0 0 4.8 1.5V6.6a4.9 4.9 0 0 1-4.8-4.6Z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
     </div>
-    <div class="footer-hours">
-      <strong>Business Hours</strong>
-      <div class="hours-grid"><span>Mon – Sun</span><span>7:00 AM – 9:00 PM</span></div>
+
+    <div class="site-footer__bottom">
+      &copy; 2026 Rockline AI Marketing. All rights reserved.
     </div>
-  </div>
-  <div class="footer-social">
-    <a href="#" class="social-link" title="YouTube" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24"><path fill="#FF0000" d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8z"/><path fill="#fff" d="M9.6 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg></a>
-    <a href="#" class="social-link" title="Google My Business" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg></a>
-    <a href="#" class="social-link" title="Instagram" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24"><defs><radialGradient id="ig2" cx="30%" cy="107%" r="150%"><stop offset="0%" stop-color="#fdf497"/><stop offset="45%" stop-color="#fd5949"/><stop offset="60%" stop-color="#d6249f"/><stop offset="90%" stop-color="#285AEB"/></radialGradient></defs><rect width="24" height="24" rx="5" fill="url(#ig2)"/><path fill="#fff" d="M12 7.2A4.8 4.8 0 1 0 12 16.8 4.8 4.8 0 0 0 12 7.2zm0 7.9a3.1 3.1 0 1 1 0-6.2 3.1 3.1 0 0 1 0 6.2zm6.1-8.1a1.1 1.1 0 1 1-2.2 0 1.1 1.1 0 0 1 2.2 0zM21 8.9c-.1-1.5-.4-2.8-1.5-3.9-1.1-1.1-2.4-1.4-3.9-1.5C14.1 3.4 9.9 3.4 8.4 3.5 6.9 3.6 5.6 3.9 4.5 5 3.4 6.1 3.1 7.4 3 8.9 2.9 10.4 2.9 14.6 3 16.1c.1 1.5.4 2.8 1.5 3.9 1.1 1.1 2.4 1.4 3.9 1.5 1.5.1 5.7.1 7.2 0 1.5-.1 2.8-.4 3.9-1.5 1.1-1.1 1.4-2.4 1.5-3.9.1-1.5.1-5.7 0-7.2zm-2 8.7a3.2 3.2 0 0 1-1.8 1.8c-1.2.5-4.2.4-5.6.4s-4.3.1-5.6-.4a3.2 3.2 0 0 1-1.8-1.8c-.5-1.2-.4-4.2-.4-5.6s-.1-4.3.4-5.6A3.2 3.2 0 0 1 5.8 4.6c1.2-.5 4.2-.4 5.6-.4s4.3-.1 5.6.4a3.2 3.2 0 0 1 1.8 1.8c.5 1.2.4 4.2.4 5.6s.1 4.3-.4 5.6z"/></svg></a>
-    <a href="#" class="social-link" title="Facebook" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24"><rect width="24" height="24" rx="4" fill="#1877F2"/><path fill="#fff" d="M16.6 12H13.8V21H10.4V12H8.4V9H10.4V7.2C10.4 5.3 11.6 3 14.5 3L17.1 3V6.2H15.5C15.2 6.2 14.8 6.4 14.8 7V9H17.1L16.6 12Z"/></svg></a>
-    <a href="#" class="social-link" title="Threads" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24"><rect width="24" height="24" rx="4" fill="#000"/><path fill="none" stroke="#fff" stroke-width="1.3" stroke-linecap="round" d="M16.5 11.3c-.2-1-.7-1.8-1.5-2.4-1-.7-2.2-1-3.5-.9-1.1.1-2 .5-2.7 1.2-.9.9-1.3 2.1-1.3 3.5 0 3 1.9 5 4.8 5.1h.3c1.1 0 2-.2 2.8-.7 1-.6 1.6-1.6 1.6-2.9 0-1-.4-1.9-1.1-2.5.4.5.6 1.1.6 1.8 0 1-.5 1.7-1.3 2.1-.6.3-1.3.4-2.1.4h-.2c-2-.1-3.3-1.4-3.3-3.3 0-.3 0-.6.1-.9.3-1.1 1-1.9 2.2-2.3.7-.3 1.5-.4 2.3-.4h.7c1.2.1 2.2.5 2.9 1.3.5.5.8 1.1 1 1.8"/></svg></a>
-    <a href="#" class="social-link" title="TikTok" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24"><rect width="24" height="24" rx="4" fill="#010101"/><path fill="#fff" d="M17 6.7a4.6 4.6 0 0 1-2.7-.9 4.6 4.6 0 0 1-1.7-2.9H10v8.3l.01 4.5a2.7 2.7 0 0 1-2.7 2.5 2.7 2.7 0 0 1-2.7-2.7 2.7 2.7 0 0 1 2.7-2.7c.3 0 .5 0 .8.1v-2.5a5.5 5.5 0 0 0-.8-.1A5.3 5.3 0 0 0 2 16.7a5.3 5.3 0 0 0 5.3 5.3 5.3 5.3 0 0 0 5.3-5.3v-7a7.3 7.3 0 0 0 4.2 1.3V8.6A4.6 4.6 0 0 1 17 6.7z"/></svg></a>
-    <a href="#" class="social-link" title="Substack" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24"><rect width="24" height="24" rx="4" fill="#FF6719"/><path fill="#fff" d="M19 5.5H5v1.75h14V5.5zm0 3.75H5v1.75h14V9.25zM5 13l7 5 7-5v7.5L12 18l-7 2.5V13z"/></svg></a>
-    <a href="#" class="social-link" title="X (Twitter)" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24"><rect width="24" height="24" rx="4" fill="#000"/><path fill="#fff" d="M17.75 3h3.14l-6.86 7.84 8.06 10.66H16.2l-4.95-6.47-5.66 6.47H2.44l7.34-8.39L1.98 3h6.68l4.47 5.91L17.75 3zm-1.1 16.52h1.74L7.45 4.78H5.59l11.06 14.74z"/></svg></a>
-  </div>
-  <div class="footer-bottom">&copy; 2025 Rockline AI Marketing · Lockport, IL · All Rights Reserved</div>
-</footer>
+  </footer>
 
-<script>
-  /* ── Ticker ── */
-  function initSeamlessTicker(el) {
-    if (!el) return;
-    Array.from(el.children).forEach(i => el.appendChild(i.cloneNode(true)));
-  }
-  initSeamlessTicker(document.getElementById('desktopTicker'));
-  initSeamlessTicker(document.getElementById('mobileTicker'));
+  <!-- Mobile menu toggle -->
+  <script>
+    const rocklineHeaderToggle = document.getElementById("site-header-toggle");
+    const rocklineMobileNav = document.getElementById("site-header-mobile");
+    if (rocklineHeaderToggle && rocklineMobileNav) {
+      rocklineHeaderToggle.addEventListener("click", () => {
+        const isOpen = rocklineMobileNav.classList.toggle("is-open");
+        rocklineHeaderToggle.setAttribute("aria-expanded", String(isOpen));
+      });
+    }
+  </script>
 
-  /* ── Desktop nav dropdowns ── */
-  const navItems = document.querySelectorAll('#sticky-nav-zone .nav-item');
-  const timers   = new Map();
-  navItems.forEach(item => {
-    if (!item.querySelector('.dropdown')) return;
-    item.addEventListener('mouseenter', () => {
-      clearTimeout(timers.get(item));
-      navItems.forEach(o => { if (o !== item) { clearTimeout(timers.get(o)); o.classList.remove('is-open'); } });
-      item.classList.add('is-open');
-    });
-    item.addEventListener('mouseleave', () => {
-      timers.set(item, setTimeout(() => item.classList.remove('is-open'), 200));
-    });
-  });
-  document.addEventListener('click', e => {
-    if (!e.target.closest('#sticky-nav-zone .nav-item'))
-      navItems.forEach(i => i.classList.remove('is-open'));
-  });
-
-  /* ── Mobile nav ── */
-  const hbtn    = document.getElementById('hamburgerTrigger');
-  const panel   = document.getElementById('mobilePanel');
-  const overlay = document.getElementById('mobileOverlay');
-  const open  = () => { panel.classList.add('open'); overlay.classList.add('visible'); hbtn.classList.add('open'); hbtn.setAttribute('aria-label','Close navigation'); document.body.style.overflow='hidden'; };
-  const close = () => { panel.classList.remove('open'); overlay.classList.remove('visible'); hbtn.classList.remove('open'); hbtn.setAttribute('aria-label','Open navigation'); document.body.style.overflow=''; };
-  hbtn.addEventListener('click', () => panel.classList.contains('open') ? close() : open());
-  overlay.addEventListener('click', close);
-  function toggleSub(el) {
-    const sub = el.nextElementSibling, isOpen = sub.classList.contains('open');
-    document.querySelectorAll('.mobile-sub.open').forEach(s => s.classList.remove('open'));
-    document.querySelectorAll('.m-parent.sub-open').forEach(p => p.classList.remove('sub-open'));
-    if (!isOpen) { sub.classList.add('open'); el.classList.add('sub-open'); }
-  }
-</script>
 </body>
 </html>
