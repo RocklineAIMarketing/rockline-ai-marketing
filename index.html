@@ -66,6 +66,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -73,6 +74,7 @@ body {
   background: var(--ink-slate);
   color: var(--stone-fog);
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 
 img {
@@ -140,6 +142,12 @@ a {
   font-size: 1.1rem;
   color: var(--pure-white);
   line-height: 1.1;
+}
+
+@media (min-width: 900px) {
+  .site-header__logo-text {
+    font-size: 1.55rem;
+  }
 }
 
 .site-header__nav {
@@ -247,6 +255,15 @@ a {
   }
 }
 
+@media (max-width: 480px) {
+  .site-header__logo-text {
+    font-size: 0.92rem;
+  }
+  .site-header__cta {
+    display: none;
+  }
+}
+
 /* Mobile menu panel */
 .site-header__mobile {
   display: none;
@@ -295,6 +312,7 @@ a {
   justify-content: flex-end;
   overflow: hidden;
   isolation: isolate;
+  padding-top: clamp(4.5rem, 15vw, 6rem);
 }
 
 .hero__media {
@@ -358,6 +376,12 @@ a {
   font-weight: 500;
   font-size: clamp(1.5rem, 3.1vw, 2.5rem);
   white-space: nowrap;
+}
+
+@media (max-width: 420px) {
+  .hero__headline-lead {
+    white-space: normal;
+  }
 }
 
 .hero__headline em {
@@ -940,7 +964,10 @@ a {
   flex-shrink: 0;
 }
 
-.review-card__badge--google { background: #4285f4; }
+.review-card__badge--google {
+  background: var(--pure-white);
+  border: 1px solid rgba(28, 35, 44, 0.1);
+}
 .review-card__badge--facebook { background: #1877f2; }
 .review-card__badge--yelp { background: #d32323; }
 
@@ -1378,6 +1405,7 @@ a {
       <a href="#reviews">Reviews</a>
       <a href="#blog">Blog</a>
       <a href="https://rocklineaimarketing.com/about/customer-success-stories">Our Work</a>
+      <a href="https://rocklineaimarketing.com/contact/office">Start a project</a>
       <a href="tel:+18152747425">(815) 274-7425</a>
     </nav>
   </header>
@@ -1598,7 +1626,14 @@ a {
           <a class="review-card" href="https://maps.app.goo.gl/DLH9tbk5KfZxzdb36" target="_blank" rel="noopener">
             <div class="review-card__top">
               <span class="review-card__platform">
-                <span class="review-card__badge review-card__badge--google">G</span>
+                <span class="review-card__badge review-card__badge--google">
+                  <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true">
+                    <path fill="#4285F4" d="M23.52 12.27c0-.85-.08-1.67-.22-2.45H12v4.63h6.47a5.54 5.54 0 0 1-2.4 3.63v3h3.88c2.27-2.09 3.57-5.17 3.57-8.81Z"/>
+                    <path fill="#34A853" d="M12 24c3.24 0 5.96-1.07 7.95-2.92l-3.88-3c-1.08.72-2.45 1.15-4.07 1.15-3.13 0-5.78-2.11-6.73-4.96H1.26v3.09A11.99 11.99 0 0 0 12 24Z"/>
+                    <path fill="#FBBC05" d="M5.27 14.27a7.2 7.2 0 0 1 0-4.54v-3.09H1.26a12 12 0 0 0 0 10.72l4.01-3.09Z"/>
+                    <path fill="#EA4335" d="M12 4.77c1.77 0 3.35.61 4.6 1.8l3.44-3.44C17.95 1.19 15.24 0 12 0 7.31 0 3.26 2.69 1.26 6.64l4.01 3.09C6.22 6.88 8.87 4.77 12 4.77Z"/>
+                  </svg>
+                </span>
                 Google
               </span>
               <span class="review-card__stars" aria-label="5 out of 5 stars">
@@ -1620,7 +1655,9 @@ a {
           <a class="review-card" href="https://facebook.com/rocklineaimarketing" target="_blank" rel="noopener">
             <div class="review-card__top">
               <span class="review-card__platform">
-                <span class="review-card__badge review-card__badge--facebook">f</span>
+                <span class="review-card__badge review-card__badge--facebook">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 12.06C22 6.51 17.52 2 12 2S2 6.51 2 12.06c0 5.02 3.66 9.18 8.44 9.94v-7.03H7.9v-2.91h2.54V9.85c0-2.51 1.49-3.9 3.77-3.9 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.89h2.78l-.44 2.91h-2.34V22c4.78-.76 8.44-4.92 8.44-9.94Z"/></svg>
+                </span>
                 Facebook
               </span>
               <span class="review-card__stars" aria-label="5 out of 5 stars">
@@ -1642,7 +1679,15 @@ a {
           <div class="review-card review-card--pending" aria-label="Yelp listing pending review">
             <div class="review-card__top">
               <span class="review-card__platform">
-                <span class="review-card__badge review-card__badge--yelp">y</span>
+                <span class="review-card__badge review-card__badge--yelp">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M12 2c-.9 0-1.6.7-1.6 1.6v7.1c0 .6.3 1.1.9 1.4.5.2 1.1.1 1.5-.3l5-4.9c.6-.6.6-1.6 0-2.3C16.3 3 13.9 2 12 2Z"/>
+                    <path d="M9.7 12.9c-.3-.5-.9-.8-1.5-.6l-6.7 2.2c-.8.3-1.1 1.3-.6 2 1.1 1.7 3 3.1 5.2 3.7.8.2 1.6-.4 1.6-1.2l.4-5.1c0-.4-.1-.7-.4-1Z"/>
+                    <path d="M11.2 14.8c-.6-.2-1.2.1-1.4.7l-2.2 6.7c-.3.8.3 1.6 1.1 1.5 2-.2 4-1.1 5.5-2.6.6-.6.5-1.6-.2-2l-2.8-4.3Z"/>
+                    <path d="M22 13.6c-.1-.8-.9-1.3-1.6-1l-6.6 2.5c-.6.2-.9.8-.8 1.4.1.5.5.9 1 1l6.7 1.4c.8.2 1.5-.5 1.4-1.3L22 13.6Z"/>
+                    <path d="M13.9 12.6c.5.3 1.1.2 1.5-.2l4.8-5.1c.6-.6.4-1.6-.3-2-1.9-1-4.2-1.2-6.2-.5-.8.3-1 1.2-.5 1.9l3.6 5c.1.1.2.2.1-.1Z"/>
+                  </svg>
+                </span>
                 Yelp
               </span>
             </div>
