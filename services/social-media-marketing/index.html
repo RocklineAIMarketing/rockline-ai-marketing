@@ -1,1 +1,707 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-D0SWY5Y40W"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-D0SWY5Y40W');
+  </script>
+
+  <title>Social Media &amp; Microblogging | Rockline AI Marketing</title>
+  <meta name="description" content="Consistent social content and AI search-ready microblogging for Chicagoland small businesses — built to grow local authority, not just followers." />
+  <link rel="canonical" href="https://rocklineaimarketing.com/services/social-media-microblogging" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Rockline AI Marketing" />
+  <meta property="og:title" content="Social Media &amp; Microblogging | Rockline AI Marketing" />
+  <meta property="og:description" content="Consistent social content and AI search-ready microblogging for Chicagoland small businesses — built to grow local authority, not just followers." />
+  <meta property="og:url" content="https://rocklineaimarketing.com/services/social-media-microblogging" />
+  <meta property="og:image" content="https://rocklineaimarketing.com/images/logos/rockline-ai-marketing-cover.JPG" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Social Media &amp; Microblogging | Rockline AI Marketing" />
+  <meta name="twitter:description" content="Consistent social content and AI search-ready microblogging for Chicagoland small businesses — built to grow local authority, not just followers." />
+  <meta name="twitter:image" content="https://rocklineaimarketing.com/images/logos/rockline-ai-marketing-cover.JPG" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+  <style>
+/* ==========================================================================
+   Rockline AI Marketing — Design Tokens (shared across the site)
+   ========================================================================== */
+
+:root {
+  --ink-slate: #1c232c;
+  --stone-fog: #e7e4dc;
+  --rockline-blue: #4c86b0;
+  --rockline-blue-deep: #16314a;
+  --rock-gray: #8993a0;
+  --sunrise-gold: #e4b94b;
+  --pure-white: #ffffff;
+
+  --font-display: "Fraunces", Georgia, serif;
+  --font-body: "Inter", -apple-system, sans-serif;
+  --font-mono: "IBM Plex Mono", monospace;
+
+  --gutter: clamp(1.5rem, 5vw, 5rem);
+  --max-width: 1400px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; overflow-x: hidden; }
+body { font-family: var(--font-body); background: var(--ink-slate); color: var(--stone-fog); -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+:focus-visible { outline: 2px solid var(--rockline-blue); outline-offset: 3px; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.btn { font-family: var(--font-body); font-weight: 600; font-size: 0.95rem; padding: 0.9rem 1.75rem; border-radius: 999px; text-decoration: none; display: inline-flex; align-items: center; gap: 0.6rem; transition: transform 0.25s ease, background 0.25s ease, color 0.25s ease, border-color 0.25s ease; }
+.btn--primary { background: var(--rockline-blue); color: var(--pure-white); }
+.btn--primary:hover { background: var(--pure-white); color: var(--ink-slate); transform: translateY(-2px); }
+.btn--ghost { background: transparent; color: var(--pure-white); border: 1px solid rgba(232, 228, 219, 0.4); }
+.btn--ghost:hover { border-color: var(--pure-white); transform: translateY(-2px); }
+.btn--ghost-dark { background: transparent; color: var(--ink-slate); border: 1px solid rgba(28, 35, 44, 0.25); }
+.btn--ghost-dark:hover { border-color: var(--ink-slate); transform: translateY(-2px); }
+
+/* ==========================================================================
+   Header (shared)
+   ========================================================================== */
+
+.site-header { position: absolute; top: 0; left: 0; z-index: 50; width: 100%; background: transparent; }
+.site-header__inner { max-width: var(--max-width); margin: 0 auto; padding: 1rem var(--gutter); display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; }
+.site-header__logo { display: flex; align-items: center; gap: 0.65rem; text-decoration: none; flex-shrink: 0; }
+.site-header__logo-text { font-family: var(--font-display); font-weight: 600; font-size: 1.1rem; color: var(--pure-white); line-height: 1.1; }
+@media (min-width: 900px) { .site-header__logo-text { font-size: 1.55rem; } }
+
+.site-header__nav { display: none; align-items: center; gap: clamp(1.25rem, 2.5vw, 2.25rem); }
+.site-header__nav a { font-family: var(--font-body); font-weight: 500; font-size: 0.92rem; color: var(--stone-fog); text-decoration: none; position: relative; padding: 0.25rem 0; transition: color 0.25s ease; }
+.site-header__nav a::after { content: ""; position: absolute; left: 0; bottom: -2px; width: 0; height: 2px; background: var(--rockline-blue); transition: width 0.25s ease; }
+.site-header__nav a:hover, .site-header__nav a:focus-visible { color: var(--pure-white); }
+.site-header__nav a:hover::after, .site-header__nav a:focus-visible::after { width: 100%; }
+
+.site-header__actions { display: flex; align-items: center; gap: 0.75rem; flex-shrink: 0; }
+.site-header__call { display: none; align-items: center; gap: 0.5rem; font-family: var(--font-body); font-weight: 600; font-size: 0.88rem; color: var(--pure-white); text-decoration: none; }
+.site-header__call svg { color: var(--rockline-blue); }
+.site-header__cta { font-family: var(--font-body); font-weight: 600; font-size: 0.88rem; color: var(--pure-white); background: var(--rockline-blue); border-radius: 999px; padding: 0.6rem 1.35rem; text-decoration: none; white-space: nowrap; transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease; }
+.site-header__cta:hover, .site-header__cta:focus-visible { background: var(--pure-white); color: var(--ink-slate); transform: translateY(-2px); }
+.site-header__toggle { display: inline-flex; align-items: center; justify-content: center; width: 2.5rem; height: 2.5rem; background: transparent; border: 1px solid rgba(232, 228, 219, 0.25); border-radius: 8px; color: var(--pure-white); cursor: pointer; }
+
+@media (min-width: 900px) {
+  .site-header__nav { display: flex; }
+  .site-header__call { display: inline-flex; }
+  .site-header__toggle { display: none; }
+}
+@media (max-width: 480px) { .site-header__logo-text { font-size: 0.92rem; } .site-header__cta { display: none; } }
+
+.site-header__mobile { display: none; flex-direction: column; gap: 0.25rem; padding: 0.5rem var(--gutter) 1.5rem; background: rgba(23, 27, 34, 0.92); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); }
+.site-header__mobile.is-open { display: flex; }
+.site-header__mobile a { font-family: var(--font-body); font-weight: 500; font-size: 1rem; color: var(--stone-fog); text-decoration: none; padding: 0.75rem 0; border-bottom: 1px solid rgba(232, 228, 219, 0.08); }
+.site-header__mobile a:hover, .site-header__mobile a:focus-visible { color: var(--pure-white); }
+@media (min-width: 900px) { .site-header__mobile { display: none !important; } }
+
+.nav-dropdown { position: relative; padding-bottom: 0.6rem; margin-bottom: -0.6rem; }
+.nav-dropdown__label { display: inline-flex; align-items: center; gap: 0.35rem; font-family: var(--font-body); font-weight: 500; font-size: 0.92rem; color: var(--stone-fog); padding: 0.25rem 0; cursor: default; user-select: none; }
+.nav-dropdown__label svg { width: 10px; height: 10px; transition: transform 0.25s ease; flex-shrink: 0; }
+.nav-dropdown.is-current .nav-dropdown__label { color: var(--pure-white); }
+.nav-dropdown:hover .nav-dropdown__label, .nav-dropdown:focus-within .nav-dropdown__label { color: var(--pure-white); }
+.nav-dropdown:hover .nav-dropdown__label svg, .nav-dropdown:focus-within .nav-dropdown__label svg { transform: rotate(180deg); }
+.nav-dropdown__menu { position: absolute; top: 100%; left: 50%; transform: translateX(-50%) translateY(6px); min-width: 15rem; margin-top: 0; padding: 0.5rem; background: rgba(23, 27, 34, 0.96); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border: 1px solid rgba(232, 228, 219, 0.12); border-radius: 12px; box-shadow: 0 24px 48px -20px rgba(0, 0, 0, 0.55); display: flex; flex-direction: column; gap: 0.15rem; opacity: 0; visibility: hidden; pointer-events: none; transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s; z-index: 60; }
+.nav-dropdown:hover .nav-dropdown__menu, .nav-dropdown:focus-within .nav-dropdown__menu { opacity: 1; visibility: visible; pointer-events: auto; transform: translateX(-50%) translateY(0); }
+.nav-dropdown__menu a { padding: 0.6rem 0.75rem; border-radius: 7px; font-size: 0.87rem; white-space: nowrap; }
+.nav-dropdown__menu a::after { display: none; }
+.nav-dropdown__menu a:hover, .nav-dropdown__menu a:focus-visible { background: rgba(76, 134, 176, 0.18); color: var(--pure-white); }
+.nav-dropdown__menu a.current-page { background: rgba(76, 134, 176, 0.18); color: var(--pure-white); }
+
+.site-header__mobile details { border-bottom: 1px solid rgba(232, 228, 219, 0.08); }
+.site-header__mobile summary { display: flex; align-items: center; justify-content: space-between; list-style: none; font-family: var(--font-body); font-weight: 500; font-size: 1rem; color: var(--stone-fog); padding: 0.75rem 0; cursor: pointer; }
+.site-header__mobile summary::-webkit-details-marker { display: none; }
+.site-header__mobile summary svg { width: 12px; height: 12px; transition: transform 0.25s ease; flex-shrink: 0; }
+.site-header__mobile details[open] summary svg { transform: rotate(180deg); }
+.site-header__mobile details[open] summary { color: var(--pure-white); }
+.site-header__mobile__submenu { display: flex; flex-direction: column; padding-bottom: 0.5rem; }
+.site-header__mobile__submenu a { padding: 0.6rem 0 0.6rem 1rem; border-bottom: none; font-size: 0.92rem; color: rgba(232, 228, 219, 0.85); }
+.site-header__mobile__submenu a:hover, .site-header__mobile__submenu a:focus-visible { color: var(--pure-white); }
+.site-header__mobile__submenu a.current-page { color: var(--pure-white); }
+
+/* ==========================================================================
+   Shared eyebrow label
+   ========================================================================== */
+
+.eyebrow { display: flex; align-items: center; gap: 0.65rem; font-family: var(--font-mono); font-size: 0.72rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--rockline-blue); margin-bottom: 1.25rem; }
+.eyebrow::before { content: ""; width: 2rem; height: 1px; background: var(--rockline-blue); }
+.eyebrow--light { color: var(--rockline-blue); }
+.eyebrow--light::before { background: var(--rockline-blue); }
+
+/* ==========================================================================
+   Page hero — dark, mirrors the other subpages
+   ========================================================================== */
+
+.page-hero {
+  background: radial-gradient(ellipse 60% 60% at 100% 0%, rgba(76, 134, 176, 0.16), transparent 70%), var(--ink-slate);
+  padding: clamp(7rem, 16vw, 9rem) var(--gutter) clamp(4rem, 8vw, 6rem);
+}
+.page-hero__inner { max-width: var(--max-width); margin: 0 auto; display: flex; flex-direction: column; gap: 2rem; }
+.page-hero__headline { font-family: var(--font-display); font-weight: 600; line-height: 1.05; letter-spacing: -0.01em; font-size: clamp(2.4rem, 5.4vw, 4.2rem); max-width: 18ch; color: var(--pure-white); }
+.page-hero__headline em { font-style: italic; font-weight: 500; color: var(--rockline-blue); }
+.page-hero__lead { font-family: var(--font-body); font-size: clamp(1rem, 1.4vw, 1.2rem); line-height: 1.75; color: var(--stone-fog); max-width: 56ch; font-weight: 400; }
+.page-hero__actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+/* ==========================================================================
+   What's included — light, feature card grid
+   ========================================================================== */
+
+.included {
+  background: radial-gradient(ellipse 60% 55% at 100% 0%, rgba(76, 134, 176, 0.12), transparent 70%), var(--pure-white);
+  color: var(--ink-slate);
+  padding: clamp(5rem, 11vw, 8.5rem) var(--gutter);
+}
+.included__inner { max-width: var(--max-width); margin: 0 auto; }
+.included__headline { font-family: var(--font-display); font-weight: 600; line-height: 1.08; letter-spacing: -0.01em; font-size: clamp(2.1rem, 4.4vw, 3.6rem); max-width: 24ch; color: var(--ink-slate); margin-bottom: 1.25rem; }
+.included__headline em { font-style: italic; font-weight: 500; color: var(--rockline-blue); }
+.included__lead { font-size: 0.98rem; line-height: 1.85; color: rgba(28, 35, 44, 0.72); max-width: 62ch; margin-bottom: clamp(2.75rem, 6vw, 3.5rem); }
+
+.feature-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(1.1rem, 2.2vw, 1.5rem); }
+.feature-card { display: flex; flex-direction: column; gap: 1rem; background: linear-gradient(165deg, var(--pure-white) 55%, #f2f7fa 100%); border: 1px solid rgba(28, 35, 44, 0.09); border-radius: 16px; padding: 1.75rem 1.6rem; transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; }
+.feature-card:hover { border-color: var(--rockline-blue); transform: translateY(-4px); box-shadow: 0 20px 40px -26px rgba(28, 35, 44, 0.32); }
+.feature-card__icon { width: 40px; height: 40px; background: rgba(76, 134, 176, 0.1); border: 1px solid rgba(76, 134, 176, 0.3); border-radius: 9px; display: flex; align-items: center; justify-content: center; color: var(--rockline-blue); }
+.feature-card__icon svg { width: 18px; height: 18px; }
+.feature-card__title { font-family: var(--font-display); font-weight: 600; font-size: 1.12rem; color: var(--ink-slate); }
+.feature-card__desc { font-size: 0.89rem; line-height: 1.7; color: rgba(28, 35, 44, 0.7); }
+
+@media (max-width: 900px) { .feature-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 640px) { .feature-grid { grid-template-columns: 1fr; } }
+
+/* ==========================================================================
+   Process — dark, timeline
+   ========================================================================== */
+
+.process { background: var(--ink-slate); color: var(--stone-fog); padding: clamp(5rem, 11vw, 8.5rem) var(--gutter); }
+.process__inner { max-width: var(--max-width); margin: 0 auto; }
+.process__headline { font-family: var(--font-display); font-weight: 600; line-height: 1.08; letter-spacing: -0.01em; font-size: clamp(2.1rem, 4.4vw, 3.6rem); max-width: 20ch; color: var(--pure-white); margin-bottom: 1.25rem; }
+.process__headline em { font-style: italic; font-weight: 500; color: var(--rockline-blue); }
+.process__lead { font-size: 0.98rem; line-height: 1.85; color: rgba(232, 228, 219, 0.78); max-width: 62ch; margin-bottom: clamp(3rem, 6.5vw, 4rem); }
+
+.process-timeline { display: grid; grid-template-columns: repeat(4, 1fr); gap: clamp(1.25rem, 2.5vw, 1.75rem); }
+.process-step { position: relative; padding-top: 2.5rem; }
+.process-step::before { content: ""; position: absolute; top: 14px; left: 0; right: -1.75rem; height: 1px; background: linear-gradient(90deg, rgba(76, 134, 176, 0.4), rgba(76, 134, 176, 0.05)); }
+.process-step:last-child::before { display: none; }
+.process-step__dot { position: absolute; top: 0; left: 0; width: 29px; height: 29px; border-radius: 50%; background: var(--ink-slate); border: 2px solid var(--rockline-blue); display: flex; align-items: center; justify-content: center; z-index: 1; }
+.process-step__dot svg { width: 12px; height: 12px; color: var(--rockline-blue); }
+.process-step__label { font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--rockline-blue); margin-bottom: 0.5rem; }
+.process-step h3 { font-family: var(--font-display); font-weight: 600; font-size: 1.15rem; color: var(--pure-white); margin-bottom: 0.6rem; }
+.process-step p { font-size: 0.88rem; line-height: 1.7; color: rgba(232, 228, 219, 0.75); }
+
+@media (max-width: 900px) {
+  .process-timeline { grid-template-columns: 1fr 1fr; row-gap: 2.5rem; }
+  .process-step::before { display: none; }
+}
+@media (max-width: 560px) {
+  .process-timeline { grid-template-columns: 1fr; }
+}
+
+/* ==========================================================================
+   Stats band — light
+   ========================================================================== */
+
+.stats-band { background: radial-gradient(ellipse 60% 60% at 100% 0%, rgba(76, 134, 176, 0.1), transparent 70%), var(--pure-white); padding: clamp(4rem, 8vw, 5.5rem) var(--gutter); border-top: 1px solid rgba(28, 35, 44, 0.08); }
+.stats-band__inner { max-width: var(--max-width); margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; text-align: center; }
+.stat-num { font-family: var(--font-display); font-weight: 600; font-size: clamp(2rem, 4vw, 3rem); color: var(--rockline-blue); line-height: 1; margin-bottom: 0.6rem; }
+.stat-num sup { font-size: 0.5em; vertical-align: super; }
+.stat-desc { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.06em; color: rgba(28, 35, 44, 0.55); line-height: 1.6; text-transform: uppercase; }
+@media (max-width: 640px) { .stats-band__inner { grid-template-columns: 1fr; } }
+
+/* ==========================================================================
+   Other services teaser — light, small cross-links to the other 2 pillars
+   ========================================================================== */
+
+.also-offer { background: var(--pure-white); color: var(--ink-slate); padding: 0 var(--gutter) clamp(5rem, 11vw, 8rem); }
+.also-offer__inner { max-width: var(--max-width); margin: 0 auto; }
+.also-offer__label { font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--rock-gray); margin-bottom: 1.25rem; }
+.also-offer__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+.also-offer__card { display: flex; align-items: center; justify-content: space-between; gap: 1rem; background: linear-gradient(165deg, var(--pure-white) 55%, #f2f7fa 100%); border: 1px solid rgba(28, 35, 44, 0.09); border-radius: 14px; padding: 1.5rem 1.75rem; text-decoration: none; color: inherit; transition: border-color 0.3s ease, transform 0.3s ease; }
+.also-offer__card:hover { border-color: var(--rockline-blue); transform: translateY(-3px); }
+.also-offer__card h3 { font-family: var(--font-display); font-weight: 600; font-size: 1.05rem; margin-bottom: 0.3rem; }
+.also-offer__card p { font-size: 0.85rem; color: rgba(28, 35, 44, 0.65); }
+.also-offer__card svg { flex-shrink: 0; color: var(--rockline-blue); transition: transform 0.25s ease; }
+.also-offer__card:hover svg { transform: translateX(4px); }
+
+@media (max-width: 700px) { .also-offer__grid { grid-template-columns: 1fr; } }
+
+/* ==========================================================================
+   Call CTA
+   ========================================================================== */
+
+.call-cta { background: var(--ink-slate); color: var(--stone-fog); padding: clamp(5rem, 11vw, 8rem) var(--gutter); text-align: center; }
+.call-cta__inner { max-width: 40rem; margin: 0 auto; }
+.call-cta__eyebrow { display: inline-flex; align-items: center; gap: 0.65rem; font-family: var(--font-mono); font-size: 0.72rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--rockline-blue); margin-bottom: 1.25rem; }
+.call-cta__headline { font-family: var(--font-display); font-weight: 600; line-height: 1.1; letter-spacing: -0.01em; font-size: clamp(2rem, 4.2vw, 3.25rem); color: var(--pure-white); margin-bottom: 0.75rem; }
+.call-cta__headline em { font-style: italic; font-weight: 500; color: var(--rockline-blue); }
+.call-cta__subhead { font-size: 1rem; line-height: 1.6; color: rgba(232, 228, 219, 0.75); margin-bottom: 2.5rem; }
+.call-cta__button { display: inline-flex; align-items: center; gap: 0.75rem; font-family: var(--font-display); font-weight: 600; font-size: clamp(1.5rem, 3vw, 2rem); color: var(--pure-white); background: var(--rockline-blue); border-radius: 999px; padding: 1.25rem 2.5rem; text-decoration: none; transition: transform 0.25s ease, background 0.25s ease; }
+.call-cta__button svg { flex-shrink: 0; }
+.call-cta__button:hover, .call-cta__button:focus-visible { background: var(--pure-white); color: var(--ink-slate); transform: translateY(-2px); }
+.call-cta__note { margin-top: 1.5rem; font-family: var(--font-mono); font-size: 0.75rem; letter-spacing: 0.04em; color: rgba(232, 228, 219, 0.55); }
+
+/* ==========================================================================
+   Footer (shared)
+   ========================================================================== */
+
+.site-footer { background: var(--pure-white); color: var(--ink-slate); border-top: 1px solid rgba(28, 35, 44, 0.1); }
+.site-footer__inner { max-width: var(--max-width); margin: 0 auto; padding: clamp(3rem, 6vw, 4.5rem) var(--gutter) clamp(2rem, 4vw, 2.5rem); display: grid; grid-template-columns: 1.3fr 1fr 1.3fr; gap: clamp(2rem, 5vw, 3rem); }
+.site-footer__brand { display: flex; flex-direction: column; gap: 1rem; }
+.site-footer__logo { height: clamp(4.5rem, 8vw, 6.5rem); width: auto; align-self: flex-start; object-fit: contain; margin-bottom: 0.25rem; }
+.site-footer__tagline { font-family: var(--font-display); font-style: italic; font-size: 1rem; color: rgba(28, 35, 44, 0.65); max-width: 22ch; }
+.site-footer__heading { font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--rockline-blue); margin-bottom: 0.85rem; }
+.site-footer__hours-value { font-family: var(--font-body); font-weight: 600; font-size: 1rem; color: var(--ink-slate); margin-bottom: 0.25rem; }
+.site-footer__hours-sub { font-size: 0.85rem; color: rgba(28, 35, 44, 0.6); }
+.site-footer__social { display: flex; flex-direction: column; align-items: flex-start; }
+.site-footer__social-row { display: flex; flex-direction: column; gap: 0.4rem; }
+.site-footer__social-hex-row { display: flex; gap: 0.5rem; }
+.site-footer__social-hex-row--offset { margin: -0.62rem 0 0 1.6rem; }
+.site-footer__social-icon { width: 3rem; height: 3.4rem; clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%); display: inline-flex; align-items: center; justify-content: center; color: var(--pure-white); text-decoration: none; font-family: var(--font-body); font-weight: 700; font-size: 0.78rem; flex-shrink: 0; transition: transform 0.25s ease, filter 0.25s ease; }
+.site-footer__social-icon:hover, .site-footer__social-icon:focus-visible { transform: translateY(-3px) scale(1.06); filter: brightness(1.1); }
+.site-footer__social-icon--facebook { background: #1877f2; }
+.site-footer__social-icon--instagram { background: linear-gradient(135deg, #f9ce34, #ee2a7b, #6228d7); }
+.site-footer__social-icon--x { background: #000000; }
+.site-footer__social-icon--substack { background: #ff6719; }
+.site-footer__social-icon--threads { background: #000000; }
+.site-footer__social-icon--tiktok { background: #010101; }
+.site-footer__social-icon--pinterest { background: #e60023; }
+.site-footer__bottom { border-top: 1px solid rgba(28, 35, 44, 0.08); padding: 1.5rem var(--gutter); text-align: center; font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.04em; color: rgba(28, 35, 44, 0.4); }
+@media (max-width: 900px) { .site-footer__inner { grid-template-columns: 1fr; } }
+
+  </style>
+</head>
+<body>
+
+  <!-- ==========================================================================
+       HEADER
+       ========================================================================== -->
+  <header class="site-header">
+    <div class="site-header__inner">
+
+      <a class="site-header__logo" href="https://rocklineaimarketing.com/">
+        <span class="site-header__logo-text">Rockline AI Marketing</span>
+      </a>
+
+      <nav class="site-header__nav" aria-label="Primary">
+        <a href="https://rocklineaimarketing.com/">Home</a>
+
+        <div class="nav-dropdown">
+          <span class="nav-dropdown__label">
+            About
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+          <div class="nav-dropdown__menu">
+            <a href="https://rocklineaimarketing.com/about/agency-profile">Agency Profile</a>
+            <a href="https://rocklineaimarketing.com/about/customer-success-stories">Customer Success Stories</a>
+          </div>
+        </div>
+
+        <div class="nav-dropdown is-current">
+          <span class="nav-dropdown__label">
+            Services
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+          <div class="nav-dropdown__menu">
+            <a href="https://rocklineaimarketing.com/services/web-development">Web Development</a>
+            <a href="https://rocklineaimarketing.com/services/social-media-microblogging" class="current-page">Social Media and Microblogging</a>
+            <a href="https://rocklineaimarketing.com/services/aerial-photography">Aerial Photography</a>
+          </div>
+        </div>
+
+        <div class="nav-dropdown">
+          <span class="nav-dropdown__label">
+            Portfolios
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+          <div class="nav-dropdown__menu">
+            <a href="https://rocklineaimarketing.com/portfolio/website-gallery">Website Gallery</a>
+            <a href="https://rocklineaimarketing.com/portfolio/blog-gallery">Micro-Blog Gallery</a>
+            <a href="https://rocklineaimarketing.com/portfolio/photography-gallery">Photography Gallery</a>
+          </div>
+        </div>
+
+        <div class="nav-dropdown">
+          <span class="nav-dropdown__label">
+            Contact
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+          <div class="nav-dropdown__menu">
+            <a href="https://rocklineaimarketing.com/contact/faq">FAQ</a>
+            <a href="https://rocklineaimarketing.com/contact/office">Office</a>
+          </div>
+        </div>
+      </nav>
+
+      <div class="site-header__actions">
+        <a class="site-header__call" href="tel:+18152747425">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          (815) 274-7425
+        </a>
+        <a class="site-header__cta" href="https://rocklineaimarketing.com/contact/office">Start a project</a>
+        <button class="site-header__toggle" id="site-header-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="site-header-mobile">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+
+    </div>
+
+    <nav class="site-header__mobile" id="site-header-mobile" aria-label="Mobile">
+      <a href="https://rocklineaimarketing.com/">Home</a>
+
+      <details>
+        <summary>
+          About
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </summary>
+        <div class="site-header__mobile__submenu">
+          <a href="https://rocklineaimarketing.com/about/agency-profile">Agency Profile</a>
+          <a href="https://rocklineaimarketing.com/about/customer-success-stories">Customer Success Stories</a>
+        </div>
+      </details>
+
+      <details open>
+        <summary>
+          Services
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </summary>
+        <div class="site-header__mobile__submenu">
+          <a href="https://rocklineaimarketing.com/services/web-development">Web Development</a>
+          <a href="https://rocklineaimarketing.com/services/social-media-microblogging" class="current-page">Social Media and Microblogging</a>
+          <a href="https://rocklineaimarketing.com/services/aerial-photography">Aerial Photography</a>
+        </div>
+      </details>
+
+      <details>
+        <summary>
+          Portfolios
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </summary>
+        <div class="site-header__mobile__submenu">
+          <a href="https://rocklineaimarketing.com/portfolio/website-gallery">Website Gallery</a>
+          <a href="https://rocklineaimarketing.com/portfolio/blog-gallery">Micro-Blog Gallery</a>
+          <a href="https://rocklineaimarketing.com/portfolio/photography-gallery">Photography Gallery</a>
+        </div>
+      </details>
+
+      <details>
+        <summary>
+          Contact
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </summary>
+        <div class="site-header__mobile__submenu">
+          <a href="https://rocklineaimarketing.com/contact/faq">FAQ</a>
+          <a href="https://rocklineaimarketing.com/contact/office">Office</a>
+        </div>
+      </details>
+
+      <a href="https://rocklineaimarketing.com/contact/office">Start a project</a>
+      <a href="tel:+18152747425">(815) 274-7425</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ==========================================================================
+         PAGE HERO
+         ========================================================================== -->
+    <section class="page-hero" aria-labelledby="social-h1">
+      <div class="page-hero__inner">
+        <p class="eyebrow">Social Media &amp; Microblogging</p>
+        <h1 class="page-hero__headline" id="social-h1">Content that builds <em>local authority.</em></h1>
+        <p class="page-hero__lead">
+          AI systems don't just read your website &mdash; they build a picture
+          of your business from everything published about you across the
+          web. Every post, article, and update is a data point. We keep that
+          picture growing, consistently, without it landing on your to-do list.
+        </p>
+        <div class="page-hero__actions">
+          <a href="tel:+18152747425" class="btn btn--primary">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Start a project
+          </a>
+          <a href="https://rocklineaimarketing.com/portfolio/blog-gallery" class="btn btn--ghost">
+            See our work
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         WHAT'S INCLUDED
+         ========================================================================== -->
+    <section class="included" aria-label="What's included">
+      <div class="included__inner">
+
+        <p class="eyebrow eyebrow--light">What's included</p>
+        <h2 class="included__headline">Consistent content, built for <em>authority &mdash; not just likes.</em></h2>
+        <p class="included__lead">The goal isn't followers. It's making your business the most recognized, most referenced, and most recommended name in your local market. Everything below comes standard.</p>
+
+        <div class="feature-grid">
+
+          <div class="feature-card">
+            <div class="feature-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            </div>
+            <h3 class="feature-card__title">Consistent Posting</h3>
+            <p class="feature-card__desc">A regular publishing cadence on Facebook and Instagram &mdash; on-brand, on-schedule, without it depending on you remembering.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            </div>
+            <h3 class="feature-card__title">Microblogging</h3>
+            <p class="feature-card__desc">Short-form written content structured so AI search engines can actually read and cite it &mdash; not just social feeds.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </div>
+            <h3 class="feature-card__title">Brand Voice &amp; Visuals</h3>
+            <p class="feature-card__desc">Posts that sound and look like your business, not a generic template &mdash; consistent tone, colors, and personality.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <h3 class="feature-card__title">Local Signals</h3>
+            <p class="feature-card__desc">Content tagged and written to reinforce your local relevance &mdash; the kind of signal both search engines and AI assistants look for.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+            </div>
+            <h3 class="feature-card__title">Platform Management</h3>
+            <p class="feature-card__desc">We handle scheduling, posting, and basic community replies across your active platforms &mdash; so it's off your plate entirely.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            </div>
+            <h3 class="feature-card__title">AI Citations</h3>
+            <p class="feature-card__desc">Content built with the goal of being the source AI assistants pull from and point customers to &mdash; not just something that gets liked.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         PROCESS
+         ========================================================================== -->
+    <section class="process" aria-label="Our process">
+      <div class="process__inner">
+
+        <p class="eyebrow">How it works</p>
+        <h2 class="process__headline">From strategy to <em>steady content.</em></h2>
+        <p class="process__lead">No guessing what to post next. Here's exactly what working together looks like.</p>
+
+        <div class="process-timeline">
+
+          <div class="process-step">
+            <div class="process-step__dot">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            </div>
+            <p class="process-step__label">Step 1</p>
+            <h3>Content Audit &amp; Strategy</h3>
+            <p>We look at what's already out there, what's missing, and what your customers actually respond to &mdash; then build a plan around it.</p>
+          </div>
+
+          <div class="process-step">
+            <div class="process-step__dot">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </div>
+            <p class="process-step__label">Step 2</p>
+            <h3>Voice &amp; Visual Guide</h3>
+            <p>We lock in a tone, look, and set of themes so every post feels consistent and unmistakably yours.</p>
+          </div>
+
+          <div class="process-step">
+            <div class="process-step__dot">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            </div>
+            <p class="process-step__label">Step 3</p>
+            <h3>Scheduled &amp; Published</h3>
+            <p>Posts and microblog content go out on a regular cadence across your active platforms &mdash; no last-minute scrambling.</p>
+          </div>
+
+          <div class="process-step">
+            <div class="process-step__dot">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            </div>
+            <p class="process-step__label">Step 4</p>
+            <h3>Review &amp; Refine</h3>
+            <p>We check in regularly on what's landing and adjust the mix &mdash; content strategy that keeps evolving instead of running on autopilot.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         STATS BAND
+         ========================================================================== -->
+    <section class="stats-band" aria-label="Why work with us">
+      <div class="stats-band__inner">
+        <div>
+          <div class="stat-num">3</div>
+          <div class="stat-desc">Core Services<br>One Team</div>
+        </div>
+        <div>
+          <div class="stat-num">10<sup>+</sup></div>
+          <div class="stat-desc">Years of<br>Experience</div>
+        </div>
+        <div>
+          <div class="stat-num">7</div>
+          <div class="stat-desc">Days a Week<br>Available to You</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         ALSO OFFER — cross-links to the other 2 pillars
+         ========================================================================== -->
+    <section class="also-offer" aria-label="Other services">
+      <div class="also-offer__inner">
+        <p class="also-offer__label">Pairs well with</p>
+        <div class="also-offer__grid">
+          <a class="also-offer__card" href="https://rocklineaimarketing.com/services/web-development">
+            <div>
+              <h3>Web Development</h3>
+              <p>Give your content somewhere strong to point back to.</p>
+            </div>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a class="also-offer__card" href="https://rocklineaimarketing.com/services/aerial-photography">
+            <div>
+              <h3>Aerial &amp; 8K Photography</h3>
+              <p>Give your posts imagery that actually stands out in a feed.</p>
+            </div>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         CLOSING CTA
+         ========================================================================== -->
+    <section class="call-cta" id="call" aria-label="Get started">
+      <div class="call-cta__inner">
+        <p class="call-cta__eyebrow">Skip the form</p>
+        <h2 class="call-cta__headline">Ready for content that <em>builds authority?</em></h2>
+        <p class="call-cta__subhead">
+          Have a question or ready to get started? Reach out directly
+          &mdash; no form required.
+        </p>
+        <a class="call-cta__button" href="tel:+18152747425">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          (815) 274-7425
+        </a>
+        <p class="call-cta__note">Call or text &middot; Rockline AI Marketing</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==========================================================================
+       FOOTER
+       ========================================================================== -->
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+
+      <div class="site-footer__brand">
+        <img
+          class="site-footer__logo"
+          src="/images/logos/rockline-ai-marketing-logo.png"
+          alt="Rockline AI Marketing logo"
+        />
+        <p class="site-footer__tagline">Marketing built on higher ground.</p>
+      </div>
+
+      <div>
+        <p class="site-footer__heading">Hours</p>
+        <p class="site-footer__hours-value">7 Days a Week, 10am&ndash;7pm</p>
+        <p class="site-footer__hours-sub">Call or text anytime &mdash; (815) 274-7425</p>
+      </div>
+
+      <div class="site-footer__social">
+        <p class="site-footer__heading">Follow along</p>
+        <div class="site-footer__social-row">
+          <div class="site-footer__social-hex-row">
+            <a class="site-footer__social-icon site-footer__social-icon--facebook" href="https://facebook.com/rocklineaimarketing" target="_blank" rel="noopener" aria-label="Facebook">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 12.06C22 6.51 17.52 2 12 2S2 6.51 2 12.06c0 5.02 3.66 9.18 8.44 9.94v-7.03H7.9v-2.91h2.54V9.85c0-2.51 1.49-3.9 3.77-3.9 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.89h2.78l-.44 2.91h-2.34V22c4.78-.76 8.44-4.92 8.44-9.94Z"/></svg>
+            </a>
+            <a class="site-footer__social-icon site-footer__social-icon--instagram" href="#" target="_blank" rel="noopener" aria-label="Instagram">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"/></svg>
+            </a>
+            <a class="site-footer__social-icon site-footer__social-icon--x" href="https://x.com/RocklineAI" target="_blank" rel="noopener" aria-label="X">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.9 2H22l-7.6 8.67L23.3 22h-6.9l-5.4-7.06L4.7 22H1.6l8.13-9.28L1 2h7.1l4.88 6.46L18.9 2Zm-1.2 18.2h1.72L7.4 3.7H5.56L17.7 20.2Z"/></svg>
+            </a>
+            <a class="site-footer__social-icon site-footer__social-icon--pinterest" href="#" target="_blank" rel="noopener" aria-label="Pinterest">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.24 2.63 7.86 6.35 9.32-.09-.79-.17-2.01.04-2.88.19-.79 1.22-5.02 1.22-5.02s-.31-.62-.31-1.54c0-1.44.84-2.52 1.87-2.52.88 0 1.31.66 1.31 1.45 0 .88-.56 2.2-.85 3.42-.24 1.02.51 1.86 1.52 1.86 1.82 0 3.22-1.92 3.22-4.69 0-2.45-1.76-4.17-4.28-4.17-2.91 0-4.62 2.19-4.62 4.45 0 .88.34 1.83.76 2.34.08.1.1.19.07.29-.08.32-.25 1-.29 1.14-.04.19-.15.23-.35.14-1.3-.6-2.11-2.5-2.11-4.02 0-3.28 2.38-6.29 6.87-6.29 3.61 0 6.41 2.57 6.41 6 0 3.58-2.26 6.47-5.39 6.47-1.05 0-2.04-.55-2.38-1.2l-.65 2.47c-.23.9-.87 2.02-1.29 2.71.98.3 2 .46 3.07.46 5.52 0 10-4.48 10-10S17.52 2 12 2Z"/></svg>
+            </a>
+          </div>
+          <div class="site-footer__social-hex-row site-footer__social-hex-row--offset">
+            <a class="site-footer__social-icon site-footer__social-icon--substack" href="https://substack.com/@rocklineaimarketing" target="_blank" rel="noopener" aria-label="Substack">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 6.6H2V4h20v2.6ZM2 9.7h20v9.6L12 14.2 2 19.3V9.7ZM22 2H2v0h20v0Z"/></svg>
+            </a>
+            <a class="site-footer__social-icon site-footer__social-icon--threads" href="https://www.threads.net/@rocklineaimarketing" target="_blank" rel="noopener" aria-label="Threads">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.2 2C7.1 2 3.6 5.1 3.4 10.1v.1c0 .1 0 .2 0 .3v2.9c0 .1 0 .2 0 .3v.1c.2 5 3.7 8.1 8.8 8.1 3 0 5.3-.9 6.9-2.7 1.2-1.4 1.9-3.2 2-5.5h-2.3c-.1 1.6-.6 2.9-1.4 3.8-1.1 1.2-2.7 1.8-4.9 1.9-3.5-.1-5.7-2-6.1-5-.1-.6-.1-1.2-.1-1.9v-.1c0-.7 0-1.3.1-1.9.4-3 2.6-4.9 6.1-5 2.3.1 4 1.1 5 3l2-1.1c-1.4-2.6-3.9-4.1-7.3-4.4Zm2.8 9.9c0 1.8-1 3-2.7 3.1-1.1 0-2-.5-2-1.5 0-1.1 1.2-1.6 2.9-1.9.6-.1 1.2-.2 1.8-.4v.7Z"/></svg>
+            </a>
+            <a class="site-footer__social-icon site-footer__social-icon--tiktok" href="#" target="_blank" rel="noopener" aria-label="TikTok">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.6 2h-3.3v13.9c0 1.6-1.3 2.9-2.9 2.9a2.9 2.9 0 0 1-2.9-2.9 2.9 2.9 0 0 1 2.9-2.9c.3 0 .6 0 .9.1v-3.4a6.3 6.3 0 0 0-.9-.1A6.3 6.3 0 0 0 4.2 15.9a6.3 6.3 0 0 0 6.2 6.3 6.3 6.3 0 0 0 6.2-6.3V8.4a8.2 8.2 0 0 0 4.8 1.5V6.6a4.9 4.9 0 0 1-4.8-4.6Z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="site-footer__bottom">
+      &copy; 2026 Rockline AI Marketing. All rights reserved.
+    </div>
+  </footer>
+
+  <!-- Mobile menu toggle -->
+  <script>
+    const rocklineHeaderToggle = document.getElementById("site-header-toggle");
+    const rocklineMobileNav = document.getElementById("site-header-mobile");
+    if (rocklineHeaderToggle && rocklineMobileNav) {
+      rocklineHeaderToggle.addEventListener("click", () => {
+        const isOpen = rocklineMobileNav.classList.toggle("is-open");
+        rocklineHeaderToggle.setAttribute("aria-expanded", String(isOpen));
+      });
+    }
+  </script>
+
+</body>
+</html>
