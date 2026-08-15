@@ -1,1133 +1,1147 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Photo Gallery | Rockline AI Marketing – Aerial &amp; 8K Photography, Chicagoland IL</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-D0SWY5Y40W"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-D0SWY5Y40W');
+</script>
+
+<title>Photo Gallery | Rockline AI Marketing</title>
+<meta name="description" content="Aerial and 8K photography by Rockline AI Marketing — drone-altitude perspectives and studio-grade detail for local business clients across Chicagoland." />
+<link rel="canonical" href="https://rocklineaimarketing.com/portfolio/photography-gallery" />
+
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Rockline AI Marketing" />
+<meta property="og:title" content="Photo Gallery | Rockline AI Marketing" />
+<meta property="og:description" content="Aerial and 8K photography by Rockline AI Marketing — drone-altitude perspectives and studio-grade detail for local business clients across Chicagoland." />
+<meta property="og:url" content="https://rocklineaimarketing.com/portfolio/photography-gallery" />
+<meta property="og:image" content="https://rocklineaimarketing.com/images/logos/rockline-ai-marketing-cover.JPG" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Photo Gallery | Rockline AI Marketing" />
+<meta name="twitter:description" content="Aerial and 8K photography by Rockline AI Marketing — drone-altitude perspectives and studio-grade detail for local business clients across Chicagoland." />
+<meta name="twitter:image" content="https://rocklineaimarketing.com/images/logos/rockline-ai-marketing-cover.JPG" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Exo+2:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --blue-bright: #279cf5;
-    --blue-light:  #bbe0fc;
-    --blue-mid:    #8fcbfa;
-    --blue-dark:   #032844;
-    --white:       #ffffff;
-    --glass:       rgba(3,40,68,0.82);
-    --ticker-bg:   #021d32;
-    --border:      rgba(39,156,245,0.14);
-    --border-hi:   rgba(39,156,245,0.32);
-  }
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; }
-  body { font-family: 'Exo 2', sans-serif; background: var(--blue-dark); color: var(--white); overflow-x: hidden; }
+/* ==========================================================================
+   Rockline AI Marketing — Design Tokens
+   (identical to index.html — kept verbatim so every page shares one system)
+   ========================================================================== */
 
-  /* ── DESKTOP HEADER ── */
-  #site-header { background: linear-gradient(180deg, #075C9D 0%, var(--blue-dark) 100%); border-bottom: 1px solid rgba(39,156,245,0.18); }
-  .header-brand { display: flex; align-items: center; justify-content: center; position: relative; padding: 18px 24px 12px; }
-  .cta-sms { position: absolute; left: 32px; top: 50%; transform: translateY(-50%); display: flex; align-items: center; gap: 8px; background: linear-gradient(135deg, var(--blue-bright), #1479c4); color: var(--white); text-decoration: none; font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 1.6px; text-transform: uppercase; padding: 10px 20px; border-radius: 4px; border: 1px solid rgba(255,255,255,0.12); box-shadow: 0 4px 20px rgba(39,156,245,0.3); transition: transform .2s, box-shadow .2s; white-space: nowrap; }
-  .cta-sms:hover { transform: translateY(calc(-50% - 2px)); box-shadow: 0 10px 32px rgba(39,156,245,0.5); }
-  .header-logo { height: 72px; width: auto; display: block; }
+:root {
+  --ink-slate: #1c232c;
+  --stone-fog: #e7e4dc;
+  --rockline-blue: #4c86b0;
+  --rockline-blue-deep: #16314a;
+  --rock-gray: #8993a0;
+  --sunrise-gold: #e4b94b;
+  --pure-white: #ffffff;
 
-  /* ── STICKY NAV ── */
-  #sticky-nav-zone { position: sticky; top: 0; z-index: 500; background: var(--glass); backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px); border-bottom: 1px solid rgba(39,156,245,0.18); box-shadow: 0 4px 30px rgba(2,10,20,0.6); }
-  nav.main-nav { display: flex; align-items: center; justify-content: center; gap: 2px; padding: 0 16px; }
-  .nav-item { position: relative; }
-  .nav-btn { display: flex; align-items: center; gap: 5px; padding: 14px 20px; font-family: 'Rajdhani', sans-serif; font-weight: 600; font-size: 13px; letter-spacing: 2px; text-transform: uppercase; color: var(--blue-light); background: none; border: none; cursor: pointer; text-decoration: none; transition: color .2s; white-space: nowrap; position: relative; }
-  .nav-btn:hover, .nav-item.is-open > .nav-btn { color: var(--white); }
-  a.nav-btn::after { content: ''; position: absolute; bottom: 8px; left: 20px; right: 20px; height: 2px; background: var(--blue-bright); border-radius: 2px; transform: scaleX(0); transition: transform .25s; }
-  a.nav-btn:hover::after, a.nav-btn.active::after { transform: scaleX(1); }
-  .chevron { width: 10px; height: 10px; transition: transform .25s; flex-shrink: 0; }
-  .nav-item.is-open .chevron { transform: rotate(180deg); }
-  .dropdown { position: absolute; top: 100%; left: 50%; transform: translateX(-50%) translateY(6px); min-width: 220px; background: rgba(2,12,24,0.97); border: 1px solid rgba(39,156,245,0.2); border-radius: 6px; box-shadow: 0 16px 48px rgba(0,0,0,0.55); opacity: 0; pointer-events: none; transition: opacity .22s, transform .22s; z-index: 600; overflow: hidden; }
-  .dropdown::before { content: ''; position: absolute; top: -8px; left: 0; right: 0; height: 8px; }
-  .nav-item.is-open .dropdown { opacity: 1; pointer-events: auto; transform: translateX(-50%) translateY(0); }
-  .dropdown a { display: block; padding: 12px 22px; font-family: 'Exo 2', sans-serif; font-size: 13px; color: var(--blue-light); text-decoration: none; letter-spacing: .5px; border-bottom: 1px solid rgba(39,156,245,0.07); transition: background .18s, color .18s, padding-left .18s; }
-  .dropdown a:last-child { border-bottom: none; }
-  .dropdown a:hover { background: rgba(39,156,245,0.1); color: var(--white); padding-left: 28px; }
-  .dropdown a.current-page { color: var(--white); background: rgba(39,156,245,0.08); }
+  --font-display: "Fraunces", Georgia, serif;
+  --font-body: "Inter", -apple-system, sans-serif;
+  --font-mono: "IBM Plex Mono", monospace;
 
-  /* ── TICKER ── */
-  .ticker-wrap { background: var(--ticker-bg); border-top: 1px solid rgba(39,156,245,0.1); padding: 7px 0; overflow: hidden; position: relative; pointer-events: none; }
-  .ticker-label { position: absolute; left: 0; top: 0; bottom: 0; z-index: 2; display: flex; align-items: center; padding: 0 18px 0 14px; background: var(--blue-bright); font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--blue-dark); white-space: nowrap; clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 50%, calc(100% - 8px) 100%, 0 100%); }
-  .ticker-wrap::after { content: ''; position: absolute; right: 0; top: 0; bottom: 0; width: 60px; background: linear-gradient(to right, transparent, var(--ticker-bg)); z-index: 3; pointer-events: none; }
-  .ticker-inner { overflow: hidden; padding-left: 112px; }
-  .ticker-track { display: flex; width: max-content; animation: tickerScroll 60s linear infinite; }
-  .ticker-item { font-family: 'Space Mono', monospace; font-size: 10.5px; color: var(--blue-mid); white-space: nowrap; padding: 0 44px; display: flex; align-items: center; gap: 10px; }
-  .ticker-item::after { content: '◆'; color: var(--blue-bright); font-size: 7px; }
-  @keyframes tickerScroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+  --gutter: clamp(1.5rem, 5vw, 5rem);
+  --max-width: 1400px;
+}
 
-  /* ── MOBILE STICKY ── */
-  #mobile-sticky { display: none; position: fixed; top: 0; left: 0; right: 0; z-index: 800; flex-direction: column; }
-  .mobile-topbar { display: flex; align-items: center; justify-content: center; position: relative; padding: 10px 16px; background: rgba(2,12,24,0.97); backdrop-filter: blur(14px); border-bottom: 1px solid rgba(39,156,245,0.15); }
-  .mobile-header-logo { height: 42px; width: auto; display: block; }
-  .hamburger-trigger { position: absolute; right: 16px; top: 50%; transform: translateY(-50%); width: 44px; height: 44px; cursor: pointer; background: rgba(39,156,245,0.06); border: 1px solid rgba(39,156,245,0.35); border-radius: 6px; padding: 0; display: flex; align-items: center; justify-content: center; transition: background .25s, border-color .25s, box-shadow .25s; box-shadow: 0 0 10px rgba(39,156,245,0.2); }
-  .hamburger-trigger:hover, .hamburger-trigger.open { background: rgba(39,156,245,0.14); border-color: rgba(39,156,245,0.75); box-shadow: 0 0 18px rgba(39,156,245,0.45); }
-  .hamburger-bars { display: flex; flex-direction: column; gap: 5px; width: 20px; }
-  .hamburger-bars span { display: block; height: 2px; border-radius: 2px; background: var(--blue-light); transition: transform .3s cubic-bezier(.22,1,.36,1), opacity .2s, width .3s; }
-  .hamburger-bars span:nth-child(1) { width: 20px; }
-  .hamburger-bars span:nth-child(2) { width: 14px; }
-  .hamburger-bars span:nth-child(3) { width: 20px; }
-  .hamburger-trigger.open .hamburger-bars span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-  .hamburger-trigger.open .hamburger-bars span:nth-child(2) { opacity: 0; width: 0; }
-  .hamburger-trigger.open .hamburger-bars span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-  .mobile-ticker-strip { background: var(--ticker-bg); border-bottom: 1px solid rgba(39,156,245,0.1); padding: 5px 0; pointer-events: none; }
-  .mobile-ticker-strip .ticker-label { font-size: 9px; padding: 0 14px 0 10px; }
-  .mobile-ticker-strip .ticker-inner { padding-left: 88px; }
-  .mobile-ticker-strip .ticker-track { animation-duration: 50s; }
-  .mobile-ticker-strip .ticker-item { font-size: 9.5px; padding: 0 30px; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; overflow-x: hidden; }
+body { font-family: var(--font-body); background: var(--ink-slate); color: var(--stone-fog); -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+:focus-visible { outline: 2px solid var(--rockline-blue); outline-offset: 3px; }
 
-  /* ── MOBILE PANEL ── */
-  .mobile-overlay { display: none; position: fixed; inset: 0; background: rgba(2,9,16,0.55); z-index: 700; opacity: 0; transition: opacity .3s; backdrop-filter: blur(4px); pointer-events: none; }
-  .mobile-overlay.visible { opacity: 1; pointer-events: auto; }
-  .mobile-panel { position: fixed; top: 0; right: -310px; width: 290px; height: 100%; background: rgba(2,12,24,0.99); border-left: 1px solid rgba(39,156,245,0.18); z-index: 900; transition: right .34s cubic-bezier(.22,1,.36,1); overflow-y: auto; padding-bottom: 48px; }
-  .mobile-panel.open { right: 0; }
-  .mobile-panel-logo { display: flex; justify-content: center; padding: 28px 20px 18px; border-bottom: 1px solid rgba(39,156,245,0.1); }
-  .mobile-panel-logo img { height: 52px; width: auto; }
-  .mobile-nav-list { list-style: none; padding: 10px 0; }
-  .mobile-nav-list > li > a, .mobile-nav-list > li > .m-parent { display: flex; align-items: center; justify-content: space-between; padding: 13px 22px; font-family: 'Rajdhani', sans-serif; font-weight: 600; font-size: 14px; letter-spacing: 1.8px; text-transform: uppercase; color: var(--blue-light); text-decoration: none; border-bottom: 1px solid rgba(39,156,245,0.06); transition: background .18s, color .18s; cursor: pointer; }
-  .mobile-nav-list > li > a:hover { background: rgba(39,156,245,0.08); color: var(--white); }
-  .mobile-nav-list > li > .m-parent { color: rgba(187,224,252,0.55); cursor: default; }
-  .m-chevron { width: 12px; height: 12px; transition: transform .25s; color: rgba(143,203,250,0.5); flex-shrink: 0; }
-  .m-parent.sub-open .m-chevron { transform: rotate(180deg); }
-  .mobile-sub { display: none; background: rgba(39,156,245,0.03); border-bottom: 1px solid rgba(39,156,245,0.06); }
-  .mobile-sub.open { display: block; }
-  .mobile-sub a { display: block; padding: 10px 22px 10px 34px; font-size: 12.5px; color: var(--blue-mid); text-decoration: none; border-bottom: 1px solid rgba(39,156,245,0.04); letter-spacing: .4px; transition: color .18s, padding-left .18s; }
-  .mobile-sub a:hover, .mobile-sub a.current-page { color: var(--white); }
-  .mobile-sub a:hover { padding-left: 40px; }
-  .mobile-panel-cta { padding: 18px 20px 0; }
-  .mobile-panel-cta a { display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; padding: 13px; background: linear-gradient(135deg, var(--blue-bright), #1479c4); color: var(--white); text-decoration: none; font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 2px; text-transform: uppercase; border-radius: 4px; box-shadow: 0 4px 20px rgba(39,156,245,0.3); transition: box-shadow .25s; }
-  .mobile-panel-cta a:hover { box-shadow: 0 8px 28px rgba(39,156,245,0.5); }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
 
-  /* ── FOOTER ── */
-  footer { background: linear-gradient(180deg, var(--blue-dark) 0%, #075C9D 100%); border-top: 1px solid rgba(39,156,245,0.14); }
-  .footer-main { display: grid; grid-template-columns: 1fr auto 1fr; gap: 24px; align-items: center; padding: 16px 32px; border-bottom: 1px solid rgba(39,156,245,0.08); max-width: 1200px; margin: 0 auto; }
-  .footer-address { font-size: 12.5px; line-height: 1.9; color: var(--blue-mid); font-style: normal; }
-  .footer-address strong { display: block; font-family: 'Rajdhani', sans-serif; font-size: 14px; color: var(--white); letter-spacing: 1px; margin-bottom: 2px; }
-  .footer-address a { color: var(--blue-bright); text-decoration: none; }
-  .footer-address a:hover { text-decoration: underline; }
-  .footer-logo-col { display: flex; justify-content: center; align-items: center; }
-  .footer-logo-col img { height: 44px; width: auto; }
-  .footer-hours { text-align: right; font-size: 12px; color: var(--blue-mid); }
-  .footer-hours strong { display: block; font-family: 'Rajdhani', sans-serif; font-size: 13px; color: var(--white); letter-spacing: 1px; margin-bottom: 4px; }
-  .hours-grid { display: grid; grid-template-columns: auto auto; gap: 0 10px; font-size: 11.5px; justify-content: end; }
-  .hours-grid span:nth-child(even) { color: var(--blue-light); }
-  .footer-social { display: flex; align-items: center; justify-content: center; gap: 6px; padding: 10px 24px; flex-wrap: wrap; }
-  .social-link { width: 36px; height: 36px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.07); display: flex; align-items: center; justify-content: center; text-decoration: none; background: rgba(255,255,255,0.03); transition: transform .2s, border-color .2s, background .2s; }
-  .social-link:hover { transform: translateY(-3px); border-color: rgba(255,255,255,0.18); background: rgba(255,255,255,0.07); }
-  .footer-bottom { padding: 8px 24px; text-align: center; font-size: 10px; color: rgba(143,203,250,0.25); letter-spacing: .8px; border-top: 1px solid rgba(39,156,245,0.05); }
+/* ==========================================================================
+   Header (shared component — unchanged from index.html)
+   ========================================================================== */
 
-  /* ── RESPONSIVE BASE ── */
-  @media (max-width: 768px) {
-    #site-header, #sticky-nav-zone { display: none; }
-    #mobile-sticky { display: flex; }
-    .mobile-overlay { display: block; }
-    main { padding-top: 92px; }
-    .footer-main { grid-template-columns: 1fr; text-align: center; gap: 12px; padding: 14px 20px; }
-    .footer-hours { text-align: center; }
-    .hours-grid { justify-content: center; }
-    .footer-logo-col { justify-content: center; }
-  }
+.site-header { position: absolute; top: 0; left: 0; z-index: 50; width: 100%; background: transparent; }
+.site-header--solid { position: relative; background: var(--ink-slate); border-bottom: 1px solid rgba(232, 228, 219, 0.1); }
+.site-header__inner { max-width: var(--max-width); margin: 0 auto; padding: 1rem var(--gutter); display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; }
+.site-header__logo { display: flex; align-items: center; gap: 0.65rem; text-decoration: none; flex-shrink: 0; }
+.site-header__logo img { height: clamp(2rem, 3vw, 2.5rem); width: auto; }
+.site-header__logo-text { font-family: var(--font-display); font-weight: 600; font-size: 1.1rem; color: var(--pure-white); line-height: 1.1; }
+@media (min-width: 900px) { .site-header__logo-text { font-size: 1.55rem; } }
+.site-header__nav { display: none; align-items: center; gap: clamp(1.25rem, 2.5vw, 2.25rem); }
+.site-header__nav a { font-family: var(--font-body); font-weight: 500; font-size: 0.92rem; color: var(--stone-fog); text-decoration: none; position: relative; padding: 0.25rem 0; transition: color 0.25s ease; }
+.site-header__nav a::after { content: ""; position: absolute; left: 0; bottom: -2px; width: 0; height: 2px; background: var(--rockline-blue); transition: width 0.25s ease; }
+.site-header__nav a:hover, .site-header__nav a:focus-visible { color: var(--pure-white); }
+.site-header__nav a:hover::after, .site-header__nav a:focus-visible::after { width: 100%; }
+.site-header__actions { display: flex; align-items: center; gap: 0.75rem; flex-shrink: 0; }
+.site-header__call { display: none; align-items: center; gap: 0.5rem; font-family: var(--font-body); font-weight: 600; font-size: 0.88rem; color: var(--pure-white); text-decoration: none; }
+.site-header__call svg { color: var(--rockline-blue); }
+.site-header__cta { font-family: var(--font-body); font-weight: 600; font-size: 0.88rem; color: var(--pure-white); background: var(--rockline-blue); border-radius: 999px; padding: 0.6rem 1.35rem; text-decoration: none; white-space: nowrap; transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease; }
+.site-header__cta:hover, .site-header__cta:focus-visible { background: var(--pure-white); color: var(--ink-slate); transform: translateY(-2px); }
+.site-header__toggle { display: inline-flex; align-items: center; justify-content: center; width: 2.5rem; height: 2.5rem; background: transparent; border: 1px solid rgba(232, 228, 219, 0.25); border-radius: 8px; color: var(--pure-white); cursor: pointer; }
+@media (min-width: 900px) {
+  .site-header__nav { display: flex; }
+  .site-header__call { display: inline-flex; }
+  .site-header__toggle { display: none; }
+}
+@media (max-width: 480px) { .site-header__logo-text { font-size: 0.92rem; } .site-header__cta { display: none; } }
 
-  /* ════════════════════════════
-     PHOTO GALLERY PAGE
-  ════════════════════════════ */
+.site-header__mobile { display: none; flex-direction: column; gap: 0.25rem; padding: 0.5rem var(--gutter) 1.5rem; background: rgba(23, 27, 34, 0.92); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); }
+.site-header--solid .site-header__mobile { background: rgba(23, 27, 34, 0.98); }
+.site-header__mobile.is-open { display: flex; }
+.site-header__mobile a { font-family: var(--font-body); font-weight: 500; font-size: 1rem; color: var(--stone-fog); text-decoration: none; padding: 0.75rem 0; border-bottom: 1px solid rgba(232, 228, 219, 0.08); }
+.site-header__mobile a:hover, .site-header__mobile a:focus-visible { color: var(--pure-white); }
+@media (min-width: 900px) { .site-header__mobile { display: none !important; } }
 
-  /* ── HERO ── */
-  .gallery-hero {
-    position: relative;
-    padding: 72px 32px 56px;
-    border-bottom: 1px solid var(--border);
-    overflow: hidden;
-  }
-  .gallery-hero::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background-image:
-      linear-gradient(rgba(39,156,245,0.04) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(39,156,245,0.04) 1px, transparent 1px);
-    background-size: 48px 48px;
-    mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, black 40%, transparent 100%);
-    -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, black 40%, transparent 100%);
-  }
-  .gallery-hero::after {
-    content: '';
-    position: absolute;
-    top: -60px; right: -100px;
-    width: 440px; height: 440px;
-    background: radial-gradient(circle, rgba(39,156,245,0.09) 0%, transparent 65%);
-    pointer-events: none;
-  }
-  .gallery-hero-inner {
-    max-width: 1160px;
-    margin: 0 auto;
-    position: relative;
-    z-index: 1;
-  }
-  .gallery-eyebrow {
-    font-family: 'Space Mono', monospace;
-    font-size: 10px;
-    letter-spacing: 3px;
-    color: var(--blue-bright);
-    text-transform: uppercase;
-    margin-bottom: 16px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-  .gallery-eyebrow::before {
-    content: '';
-    display: block;
-    width: 32px;
-    height: 1px;
-    background: var(--blue-bright);
-  }
-  .gallery-hero h1 {
-    font-family: 'Rajdhani', sans-serif;
-    font-weight: 700;
-    font-size: clamp(2.4rem, 5vw, 3.8rem);
-    line-height: 1.02;
-    margin-bottom: 20px;
-  }
-  .gallery-hero h1 em {
-    background: linear-gradient(90deg, var(--blue-bright), var(--blue-mid));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    font-style: normal;
-  }
-  .gallery-hero-lead {
-    font-size: 1rem;
-    color: var(--blue-light);
-    line-height: 1.9;
-    font-weight: 300;
-    max-width: 520px;
-  }
+.nav-dropdown { position: relative; padding-bottom: 0.6rem; margin-bottom: -0.6rem; }
+.nav-dropdown__label { display: inline-flex; align-items: center; gap: 0.35rem; font-family: var(--font-body); font-weight: 500; font-size: 0.92rem; color: var(--stone-fog); padding: 0.25rem 0; cursor: default; user-select: none; }
+.nav-dropdown__label svg { width: 10px; height: 10px; transition: transform 0.25s ease; flex-shrink: 0; }
+.nav-dropdown:hover .nav-dropdown__label, .nav-dropdown:focus-within .nav-dropdown__label { color: var(--pure-white); }
+.nav-dropdown:hover .nav-dropdown__label svg, .nav-dropdown:focus-within .nav-dropdown__label svg { transform: rotate(180deg); }
+.nav-dropdown__menu { position: absolute; top: 100%; left: 50%; transform: translateX(-50%) translateY(6px); min-width: 15rem; margin-top: 0; padding: 0.5rem; background: rgba(23, 27, 34, 0.96); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border: 1px solid rgba(232, 228, 219, 0.12); border-radius: 12px; box-shadow: 0 24px 48px -20px rgba(0, 0, 0, 0.55); display: flex; flex-direction: column; gap: 0.15rem; opacity: 0; visibility: hidden; pointer-events: none; transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s; z-index: 60; }
+.nav-dropdown:hover .nav-dropdown__menu, .nav-dropdown:focus-within .nav-dropdown__menu { opacity: 1; visibility: visible; pointer-events: auto; transform: translateX(-50%) translateY(0); }
+.nav-dropdown__menu a { padding: 0.6rem 0.75rem; border-radius: 7px; font-size: 0.87rem; white-space: nowrap; }
+.nav-dropdown__menu a::after { display: none; }
+.nav-dropdown__menu a:hover, .nav-dropdown__menu a:focus-visible { background: rgba(76, 134, 176, 0.18); color: var(--pure-white); }
+.nav-dropdown__menu a.current-page { color: var(--pure-white); background: rgba(76, 134, 176, 0.12); }
 
-  /* ── TAB BAR ── */
-  .gallery-tabs-wrap {
-    position: sticky;
-    top: 52px; /* below nav */
-    z-index: 400;
-    background: rgba(2,12,24,0.95);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border-bottom: 1px solid var(--border-hi);
-  }
-  .gallery-tabs {
-    max-width: 1160px;
-    margin: 0 auto;
-    display: flex;
-    align-items: stretch;
-    padding: 0 32px;
-    gap: 0;
-  }
-  .gallery-tab {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 16px 28px;
-    font-family: 'Rajdhani', sans-serif;
-    font-weight: 700;
-    font-size: 13px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: var(--blue-mid);
-    cursor: pointer;
-    border: none;
-    background: none;
-    border-bottom: 2px solid transparent;
-    transition: color .2s, border-color .2s;
-    position: relative;
-    top: 1px;
-    white-space: nowrap;
-  }
-  .gallery-tab:hover { color: var(--blue-light); }
-  .gallery-tab.active { color: var(--white); border-bottom-color: var(--blue-bright); }
-  .gallery-tab svg { flex-shrink: 0; }
-  .tab-count {
-    font-family: 'Space Mono', monospace;
-    font-size: 9px;
-    letter-spacing: 1px;
-    padding: 2px 7px;
-    border-radius: 10px;
-    background: rgba(39,156,245,0.12);
-    color: var(--blue-mid);
-    border: 1px solid var(--border-hi);
-  }
-  .gallery-tab.active .tab-count {
-    background: rgba(39,156,245,0.22);
-    color: var(--blue-bright);
-    border-color: rgba(39,156,245,0.45);
-  }
+.site-header__mobile details { border-bottom: 1px solid rgba(232, 228, 219, 0.08); }
+.site-header__mobile summary { display: flex; align-items: center; justify-content: space-between; list-style: none; font-family: var(--font-body); font-weight: 500; font-size: 1rem; color: var(--stone-fog); padding: 0.75rem 0; cursor: pointer; }
+.site-header__mobile summary::-webkit-details-marker { display: none; }
+.site-header__mobile summary svg { width: 12px; height: 12px; transition: transform 0.25s ease; flex-shrink: 0; }
+.site-header__mobile details[open] summary svg { transform: rotate(180deg); }
+.site-header__mobile details[open] summary { color: var(--pure-white); }
+.site-header__mobile__submenu { display: flex; flex-direction: column; padding-bottom: 0.5rem; }
+.site-header__mobile__submenu a { padding: 0.6rem 0 0.6rem 1rem; border-bottom: none; font-size: 0.92rem; color: rgba(232, 228, 219, 0.85); }
+.site-header__mobile__submenu a:hover, .site-header__mobile__submenu a:focus-visible { color: var(--pure-white); }
+.site-header__mobile__submenu a.current-page { color: var(--pure-white); }
 
-  /* ── GALLERY PANELS ── */
-  .gallery-panel { display: none; padding: 56px 32px 80px; max-width: 1160px; margin: 0 auto; }
-  .gallery-panel.active { display: block; }
+/* ==========================================================================
+   Shared section grammar (eyebrow used across the site)
+   ========================================================================== */
 
-  /* ── SECTION DIVIDER ── */
-  .gallery-section-label {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    margin-bottom: 24px;
-    margin-top: 56px;
-  }
-  .gallery-section-label:first-child { margin-top: 0; }
-  .gallery-section-label span {
-    font-family: 'Space Mono', monospace;
-    font-size: 9px;
-    letter-spacing: 2.5px;
-    text-transform: uppercase;
-    color: var(--blue-bright);
-    white-space: nowrap;
-  }
-  .gallery-section-label::after {
-    content: '';
-    flex: 1;
-    height: 1px;
-    background: var(--border-hi);
-  }
+.section-eyebrow { display: flex; align-items: center; gap: 0.65rem; font-family: var(--font-mono); font-size: 0.72rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--rockline-blue); margin-bottom: 1.25rem; }
+.section-eyebrow::before { content: ""; width: 2rem; height: 1px; background: var(--rockline-blue); }
 
-  /* ── LAYOUT 1: HERO SHOT (single full-width tall image) ── */
-  .layout-hero-shot {
-    margin-bottom: 6px;
-  }
-  .hero-shot-cell {
-    position: relative;
-    height: 480px;
-    border-radius: 10px;
-    overflow: hidden;
-    cursor: pointer;
-    background: rgba(39,156,245,0.05);
-    border: 1px solid var(--border-hi);
-  }
-  .hero-shot-cell img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .6s cubic-bezier(.22,1,.36,1); }
-  .hero-shot-cell:hover img { transform: scale(1.03); }
-  .hero-shot-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to top, rgba(2,10,22,0.7) 0%, transparent 50%);
-    display: flex;
-    align-items: flex-end;
-    padding: 28px 32px;
-    opacity: 0;
-    transition: opacity .3s;
-  }
-  .hero-shot-cell:hover .hero-shot-overlay { opacity: 1; }
-  .hero-shot-caption {
-    font-family: 'Rajdhani', sans-serif;
-    font-size: 16px;
-    font-weight: 600;
-    letter-spacing: 1px;
-    color: var(--white);
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-  .hero-shot-caption svg { opacity: 0.7; }
-  .photo-placeholder {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-  }
-  .photo-placeholder svg { width: 28px; height: 28px; color: rgba(39,156,245,0.2); }
-  .photo-placeholder span {
-    font-family: 'Space Mono', monospace;
-    font-size: 8px;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    color: rgba(143,203,250,0.18);
-  }
+/* ==========================================================================
+   Gallery hero — dark, mirrors the compact interior-page header used on
+   the blog gallery, styled to this page's photography subject matter.
+   ========================================================================== */
 
-  /* ── LAYOUT 2: TRIO (1 tall left + 2 stacked right) ── */
-  .layout-trio {
-    display: grid;
-    grid-template-columns: 1.4fr 1fr;
-    grid-template-rows: 220px 220px;
-    gap: 6px;
-    margin-bottom: 6px;
-  }
-  .trio-main {
-    grid-row: 1 / 3;
-    border-radius: 10px 4px 4px 10px;
-  }
-  .trio-secondary { border-radius: 4px; }
-  .trio-secondary:last-child { border-radius: 4px 10px 10px 4px; }
-  .gallery-cell {
-    position: relative;
-    overflow: hidden;
-    cursor: pointer;
-    background: rgba(39,156,245,0.05);
-    border: 1px solid var(--border-hi);
-    transition: border-color .25s;
-  }
-  .gallery-cell:hover { border-color: rgba(39,156,245,0.55); }
-  .gallery-cell img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .5s cubic-bezier(.22,1,.36,1); }
-  .gallery-cell:hover img { transform: scale(1.05); }
-  .cell-zoom-hint {
-    position: absolute;
-    top: 12px; right: 12px;
-    width: 32px; height: 32px;
-    border-radius: 50%;
-    background: rgba(2,10,22,0.7);
-    border: 1px solid var(--border-hi);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    transform: scale(0.7);
-    transition: opacity .25s, transform .25s;
-  }
-  .gallery-cell:hover .cell-zoom-hint { opacity: 1; transform: scale(1); }
-  .cell-zoom-hint svg { width: 14px; height: 14px; color: var(--blue-bright); }
+.gallery-hero {
+  position: relative;
+  padding: clamp(7.5rem, 16vw, 10rem) var(--gutter) clamp(4rem, 8vw, 5.5rem);
+  background: var(--ink-slate);
+  overflow: hidden;
+  isolation: isolate;
+}
 
-  /* ── LAYOUT 3: MASONRY ROW (3 varied-height cols) ── */
-  .layout-masonry {
-    display: grid;
-    grid-template-columns: 1fr 1.3fr 1fr;
-    gap: 6px;
-    margin-bottom: 6px;
-    align-items: start;
-  }
-  .masonry-col { display: flex; flex-direction: column; gap: 6px; }
-  .masonry-cell-tall { height: 320px; border-radius: 8px; }
-  .masonry-cell-short { height: 200px; border-radius: 8px; }
-  .masonry-cell-mid { height: 260px; border-radius: 8px; }
+.gallery-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image:
+    linear-gradient(rgba(76, 134, 176, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(76, 134, 176, 0.07) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: radial-gradient(ellipse 75% 65% at 12% 0%, black 30%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse 75% 65% at 12% 0%, black 30%, transparent 100%);
+}
 
-  /* ── LAYOUT 4: UNIFORM STRIP (4-across) ── */
-  .layout-strip {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 6px;
-    margin-bottom: 6px;
-  }
-  .strip-cell {
-    height: 200px;
-    border-radius: 6px;
-  }
-  .strip-cell:first-child { border-radius: 10px 6px 6px 10px; }
-  .strip-cell:last-child { border-radius: 6px 10px 10px 6px; }
+.gallery-hero::after {
+  content: "";
+  position: absolute;
+  top: -20%; right: -8%;
+  width: 34rem; height: 34rem;
+  background: radial-gradient(circle, rgba(76, 134, 176, 0.16) 0%, transparent 68%);
+  z-index: -1;
+  pointer-events: none;
+}
 
-  /* ── LAYOUT 5: PANORAMIC (2 wide side by side) ── */
-  .layout-panoramic {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 6px;
-    margin-bottom: 6px;
-  }
-  .panoramic-cell {
-    height: 300px;
-    border-radius: 10px;
-  }
+.gallery-hero-inner { max-width: var(--max-width); margin: 0 auto; }
 
-  /* ── LIGHTBOX ── */
-  .lightbox {
-    position: fixed;
-    inset: 0;
-    z-index: 1000;
-    background: rgba(1,7,15,0.97);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity .3s;
-  }
-  .lightbox.open {
-    opacity: 1;
-    pointer-events: auto;
-  }
-  .lightbox-img-wrap {
-    position: relative;
-    max-width: 90vw;
-    max-height: 88vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .lightbox-img-wrap img {
-    max-width: 90vw;
-    max-height: 88vh;
-    object-fit: contain;
-    border-radius: 6px;
-    display: block;
-    transition: opacity .2s;
-  }
-  .lightbox-placeholder {
-    width: min(80vw, 900px);
-    height: min(70vh, 600px);
-    border-radius: 10px;
-    background: rgba(39,156,245,0.04);
-    border: 1px solid var(--border-hi);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 14px;
-  }
-  .lightbox-placeholder svg { width: 40px; height: 40px; color: rgba(39,156,245,0.2); }
-  .lightbox-placeholder span {
-    font-family: 'Space Mono', monospace;
-    font-size: 9px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: rgba(143,203,250,0.2);
-  }
-  .lightbox-close {
-    position: fixed;
-    top: 20px; right: 24px;
-    width: 44px; height: 44px;
-    border-radius: 50%;
-    background: rgba(2,12,24,0.8);
-    border: 1px solid var(--border-hi);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: background .2s, border-color .2s;
-    z-index: 1001;
-  }
-  .lightbox-close:hover { background: rgba(39,156,245,0.15); border-color: var(--blue-bright); }
-  .lightbox-close svg { width: 18px; height: 18px; color: var(--blue-light); }
-  .lightbox-nav {
-    position: fixed;
-    top: 50%; transform: translateY(-50%);
-    width: 48px; height: 48px;
-    border-radius: 50%;
-    background: rgba(2,12,24,0.8);
-    border: 1px solid var(--border-hi);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: background .2s, border-color .2s, opacity .2s;
-    z-index: 1001;
-  }
-  .lightbox-nav:hover { background: rgba(39,156,245,0.15); border-color: var(--blue-bright); }
-  .lightbox-nav svg { width: 20px; height: 20px; color: var(--blue-light); }
-  .lightbox-prev { left: 20px; }
-  .lightbox-next { right: 20px; }
-  .lightbox-nav.hidden { opacity: 0; pointer-events: none; }
-  .lightbox-counter {
-    position: fixed;
-    bottom: 24px; left: 50%; transform: translateX(-50%);
-    font-family: 'Space Mono', monospace;
-    font-size: 10px;
-    letter-spacing: 2px;
-    color: var(--blue-mid);
-    background: rgba(2,12,24,0.7);
-    padding: 6px 16px;
-    border-radius: 20px;
-    border: 1px solid var(--border);
-  }
-  .lightbox-caption {
-    position: fixed;
-    bottom: 60px; left: 50%; transform: translateX(-50%);
-    font-family: 'Rajdhani', sans-serif;
-    font-size: 14px;
-    letter-spacing: 1px;
-    color: var(--blue-light);
-    text-align: center;
-    white-space: nowrap;
-  }
+.gallery-hero h1 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  font-size: clamp(2.3rem, 5.2vw, 4rem);
+  max-width: 20ch;
+  color: var(--pure-white);
+  margin-bottom: 1.5rem;
+}
 
-  /* ── RESPONSIVE ── */
-  @media (max-width: 900px) {
-    .layout-strip { grid-template-columns: repeat(2, 1fr); }
-    .layout-masonry { grid-template-columns: 1fr 1fr; }
-    .layout-masonry .masonry-col:last-child { display: none; }
-  }
-  @media (max-width: 768px) {
-    .gallery-hero { padding: 40px 16px 40px; }
-    .gallery-panel { padding: 32px 16px 60px; }
-    .gallery-tabs { padding: 0 16px; }
-    .gallery-tab { padding: 14px 16px; font-size: 12px; }
-    .layout-hero-shot .hero-shot-cell { height: 260px; }
-    .layout-trio { grid-template-columns: 1fr; grid-template-rows: 240px 180px 180px; }
-    .trio-main { grid-row: 1; border-radius: 10px; }
-    .trio-secondary, .trio-secondary:last-child { border-radius: 8px; }
-    .layout-masonry { grid-template-columns: 1fr; }
-    .masonry-col:not(:first-child) { display: none; }
-    .layout-strip { grid-template-columns: 1fr 1fr; }
-    .layout-panoramic { grid-template-columns: 1fr; }
-    .lightbox-nav { width: 36px; height: 36px; }
-    .lightbox-prev { left: 8px; }
-    .lightbox-next { right: 8px; }
-  }
+.gallery-hero h1 em {
+  font-style: italic;
+  font-weight: 500;
+  color: var(--rockline-blue);
+}
+
+.gallery-hero-lead {
+  font-size: clamp(1rem, 1.3vw, 1.15rem);
+  line-height: 1.7;
+  color: rgba(232, 228, 219, 0.8);
+  max-width: 46ch;
+}
+
+/* ==========================================================================
+   Tab bar
+   ========================================================================== */
+
+.gallery-tabs-wrap {
+  position: sticky;
+  top: 0;
+  z-index: 400;
+  background: rgba(23, 27, 34, 0.96);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(232, 228, 219, 0.1);
+}
+.gallery-tabs {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  align-items: stretch;
+  padding: 0 var(--gutter);
+  gap: 0;
+  overflow-x: auto;
+}
+.gallery-tab {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 1.1rem 1.6rem;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.88rem;
+  color: rgba(232, 228, 219, 0.6);
+  cursor: pointer;
+  border: none;
+  background: none;
+  border-bottom: 2px solid transparent;
+  transition: color .2s, border-color .2s;
+  position: relative;
+  top: 1px;
+  white-space: nowrap;
+}
+.gallery-tab:hover { color: var(--stone-fog); }
+.gallery-tab.active { color: var(--pure-white); border-bottom-color: var(--rockline-blue); }
+.gallery-tab svg { flex-shrink: 0; color: var(--rockline-blue); }
+.tab-count {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.04em;
+  padding: 0.15rem 0.5rem;
+  border-radius: 10px;
+  background: rgba(76, 134, 176, 0.14);
+  color: var(--rockline-blue);
+  border: 1px solid rgba(76, 134, 176, 0.3);
+}
+.gallery-tab.active .tab-count { background: rgba(76, 134, 176, 0.24); color: var(--pure-white); border-color: rgba(76, 134, 176, 0.5); }
+
+/* ==========================================================================
+   Gallery panels
+   ========================================================================== */
+
+.gallery-panel {
+  display: none;
+  padding: clamp(3rem, 6vw, 4.5rem) var(--gutter) clamp(5rem, 11vw, 8rem);
+  max-width: var(--max-width);
+  margin: 0 auto;
+  background: var(--ink-slate);
+}
+.gallery-panel.active { display: block; }
+
+.gallery-section-label {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  margin-top: 3.5rem;
+}
+.gallery-section-label:first-child { margin-top: 0; }
+.gallery-section-label span {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--rockline-blue);
+  white-space: nowrap;
+}
+.gallery-section-label::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: rgba(232, 228, 219, 0.14);
+}
+
+/* ── LAYOUT 1: HERO SHOT ── */
+.layout-hero-shot { margin-bottom: 0.4rem; }
+.hero-shot-cell {
+  position: relative;
+  height: 480px;
+  border-radius: 14px;
+  overflow: hidden;
+  cursor: pointer;
+  background: linear-gradient(165deg, #232c37 0%, #1c232c 100%);
+  border: 1px solid rgba(232, 228, 219, 0.12);
+}
+.hero-shot-cell img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .6s cubic-bezier(.22,1,.36,1); }
+.hero-shot-cell:hover img { transform: scale(1.03); }
+.hero-shot-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(28, 35, 44, 0.85) 0%, transparent 50%);
+  display: flex;
+  align-items: flex-end;
+  padding: 1.75rem 2rem;
+  opacity: 0;
+  transition: opacity .3s;
+}
+.hero-shot-cell:hover .hero-shot-overlay { opacity: 1; }
+.hero-shot-caption {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 600;
+  font-style: italic;
+  color: var(--pure-white);
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.hero-shot-caption svg { opacity: 0.8; color: var(--rockline-blue); }
+
+.photo-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+}
+.photo-placeholder svg { width: 28px; height: 28px; color: rgba(76, 134, 176, 0.35); }
+.photo-placeholder span {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(232, 228, 219, 0.28);
+}
+
+/* ── LAYOUT 2: TRIO ── */
+.layout-trio {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  grid-template-rows: 220px 220px;
+  gap: 8px;
+  margin-bottom: 0.4rem;
+}
+.trio-main { grid-row: 1 / 3; border-radius: 14px 6px 6px 14px; }
+.trio-secondary { border-radius: 6px; }
+.trio-secondary:last-child { border-radius: 6px 14px 14px 6px; }
+
+.gallery-cell {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  background: linear-gradient(165deg, #232c37 0%, #1c232c 100%);
+  border: 1px solid rgba(232, 228, 219, 0.12);
+  transition: border-color .25s;
+}
+.gallery-cell:hover { border-color: rgba(76, 134, 176, 0.6); }
+.gallery-cell img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .5s cubic-bezier(.22,1,.36,1); }
+.gallery-cell:hover img { transform: scale(1.05); }
+.cell-zoom-hint {
+  position: absolute;
+  top: 12px; right: 12px;
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  background: rgba(28, 35, 44, 0.75);
+  border: 1px solid rgba(76, 134, 176, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transform: scale(0.7);
+  transition: opacity .25s, transform .25s;
+}
+.gallery-cell:hover .cell-zoom-hint { opacity: 1; transform: scale(1); }
+.cell-zoom-hint svg { width: 14px; height: 14px; color: var(--rockline-blue); }
+
+/* ── LAYOUT 3: MASONRY ── */
+.layout-masonry {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr 1fr;
+  gap: 8px;
+  margin-bottom: 0.4rem;
+  align-items: start;
+}
+.masonry-col { display: flex; flex-direction: column; gap: 8px; }
+.masonry-cell-tall { height: 320px; border-radius: 10px; }
+.masonry-cell-short { height: 200px; border-radius: 10px; }
+.masonry-cell-mid { height: 260px; border-radius: 10px; }
+
+/* ── LAYOUT 4: STRIP ── */
+.layout-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  margin-bottom: 0.4rem;
+}
+.strip-cell { height: 200px; border-radius: 8px; }
+.strip-cell:first-child { border-radius: 14px 8px 8px 14px; }
+.strip-cell:last-child { border-radius: 8px 14px 14px 8px; }
+
+/* ── LAYOUT 5: PANORAMIC ── */
+.layout-panoramic {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-bottom: 0.4rem;
+}
+.panoramic-cell { height: 300px; border-radius: 14px; }
+
+/* ==========================================================================
+   Lightbox
+   ========================================================================== */
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(12, 15, 19, 0.97);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .3s;
+}
+.lightbox.open { opacity: 1; pointer-events: auto; }
+.lightbox-img-wrap {
+  position: relative;
+  max-width: 90vw;
+  max-height: 88vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.lightbox-img-wrap img {
+  max-width: 90vw;
+  max-height: 88vh;
+  object-fit: contain;
+  border-radius: 10px;
+  display: block;
+  transition: opacity .2s;
+}
+.lightbox-placeholder {
+  width: min(80vw, 900px);
+  height: min(70vh, 600px);
+  border-radius: 14px;
+  background: linear-gradient(165deg, #232c37 0%, #1c232c 100%);
+  border: 1px solid rgba(232, 228, 219, 0.12);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.9rem;
+}
+.lightbox-placeholder svg { width: 40px; height: 40px; color: rgba(76, 134, 176, 0.35); }
+.lightbox-placeholder span {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(232, 228, 219, 0.3);
+}
+.lightbox-close {
+  position: fixed;
+  top: 20px; right: 24px;
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  background: rgba(23, 27, 34, 0.85);
+  border: 1px solid rgba(232, 228, 219, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background .2s, border-color .2s;
+  z-index: 1001;
+}
+.lightbox-close:hover { background: rgba(76, 134, 176, 0.2); border-color: var(--rockline-blue); }
+.lightbox-close svg { width: 18px; height: 18px; color: var(--stone-fog); }
+.lightbox-nav {
+  position: fixed;
+  top: 50%; transform: translateY(-50%);
+  width: 48px; height: 48px;
+  border-radius: 50%;
+  background: rgba(23, 27, 34, 0.85);
+  border: 1px solid rgba(232, 228, 219, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background .2s, border-color .2s, opacity .2s;
+  z-index: 1001;
+}
+.lightbox-nav:hover { background: rgba(76, 134, 176, 0.2); border-color: var(--rockline-blue); }
+.lightbox-nav svg { width: 20px; height: 20px; color: var(--stone-fog); }
+.lightbox-prev { left: 20px; }
+.lightbox-next { right: 20px; }
+.lightbox-nav.hidden { opacity: 0; pointer-events: none; }
+.lightbox-counter {
+  position: fixed;
+  bottom: 24px; left: 50%; transform: translateX(-50%);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  color: rgba(232, 228, 219, 0.65);
+  background: rgba(23, 27, 34, 0.75);
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  border: 1px solid rgba(232, 228, 219, 0.14);
+}
+.lightbox-caption {
+  position: fixed;
+  bottom: 60px; left: 50%; transform: translateX(-50%);
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 0.95rem;
+  color: var(--stone-fog);
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+
+@media (max-width: 900px) {
+  .layout-strip { grid-template-columns: repeat(2, 1fr); }
+  .layout-masonry { grid-template-columns: 1fr 1fr; }
+  .layout-masonry .masonry-col:last-child { display: none; }
+}
+@media (max-width: 640px) {
+  .gallery-tab { padding: 0.9rem 1.1rem; font-size: 0.8rem; }
+  .layout-hero-shot .hero-shot-cell { height: 260px; }
+  .layout-trio { grid-template-columns: 1fr; grid-template-rows: 240px 180px 180px; }
+  .trio-main { grid-row: 1; border-radius: 14px; }
+  .trio-secondary, .trio-secondary:last-child { border-radius: 10px; }
+  .layout-masonry { grid-template-columns: 1fr; }
+  .masonry-col:not(:first-child) { display: none; }
+  .layout-strip { grid-template-columns: 1fr 1fr; }
+  .layout-panoramic { grid-template-columns: 1fr; }
+  .lightbox-nav { width: 36px; height: 36px; }
+  .lightbox-prev { left: 8px; }
+  .lightbox-next { right: 8px; }
+}
+
+/* ==========================================================================
+   Footer (shared component — unchanged from index.html)
+   ========================================================================== */
+
+.site-footer { background: var(--pure-white); color: var(--ink-slate); border-top: 1px solid rgba(28, 35, 44, 0.1); }
+.site-footer__inner { max-width: var(--max-width); margin: 0 auto; padding: clamp(3rem, 6vw, 4.5rem) var(--gutter) clamp(2rem, 4vw, 2.5rem); display: grid; grid-template-columns: 1.3fr 1fr 1.3fr; gap: clamp(2rem, 5vw, 3rem); }
+.site-footer__brand { display: flex; flex-direction: column; gap: 1rem; }
+.site-footer__logo { height: clamp(4.5rem, 8vw, 6.5rem); width: auto; align-self: flex-start; object-fit: contain; margin-bottom: 0.25rem; }
+.site-footer__tagline { font-family: var(--font-display); font-style: italic; font-size: 1rem; color: rgba(28, 35, 44, 0.65); max-width: 22ch; }
+.site-footer__heading { font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--rockline-blue); margin-bottom: 0.85rem; }
+.site-footer__hours-value { font-family: var(--font-body); font-weight: 600; font-size: 1rem; color: var(--ink-slate); margin-bottom: 0.25rem; }
+.site-footer__hours-sub { font-size: 0.85rem; color: rgba(28, 35, 44, 0.6); }
+.site-footer__social { display: flex; flex-direction: column; align-items: flex-start; }
+.site-footer__social-row { display: flex; flex-direction: column; gap: 0.4rem; }
+.site-footer__social-hex-row { display: flex; gap: 0.5rem; }
+.site-footer__social-hex-row--offset { margin: -0.62rem 0 0 1.6rem; }
+.site-footer__social-icon { width: 3rem; height: 3.4rem; clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%); display: inline-flex; align-items: center; justify-content: center; color: var(--pure-white); text-decoration: none; font-family: var(--font-body); font-weight: 700; font-size: 0.78rem; flex-shrink: 0; transition: transform 0.25s ease, filter 0.25s ease; }
+.site-footer__social-icon:hover, .site-footer__social-icon:focus-visible { transform: translateY(-3px) scale(1.06); filter: brightness(1.1); }
+.site-footer__social-icon--facebook { background: #1877f2; }
+.site-footer__social-icon--instagram { background: linear-gradient(135deg, #f9ce34, #ee2a7b, #6228d7); }
+.site-footer__social-icon--x { background: #000000; }
+.site-footer__social-icon--substack { background: #ff6719; }
+.site-footer__social-icon--threads { background: #000000; }
+.site-footer__social-icon--tiktok { background: #010101; }
+.site-footer__social-icon--pinterest { background: #e60023; }
+.site-footer__bottom { border-top: 1px solid rgba(28, 35, 44, 0.08); padding: 1.5rem var(--gutter); text-align: center; font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.04em; color: rgba(28, 35, 44, 0.4); }
+@media (max-width: 900px) { .site-footer__inner { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
 
-<!-- DESKTOP HEADER -->
-<header id="site-header">
-  <div class="header-brand">
-    <a href="sms:+18155555555?body=Hi%2C%20I%27d%20like%20to%20learn%20more%20about%20Rockline%20AI%20Marketing!" class="cta-sms">
-      <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-      Contact Us
-    </a>
-    <img src="../images/logos/rockline-ai-marketing-logo.png" alt="Rockline AI Marketing" class="header-logo">
-  </div>
-</header>
+  <!-- ==========================================================================
+       HEADER (solid — same tokens/markup as index.html)
+       ========================================================================== -->
+  <header class="site-header site-header--solid">
+    <div class="site-header__inner">
 
-<!-- DESKTOP STICKY NAV + TICKER -->
-<div id="sticky-nav-zone">
-  <nav class="main-nav" role="navigation" aria-label="Main navigation">
-    <div class="nav-item"><a href="../index.html" class="nav-btn">Home</a></div>
-    <div class="nav-item">
-      <span class="nav-btn" tabindex="0">About <svg class="chevron" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 3.5L5 6.5L8 3.5"/></svg></span>
-      <div class="dropdown">
-        <a href="../about/agency-profile.html">Agency Profile</a>
-        <a href="../about/customer-success-stories.html">Customer Success Stories</a>
-        <a href="../about/community-activism.html">Community Activism</a>
-      </div>
-    </div>
-    <div class="nav-item">
-      <span class="nav-btn" tabindex="0">Portfolio <svg class="chevron" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 3.5L5 6.5L8 3.5"/></svg></span>
-      <div class="dropdown">
-        <a href="website-gallery.html">Website Gallery</a>
-        <a href="photo-gallery.html" class="current-page">Photo Gallery</a>
-        <a href="social-gallery.html">Social Gallery</a>
-      </div>
-    </div>
-    <div class="nav-item">
-      <span class="nav-btn" tabindex="0">Services <svg class="chevron" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 3.5L5 6.5L8 3.5"/></svg></span>
-      <div class="dropdown">
-        <a href="../services/custom-websites.html">Custom Websites</a>
-        <a href="../services/microblogging.html">Microblogging</a>
-        <a href="../services/aerial-8k-photography.html">Aerial &amp; 8K Photography</a>
-      </div>
-    </div>
-    <div class="nav-item">
-      <span class="nav-btn" tabindex="0">Contact <svg class="chevron" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 3.5L5 6.5L8 3.5"/></svg></span>
-      <div class="dropdown">
-        <a href="../contact/business-information.html">Business Information</a>
-        <a href="../contact/social-media.html">Social Media</a>
-        <a href="../contact/q-and-a.html">Q &amp; A</a>
-      </div>
-    </div>
-  </nav>
-  <div class="ticker-wrap">
-    <a href="../contact/q-and-a.html" style="text-decoration:none; pointer-events:auto;"><div class="ticker-label">GEO FAQ</div></a>
-    <div class="ticker-inner">
-      <div class="ticker-track" id="desktopTicker">
-        <div class="ticker-item">What is Generative Engine Optimization (GEO)?</div>
-        <div class="ticker-item">How does GEO differ from traditional SEO?</div>
-        <div class="ticker-item">Can AI-driven content appear in ChatGPT and Gemini answers?</div>
-        <div class="ticker-item">What makes a website discoverable by AI search engines?</div>
-        <div class="ticker-item">How does Rockline AI Marketing implement GEO strategies?</div>
-        <div class="ticker-item">Is GEO replacing SEO — or working alongside it?</div>
-        <div class="ticker-item">How do large language models discover and cite local businesses?</div>
-        <div class="ticker-item">What role does structured data play in GEO?</div>
-        <div class="ticker-item">How quickly can GEO improve your online visibility?</div>
-        <div class="ticker-item">What industries benefit most from Generative Engine Optimization?</div>
-      </div>
-    </div>
-  </div>
-</div>
+      <a class="site-header__logo" href="https://rocklineaimarketing.com/">
+        <span class="site-header__logo-text">Rockline AI Marketing</span>
+      </a>
 
-<!-- MOBILE STICKY -->
-<div id="mobile-sticky">
-  <div class="mobile-topbar">
-    <img src="../images/logos/rockline-ai-marketing-logo.png" alt="Rockline AI Marketing" class="mobile-header-logo">
-    <button class="hamburger-trigger" id="hamburgerTrigger" aria-label="Open navigation">
-      <div class="hamburger-bars"><span></span><span></span><span></span></div>
+      <nav class="site-header__nav" aria-label="Primary">
+        <a href="https://rocklineaimarketing.com/">Home</a>
+
+        <div class="nav-dropdown">
+          <span class="nav-dropdown__label">
+            About
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+          <div class="nav-dropdown__menu">
+            <a href="https://rocklineaimarketing.com/about/agency-profile">Agency Profile</a>
+            <a href="https://rocklineaimarketing.com/about/customer-success-stories">Customer Success Stories</a>
+          </div>
+        </div>
+
+        <div class="nav-dropdown">
+          <span class="nav-dropdown__label">
+            Services
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+          <div class="nav-dropdown__menu">
+            <a href="https://rocklineaimarketing.com/services/web-development">Web Development</a>
+            <a href="https://rocklineaimarketing.com/services/social-media-microblogging">Social Media and Microblogging</a>
+            <a href="https://rocklineaimarketing.com/services/aerial-photography">Aerial Photography</a>
+          </div>
+        </div>
+
+        <div class="nav-dropdown">
+          <span class="nav-dropdown__label">
+            Portfolios
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+          <div class="nav-dropdown__menu">
+            <a href="https://rocklineaimarketing.com/portfolio/website-gallery">Website Gallery</a>
+            <a href="https://rocklineaimarketing.com/portfolio/blog-gallery">Micro-Blog Gallery</a>
+            <a href="https://rocklineaimarketing.com/portfolio/photography-gallery" class="current-page">Photography Gallery</a>
+          </div>
+        </div>
+
+        <div class="nav-dropdown">
+          <span class="nav-dropdown__label">
+            Contact
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+          <div class="nav-dropdown__menu">
+            <a href="https://rocklineaimarketing.com/contact/faq">FAQ</a>
+            <a href="https://rocklineaimarketing.com/contact/office">Office</a>
+          </div>
+        </div>
+      </nav>
+
+      <div class="site-header__actions">
+        <a class="site-header__call" href="tel:+18152747425">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          (815) 274-7425
+        </a>
+        <a class="site-header__cta" href="https://rocklineaimarketing.com/contact/office">Start a project</a>
+        <button class="site-header__toggle" id="site-header-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="site-header-mobile">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+
+    </div>
+
+    <nav class="site-header__mobile" id="site-header-mobile" aria-label="Mobile">
+      <a href="https://rocklineaimarketing.com/">Home</a>
+
+      <details>
+        <summary>
+          About
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </summary>
+        <div class="site-header__mobile__submenu">
+          <a href="https://rocklineaimarketing.com/about/agency-profile">Agency Profile</a>
+          <a href="https://rocklineaimarketing.com/about/customer-success-stories">Customer Success Stories</a>
+        </div>
+      </details>
+
+      <details>
+        <summary>
+          Services
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </summary>
+        <div class="site-header__mobile__submenu">
+          <a href="https://rocklineaimarketing.com/services/web-development">Web Development</a>
+          <a href="https://rocklineaimarketing.com/services/social-media-microblogging">Social Media and Microblogging</a>
+          <a href="https://rocklineaimarketing.com/services/aerial-photography">Aerial Photography</a>
+        </div>
+      </details>
+
+      <details open>
+        <summary>
+          Portfolios
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </summary>
+        <div class="site-header__mobile__submenu">
+          <a href="https://rocklineaimarketing.com/portfolio/website-gallery">Website Gallery</a>
+          <a href="https://rocklineaimarketing.com/portfolio/blog-gallery">Micro-Blog Gallery</a>
+          <a href="https://rocklineaimarketing.com/portfolio/photography-gallery" class="current-page">Photography Gallery</a>
+        </div>
+      </details>
+
+      <details>
+        <summary>
+          Contact
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </summary>
+        <div class="site-header__mobile__submenu">
+          <a href="https://rocklineaimarketing.com/contact/faq">FAQ</a>
+          <a href="https://rocklineaimarketing.com/contact/office">Office</a>
+        </div>
+      </details>
+
+      <a href="https://rocklineaimarketing.com/contact/office">Start a project</a>
+      <a href="tel:+18152747425">(815) 274-7425</a>
+    </nav>
+  </header>
+
+  <!-- ═══════════════ LIGHTBOX ═══════════════ -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer">
+    <button class="lightbox-close" id="lbClose" aria-label="Close">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
     </button>
-  </div>
-  <div class="mobile-ticker-strip ticker-wrap">
-    <a href="../contact/q-and-a.html" style="text-decoration:none; pointer-events:auto;"><div class="ticker-label">GEO FAQ</div></a>
-    <div class="ticker-inner">
-      <div class="ticker-track" id="mobileTicker">
-        <div class="ticker-item">What is Generative Engine Optimization (GEO)?</div>
-        <div class="ticker-item">How does GEO differ from traditional SEO?</div>
-        <div class="ticker-item">Can AI-driven content appear in ChatGPT &amp; Gemini?</div>
-        <div class="ticker-item">What makes a website discoverable by AI?</div>
-        <div class="ticker-item">How does Rockline AI Marketing implement GEO?</div>
-        <div class="ticker-item">Is GEO replacing SEO — or working alongside it?</div>
-        <div class="ticker-item">How do LLMs discover and cite local businesses?</div>
-        <div class="ticker-item">What role does structured data play in GEO?</div>
-        <div class="ticker-item">How quickly can GEO improve your visibility?</div>
-        <div class="ticker-item">Which industries benefit most from GEO?</div>
+    <button class="lightbox-nav lightbox-prev" id="lbPrev" aria-label="Previous photo">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+    </button>
+    <div class="lightbox-img-wrap" id="lbImgWrap">
+      <div class="lightbox-placeholder" id="lbPlaceholder">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+        <span>Add your photo here</span>
       </div>
     </div>
+    <button class="lightbox-nav lightbox-next" id="lbNext" aria-label="Next photo">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+    </button>
+    <div class="lightbox-caption" id="lbCaption"></div>
+    <div class="lightbox-counter" id="lbCounter"></div>
   </div>
-</div>
 
-<div class="mobile-overlay" id="mobileOverlay"></div>
-<div class="mobile-panel" id="mobilePanel" role="dialog" aria-label="Navigation">
-  <div class="mobile-panel-logo">
-    <img src="../images/logos/rockline-ai-marketing-logo.png" alt="Rockline AI Marketing">
-  </div>
-  <ul class="mobile-nav-list">
-    <li><a href="../index.html">Home</a></li>
-    <li>
-      <div class="m-parent" onclick="toggleSub(this)">About <svg class="m-chevron" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 3.5L5 6.5L8 3.5"/></svg></div>
-      <div class="mobile-sub">
-        <a href="../about/agency-profile.html">Agency Profile</a>
-        <a href="../about/customer-success-stories.html">Customer Success Stories</a>
-        <a href="../about/community-activism.html">Community Activism</a>
-      </div>
-    </li>
-    <li>
-      <div class="m-parent sub-open" onclick="toggleSub(this)">Portfolio <svg class="m-chevron" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 3.5L5 6.5L8 3.5"/></svg></div>
-      <div class="mobile-sub open">
-        <a href="website-gallery.html">Website Gallery</a>
-        <a href="photo-gallery.html" class="current-page">Photo Gallery</a>
-        <a href="social-gallery.html">Social Gallery</a>
-      </div>
-    </li>
-    <li>
-      <div class="m-parent" onclick="toggleSub(this)">Services <svg class="m-chevron" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 3.5L5 6.5L8 3.5"/></svg></div>
-      <div class="mobile-sub">
-        <a href="../services/custom-websites.html">Custom Websites</a>
-        <a href="../services/microblogging.html">Microblogging</a>
-        <a href="../services/aerial-8k-photography.html">Aerial &amp; 8K Photography</a>
-      </div>
-    </li>
-    <li>
-      <div class="m-parent" onclick="toggleSub(this)">Contact <svg class="m-chevron" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 3.5L5 6.5L8 3.5"/></svg></div>
-      <div class="mobile-sub">
-        <a href="../contact/business-information.html">Business Information</a>
-        <a href="../contact/social-media.html">Social Media</a>
-        <a href="../contact/q-and-a.html">Q &amp; A</a>
-      </div>
-    </li>
-  </ul>
-  <div class="mobile-panel-cta">
-    <a href="sms:+18155555555?body=Hi%2C%20I%27d%20like%20to%20learn%20more%20about%20Rockline%20AI%20Marketing!">
-      <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-      Text Us Now
-    </a>
-  </div>
-</div>
+  <main>
 
-<!-- ═══════════════ LIGHTBOX ═══════════════ -->
-<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer">
-  <button class="lightbox-close" id="lbClose" aria-label="Close">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
-  </button>
-  <button class="lightbox-nav lightbox-prev" id="lbPrev" aria-label="Previous photo">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
-  </button>
-  <div class="lightbox-img-wrap" id="lbImgWrap">
-    <div class="lightbox-placeholder" id="lbPlaceholder">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-      <span>Add your photo here</span>
+    <!-- ==========================================================================
+         GALLERY HERO
+         ========================================================================== -->
+    <section class="gallery-hero" aria-label="Photo gallery introduction">
+      <div class="gallery-hero-inner">
+        <p class="section-eyebrow">Photo Gallery</p>
+        <h1>Aerial &amp; 8K photography, <em>built to stop the scroll.</em></h1>
+        <p class="gallery-hero-lead">
+          Every shot is captured at maximum resolution &mdash; drone-altitude
+          perspectives and ground-level 8K detail that make your business
+          impossible to ignore.
+        </p>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         TAB BAR
+         ========================================================================== -->
+    <div class="gallery-tabs-wrap">
+      <div class="gallery-tabs" role="tablist">
+        <button class="gallery-tab active" role="tab" aria-selected="true" data-tab="aerial">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          Aerial
+          <span class="tab-count">12</span>
+        </button>
+        <button class="gallery-tab" role="tab" aria-selected="false" data-tab="eightk">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M8 10v4M16 10v4M12 10v4"/></svg>
+          8K Photography
+          <span class="tab-count">12</span>
+        </button>
+      </div>
     </div>
-  </div>
-  <button class="lightbox-nav lightbox-next" id="lbNext" aria-label="Next photo">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
-  </button>
-  <div class="lightbox-caption" id="lbCaption"></div>
-  <div class="lightbox-counter" id="lbCounter"></div>
-</div>
 
-<!-- ═══════════════ MAIN ═══════════════ -->
-<main>
+    <!-- ═══ AERIAL TAB ═══ -->
+    <div class="gallery-panel active" id="panel-aerial" role="tabpanel">
 
-  <!-- HERO -->
-  <section class="gallery-hero">
-    <div class="gallery-hero-inner">
-      <p class="gallery-eyebrow">Photo Gallery</p>
-      <h1>Aerial &amp; 8K Photography<br><em>Built to Stop the Scroll.</em></h1>
-      <p class="gallery-hero-lead">Every shot is captured at maximum resolution — drone-altitude perspectives and ground-level 8K detail that make your business impossible to ignore.</p>
-    </div>
-  </section>
-
-  <!-- TAB BAR -->
-  <div class="gallery-tabs-wrap">
-    <div class="gallery-tabs" role="tablist">
-      <button class="gallery-tab active" role="tab" aria-selected="true" data-tab="aerial">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-        Aerial
-        <span class="tab-count">12</span>
-      </button>
-      <button class="gallery-tab" role="tab" aria-selected="false" data-tab="eightk">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M8 10v4M16 10v4M12 10v4"/></svg>
-        8K Photography
-        <span class="tab-count">12</span>
-      </button>
-    </div>
-  </div>
-
-  <!-- ═══ AERIAL TAB ═══ -->
-  <div class="gallery-panel active" id="panel-aerial" role="tabpanel">
-
-    <!-- Layout 1: Hero Shot -->
-    <div class="gallery-section-label"><span>Signature Shot</span></div>
-    <div class="layout-hero-shot">
-      <div class="hero-shot-cell gallery-cell" data-caption="Aerial — Signature Shot" data-index="0">
-        <div class="photo-placeholder">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-          <span>Hero aerial photo</span>
-        </div>
-        <div class="hero-shot-overlay">
-          <span class="hero-shot-caption">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg>
-            View Full Size
-          </span>
+      <!-- Layout 1: Hero Shot -->
+      <div class="gallery-section-label"><span>Signature Shot</span></div>
+      <div class="layout-hero-shot">
+        <div class="hero-shot-cell gallery-cell" data-caption="Aerial — Signature Shot" data-index="0">
+          <div class="photo-placeholder">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            <span>Hero aerial photo</span>
+          </div>
+          <div class="hero-shot-overlay">
+            <span class="hero-shot-caption">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg>
+              View Full Size
+            </span>
+          </div>
         </div>
       </div>
-    </div>
 
-    <!-- Layout 2: Trio -->
-    <div class="gallery-section-label"><span>Location Series</span></div>
-    <div class="layout-trio">
-      <div class="gallery-cell trio-main" data-caption="Aerial — Location A" data-index="1">
-        <div class="photo-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg><span>Aerial photo</span></div>
-        <div class="cell-zoom-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
-      </div>
-      <div class="gallery-cell trio-secondary" data-caption="Aerial — Location B" data-index="2">
-        <div class="photo-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg><span>Aerial photo</span></div>
-        <div class="cell-zoom-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
-      </div>
-      <div class="gallery-cell trio-secondary" data-caption="Aerial — Location C" data-index="3">
-        <div class="photo-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg><span>Aerial photo</span></div>
-        <div class="cell-zoom-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
-      </div>
-    </div>
-
-    <!-- Layout 3: Masonry -->
-    <div class="gallery-section-label"><span>Perspectives</span></div>
-    <div class="layout-masonry">
-      <div class="masonry-col">
-        <div class="gallery-cell masonry-cell-short" data-caption="Aerial — Wide View" data-index="4">
+      <!-- Layout 2: Trio -->
+      <div class="gallery-section-label"><span>Location Series</span></div>
+      <div class="layout-trio">
+        <div class="gallery-cell trio-main" data-caption="Aerial — Location A" data-index="1">
           <div class="photo-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg><span>Aerial photo</span></div>
           <div class="cell-zoom-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
         </div>
-        <div class="gallery-cell masonry-cell-tall" data-caption="Aerial — Overhead" data-index="5">
+        <div class="gallery-cell trio-secondary" data-caption="Aerial — Location B" data-index="2">
+          <div class="photo-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg><span>Aerial photo</span></div>
+          <div class="cell-zoom-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
+        </div>
+        <div class="gallery-cell trio-secondary" data-caption="Aerial — Location C" data-index="3">
           <div class="photo-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg><span>Aerial photo</span></div>
           <div class="cell-zoom-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
         </div>
       </div>
-      <div class="masonry-col">
-        <div class="gallery-cell masonry-cell-tall" data-caption="Aerial — Diagonal" data-index="6">
-          <div class="photo-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg><span>Aerial photo</span></div>
+
+      <!-- Layout 3: Masonry -->
+      <div class="gallery-section-label"><span>Perspectives</span></div>
+      <div class="layout-masonry">
+        <div class="masonry-col">
+          <div class="gallery-cell masonry-cell-short" data-caption="Aerial — Wide View" data-index="4">
+            <div class="photo-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg><span>Aerial photo</span></div>
+            <div class="cell-zoom-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
+          </div>
+          <div class="gallery-cell masonry-cell-tall" data-caption="Aerial — Overhead" data-index="5">
+            <div class="photo-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg><span>Aerial photo</span></div>
+            <div class="cell-zoom-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
+          </div>
+        </div>
+        <div class="masonry-col">
+          <div class="gallery-cell masonry-cell-tall" data-caption="Aerial — Diagonal" data-index="6">
+            <div class="photo-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg><span>Aerial photo</span></div>
+            <div class="cell-zoom-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
+          </div>
+          <div class="gallery-cell masonry-cell-short" data-caption="Aerial — Detail" data-index="7">
+            <div class="photo-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg><span>Aerial photo</span></div>
+            <div class="cell-zoom-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
+          </div>
+        </div>
+        <div class="masonry-col">
+          <div class="gallery-cell masonry-cell-mid" data-caption="Aerial — Mid-Range" data-index="8">
+            <div class="photo-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg><span>Aerial photo</span></div>
+            <div class="cell-zoom-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
+          </div>
+          <div class="gallery-cell masonry-cell-mid" data-caption="Aerial — Horizon" data-index="9">
+            <div class="photo-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg><span>Aerial photo</span></div>
+            <div class="cell-zoom-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Layout 4: Strip -->
+      <div class="gallery-section-label"><span>Quick Cuts</span></div>
+      <div class="layout-strip">
+        <div class="gallery-cell strip-cell" data-caption="Aerial — Frame 1" data-index="10">
+          <div class="photo-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg><span>Photo</span></div>
           <div class="cell-zoom-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
         </div>
-        <div class="gallery-cell masonry-cell-short" data-caption="Aerial — Detail" data-index="7">
-          <div class="photo-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg><span>Aerial photo</span></div>
+        <div class="gallery-cell strip-cell" data-caption="Aerial — Frame 2" data-index="11">
+          <div class="photo-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg><span>Photo</span></div>
+          <div class="cell-zoom-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
+        </div>
+        <div class="gallery-cell strip-cell" data-caption="Aerial — Frame 3" data-index="12">
+          <div class="photo-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg><span>Photo</span></div>
+          <div class="cell-zoom-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
+        </div>
+        <div class="gallery-cell strip-cell" data-caption="Aerial — Frame 4" data-index="13">
+          <div class="photo-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg><span>Photo</span></div>
           <div class="cell-zoom-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
         </div>
       </div>
-      <div class="masonry-col">
-        <div class="gallery-cell masonry-cell-mid" data-caption="Aerial — Mid-Range" data-index="8">
-          <div class="photo-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg><span>Aerial photo</span></div>
-          <div class="cell-zoom-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
-        </div>
-        <div class="gallery-cell masonry-cell-mid" data-caption="Aerial — Horizon" data-index="9">
-          <div class="photo-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg><span>Aerial photo</span></div>
-          <div class="cell-zoom-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
-        </div>
-      </div>
+
     </div>
+    <!-- /panel-aerial -->
 
-    <!-- Layout 4: Strip -->
-    <div class="gallery-section-label"><span>Quick Cuts</span></div>
-    <div class="layout-strip">
-      <div class="gallery-cell strip-cell" data-caption="Aerial — Frame 1" data-index="10">
-        <div class="photo-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg><span>Photo</span></div>
-        <div class="cell-zoom-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
-      </div>
-      <div class="gallery-cell strip-cell" data-caption="Aerial — Frame 2" data-index="11">
-        <div class="photo-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg><span>Photo</span></div>
-        <div class="cell-zoom-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
-      </div>
-      <div class="gallery-cell strip-cell" data-caption="Aerial — Frame 3" data-index="12">
-        <div class="photo-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg><span>Photo</span></div>
-        <div class="cell-zoom-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
-      </div>
-      <div class="gallery-cell strip-cell" data-caption="Aerial — Frame 4" data-index="13">
-        <div class="photo-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg><span>Photo</span></div>
-        <div class="cell-zoom-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
-      </div>
-    </div>
+    <!-- ═══ 8K TAB ═══ -->
+    <div class="gallery-panel" id="panel-eightk" role="tabpanel">
 
-  </div>
-  <!-- /panel-aerial -->
-
-  <!-- ═══ 8K TAB ═══ -->
-  <div class="gallery-panel" id="panel-eightk" role="tabpanel">
-
-    <!-- Layout 1: Hero Shot -->
-    <div class="gallery-section-label"><span>Signature Shot</span></div>
-    <div class="layout-hero-shot">
-      <div class="hero-shot-cell gallery-cell" data-caption="8K — Signature Shot" data-index="0">
-        <div class="photo-placeholder">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M8 10v4M16 10v4M12 10v4"/></svg>
-          <span>Hero 8K photo</span>
-        </div>
-        <div class="hero-shot-overlay">
-          <span class="hero-shot-caption">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg>
-            View Full Size
-          </span>
+      <!-- Layout 1: Hero Shot -->
+      <div class="gallery-section-label"><span>Signature Shot</span></div>
+      <div class="layout-hero-shot">
+        <div class="hero-shot-cell gallery-cell" data-caption="8K — Signature Shot" data-index="0">
+          <div class="photo-placeholder">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M8 10v4M16 10v4M12 10v4"/></svg>
+            <span>Hero 8K photo</span>
+          </div>
+          <div class="hero-shot-overlay">
+            <span class="hero-shot-caption">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg>
+              View Full Size
+            </span>
+          </div>
         </div>
       </div>
-    </div>
 
-    <!-- Layout 2: Panoramic -->
-    <div class="gallery-section-label"><span>Wide Format</span></div>
-    <div class="layout-panoramic">
-      <div class="gallery-cell panoramic-cell" data-caption="8K — Wide A" data-index="1">
-        <div class="photo-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M8 10v4M16 10v4M12 10v4"/></svg><span>8K photo</span></div>
-        <div class="cell-zoom-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
-      </div>
-      <div class="gallery-cell panoramic-cell" data-caption="8K — Wide B" data-index="2">
-        <div class="photo-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M8 10v4M16 10v4M12 10v4"/></svg><span>8K photo</span></div>
-        <div class="cell-zoom-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
-      </div>
-    </div>
-
-    <!-- Layout 3: Trio -->
-    <div class="gallery-section-label"><span>Detail Series</span></div>
-    <div class="layout-trio">
-      <div class="gallery-cell trio-main" data-caption="8K — Detail A" data-index="3">
-        <div class="photo-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M8 10v4M16 10v4M12 10v4"/></svg><span>8K photo</span></div>
-        <div class="cell-zoom-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
-      </div>
-      <div class="gallery-cell trio-secondary" data-caption="8K — Detail B" data-index="4">
-        <div class="photo-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M8 10v4M16 10v4M12 10v4"/></svg><span>8K photo</span></div>
-        <div class="cell-zoom-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
-      </div>
-      <div class="gallery-cell trio-secondary" data-caption="8K — Detail C" data-index="5">
-        <div class="photo-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M8 10v4M16 10v4M12 10v4"/></svg><span>8K photo</span></div>
-        <div class="cell-zoom-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
-      </div>
-    </div>
-
-    <!-- Layout 4: Masonry -->
-    <div class="gallery-section-label"><span>Studio Shots</span></div>
-    <div class="layout-masonry">
-      <div class="masonry-col">
-        <div class="gallery-cell masonry-cell-tall" data-caption="8K — Studio A" data-index="6">
+      <!-- Layout 2: Panoramic -->
+      <div class="gallery-section-label"><span>Wide Format</span></div>
+      <div class="layout-panoramic">
+        <div class="gallery-cell panoramic-cell" data-caption="8K — Wide A" data-index="1">
           <div class="photo-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M8 10v4M16 10v4M12 10v4"/></svg><span>8K photo</span></div>
           <div class="cell-zoom-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
         </div>
-        <div class="gallery-cell masonry-cell-short" data-caption="8K — Studio B" data-index="7">
+        <div class="gallery-cell panoramic-cell" data-caption="8K — Wide B" data-index="2">
           <div class="photo-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M8 10v4M16 10v4M12 10v4"/></svg><span>8K photo</span></div>
           <div class="cell-zoom-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
         </div>
       </div>
-      <div class="masonry-col">
-        <div class="gallery-cell masonry-cell-short" data-caption="8K — Studio C" data-index="8">
+
+      <!-- Layout 3: Trio -->
+      <div class="gallery-section-label"><span>Detail Series</span></div>
+      <div class="layout-trio">
+        <div class="gallery-cell trio-main" data-caption="8K — Detail A" data-index="3">
           <div class="photo-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M8 10v4M16 10v4M12 10v4"/></svg><span>8K photo</span></div>
           <div class="cell-zoom-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
         </div>
-        <div class="gallery-cell masonry-cell-tall" data-caption="8K — Studio D" data-index="9">
+        <div class="gallery-cell trio-secondary" data-caption="8K — Detail B" data-index="4">
+          <div class="photo-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M8 10v4M16 10v4M12 10v4"/></svg><span>8K photo</span></div>
+          <div class="cell-zoom-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
+        </div>
+        <div class="gallery-cell trio-secondary" data-caption="8K — Detail C" data-index="5">
           <div class="photo-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M8 10v4M16 10v4M12 10v4"/></svg><span>8K photo</span></div>
           <div class="cell-zoom-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
         </div>
       </div>
-      <div class="masonry-col">
-        <div class="gallery-cell masonry-cell-mid" data-caption="8K — Studio E" data-index="10">
-          <div class="photo-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M8 10v4M16 10v4M12 10v4"/></svg><span>8K photo</span></div>
+
+      <!-- Layout 4: Masonry -->
+      <div class="gallery-section-label"><span>Studio Shots</span></div>
+      <div class="layout-masonry">
+        <div class="masonry-col">
+          <div class="gallery-cell masonry-cell-tall" data-caption="8K — Studio A" data-index="6">
+            <div class="photo-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M8 10v4M16 10v4M12 10v4"/></svg><span>8K photo</span></div>
+            <div class="cell-zoom-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
+          </div>
+          <div class="gallery-cell masonry-cell-short" data-caption="8K — Studio B" data-index="7">
+            <div class="photo-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M8 10v4M16 10v4M12 10v4"/></svg><span>8K photo</span></div>
+            <div class="cell-zoom-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
+          </div>
+        </div>
+        <div class="masonry-col">
+          <div class="gallery-cell masonry-cell-short" data-caption="8K — Studio C" data-index="8">
+            <div class="photo-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M8 10v4M16 10v4M12 10v4"/></svg><span>8K photo</span></div>
+            <div class="cell-zoom-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
+          </div>
+          <div class="gallery-cell masonry-cell-tall" data-caption="8K — Studio D" data-index="9">
+            <div class="photo-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M8 10v4M16 10v4M12 10v4"/></svg><span>8K photo</span></div>
+            <div class="cell-zoom-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
+          </div>
+        </div>
+        <div class="masonry-col">
+          <div class="gallery-cell masonry-cell-mid" data-caption="8K — Studio E" data-index="10">
+            <div class="photo-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M8 10v4M16 10v4M12 10v4"/></svg><span>8K photo</span></div>
+            <div class="cell-zoom-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
+          </div>
+          <div class="gallery-cell masonry-cell-mid" data-caption="8K — Studio F" data-index="11">
+            <div class="photo-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M8 10v4M16 10v4M12 10v4"/></svg><span>8K photo</span></div>
+            <div class="cell-zoom-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Layout 5: Strip -->
+      <div class="gallery-section-label"><span>Close-Up Details</span></div>
+      <div class="layout-strip">
+        <div class="gallery-cell strip-cell" data-caption="8K — Close-Up 1" data-index="12">
+          <div class="photo-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M8 10v4M16 10v4M12 10v4"/></svg><span>Photo</span></div>
           <div class="cell-zoom-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
         </div>
-        <div class="gallery-cell masonry-cell-mid" data-caption="8K — Studio F" data-index="11">
-          <div class="photo-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M8 10v4M16 10v4M12 10v4"/></svg><span>8K photo</span></div>
+        <div class="gallery-cell strip-cell" data-caption="8K — Close-Up 2" data-index="13">
+          <div class="photo-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M8 10v4M16 10v4M12 10v4"/></svg><span>Photo</span></div>
+          <div class="cell-zoom-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
+        </div>
+        <div class="gallery-cell strip-cell" data-caption="8K — Close-Up 3" data-index="14">
+          <div class="photo-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M8 10v4M16 10v4M12 10v4"/></svg><span>Photo</span></div>
+          <div class="cell-zoom-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
+        </div>
+        <div class="gallery-cell strip-cell" data-caption="8K — Close-Up 4" data-index="15">
+          <div class="photo-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M8 10v4M16 10v4M12 10v4"/></svg><span>Photo</span></div>
           <div class="cell-zoom-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
         </div>
       </div>
+
+    </div>
+    <!-- /panel-eightk -->
+
+  </main>
+
+  <!-- ==========================================================================
+       FOOTER (shared component — unchanged from index.html)
+       ========================================================================== -->
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+
+      <div class="site-footer__brand">
+        <img
+          class="site-footer__logo"
+          src="../images/logos/rockline-ai-marketing-logo.png"
+          alt="Rockline AI Marketing logo"
+        />
+        <p class="site-footer__tagline">Marketing built on higher ground.</p>
+      </div>
+
+      <div>
+        <p class="site-footer__heading">Hours</p>
+        <p class="site-footer__hours-value">7 Days a Week, 10am&ndash;7pm</p>
+        <p class="site-footer__hours-sub">Call or text anytime &mdash; (815) 274-7425</p>
+      </div>
+
+      <div class="site-footer__social">
+        <p class="site-footer__heading">Follow along</p>
+        <div class="site-footer__social-row">
+          <div class="site-footer__social-hex-row">
+            <a class="site-footer__social-icon site-footer__social-icon--facebook" href="https://facebook.com/rocklineaimarketing" target="_blank" rel="noopener" aria-label="Facebook">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 12.06C22 6.51 17.52 2 12 2S2 6.51 2 12.06c0 5.02 3.66 9.18 8.44 9.94v-7.03H7.9v-2.91h2.54V9.85c0-2.51 1.49-3.9 3.77-3.9 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.89h2.78l-.44 2.91h-2.34V22c4.78-.76 8.44-4.92 8.44-9.94Z"/></svg>
+            </a>
+            <a class="site-footer__social-icon site-footer__social-icon--instagram" href="#" target="_blank" rel="noopener" aria-label="Instagram">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"/></svg>
+            </a>
+            <a class="site-footer__social-icon site-footer__social-icon--x" href="https://x.com/RocklineAI" target="_blank" rel="noopener" aria-label="X">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.9 2H22l-7.6 8.67L23.3 22h-6.9l-5.4-7.06L4.7 22H1.6l8.13-9.28L1 2h7.1l4.88 6.46L18.9 2Zm-1.2 18.2h1.72L7.4 3.7H5.56L17.7 20.2Z"/></svg>
+            </a>
+            <a class="site-footer__social-icon site-footer__social-icon--pinterest" href="#" target="_blank" rel="noopener" aria-label="Pinterest">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.24 2.63 7.86 6.35 9.32-.09-.79-.17-2.01.04-2.88.19-.79 1.22-5.02 1.22-5.02s-.31-.62-.31-1.54c0-1.44.84-2.52 1.87-2.52.88 0 1.31.66 1.31 1.45 0 .88-.56 2.2-.85 3.42-.24 1.02.51 1.86 1.52 1.86 1.82 0 3.22-1.92 3.22-4.69 0-2.45-1.76-4.17-4.28-4.17-2.91 0-4.62 2.19-4.62 4.45 0 .88.34 1.83.76 2.34.08.1.1.19.07.29-.08.32-.25 1-.29 1.14-.04.19-.15.23-.35.14-1.3-.6-2.11-2.5-2.11-4.02 0-3.28 2.38-6.29 6.87-6.29 3.61 0 6.41 2.57 6.41 6 0 3.58-2.26 6.47-5.39 6.47-1.05 0-2.04-.55-2.38-1.2l-.65 2.47c-.23.9-.87 2.02-1.29 2.71.98.3 2 .46 3.07.46 5.52 0 10-4.48 10-10S17.52 2 12 2Z"/></svg>
+            </a>
+          </div>
+          <div class="site-footer__social-hex-row site-footer__social-hex-row--offset">
+            <a class="site-footer__social-icon site-footer__social-icon--substack" href="https://substack.com/@rocklineaimarketing" target="_blank" rel="noopener" aria-label="Substack">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 6.6H2V4h20v2.6ZM2 9.7h20v9.6L12 14.2 2 19.3V9.7ZM22 2H2v0h20v0Z"/></svg>
+            </a>
+            <a class="site-footer__social-icon site-footer__social-icon--threads" href="https://www.threads.net/@rocklineaimarketing" target="_blank" rel="noopener" aria-label="Threads">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.2 2C7.1 2 3.6 5.1 3.4 10.1v.1c0 .1 0 .2 0 .3v2.9c0 .1 0 .2 0 .3v.1c.2 5 3.7 8.1 8.8 8.1 3 0 5.3-.9 6.9-2.7 1.2-1.4 1.9-3.2 2-5.5h-2.3c-.1 1.6-.6 2.9-1.4 3.8-1.1 1.2-2.7 1.8-4.9 1.9-3.5-.1-5.7-2-6.1-5-.1-.6-.1-1.2-.1-1.9v-.1c0-.7 0-1.3.1-1.9.4-3 2.6-4.9 6.1-5 2.3.1 4 1.1 5 3l2-1.1c-1.4-2.6-3.9-4.1-7.3-4.4Zm2.8 9.9c0 1.8-1 3-2.7 3.1-1.1 0-2-.5-2-1.5 0-1.1 1.2-1.6 2.9-1.9.6-.1 1.2-.2 1.8-.4v.7Z"/></svg>
+            </a>
+            <a class="site-footer__social-icon site-footer__social-icon--tiktok" href="#" target="_blank" rel="noopener" aria-label="TikTok">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.6 2h-3.3v13.9c0 1.6-1.3 2.9-2.9 2.9a2.9 2.9 0 0 1-2.9-2.9 2.9 2.9 0 0 1 2.9-2.9c.3 0 .6 0 .9.1v-3.4a6.3 6.3 0 0 0-.9-.1A6.3 6.3 0 0 0 4.2 15.9a6.3 6.3 0 0 0 6.2 6.3 6.3 6.3 0 0 0 6.2-6.3V8.4a8.2 8.2 0 0 0 4.8 1.5V6.6a4.9 4.9 0 0 1-4.8-4.6Z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
     </div>
 
-    <!-- Layout 5: Strip -->
-    <div class="gallery-section-label"><span>Close-Up Details</span></div>
-    <div class="layout-strip">
-      <div class="gallery-cell strip-cell" data-caption="8K — Close-Up 1" data-index="12">
-        <div class="photo-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M8 10v4M16 10v4M12 10v4"/></svg><span>Photo</span></div>
-        <div class="cell-zoom-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
-      </div>
-      <div class="gallery-cell strip-cell" data-caption="8K — Close-Up 2" data-index="13">
-        <div class="photo-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M8 10v4M16 10v4M12 10v4"/></svg><span>Photo</span></div>
-        <div class="cell-zoom-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
-      </div>
-      <div class="gallery-cell strip-cell" data-caption="8K — Close-Up 3" data-index="14">
-        <div class="photo-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M8 10v4M16 10v4M12 10v4"/></svg><span>Photo</span></div>
-        <div class="cell-zoom-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
-      </div>
-      <div class="gallery-cell strip-cell" data-caption="8K — Close-Up 4" data-index="15">
-        <div class="photo-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M8 10v4M16 10v4M12 10v4"/></svg><span>Photo</span></div>
-        <div class="cell-zoom-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
-      </div>
+    <div class="site-footer__bottom">
+      &copy; 2026 Rockline AI Marketing. All rights reserved.
     </div>
+  </footer>
 
-  </div>
-  <!-- /panel-eightk -->
-
-</main>
-
-<!-- FOOTER -->
-<footer>
-  <div class="footer-main">
-    <address class="footer-address">
-      <strong>Rockline AI Marketing</strong>
-      Lockport, IL<br>
-      <a href="tel:+18155555555">815-555-5555</a>
-    </address>
-    <div class="footer-logo-col">
-      <img src="../images/logos/rockline-ai-marketing-logo.png" alt="Rockline AI Marketing">
-    </div>
-    <div class="footer-hours">
-      <strong>Business Hours</strong>
-      <div class="hours-grid"><span>Mon – Sun</span><span>7:00 AM – 9:00 PM</span></div>
-    </div>
-  </div>
-  <div class="footer-social">
-    <a href="#" class="social-link" title="YouTube" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24"><path fill="#FF0000" d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8z"/><path fill="#fff" d="M9.6 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg></a>
-    <a href="#" class="social-link" title="Google My Business" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg></a>
-    <a href="#" class="social-link" title="Instagram" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24"><defs><radialGradient id="ig2" cx="30%" cy="107%" r="150%"><stop offset="0%" stop-color="#fdf497"/><stop offset="45%" stop-color="#fd5949"/><stop offset="60%" stop-color="#d6249f"/><stop offset="90%" stop-color="#285AEB"/></radialGradient></defs><rect width="24" height="24" rx="5" fill="url(#ig2)"/><path fill="#fff" d="M12 7.2A4.8 4.8 0 1 0 12 16.8 4.8 4.8 0 0 0 12 7.2zm0 7.9a3.1 3.1 0 1 1 0-6.2 3.1 3.1 0 0 1 0 6.2zm6.1-8.1a1.1 1.1 0 1 1-2.2 0 1.1 1.1 0 0 1 2.2 0zM21 8.9c-.1-1.5-.4-2.8-1.5-3.9-1.1-1.1-2.4-1.4-3.9-1.5C14.1 3.4 9.9 3.4 8.4 3.5 6.9 3.6 5.6 3.9 4.5 5 3.4 6.1 3.1 7.4 3 8.9 2.9 10.4 2.9 14.6 3 16.1c.1 1.5.4 2.8 1.5 3.9 1.1 1.1 2.4 1.4 3.9 1.5 1.5.1 5.7.1 7.2 0 1.5-.1 2.8-.4 3.9-1.5 1.1-1.1 1.4-2.4 1.5-3.9.1-1.5.1-5.7 0-7.2zm-2 8.7a3.2 3.2 0 0 1-1.8 1.8c-1.2.5-4.2.4-5.6.4s-4.3.1-5.6-.4a3.2 3.2 0 0 1-1.8-1.8c-.5-1.2-.4-4.2-.4-5.6s-.1-4.3.4-5.6A3.2 3.2 0 0 1 5.8 4.6c1.2-.5 4.2-.4 5.6-.4s4.3-.1 5.6.4a3.2 3.2 0 0 1 1.8 1.8c.5 1.2.4 4.2.4 5.6s.1 4.3-.4 5.6z"/></svg></a>
-    <a href="#" class="social-link" title="Facebook" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24"><rect width="24" height="24" rx="4" fill="#1877F2"/><path fill="#fff" d="M16.6 12H13.8V21H10.4V12H8.4V9H10.4V7.2C10.4 5.3 11.6 3 14.5 3L17.1 3V6.2H15.5C15.2 6.2 14.8 6.4 14.8 7V9H17.1L16.6 12Z"/></svg></a>
-    <a href="#" class="social-link" title="X (Twitter)" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24"><rect width="24" height="24" rx="4" fill="#000"/><path fill="#fff" d="M17.75 3h3.14l-6.86 7.84 8.06 10.66H16.2l-4.95-6.47-5.66 6.47H2.44l7.34-8.39L1.98 3h6.68l4.47 5.91L17.75 3zm-1.1 16.52h1.74L7.45 4.78H5.59l11.06 14.74z"/></svg></a>
-  </div>
-  <div class="footer-bottom">&copy; 2025 Rockline AI Marketing · Lockport, IL · All Rights Reserved</div>
-</footer>
-
-<script>
-  /* ── TICKER ── */
-  function initSeamlessTicker(el) {
-    if (!el) return;
-    Array.from(el.children).forEach(i => el.appendChild(i.cloneNode(true)));
-  }
-  initSeamlessTicker(document.getElementById('desktopTicker'));
-  initSeamlessTicker(document.getElementById('mobileTicker'));
-
-  /* ── DESKTOP NAV ── */
-  const navItems = document.querySelectorAll('#sticky-nav-zone .nav-item');
-  const timers = new Map();
-  navItems.forEach(item => {
-    if (!item.querySelector('.dropdown')) return;
-    item.addEventListener('mouseenter', () => {
-      clearTimeout(timers.get(item));
-      navItems.forEach(o => { if (o !== item) { clearTimeout(timers.get(o)); o.classList.remove('is-open'); }});
-      item.classList.add('is-open');
-    });
-    item.addEventListener('mouseleave', () => {
-      timers.set(item, setTimeout(() => item.classList.remove('is-open'), 200));
-    });
-  });
-  document.addEventListener('click', e => {
-    if (!e.target.closest('#sticky-nav-zone .nav-item')) navItems.forEach(i => i.classList.remove('is-open'));
-  });
-
-  /* ── MOBILE NAV ── */
-  const hbtn = document.getElementById('hamburgerTrigger');
-  const panel = document.getElementById('mobilePanel');
-  const overlay = document.getElementById('mobileOverlay');
-  const openPanel = () => { panel.classList.add('open'); overlay.classList.add('visible'); hbtn.classList.add('open'); hbtn.setAttribute('aria-label','Close navigation'); document.body.style.overflow='hidden'; };
-  const closePanel = () => { panel.classList.remove('open'); overlay.classList.remove('visible'); hbtn.classList.remove('open'); hbtn.setAttribute('aria-label','Open navigation'); document.body.style.overflow=''; };
-  hbtn.addEventListener('click', () => panel.classList.contains('open') ? closePanel() : openPanel());
-  overlay.addEventListener('click', closePanel);
-  function toggleSub(el) {
-    const sub = el.nextElementSibling, isOpen = sub.classList.contains('open');
-    document.querySelectorAll('.mobile-sub.open').forEach(s => s.classList.remove('open'));
-    document.querySelectorAll('.m-parent.sub-open').forEach(p => p.classList.remove('sub-open'));
-    if (!isOpen) { sub.classList.add('open'); el.classList.add('sub-open'); }
-  }
-
-  /* ── TABS ── */
-  const tabs = document.querySelectorAll('.gallery-tab');
-  tabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-      tabs.forEach(t => { t.classList.remove('active'); t.setAttribute('aria-selected','false'); });
-      document.querySelectorAll('.gallery-panel').forEach(p => p.classList.remove('active'));
-      tab.classList.add('active');
-      tab.setAttribute('aria-selected','true');
-      document.getElementById('panel-' + tab.dataset.tab).classList.add('active');
-    });
-  });
-
-  /* ── LIGHTBOX ── */
-  const lightbox = document.getElementById('lightbox');
-  const lbImgWrap = document.getElementById('lbImgWrap');
-  const lbCaption = document.getElementById('lbCaption');
-  const lbCounter = document.getElementById('lbCounter');
-  const lbPrev = document.getElementById('lbPrev');
-  const lbNext = document.getElementById('lbNext');
-
-  let activeCells = [];
-  let currentIndex = 0;
-
-  function getActiveCells() {
-    const activePanel = document.querySelector('.gallery-panel.active');
-    return Array.from(activePanel.querySelectorAll('.gallery-cell'));
-  }
-
-  function openLightbox(cells, idx) {
-    activeCells = cells;
-    currentIndex = idx;
-    renderLightbox();
-    lightbox.classList.add('open');
-    document.body.style.overflow = 'hidden';
-  }
-
-  function renderLightbox() {
-    const cell = activeCells[currentIndex];
-    const caption = cell.dataset.caption || '';
-    const imgEl = cell.querySelector('img');
-
-    // Clear wrap (keep placeholder if no img)
-    lbImgWrap.innerHTML = '';
-    if (imgEl) {
-      const img = document.createElement('img');
-      img.src = imgEl.src;
-      img.alt = caption;
-      lbImgWrap.appendChild(img);
-    } else {
-      const ph = document.createElement('div');
-      ph.className = 'lightbox-placeholder';
-      ph.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg><span>${caption || 'Add your photo here'}</span>`;
-      lbImgWrap.appendChild(ph);
+  <script>
+    /* ── MOBILE NAV ── */
+    const rocklineHeaderToggle = document.getElementById("site-header-toggle");
+    const rocklineMobileNav = document.getElementById("site-header-mobile");
+    if (rocklineHeaderToggle && rocklineMobileNav) {
+      rocklineHeaderToggle.addEventListener("click", () => {
+        const isOpen = rocklineMobileNav.classList.toggle("is-open");
+        rocklineHeaderToggle.setAttribute("aria-expanded", String(isOpen));
+      });
     }
 
-    lbCaption.textContent = caption;
-    lbCounter.textContent = (currentIndex + 1) + ' / ' + activeCells.length;
-    lbPrev.classList.toggle('hidden', currentIndex === 0);
-    lbNext.classList.toggle('hidden', currentIndex === activeCells.length - 1);
-  }
-
-  function closeLightbox() {
-    lightbox.classList.remove('open');
-    document.body.style.overflow = '';
-  }
-
-  document.querySelectorAll('.gallery-cell').forEach(cell => {
-    cell.addEventListener('click', () => {
-      const cells = getActiveCells();
-      const idx = cells.indexOf(cell);
-      openLightbox(cells, idx);
+    /* ── TABS ── */
+    const tabs = document.querySelectorAll('.gallery-tab');
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        tabs.forEach(t => { t.classList.remove('active'); t.setAttribute('aria-selected','false'); });
+        document.querySelectorAll('.gallery-panel').forEach(p => p.classList.remove('active'));
+        tab.classList.add('active');
+        tab.setAttribute('aria-selected','true');
+        document.getElementById('panel-' + tab.dataset.tab).classList.add('active');
+      });
     });
-  });
 
-  lbPrev.addEventListener('click', () => { if (currentIndex > 0) { currentIndex--; renderLightbox(); } });
-  lbNext.addEventListener('click', () => { if (currentIndex < activeCells.length - 1) { currentIndex++; renderLightbox(); } });
-  document.getElementById('lbClose').addEventListener('click', closeLightbox);
-  lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
+    /* ── LIGHTBOX ── */
+    const lightbox = document.getElementById('lightbox');
+    const lbImgWrap = document.getElementById('lbImgWrap');
+    const lbCaption = document.getElementById('lbCaption');
+    const lbCounter = document.getElementById('lbCounter');
+    const lbPrev = document.getElementById('lbPrev');
+    const lbNext = document.getElementById('lbNext');
 
-  document.addEventListener('keydown', e => {
-    if (!lightbox.classList.contains('open')) return;
-    if (e.key === 'Escape') closeLightbox();
-    if (e.key === 'ArrowLeft' && currentIndex > 0) { currentIndex--; renderLightbox(); }
-    if (e.key === 'ArrowRight' && currentIndex < activeCells.length - 1) { currentIndex++; renderLightbox(); }
-  });
+    let activeCells = [];
+    let currentIndex = 0;
 
-  /* ── TOUCH SWIPE FOR LIGHTBOX ── */
-  let touchStartX = 0;
-  lightbox.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
-  lightbox.addEventListener('touchend', e => {
-    const dx = e.changedTouches[0].clientX - touchStartX;
-    if (Math.abs(dx) < 40) return;
-    if (dx < 0 && currentIndex < activeCells.length - 1) { currentIndex++; renderLightbox(); }
-    if (dx > 0 && currentIndex > 0) { currentIndex--; renderLightbox(); }
-  });
-</script>
+    function getActiveCells() {
+      const activePanel = document.querySelector('.gallery-panel.active');
+      return Array.from(activePanel.querySelectorAll('.gallery-cell'));
+    }
+
+    function openLightbox(cells, idx) {
+      activeCells = cells;
+      currentIndex = idx;
+      renderLightbox();
+      lightbox.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function renderLightbox() {
+      const cell = activeCells[currentIndex];
+      const caption = cell.dataset.caption || '';
+      const imgEl = cell.querySelector('img');
+
+      lbImgWrap.innerHTML = '';
+      if (imgEl) {
+        const img = document.createElement('img');
+        img.src = imgEl.src;
+        img.alt = caption;
+        lbImgWrap.appendChild(img);
+      } else {
+        const ph = document.createElement('div');
+        ph.className = 'lightbox-placeholder';
+        ph.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg><span>${caption || 'Add your photo here'}</span>`;
+        lbImgWrap.appendChild(ph);
+      }
+
+      lbCaption.textContent = caption;
+      lbCounter.textContent = (currentIndex + 1) + ' / ' + activeCells.length;
+      lbPrev.classList.toggle('hidden', currentIndex === 0);
+      lbNext.classList.toggle('hidden', currentIndex === activeCells.length - 1);
+    }
+
+    function closeLightbox() {
+      lightbox.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    document.querySelectorAll('.gallery-cell').forEach(cell => {
+      cell.addEventListener('click', () => {
+        const cells = getActiveCells();
+        const idx = cells.indexOf(cell);
+        openLightbox(cells, idx);
+      });
+    });
+
+    lbPrev.addEventListener('click', () => { if (currentIndex > 0) { currentIndex--; renderLightbox(); } });
+    lbNext.addEventListener('click', () => { if (currentIndex < activeCells.length - 1) { currentIndex++; renderLightbox(); } });
+    document.getElementById('lbClose').addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
+
+    document.addEventListener('keydown', e => {
+      if (!lightbox.classList.contains('open')) return;
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowLeft' && currentIndex > 0) { currentIndex--; renderLightbox(); }
+      if (e.key === 'ArrowRight' && currentIndex < activeCells.length - 1) { currentIndex++; renderLightbox(); }
+    });
+
+    /* ── TOUCH SWIPE FOR LIGHTBOX ── */
+    let touchStartX = 0;
+    lightbox.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
+    lightbox.addEventListener('touchend', e => {
+      const dx = e.changedTouches[0].clientX - touchStartX;
+      if (Math.abs(dx) < 40) return;
+      if (dx < 0 && currentIndex < activeCells.length - 1) { currentIndex++; renderLightbox(); }
+      if (dx > 0 && currentIndex > 0) { currentIndex--; renderLightbox(); }
+    });
+  </script>
+
 </body>
 </html>
