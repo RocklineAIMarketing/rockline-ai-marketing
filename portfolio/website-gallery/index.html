@@ -229,7 +229,7 @@ a { color: inherit; }
 
 .p-hero {
   position: relative;
-  min-height: 78svh;
+  min-height: 100svh;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -242,9 +242,9 @@ a { color: inherit; }
 .p-hero__scrim {
   position: absolute; inset: 0; z-index: -1;
   background: linear-gradient(180deg,
-    rgba(23, 27, 34, 0.25) 0%,
-    rgba(23, 27, 34, 0.15) 30%,
-    rgba(23, 27, 34, 0.6) 68%,
+    rgba(23, 27, 34, 0.15) 0%,
+    rgba(23, 27, 34, 0.1) 45%,
+    rgba(23, 27, 34, 0.55) 78%,
     rgba(23, 27, 34, 0.94) 100%);
 }
 .p-hero__content {
@@ -315,7 +315,7 @@ a { color: inherit; }
 
 .portfolio__grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: clamp(1.25rem, 2.5vw, 1.75rem);
 }
 .portfolio-card {
@@ -337,7 +337,7 @@ a { color: inherit; }
 }
 .portfolio-card__media {
   position: relative;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 1 / 1;
   background: rgba(76, 134, 176, 0.12);
   overflow: hidden;
 }
