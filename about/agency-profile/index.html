@@ -22,12 +22,12 @@
   <meta property="og:title" content="Agency Profile | Rockline AI Marketing" />
   <meta property="og:description" content="Meet Rockline AI Marketing — a family-owned agency in Lockport, IL building websites and AI-search visibility for Chicagoland small businesses." />
   <meta property="og:url" content="https://rocklineaimarketing.com/about/agency-profile" />
-  <meta property="og:image" content="https://rocklineaimarketing.com/images/logos/rockline-ai-marketing-cover.JPG" />
+  <meta property="og:image" content="https://rocklineaimarketing.com/images/rockline-ai-marketing-agency-profile.png" />
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Agency Profile | Rockline AI Marketing" />
   <meta name="twitter:description" content="Meet Rockline AI Marketing — a family-owned agency in Lockport, IL building websites and AI-search visibility for Chicagoland small businesses." />
-  <meta name="twitter:image" content="https://rocklineaimarketing.com/images/logos/rockline-ai-marketing-cover.JPG" />
+  <meta name="twitter:image" content="https://rocklineaimarketing.com/images/rockline-ai-marketing-agency-profile.png" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -137,16 +137,44 @@ a { color: inherit; }
 .btn--ghost:hover { border-color: var(--pure-white); transform: translateY(-2px); }
 
 /* ==========================================================================
-   Page intro band — sits directly under the transparent header, so it
-   carries a dark background of its own (unlike the homepage hero photo).
+   Page intro band — now a full-bleed photo hero, mirroring the homepage
+   hero pattern: an absolutely-positioned image + directional scrim behind
+   the headline, fading to solid ink-slate at the bottom so it hands off
+   seamlessly into the Origin Story section below.
    ========================================================================== */
 
-.page-intro { background: var(--ink-slate); padding: clamp(7.5rem, 16vw, 10rem) var(--gutter) 0; }
-.page-intro__inner { max-width: var(--max-width); margin: 0 auto; }
+.page-intro {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  min-height: 64vh;
+  display: flex;
+  align-items: flex-start;
+  padding: clamp(7.5rem, 16vw, 10rem) var(--gutter) clamp(4.5rem, 10vw, 7rem);
+}
+.page-intro__media { position: absolute; inset: 0; z-index: -2; }
+.page-intro__media img { width: 100%; height: 100%; object-fit: cover; object-position: center 38%; }
+.page-intro__scrim {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(
+    180deg,
+    rgba(23, 27, 34, 0.6) 0%,
+    rgba(23, 27, 34, 0.4) 30%,
+    rgba(23, 27, 34, 0.8) 78%,
+    var(--ink-slate) 100%
+  );
+}
+.page-intro__inner { max-width: var(--max-width); margin: 0 auto; width: 100%; }
 .page-intro__eyebrow { display: flex; align-items: center; gap: 0.65rem; font-family: var(--font-mono); font-size: 0.72rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--rockline-blue); margin-bottom: 1.25rem; }
 .page-intro__eyebrow::before { content: ""; width: 2rem; height: 1px; background: var(--rockline-blue); }
-.page-intro__headline { font-family: var(--font-display); font-weight: 600; line-height: 1.05; letter-spacing: -0.01em; font-size: clamp(2.4rem, 5.2vw, 4rem); max-width: 20ch; color: var(--pure-white); }
+.page-intro__headline { font-family: var(--font-display); font-weight: 600; line-height: 1.05; letter-spacing: -0.01em; font-size: clamp(2.4rem, 5.2vw, 4rem); max-width: 20ch; color: var(--pure-white); text-shadow: 0 2px 24px rgba(0, 0, 0, 0.25); }
 .page-intro__headline em { font-style: italic; font-weight: 500; color: var(--rockline-blue); }
+
+@media (max-width: 640px) {
+  .page-intro { min-height: 52vh; }
+}
 
 /* ==========================================================================
    Origin Story — dark section, continues straight off the page intro.
@@ -436,9 +464,18 @@ a { color: inherit; }
   <main>
 
     <!-- ==========================================================================
-         PAGE INTRO
+         PAGE INTRO — photo hero
          ========================================================================== -->
     <section class="page-intro" aria-label="Agency profile introduction">
+
+      <div class="page-intro__media">
+        <img
+          src="images/rockline-ai-marketing-agency-profile.png"
+          alt="Rockline AI Marketing team"
+        />
+      </div>
+      <div class="page-intro__scrim" aria-hidden="true"></div>
+
       <div class="page-intro__inner">
         <p class="page-intro__eyebrow">Agency Profile</p>
         <h1 class="page-intro__headline">Built from passion.<br><em>Launched with purpose.</em></h1>
