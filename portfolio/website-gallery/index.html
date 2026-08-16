@@ -317,6 +317,7 @@ a { color: inherit; }
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: clamp(1.25rem, 2.5vw, 1.75rem);
+  align-items: start;
 }
 .portfolio-card {
   position: relative;
@@ -352,29 +353,45 @@ a { color: inherit; }
 }
 
 /* Two-up media: screenshot + autoplaying video side by side.
-   Uses flexbox with explicit 50/50 widths on img/video (targeted directly,
-   not via :first-child/:last-child) so the split can't be thrown off by
-   the absolutely-positioned label tags sitting earlier in the markup. */
+   Fixed 3:4 box keeps every card the same size (consistency), while each
+   half uses the "Apple Music / Spotify" trick: a blurred, scaled-up copy
+   of the same image/video fills the frame as a backdrop, and the real
+   image/video sits on top at its natural ratio via object-fit: contain,
+   so nothing is ever cropped. */
 .portfolio-card__media--split {
+  position: relative;
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 100%;
   aspect-ratio: 3 / 4;
 }
-.portfolio-card__media--split img,
-.portfolio-card__media--split video {
+.media-frame {
+  position: relative;
   width: 100%;
   height: 50%;
   flex: 0 0 50%;
-  object-fit: contain;
-  object-position: top center;
-  display: block;
+  overflow: hidden;
   background: rgba(23, 27, 34, 0.06);
 }
-.portfolio-card__media--split img {
-  border-right: none;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+.media-frame + .media-frame {
+  border-top: 1px solid rgba(255, 255, 255, 0.25);
+}
+.media-frame__bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: blur(20px) brightness(0.65) saturate(1.15);
+  transform: scale(1.2);
+}
+.media-frame__fg {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
 }
 .portfolio-card__media-tag {
   position: absolute;
@@ -392,12 +409,9 @@ a { color: inherit; }
   text-transform: uppercase;
   padding: 0.3rem 0.55rem;
   border-radius: 999px;
-  z-index: 1;
+  z-index: 2;
 }
 .portfolio-card__media-tag--video { top: auto; bottom: 0.7rem; left: 0.7rem; }
-@media (max-width: 500px) {
-  .portfolio-card__media--split { aspect-ratio: 3 / 4; }
-}
 
 .portfolio-card__body { display: flex; flex-direction: column; gap: 0.9rem; padding: clamp(1.75rem, 2.5vw, 2.1rem); flex: 1; }
 .portfolio-card__num {
@@ -730,12 +744,16 @@ a { color: inherit; }
             <div class="portfolio-card__media portfolio-card__media--split">
               <span class="portfolio-card__media-tag">Screenshot</span>
               <span class="portfolio-card__media-tag portfolio-card__media-tag--video">Video</span>
-              <img src="/images/web-portfolio-examples/morandi-properties-profile.jpeg" alt="Morandi Properties website screenshot" loading="lazy" />
-              <video
-                src="/videos/website-portfolio-examples/morandi-properties-video.mov"
-                autoplay muted loop playsinline
-                aria-label="Morandi Properties website walkthrough video"
-              ></video>
+
+              <div class="media-frame">
+                <img class="media-frame__bg" src="/images/web-portfolio-examples/morandi-properties-profile.jpeg" alt="" aria-hidden="true" loading="lazy" />
+                <img class="media-frame__fg" src="/images/web-portfolio-examples/morandi-properties-profile.jpeg" alt="Morandi Properties website screenshot" loading="lazy" />
+              </div>
+
+              <div class="media-frame">
+                <video class="media-frame__bg" src="/videos/website-portfolio-examples/morandi-properties-video.mov" autoplay muted loop playsinline aria-hidden="true"></video>
+                <video class="media-frame__fg" src="/videos/website-portfolio-examples/morandi-properties-video.mov" autoplay muted loop playsinline aria-label="Morandi Properties website walkthrough video"></video>
+              </div>
             </div>
             <div class="portfolio-card__body">
               <span class="portfolio-card__num">01</span>
@@ -761,12 +779,16 @@ a { color: inherit; }
             <div class="portfolio-card__media portfolio-card__media--split">
               <span class="portfolio-card__media-tag">Screenshot</span>
               <span class="portfolio-card__media-tag portfolio-card__media-tag--video">Video</span>
-              <img src="/images/web-portfolio-examples/rejuvenate-website-portfolio.jpeg" alt="RejuveNate Plants & Wellness website screenshot" loading="lazy" />
-              <video
-                src="/videos/website-portfolio-examples/rejuvenate-website-portfolio.mov"
-                autoplay muted loop playsinline
-                aria-label="RejuveNate Plants & Wellness website walkthrough video"
-              ></video>
+
+              <div class="media-frame">
+                <img class="media-frame__bg" src="/images/web-portfolio-examples/rejuvenate-website-portfolio.jpeg" alt="" aria-hidden="true" loading="lazy" />
+                <img class="media-frame__fg" src="/images/web-portfolio-examples/rejuvenate-website-portfolio.jpeg" alt="RejuveNate Plants & Wellness website screenshot" loading="lazy" />
+              </div>
+
+              <div class="media-frame">
+                <video class="media-frame__bg" src="/videos/website-portfolio-examples/rejuvenate-website-portfolio.mov" autoplay muted loop playsinline aria-hidden="true"></video>
+                <video class="media-frame__fg" src="/videos/website-portfolio-examples/rejuvenate-website-portfolio.mov" autoplay muted loop playsinline aria-label="RejuveNate Plants & Wellness website walkthrough video"></video>
+              </div>
             </div>
             <div class="portfolio-card__body">
               <span class="portfolio-card__num">02</span>
