@@ -148,18 +148,55 @@ a { color: inherit; }
 .eyebrow--light::before { background: var(--rockline-blue); }
 
 /* ==========================================================================
-   Page hero — dark, mirrors the other subpages
+   Page hero — full-bleed photo, mirrors the homepage hero
    ========================================================================== */
 
 .page-hero {
-  background: radial-gradient(ellipse 60% 60% at 100% 0%, rgba(76, 134, 176, 0.16), transparent 70%), var(--ink-slate);
-  padding: clamp(7rem, 16vw, 9rem) var(--gutter) clamp(4rem, 8vw, 6rem);
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  overflow: hidden;
+  isolation: isolate;
+  padding-top: clamp(4.5rem, 15vw, 6rem);
 }
-.page-hero__inner { max-width: var(--max-width); margin: 0 auto; display: flex; flex-direction: column; gap: 2rem; }
-.page-hero__headline { font-family: var(--font-display); font-weight: 600; line-height: 1.05; letter-spacing: -0.01em; font-size: clamp(2.4rem, 5.4vw, 4.2rem); max-width: 18ch; color: var(--pure-white); }
+
+.page-hero__media { position: absolute; inset: 0; z-index: -2; }
+.page-hero__media img { width: 100%; height: 100%; object-fit: cover; object-position: center 40%; }
+
+.page-hero__scrim {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(
+    180deg,
+    rgba(23, 27, 34, 0.15) 0%,
+    rgba(23, 27, 34, 0.05) 30%,
+    rgba(23, 27, 34, 0.55) 68%,
+    rgba(23, 27, 34, 0.92) 100%
+  );
+}
+
+.page-hero__inner {
+  position: relative;
+  z-index: 1;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 var(--gutter) clamp(3.5rem, 9vh, 6rem);
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.page-hero__headline { font-family: var(--font-display); font-weight: 600; line-height: 1.05; letter-spacing: -0.01em; font-size: clamp(2.4rem, 5.4vw, 4.2rem); max-width: 18ch; color: var(--pure-white); text-shadow: 0 2px 24px rgba(0, 0, 0, 0.22); }
 .page-hero__headline em { font-style: italic; font-weight: 500; color: var(--rockline-blue); }
 .page-hero__lead { font-family: var(--font-body); font-size: clamp(1rem, 1.4vw, 1.2rem); line-height: 1.75; color: var(--stone-fog); max-width: 56ch; font-weight: 400; }
 .page-hero__actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+@media (max-width: 640px) {
+  .page-hero { min-height: 100dvh; }
+}
 
 /* ==========================================================================
    What's included — light, feature card grid
@@ -426,6 +463,17 @@ a { color: inherit; }
          PAGE HERO
          ========================================================================== -->
     <section class="page-hero" aria-labelledby="social-h1">
+
+      <div class="page-hero__media">
+        <img
+          src="/images/hero-photos/rockline-ai-marketing-microblogging.jpg"
+          alt="Social media and microblogging content for a Chicagoland small business"
+          loading="eager"
+        />
+      </div>
+
+      <div class="page-hero__scrim" aria-hidden="true"></div>
+
       <div class="page-hero__inner">
         <p class="eyebrow">Social Media &amp; Microblogging</p>
         <h1 class="page-hero__headline" id="social-h1">Content that builds <em>local authority.</em></h1>
