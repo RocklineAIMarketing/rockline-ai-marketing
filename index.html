@@ -3,6 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="Rockline AI Marketing" />
+  <meta name="theme-color" content="#1c232c" />
 
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-D0SWY5Y40W"></script>
@@ -23,6 +26,7 @@
   <meta property="og:description" content="Rockline AI Marketing — website design, social media marketing, generative engine optimization, and aerial photography for small businesses." />
   <meta property="og:url" content="https://rocklineaimarketing.com/" />
   <meta property="og:image" content="https://rocklineaimarketing.com/images/logos/rockline-ai-marketing-cover.JPG" />
+  <meta property="og:locale" content="en_US" />
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Rockline AI Marketing | Marketing for Small Business" />
@@ -32,6 +36,190 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+
+  <!-- ==========================================================================
+       Structured data (JSON-LD)
+       Four linked entities: the business itself (MarketingAgency, a
+       LocalBusiness subtype), the WebSite, this WebPage, and the Blog.
+       All four share stable @id anchors so crawlers and AI answer engines
+       (Google, Bing Copilot, Perplexity, ChatGPT browsing, etc.) can
+       resolve them as one connected graph instead of guessing.
+
+       REQUIRED BEFORE LAUNCH: replace the address placeholders below with
+       your real street address, city, and ZIP — search engines and AI
+       answer engines treat an inaccurate or fake NAP (name/address/phone)
+       as a trust signal, so leaving fabricated values in is worse than
+       leaving the field out.
+       ========================================================================== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MarketingAgency",
+    "@id": "https://rocklineaimarketing.com/#organization",
+    "name": "Rockline AI Marketing",
+    "url": "https://rocklineaimarketing.com/",
+    "logo": "https://rocklineaimarketing.com/images/logos/rockline-ai-marketing-logo.png",
+    "image": "https://rocklineaimarketing.com/images/logos/rockline-ai-marketing-cover.JPG",
+    "description": "Rockline AI Marketing provides website design, social media marketing, and aerial photography for small businesses across Chicagoland.",
+    "telephone": "+1-815-274-7425",
+    "priceRange": "$$",
+    "areaServed": {
+      "@type": "Place",
+      "name": "Chicagoland, IL"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "330 High Road",
+      "addressLocality": "Lockport",
+      "addressRegion": "IL",
+      "postalCode": "60441",
+      "addressCountry": "US"
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+      "opens": "10:00",
+      "closes": "19:00"
+    },
+    "sameAs": [
+      "https://facebook.com/rocklineaimarketing",
+      "https://x.com/RocklineAI",
+      "https://substack.com/@rocklineaimarketing",
+      "https://www.threads.net/@rocklineaimarketing"
+    ],
+    "makesOffer": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Website Design",
+          "serviceType": "Web Development",
+          "url": "https://rocklineaimarketing.com/services/web-development",
+          "description": "A site that loads fast, looks sharp on any phone, and makes it obvious how to call, book, or order.",
+          "provider": { "@id": "https://rocklineaimarketing.com/#organization" },
+          "areaServed": { "@type": "Place", "name": "Chicagoland, IL" }
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Social Media Marketing",
+          "serviceType": "Social Media Marketing",
+          "url": "https://rocklineaimarketing.com/services/social-media-microblogging",
+          "description": "Ongoing Facebook and Instagram management — regular posts, photos, and offers that keep customers coming back.",
+          "provider": { "@id": "https://rocklineaimarketing.com/#organization" },
+          "areaServed": { "@type": "Place", "name": "Chicagoland, IL" }
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Aerial Photography",
+          "serviceType": "Aerial Photography",
+          "url": "https://rocklineaimarketing.com/services/aerial-photography",
+          "description": "Drone photo and video for real estate listings, events, and social media.",
+          "provider": { "@id": "https://rocklineaimarketing.com/#organization" },
+          "areaServed": { "@type": "Place", "name": "Chicagoland, IL" }
+        }
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": "https://rocklineaimarketing.com/#website",
+    "url": "https://rocklineaimarketing.com/",
+    "name": "Rockline AI Marketing",
+    "publisher": { "@id": "https://rocklineaimarketing.com/#organization" }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://rocklineaimarketing.com/#webpage",
+    "url": "https://rocklineaimarketing.com/",
+    "name": "Rockline AI Marketing | Marketing for Small Business",
+    "description": "Rockline AI Marketing — website design, social media marketing, generative engine optimization, and aerial photography for small businesses.",
+    "isPartOf": { "@id": "https://rocklineaimarketing.com/#website" },
+    "about": { "@id": "https://rocklineaimarketing.com/#organization" },
+    "inLanguage": "en-US",
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": [".hero__headline", ".hero__subhead", ".services__headline"]
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "@id": "https://rocklineaimarketing.com/#blog",
+    "publisher": { "@id": "https://rocklineaimarketing.com/#organization" },
+    "blogPost": [
+      {
+        "@type": "BlogPosting",
+        "headline": "From Google to AI: How Search Is Changing",
+        "url": "https://rocklineaimarketing.com/contact/faq/from-google-to-ai",
+        "description": "Search isn't just Google anymore. Here's what the rise of ChatGPT and AI answers means for how customers actually find local businesses today.",
+        "author": { "@id": "https://rocklineaimarketing.com/#organization" },
+        "publisher": { "@id": "https://rocklineaimarketing.com/#organization" }
+      },
+      {
+        "@type": "BlogPosting",
+        "headline": "How AI Search Actually Works",
+        "url": "https://rocklineaimarketing.com/contact/faq/ai-search-operation",
+        "description": "A look under the hood at how AI engines pull their answers — and what that means for whether your business gets mentioned or gets skipped.",
+        "author": { "@id": "https://rocklineaimarketing.com/#organization" },
+        "publisher": { "@id": "https://rocklineaimarketing.com/#organization" }
+      },
+      {
+        "@type": "BlogPosting",
+        "headline": "Building AI Authority for Your Business",
+        "url": "https://rocklineaimarketing.com/contact/faq/building-ai-authority",
+        "description": "Rankings used to be the whole game. Now it's about being trusted enough that AI cites you directly. Here's how to build that kind of authority.",
+        "author": { "@id": "https://rocklineaimarketing.com/#organization" },
+        "publisher": { "@id": "https://rocklineaimarketing.com/#organization" }
+      }
+    ]
+  }
+  </script>
+
+  <!-- Review schema template — uncomment and fill in once real reviews are
+       pasted into the Reviews section below. Do not publish with placeholder
+       names or invented ratings; unverifiable review markup violates
+       Google's structured-data guidelines and can trigger a manual action.
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "@id": "https://rocklineaimarketing.com/#organization",
+    "review": [
+      {
+        "@type": "Review",
+        "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+        "author": { "@type": "Person", "name": "REPLACE_WITH_REVIEWER_NAME" },
+        "reviewBody": "REPLACE_WITH_VERBATIM_REVIEW_TEXT",
+        "publisher": { "@type": "Organization", "name": "Google" }
+      }
+    ],
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "REPLACE_WITH_ACTUAL_AVERAGE",
+      "reviewCount": "REPLACE_WITH_ACTUAL_COUNT"
+    }
+  }
+  </script>
+  -->
+
   <style>
 /* ==========================================================================
    Rockline AI Marketing — Design Tokens
@@ -1770,8 +1958,6 @@ a {
 
     <!-- ==========================================================================
          SERVICES — "What We Do"
-         Three cards, numbered 01/02/03 because these are the full, literal
-         scope of what Rockline offers — not decorative sequencing.
          ========================================================================== -->
     <section class="services" id="services" aria-label="What we do">
       <div class="services__inner">
@@ -1863,10 +2049,6 @@ a {
 
     <!-- ==========================================================================
          REVIEWS — "Social Proof"
-         PLACEHOLDER CONTENT: swap in the actual reviewer name, rating, and
-         verbatim quote for Google + Facebook. Yelp card is disabled/pending
-         until the listing clears review — flip review-card--pending off and
-         add the real href once it's live.
          ========================================================================== -->
     <section class="reviews" id="reviews" aria-label="Customer reviews">
       <div class="reviews__inner">
@@ -1957,9 +2139,6 @@ a {
 
     <!-- ==========================================================================
          BLOG PREVIEW — "From the Blog"
-         Titles/teasers are my best guess based on the slug + what we've
-         discussed about each post's topic — double-check these match the
-         actual published content and adjust wording as needed.
          ========================================================================== -->
     <section class="blog" id="blog" aria-label="Latest blog posts">
       <div class="blog__inner">
@@ -2109,20 +2288,17 @@ a {
 
   <!-- ==========================================================================
        Live Google rating
-       The "5.0 · Rating on Google" stat pulls a live number from your
-       Google Business Profile via the Google Maps Places library. It
-       fetches on every page load, so it always reflects your current
-       rating — there's no manual editing needed as new reviews come in.
+       Pulls the current rating from the Google Business Profile via the
+       Places API on each page load.
 
        SETUP (one-time, in Google Cloud Console):
-       1. Create/select a project, enable the "Places API".
-       2. Create an API key, then restrict it to "HTTP referrers" and
-          add your live domain(s) (e.g. rocklineaimarketing.com/*) so
-          the key can't be used elsewhere.
-       3. Find your Place ID: https://developers.google.com/maps/documentation/places/web-service/place-id
-          (search "Rockline AI Marketing" — use the exact business listing).
-       4. Paste both values below. Until you do, the stat quietly stays
-          at the "5.0" fallback shown in the HTML — nothing breaks.
+       1. Enable the "Places API" on a project.
+       2. Create an API key restricted to HTTP referrers for your live
+          domain (e.g. rocklineaimarketing.com/*).
+       3. Find the Place ID for the Rockline listing via Google's Place ID
+          finder tool.
+       4. Paste both values below. Until then, the stat stays at the
+          "5.0" fallback shown in the HTML.
        ========================================================================== -->
   <script>
     const ROCKLINE_GOOGLE_PLACE_ID = "PASTE_YOUR_PLACE_ID_HERE";
